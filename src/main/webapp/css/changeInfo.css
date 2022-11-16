@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+.mt30 {
+    margin-top: 30px!important;
+}
+.title_wrap {
+    position: relative;
+    margin-bottom: 15px;
+    min-height: 25px;
+    overflow: hidden;
+}
+.title_wrap h4 {
+    font-size: 16px;
+    color: #222;
+}
+.float_left {
+    float: left;
+}
+.title_wrap .txt_line {
+    float: left;
+    margin-left: 15px;
+    padding-left: 15px;
+    color: #999;
+    background: url(/_ui/desktop/common/images/common/ico_txt_line.gif) 0 5px no-repeat;
+    line-height: 24px;
+}
+.reqd_txt {
+    font-size: 12px;
+    line-height: 18px;
+}
+.title_wrap .reqd_txt, .title_wrap .guide_comment {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+}
+.tblwrap {
+    position: relative;
+}
+img, fieldset {
+    border: 0;
+}
+legend {
+    position: absolute;
+    left: -5000px;
+    font-size: 0;
+}
+.tbl_wtype1 {
+    border-top: 1px solid #666;
+    color: #222;
+    font-size: 12px;
+    clear: both;
+}
+.tbl_wtype1 th.th_space {
+    padding-left: 28px;
+}
+.tbl_wtype1 th {
+    padding: 7px 0 7px 15px;
+    line-height: 30px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #dfdfdf;
+    text-align: left;
+    vertical-align: top;
+}
+.tbl_wtype1 td {
+    padding: 7px 10px;
+    height: 30px;
+    line-height: 30px;
+    color: #444;
+    border-bottom: 1px solid #dfdfdf;
+}
+.btn_btwrap {
+    position: absolute;
+    margin-top: 37px;
+}
+.btn.wt_ss {
+    padding: 6px 10px 7px;
+    padding: 7px 10px 6px\9;
+    min-width: 50px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 11px;
+    line-height: 11px;
+}
+.btn:first-child {
+    margin-left: 0;
+}
+.btnwrap {
+    margin-top: 40px;
+    text-align: center;
+}
+.btnwrap.mypage2 input {
+    width: 148px;
+}
+.wt {
+    padding: 8px 20px 10px;
+    min-width: 140px;
+    background: #fff;
+    border: 1px solid #a3a3a3;
+    font-size: 14px;
+}
+.btn:first-child {
+    margin-left: 0;
+}
+.btn {
+    margin-left: 5px;
+    display: inline-block;
+    color: #363636;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.gray {
+    padding: 8px 20px 10px;
+    min-width: 140px;
+    background: #4a4a4a;
+    border: 1px solid #4a4a4a;
+    color: #fff;
+    font-size: 14px;
+}
+.mypage2 input {
+    width: 148px;
+}
