@@ -8,6 +8,7 @@
 	<link href="../css/mypage.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!--  -->
 </head>
 <body>
 	<div class="bodywrap">
