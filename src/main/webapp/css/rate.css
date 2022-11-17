@@ -97,9 +97,6 @@ td.no_data {
   font-weight: bold;
   clear: both;
 }
-.gd_list dd {
-  /* flex: 3; */
-}
 ul {
   display: block;
   list-style-type: disc;
