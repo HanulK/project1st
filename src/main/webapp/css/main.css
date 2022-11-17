@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+.bodywrap{
+	padding: 119px 0 45px 0;
+}
+.big_banner1903 {
+    position: relative;
+    margin-bottom: 53px;
+    overflow: hidden;
+}
+.big_banner1903 .big_banner_inner {
+    width: 1019px;
+    overflow: hidden;
+}
+.swiper-container {
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+.slide-bgimg{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 1019px;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    z-index: -2;
+}
+.big_banner1903 ul li {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+}
+.product_list1903 {
+    margin-top: 65px;
+}
+.nbe_cnt {
+    overflow: hidden;
+    padding-bottom: 56px;
+    height: 407.94px;
+    position: relative;
+}
+.product_left_menu {
+    float: left;
+    width: 11.61%;
+}
+.product_list1903 .product_left_menu .tit {
+    height: 39px;
+    line-height: 30px;
+    border-bottom: 2px solid #0b0b0b;
+}
+li {
+    list-style: none;
+}
+.product_list1903 .product_left_menu ul li a {
+    font-size: 19px;
+    color: #8f8f8f;
+    font-family: 'Apple SD Gothic Neo',sans-serif;
+    padding: 12px 0;
+}
+.swiper-container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.swiper-slide {
+    width: 234px;
+    margin-right: 7px;
+    height: 100%;
+    position: relative;
+}
+.item_box {
+    position: relative;
+}
+.item_box a {
+    display: block;
+    position: relative;
+}
+.brand {
+    font-family: 'Apple SD Gothic Neo',"Malgun Gothic","맑은 고딕";
+    font-size: 16px;
+    color: #3a3a3a;
+    margin-top: 15px;
+    font-weight: bold;
+}
+.item_box .item_info2 span {
+    display: block;
+    text-align: center;
+}
+.price {
+    color: #646464;
+    font-size: 13px;
+    font-family: Arial,'Apple SD Gothic Neo',sans-serif;
+    padding: 0;
+}
