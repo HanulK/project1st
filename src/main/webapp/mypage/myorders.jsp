@@ -14,7 +14,7 @@
 		<div class="search_wrap">
 	        <ul>
 	            <li>
-	                <p class="bul_sty01"><label for="term">조회기간<!-- 조회기간 --></label></p>
+	                <p class="bul_sty01"><label for="term">조회기간</label></p>
 	                <div class="calendar_wrap mr5">
 	                    <input type="text" name="sterm" class="input_date hasDatepicker" title="mypage.order.history.serch.term.insert" id="sterm" readonly="">
 	                    <button type="button" class="ui-datepicker-trigger ico_cld">...</button>
@@ -23,10 +23,10 @@
 	                </div>
 	            </li>
 	            <li class="space">
-	                <p class="bul_sty01"><label for="id_sel">검색구분<!-- 검색구분 --></label></p>
+	                <p class="bul_sty01"><label for="id_sel">검색구분</label></p>
 	                <select name="searchType" title="검색구분" class="select">
-	                    <option value="productName">상품명<!-- 상품명 --></option>
-	                    <option value="orderNumber">주문번호<!-- 주문번호 --></option>
+	                    <option value="productName">상품명</option>
+	                    <option value="orderNumber">주문번호</option>
 	                </select>
 	                <input type="text" name="searchWord" class="input_all" title="검색어 입력"> 
 	            </li>

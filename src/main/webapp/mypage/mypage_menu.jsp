@@ -5,41 +5,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link href="../css/mypage.css" rel="stylesheet" type="text/css">
+<link href="../css/mypage.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function() {
+	$(".page").load("mypage.jsp");
+	});
+$(function(){
+	$("#order").click(function(){
+		$(".page").load("myorders.jsp")
+		$("#pageName").text("주문.배송/반품/취소")
+	})
+})
+$(function(){
+	$("#wish").click(function(){
+		$(".page").load("mywish.jsp")
+		$("#pageName").text("위시리스트")
+	})
+})
+$(function(){
+	$("#info").click(function(){
+		$(".page").load("changeInfo.jsp")
+		$("#pageName").text("개인정보 변경 / 탈퇴")
+	})
+})
+$(function(){
+	$("#mypage").click(function(){
+		$(".page").load("mypage.jsp")
+		$("#pageName").text("마이페이지")
+	})
+})
+</script>
 <title>Insert title here</title>
 </head>
 <body>
 	<div class="bodywrap">
-		<h3>마이페이지</h3>
+		<h3 id="pageName">마이페이지</h3>
 		<div class="container">
 			<div class="info-wrap">
-				<h3><a href="#">마이페이지</a></h3>
+				<h3><a href="#" id="mypage">마이페이지</a></h3>
 				<div class="info">
 					<dl>
 						<dt>주문조회</dt>
-						<dd><a href="#">주문/배송/반품/취소</a></dd>
-					</dl>
-					<dl>
-						<dt>혜택관리</dt>
-						<dd><a href="#">나의 쿠폰</a></dd>
+						<dd><a href="#" id="order">주문/배송/반품/취소</a></dd>
 					</dl>
 					<dl>
 						<dt>나의 상품관리</dt>
-						<dd><a href="#">위시리스트</a></dd>
-						<dd><a href="#">재입고 알림</a></dd>
+						<dd><a href="#" id="wish">위시리스트</a></dd>
 					</dl>
 					<dl>
 						<dt>나의 정보관리</dt>
-						<dd><a href="#">개인정보 변경/탈퇴</a></dd>
-						<dd><a href="#">배송지 관리</a></dd>
-						<dd><a href="#">원클릭 결제 관리</a></dd>
+						<dd><a href="#" id="info">개인정보 변경/탈퇴</a></dd>
 					</dl>
 					<dl>
 						<dt>나의 활동관리</dt>
 						<dd><a href="#">내 상품평</a></dd>
 						<dd><a href="#">상품 Q&A</a></dd>
-						<dd><a href="#">1:1 문의</a></dd>
 					</dl>
 				</div>
 				<div class="guide">
@@ -55,6 +77,8 @@
 						@thehandsome.com
 					</a>
 				</div>
+			</div>
+			<div class="page">
 			</div>
 		</div>
 	</div>
