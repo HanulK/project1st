@@ -1,6 +1,11 @@
+.sub-container{
+	position: relative;
+    float: left;
+    margin-top: 20px;
+    width: 834px;
+}
 .title_wrap {
     position: relative;
-    /* 임시 top margin*/
     margin-top: 100px;
     margin-bottom: 15px;
     min-height: 25px;

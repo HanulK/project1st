@@ -36,6 +36,18 @@ $(function(){
 		$("#pageName").text("마이페이지")
 	})
 })
+$(function(){
+	$("#qna").click(function(){
+		$(".page").load("qna.jsp")
+		$("#pageName").text("상품 Q&A")
+	})
+})
+$(function(){
+	$("#rate").click(function(){
+		$(".page").load("rate.jsp")
+		$("#pageName").text("내 상품평")
+	})
+})
 </script>
 <title>Insert title here</title>
 </head>
@@ -60,8 +72,8 @@ $(function(){
 					</dl>
 					<dl>
 						<dt>나의 활동관리</dt>
-						<dd><a href="#">내 상품평</a></dd>
-						<dd><a href="#">상품 Q&A</a></dd>
+						<dd><a href="#" id="rate">내 상품평</a></dd>
+						<dd><a href="#" id="qna">상품 Q&A</a></dd>
 					</dl>
 				</div>
 				<div class="guide">
