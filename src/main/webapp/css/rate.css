@@ -1,3 +1,9 @@
+.sub-container{
+	position: relative;
+    float: left;
+    margin-top: 20px;
+    width: 834px;
+}
 .my_review_wrap_box {
   width: 764px;
   height: inherit;
@@ -44,7 +50,6 @@
 .info {
   margin-bottom: 30px;
 }
-/* 설명 */
 .bul_sty01_li li {
   padding-left: 11px;
   background: url(/_ui/desktop/common/images/common/li_bul_1.png) 0 8px no-repeat;
@@ -52,7 +57,6 @@
   font-size: 12px;
 }
 
-/* 테이블 */
 .tbl_ltype {
   border-top: 1px solid #414040;
   border-bottom: 1px solid #414040;
