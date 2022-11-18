@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="header.jsp" %> 
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
@@ -45,7 +46,7 @@
                   		<li class="swiper-slide">
                   			<div class="item_box">
                   				<a href="#">
-                  					<span>
+                  					<span class="item_img">
                   						<img src="http://newmedia.thehandsome.com/TH/2C/FW/TH2CBWCT419MP1_DB_W01.jpg/dims/resize/234x353" alt="" name="캐시미어 블렌드 발마칸 코트" class="respon_image">
                   					</span>
                   				</a>
@@ -75,7 +76,7 @@
                   		<li class="swiper-slide">
                   			<div class="item_box">
                   				<a href="#">
-                  					<span>
+                  					<span class="item_img">
                   						<img src="http://newmedia.thehandsome.com/IL/2C/FW/IL2C9TTO870N_BK_W01.jpg/dims/resize/234x353" alt="" name="캐시미어 블렌드 발마칸 코트" class="respon_image">
                   					</span>
                   				</a>
@@ -91,4 +92,5 @@
           </div>
 	</div>
 </body>
+<%@ include file="footer.jsp" %>   
 </html>
