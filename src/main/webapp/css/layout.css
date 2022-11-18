@@ -1,0 +1,35 @@
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+fieldset {
+    border: none
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: lightgray;
+}
+
+.app-container {
+    width: 90vw;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.page-title {
+    text-align: center;
+    display: block;
+    padding: 30px;
+    font-size: 26px;
+    color: #363636;
+}
+
+.center {
+    width: fit-content;
+    margin: 0 auto;
+}
