@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>여성의류</title>
-<link href="css/itemWList.css" rel="stylesheet" type="text/css" />
+<link href="../css/itemWList.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <!-- 여성>아우터>재킷 -->
