@@ -1,0 +1,176 @@
+.adaptive_wrap {
+  margin: 0 auto;
+  position: relative;
+  min-height: 400px;
+}
+.br_result_search {
+  margin-top: 40px;
+}
+.br_result_search .result_inner_top {
+  position: relative;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e3e3e3;
+  margin-bottom: 20px;
+}
+.br_result_search .result_inner_top_left .result_tlt strong {
+  line-height: 40px;
+  font-size: 32px;
+  color: #c69c6d;
+}
+
+.br_result_search .result_inner_top_left {
+  width: 50%;
+  padding-left: 5px;
+}
+.br_result_search .result_inner_top_left .result_tlt span {
+  font-size: 14px;
+  vertical-align: baseline;
+}
+.br_result_search .result_inner_top_right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 399px;
+}
+.items_list li .item_box {
+  position: relative;
+  padding-bottom: 40px;
+}
+.items_list li .item_box .item_info1 {
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+.items_list li .item_box a {
+  display: block;
+  position: relative;
+  font-size: 11px;
+}
+
+.sr_sortby {
+  overflow: visible;
+  margin-bottom: 20px;
+}
+.sr_sortby {
+  padding: 35px 0 23px 10px;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* item box */
+.items_list li .item_box {
+  position: relative;
+  padding-bottom: 40px;
+}
+.items_list li .item_box .item_info1 {
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+.items_list li .item_box .item_info1 .item_img {
+  position: relative;
+  display: block;
+}
+.items_list li .item_box .item_info1 .item_img img {
+  display: block;
+}
+.items_list li .item_box .item_info1 .item_img img {
+  width: 100%;
+  max-width: 294px;
+}
+.items_list li .item_box a {
+  display: block;
+  position: relative;
+  font-size: 11px;
+}
+.items_list li .item_box .item_info2 .brand,
+.matches_list .item_info2 .brand {
+  letter-spacing: 1px;
+  font-family: "whitneyBold", "Malgun Gothic", "맑은 고딕";
+  font-size: 11px;
+  color: #363636;
+}
+.items_list li .item_box .item_info2 .title {
+  padding: 0 10px;
+  height: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.items_list li .item_box .item_info2 .price {
+  padding: 5px 0;
+  color: #0d0d0d;
+}
+.items_list li .item_box .item_info2 span {
+  display: block;
+  text-align: center;
+}
+.items_list li .item_box .item_info2 span.flag {
+  width: 90%;
+  margin: 0 auto;
+}
+.items_list li .item_box .item_info2 .flag .flag_typ1 {
+  color: #c69c6d;
+  letter-spacing: 1px;
+}
+.items_list li .item_box .item_info2 .flag span {
+  line-height: 24px;
+}
+
+.items_list li .item_box .item_info2 .flag .flag_typ1 {
+  color: #c69c6d;
+  letter-spacing: 1px;
+}
+.items_list li .item_box .item_info2 .flag span {
+  line-height: 24px;
+}
+.items_list li .item_box .color_more_wrap {
+  margin-top: 10px;
+  position: relative;
+  text-align: center;
+}
+.items_list li .item_box {
+  position: relative;
+  padding-bottom: 40px;
+}
+/*item_list*/
+.items_list #asyncSearchItem li {
+  float: left;
+  width: 24.5%;
+  margin-right: 0.6%;
+  /* height: 619px; */
+}
+.items_list {
+  display: block;
+}
+/* paging */
+.paging {
+  padding-bottom: 40px;
+  margin-bottom: 50px;
+  text-align: center;
+  border-bottom: 1px solid #dfdfdf;
+}
+.paging > a {
+  display: inline-block;
+  width: 15px;
+  margin: 0 5px;
+  height: 13px;
+  cursor: pointer;
+}
+.paging .num a.on {
+  font-weight: bold;
+}
+a:hover {
+  text-decoration: none;
+  color: #727272;
+}
+
+/* 검색 */
+.br_result_search .result_inner_top_right input[type="search"] {
+  width: 250px;
+  height: 25px;
+  box-sizing: content-box;
+  line-height: 25px;
+  margin-right: 0;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #444;
+}
