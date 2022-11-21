@@ -46,6 +46,11 @@ nav {
 	border-width: 50%;
 }
 
+.nav-category a {
+	text-decoration: none;
+	color: #444
+}
+
 .nav-mymenu {
 	margin-left: 5px;
 }
