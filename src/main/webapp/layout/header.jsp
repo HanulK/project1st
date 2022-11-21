@@ -10,7 +10,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
   </head>
   <body>
     <header class="header-wrap">
-      <nav class="nav-wrap">
+      <nav class="nav-container">
         <h1 class="logo">
           <a href="../main/main.jsp">
             <img src="http://cdn.thehandsome.com/_ui/desktop/common/images/main/top-header-handsome-logo.png" />
