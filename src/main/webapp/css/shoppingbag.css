@@ -1,0 +1,52 @@
+.basket_tlt .tlt {
+  margin-top: 5px;
+  font-size: 11px;
+}
+.basket_tlt span.sb_tlt {
+  display: block;
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.basket_tlt span {
+  font-size: 12px;
+}
+.color_op {
+  margin-top: 10px;
+  font-size: 11px;
+  color: #999;
+}
+.pt_list_all .color_op {
+  text-align: left;
+}
+.option_wrap .btn_option {
+  float: right;
+  color: #999;
+  font-size: 11px;
+  text-decoration: underline !important;
+}
+.tbl_ltype th {
+  padding: 15px;
+  color: #222;
+  line-height: 14px;
+  text-align: center;
+  background: #f5f5f5;
+}
+.total_wrap {
+  padding: 25px 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.total_price_wrap dt {
+  display: inline-block;
+  width: 140px;
+  height: 22px;
+  color: #222;
+}
+.delch_wrap {
+  position: relative;
+}
+.tbl_ltype td.pt_list_wrap {
+  border-left: 0;
+  padding-left: 0;
+}
