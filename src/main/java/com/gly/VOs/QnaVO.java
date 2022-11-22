@@ -1,56 +1,17 @@
 package com.gly.VOs;
 
 import java.sql.Timestamp;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class QnaVO {
-  private int   qseq; 
-  private String subject; 
-  private String content;
-  private String reply;
-  private String id; 
-  private String rep; 
-  private Timestamp indate;
-  
-  public int getQseq() {
-    return qseq;
-  }
-  public void setQseq(int qseq) {
-    this.qseq = qseq;
-  }  
-  public String getReply() {
-    return reply;
-  }
-  public void setReply(String reply) {
-    this.reply = reply;
-  }
-  public String getSubject() {
-    return subject;
-  }
-  public void setSubject(String subject) {
-    this.subject = subject;
-  }
-  public String getContent() {
-    return content;
-  }
-  public void setContent(String content) {
-    this.content = content;
-  }  
-  public String getId() {
-    return id;
-  }
-  public void setId(String id) {
-    this.id = id;
-  }
-  public String getRep() {
-    return rep;
-  }
-  public void setRep(String rep) {
-    this.rep = rep;
-  }
-  public Timestamp getIndate() {
-    return indate;
-  }
-  public void setIndate(Timestamp indate) {
-    this.indate = indate;
-  }  
+  private int    	qna_id; 		// Q&A 번호
+  private String 	id;				// 고객 ID
+  private String 	title;			// Q&A 제목
+  private String 	content;		// 질의 내용
+  private String 	reply;			// 답변 내용
+  private int 		state; 			// 답변 상태(0:미응답, 1:응답완료)
+  private Timestamp date;			// Q&A 등록 날짜
 }

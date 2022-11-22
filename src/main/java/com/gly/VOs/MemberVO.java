@@ -7,13 +7,13 @@ import lombok.Setter;
 @Getter
 @Setter
 public class MemberVO {
-  private String m_id;
-  private String m_pw;
-  private String m_name;
-  private String m_birth;
-  private int m_gender;
-  private String m_email;
-  private String m_address;
-  private String m_phone;
-  private Timestamp m_indate;
+  private String id;			// 고객 ID
+  private String pw;			// 고객 PW
+  private String name;			// 고객 이름
+  private String birth;			// 고객 생년월일
+  private int 	 gender;		// 고객 성별
+  private String email;			// 고객 이메일
+  private String address;		// 고객 주소
+  private String phone;			// 고객 전화번호
+  private Timestamp indate;		// 고객 가입일자 
 }
