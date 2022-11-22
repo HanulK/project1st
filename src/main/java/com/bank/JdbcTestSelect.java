@@ -1,36 +1,19 @@
 package com.bank;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.io.IOException;
+import java.io.PrintWriter;
 
-public class JdbcTestSelect {
-	public static void main(String args[]) throws SQLException {
-		Connection conn = null;
-		Statement stmt = null;
-		ResultSet rset = null;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class JdbcTestSelect extends HttpServlet {
+	protected void doGet(HttpServletRequest request,HttpServletResponse response)  throws ServletException, IOException{
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out=response.getWriter();	
+		TestDAO dao = new TestDAO();
+		dao.JdbcTest();
 		
-		conn = DBConnection.getConnection(); //before
-
-		try {
-			stmt = conn.createStatement();
-			rset = stmt.executeQuery("SELECT employee_id, first_name FROM employees");
-
-			while (rset.next()) {
-				System.out.print(rset.getInt(1) + " ");
-				System.out.println(rset.getString(2));
-			}
-		}
-
-		finally {
-			if (rset != null)
-				rset.close();
-			if (stmt != null)
-				stmt.close();
-			if (conn != null)
-				conn.close();
-		}
 	}
-
 }
