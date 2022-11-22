@@ -13,6 +13,10 @@
   padding: 30px 0;
     margin-top: 53px;
 }
+.footer a{
+	text-decoration:none;
+	color:#444;
+}
 #footerWrap .footer_cnts2 .cnts2_left {
   width: 60.58%;
   float: left;
