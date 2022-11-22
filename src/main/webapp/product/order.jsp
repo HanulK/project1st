@@ -158,11 +158,11 @@
 	                                					<label class="mr20 one_click_pay">계좌이체</label>
 	                                				</li>
 	                                				<li>
-	                                					<input type="radio" checked="checked">
+	                                					<input type="radio">
 	                                					<label class="mr20 one_click_pay">핸드폰 결제</label>
 	                                				</li>
 	                                				<li>
-	                                					<input type="radio" checked="checked">
+	                                					<input type="radio">
 	                                					<label class="mr20 one_click_pay">카드 결제</label>
 	                                				</li>
 	                                			</ul>
