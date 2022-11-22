@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Marker+Hatch&display=swap");
+
 .header-wrap {
   position: fixed;
   width: 100%;
@@ -9,11 +11,20 @@
   display: absolute;
   left: 0;
   top: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 12px;
 }
-
+.header-wrap ul,
+.header-wrap ul li {
+  text-decoration: none;
+}
+.header-wrap a {
+  text-decoration: none;
+  color: #444;
+}
 .nav-container {
   width: auto;
-  min-width: 995px;
+  min-width: 900px;
   max-width: 1205px;
   height: 100%;
   margin: 0 auto;
@@ -35,22 +46,25 @@
 
 .logo {
   margin-right: 50px;
+  font-size: 36px;
+  font-weight: 400;
+  font-family: "Rubik Marker Hatch", cursive;
 }
 
 .nav-category {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 800;
   padding: 0.5rem 1rem;
 }
 
 .nav-category:hover {
-  border-bottom: 2px solid #999;
   border-width: 50%;
+  background-color: #d4d4d4;
 }
 
 .nav-mymenu {
-  margin-left: 5px;
-  font-size: 14px;
+  margin-left: 8px;
+  font-size: 12px;
 }
 
 .nav-search {
