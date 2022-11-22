@@ -14,7 +14,7 @@
 	<div class="sub-container">
 		<div class="title-wrap mt30">
 			<h4>위시리스트</h4>
-			<p>위시리스트에는 상품이 최대 200개 까지 저장 됩니다.</p>
+			<p class="txt_line">위시리스트에는 상품이 최대 200개 까지 저장 됩니다.</p>
 		</div>
 		<div class="table-wrap">
 			<table class="tbl_ltype">
@@ -54,8 +54,8 @@
 						</td>
 						<td class="al_middle">
 							<div class="btn_wrap">
-								<a href="#"  class="wt_ss">쇼핑백담기</a>			
-								<a href="#" class="wt_ss">삭제</a>		
+								<a href="#"  class="wt_ss btn">쇼핑백담기</a>			
+								<a href="#" class="wt_ss btn">삭제</a>		
 							</div>	
 						</td>
 					</tr>

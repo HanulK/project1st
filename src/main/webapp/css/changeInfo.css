@@ -123,3 +123,11 @@ legend {
 .mypage2 input {
     width: 148px;
 }
+.txt_line {
+    float: left;
+    margin-left: 15px;
+    padding-left: 15px;
+    color: #999;
+    line-height: 24px;
+    font-size: 12px;
+}

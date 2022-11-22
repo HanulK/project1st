@@ -35,13 +35,7 @@
 .mr5 {
     margin-right: 5px!important;
 }
-input[type=text], input[type=password], input[type=email], input[type=number], input[type=search] {
-    margin-right: 5px;
-    height: 28px;
-    line-height: 30px;
-    text-indent: 10px;
-    border: 1px solid #ccc;
-}
+
 .calendar_wrap .ico_cld {
     display: inline-block;
     width: 28px;
