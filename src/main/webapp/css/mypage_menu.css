@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+.sub_container {
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    width: 995px;
+    *zoom: 1;
+}
 h4 a {
     display: block;
     padding: 23px 0 23px 17px;

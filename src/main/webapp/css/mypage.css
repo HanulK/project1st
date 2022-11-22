@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+.bodywrap {
+    padding: 119px 0 45px 0;
+    height:1000px;
+}
 body{
 	margin:0;
 	padding:0;
