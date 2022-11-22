@@ -57,6 +57,10 @@
 }
 
 /* item box */
+.items_list li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
 .items_list li .item_box {
   position: relative;
   padding-bottom: 40px;
