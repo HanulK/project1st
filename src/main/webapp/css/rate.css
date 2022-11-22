@@ -101,7 +101,7 @@ td.no_data {
   font-weight: bold;
   clear: both;
 }
-ul {
+.gd_wrap ul {
   display: block;
   list-style-type: disc;
   /* margin-block-start: 1em;
@@ -110,7 +110,7 @@ ul {
   margin-inline-end: 0px;
   padding-inline-start: 40px;
 }
-ul > li {
+.gd_wrap ul > li {
   display: list-item;
   text-align: -webkit-match-parent;
   padding-left: 11px;

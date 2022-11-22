@@ -5,8 +5,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="../css/common.css" rel="stylesheet" />
-<link href="../css/layout.css" rel="stylesheet" />
 <link href="../css/rate.css" rel="stylesheet" />
 <meta charset="UTF-8">
 <title>Insert title here</title>

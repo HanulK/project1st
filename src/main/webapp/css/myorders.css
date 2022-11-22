@@ -20,20 +20,22 @@
 .search_wrap ul > li {
     overflow: hidden;
 }
-.search_wrap ul > li > p {
+.search_wrap p {
     width: 78px;
     text-align: left;
+    margin-right: 15px;
+    color: #222;
+    float: left;
+    padding-left: 11px;
+    font-size: 12px;
+}
+.search_wrap ul > li > p label {
+    vertical-align: -10px;
 }
 .mr5 {
     margin-right: 5px!important;
 }
-input[type=text], input[type=password], input[type=email], input[type=number], input[type=search] {
-    margin-right: 5px;
-    height: 28px;
-    line-height: 30px;
-    text-indent: 10px;
-    border: 1px solid #ccc;
-}
+
 .calendar_wrap .ico_cld {
     display: inline-block;
     width: 28px;
@@ -74,8 +76,7 @@ input[type=text], input[type=password], input[type=email], input[type=number], i
     margin-left: 5px;
     padding: 0 30px;
     background: #4a4a4a;
-    height: 70px;
-    line-height: 70px;
+    height:30px;
     color: #fff;
     font-size: 14px;
     text-align: center;

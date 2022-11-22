@@ -16,7 +16,7 @@
 }
 .header-wrap ul,
 .header-wrap ul li {
-  text-decoration: none;
+  list-style: none;
 }
 .header-wrap a {
   text-decoration: none;

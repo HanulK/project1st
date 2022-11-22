@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+.bodywrap {
+    padding: 119px 0 45px 0;
+    height:1000px;
+}
 body{
 	margin:0;
 	padding:0;
@@ -63,12 +67,18 @@ a{
 }
 .title-wrap h4 {
 	float: left;
+	font-size: 16px;
+    color: #222;
 }
-.btn-wrap{
-	float: right;
+.title-wrap p {
+	float: left;
+    margin-left: 15px;
+    padding-left: 15px;
+    color: #999;
+    line-height: 24px;
 }
 .table-wrap{
-	    border-top: 1px solid #414040;
+	position: relative;
 }
 table {
     width: 100%;
@@ -96,4 +106,84 @@ table {
 .brand{
 	display:block;
 	text-align: center;
+}
+.profile span{
+	font-size: 22px;
+    font-weight: bold;
+    display: block;
+    padding-left: 0;
+    margin-left: 0;
+}
+.tbl_ltype {
+    border-top: 1px solid #414040;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+caption {
+    position: relative;
+    left: -5000px;
+    height: 0;
+    line-height: 0;
+    text-indent: -5000px;
+}
+.tbl_ltype th {
+    padding: 15px;
+    color: #222;
+    line-height: 14px;
+    text-align: center;
+    background: #f5f5f5;
+    margin:0;
+}
+.no_data {
+    padding: 50px 0!important;
+    color: #c69c6c;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 22px;
+    border-left: none;
+}
+ .tbl_ltype th {
+    padding: 15px 10px;
+}
+.tbl_ltype td {
+    padding: 15px;
+    color: #222;
+    text-align: center;
+    border-left: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+.title_wrap h4 {
+    font-size: 16px;
+    color: #222;
+}
+.mt50{
+	margin-top: 50px!important;
+}
+ .brand {
+    height: 22px;
+    color: #222;
+    font-size: 11px;
+    display: block;
+}
+.wish_wrap li .tlt {
+    height: 40px;
+    color: #222;
+    font-size: 12px;
+    line-height: 18px;
+    display: block;
+    overflow: hidden;
+}
+.price {
+    margin-top: 5px;
+    color: #222;
+    text-align: center;
+    display: block;
+}
+.wish-wrap li {
+	list-style:none;
+}
+.wish-wrap{
+	margin:0;
+	padding:0;
 }

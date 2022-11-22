@@ -14,7 +14,7 @@
 	<div class="sub-container">
 		<div class="title-wrap mt30">
 			<h4>위시리스트</h4>
-			<p>위시리스트에는 상품이 최대 200개 까지 저장 됩니다.</p>
+			<p class="txt_line">위시리스트에는 상품이 최대 200개 까지 저장 됩니다.</p>
 		</div>
 		<div class="table-wrap">
 			<table class="tbl_ltype">
@@ -38,7 +38,7 @@
 						<td><input type="checkbox"></td>
 						<td>
 							<div class="pt-list-wrap">
-								<a href="#"><img src="http://newmedia.thehandsome.com/IL/2C/FW/IL2C9TTO870N_BK_S01.jpg" alt="상품 이미지"></a>
+								<a href="#"><img class="img_size" src="http://newmedia.thehandsome.com/IL/2C/FW/IL2C9TTO870N_BK_S01.jpg" alt="상품 이미지"></a>
 								<div class="detail-wrap">
 									<a href="#">
 										<span>LÄTT</span>
@@ -54,19 +54,14 @@
 						</td>
 						<td class="al_middle">
 							<div class="btn_wrap">
-								<a href="#" index="0" >쇼핑백담기</a>			
-								<a href="#">삭제</a>		
+								<a href="#"  class="wt_ss btn">쇼핑백담기</a>			
+								<a href="#" class="wt_ss btn">삭제</a>		
 							</div>	
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
-		<p class="mt10 ml10">* 정확한 적립율은 상품상세페이지에서 확인하세요.</p>
-		<div class="btn_btwrap">
-		<a href="#" class="btn wt_ss chooseDel">선택삭제</a>
-		<div class="paging">
-	</div>
 	</div>
 
 </body>
