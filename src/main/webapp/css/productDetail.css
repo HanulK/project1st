@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.sub_container {
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    width: 995px;
+}
+.order_box{
+	border: 3px solid #f5f5f5;
+	padding: 10px 20px 30px;
+}
