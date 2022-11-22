@@ -13,7 +13,7 @@
 </head>
 <body>
 	<%@ include file="../layout/header.jsp"%>
-	<div class="app-container">
+	<div class="app-container" style="height:800px;">
 		<h1 class="page-title center">로그인</h1>
 		<div class="login-container center">
 			<section class="login-form">

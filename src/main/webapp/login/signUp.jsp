@@ -13,7 +13,7 @@
 </head>
 <body>
 	<%@ include file="../layout/header.jsp"%>
-	<div class="app-container">
+	<div class="app-container" style="height:800px;">
 		<h1 class="page-title">회원가입</h1>
 		<form class="signUp-form" action="">
 			<fieldset>
