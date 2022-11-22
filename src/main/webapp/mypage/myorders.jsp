@@ -16,22 +16,14 @@
 	            <li>
 	                <p class="bul_sty01"><label for="term">조회기간</label></p>
 	                <div class="calendar_wrap mr5">
-	                    <input type="text" name="sterm" class="input_date hasDatepicker" title="mypage.order.history.serch.term.insert" id="sterm" readonly="">
-	                    <button type="button" class="ui-datepicker-trigger ico_cld">...</button>
+	                    <input type="date" class="input_date hasDatepicker" >
 	                    <div class="form_hyphen pl5">-</div>
-	                    <input type="text" name="eterm" class="input_date hasDatepicker" title="mypage.order.history.serch.term.insert" id="eterm" readonly=""><button type="button" class="ui-datepicker-trigger ico_cld">...</button><!-- <a href="#" class="ico_cld">날짜 선택 버튼</a> -->
+	                    <input type="date" class="input_date hasDatepicker">
 	                </div>
-	            </li>
-	            <li class="space">
-	                <p class="bul_sty01"><label for="id_sel">검색구분</label></p>
-	                <select name="searchType" title="검색구분" class="select">
-	                    <option value="productName">상품명</option>
-	                    <option value="orderNumber">주문번호</option>
-	                </select>
-	                <input type="text" name="searchWord" class="input_all" title="검색어 입력"> 
+	                <input type="button" id="searchBtn" class="btn_search" value="조회하기">
 	            </li>
 	        </ul>
-            <input type="button" id="searchBtn" class="btn_search" value="조회하기">
+            
         </div>
         <div class="title_wrap mt50">
         	<h4>상품 주문 목록<!-- 상품 주문목록 --></h4>

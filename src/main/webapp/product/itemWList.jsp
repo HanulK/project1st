@@ -8,6 +8,7 @@
 <link href="../css/itemWList.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<%@ include file="../layout/header.jsp"%>
 <!-- 여성>아우터>재킷 -->
 <h3 class="cnts_title ou1804">
                  <span id><!-- 정상 브랜드 카테고리 목록 -->

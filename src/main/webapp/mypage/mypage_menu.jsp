@@ -17,7 +17,7 @@ $(document).ready(function() {
 $(function(){
 	$("#order").click(function(){
 		$(".page").load("myorders.jsp")
-		$("#pageName").text("주문.배송/반품/취소")
+		$("#pageName").text("주문/배송/반품/취소")
 	})
 })
 $(function(){
@@ -56,7 +56,9 @@ $(function(){
 <body>
 	<div class="bodywrap">
 		<div class="sub_container">
-			<h3 id="pageName">마이페이지</h3>
+			<div class="cnt_title">
+				<h3 id="pageName">마이페이지</h3>
+			</div>
 			<div class="container">
 				<div class="info-wrap">
 					<h4><a href="#" id="mypage">마이페이지</a></h4>
