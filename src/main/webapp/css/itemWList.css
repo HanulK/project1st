@@ -54,7 +54,6 @@ li {
 	text-align: -webkit-match-parent;
 }
 
--->
 a:link, a:active, a:visited, a {
 	text-decoration: none;
 }
@@ -90,8 +89,7 @@ a:link, a:active, a:visited, a {
 	position: relative;
 }
 
-<!--
-브랜드, 색상, 사이즈, 가격 등 가로로 정렬-->.filterWrap li .select .ico_arr {
+.filterWrap li .select .ico_arr {
 	width: 20px;
 	height: 20px;
 	display: inline-block;
@@ -112,8 +110,7 @@ li {
 	list-style: none;
 }
 
-<!--
-점떼줌-->a:-webkit-any-link {
+a:-webkit-any-link {
 	cursor: pointer;
 }
 
