@@ -105,3 +105,19 @@ li {
 	display: inline-block;
     vertical-align: middle;
 }
+.main_container {
+    margin: 0 auto;
+    width: 995px;
+    min-width: 995px;
+}
+.newItem{
+    font-size: 19px;
+    color: #8f8f8f;
+    padding: 12px 0;
+}
+a:link, a:active, a:visited, a {
+    text-decoration: none;
+}
+a{
+	outline: none;
+}
