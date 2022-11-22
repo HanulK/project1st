@@ -13,7 +13,7 @@
 </head>
 <body>
 	<%@ include file="../layout/header.jsp"%>
-	<div class="app-container">
+	<div class="app-container" style="height:800px;">
 		<h1 class="page-title center">쇼핑백</h1>
 		<div class="shopping_cart_tab1807 tab_a">
 			<!-- //장바구니개편 -->

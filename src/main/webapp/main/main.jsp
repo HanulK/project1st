@@ -20,15 +20,15 @@
 				</ul>
 			</div>
 		</div>
-		<div class="product_list1903">
+		<div class="main_container">
+			<div class="product_list1903">
 			<div class="nbe_cnt new">
 				<div class="product_left_menu">
 					<h4 class="tit">신상품</h4>
 					<ul>
-						<li class=""><a href="#">여성</a></li>
-						<li class="on"><a href="#">남성</a></li>
-						<li class=""><a href="#">포인트 ACC.</a></li>
-						<li class=""><a href="#">셀렉티드</a></li>
+						<li class="newItem"><a href="../product/itemWList.jsp">여성</a></li>
+						<li class="newItem"><a href="../product/itemWList.jsp">남성</a></li>
+						<li class="newItem"><a href="../product/itemWList.jsp">포인트 ACC.</a></li>
 					</ul>
 				</div>
 				<div class="swiper-container">
@@ -51,8 +51,8 @@
 				<div class="product_left_menu">
 					<h4 class="tit">베스트</h4>
 					<ul>
-						<li class="on"><a href="#">여성</a></li>
-						<li class=""><a href="#">남성</a></li>
+						<li class="newItem"><a href="../product/itemWList.jsp">여성</a></li>
+						<li class="newItem"><a href="../product/itemWList.jsp">남성</a></li>
 					</ul>
 				</div>
 				<div class="swiper-container">
@@ -71,6 +71,7 @@
 					</ul>
 				</div>
 			</div>
+		</div>
 		</div>
 	</div>
 </body>

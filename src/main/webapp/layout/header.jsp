@@ -32,7 +32,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           </li>
           <li class="nav-mymenu"><a href="../login/login.jsp"> 로그인</a></li>
           <li class="nav-mymenu"><a href="../mypage/mypage_menu.jsp"> 마이페이지</a></li>
-          <li class="nav-mymenu"><a href="../mypage/mywish.jsp"> 찜 </a></li>
           <li class="nav-mymenu"><a href="../mypage/shoppingbag.jsp">쇼핑백 </a></li>
         </ul>
       </nav>

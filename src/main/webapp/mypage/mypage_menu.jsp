@@ -70,6 +70,7 @@ $(function(){
 						<dl>
 							<dt>나의 상품관리</dt>
 							<dd><a href="#" id="wish">위시리스트</a></dd>
+							<dd><a href="shoppingbag.jsp" id="wish">쇼핑백</a></dd>
 						</dl>
 						<dl>
 							<dt>나의 정보관리</dt>
