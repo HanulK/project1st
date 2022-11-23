@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="../css/mypage_menu.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
