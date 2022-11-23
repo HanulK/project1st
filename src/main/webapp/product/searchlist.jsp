@@ -12,7 +12,6 @@
 <link href="../css/searchList.css" rel="stylesheet" />
 </head>
 <body>
-<%@ include file="../layout/header.jsp"%>
 	<%@ include file="../layout/header.jsp"%>
 	<div id="bodyWrap" class="app-container">
 		<div class="adaptive_wrap">

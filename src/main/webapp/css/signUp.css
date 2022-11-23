@@ -151,6 +151,7 @@ select {
 .btnwrap {
     margin-top: 15px;
     text-align: center;
+    margin-top:40px;
 }
 
 .btn.wt {
@@ -168,4 +169,5 @@ select {
     border: 1px solid #4a4a4a;
     color: #fff;
     font-size: 14px;
+    margin-left:20px;
 }
