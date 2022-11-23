@@ -6,20 +6,11 @@
 <html>
 <head>
 <link href="../css/qna.css" rel="stylesheet" />
-<link href="../css/mypage.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<%@ include file="../layout/header.jsp"%>
-	<div class="bodywrap">
-		<div class="sub_container">
-			<div class="cnt_title">
-				<h3 id="pageName">상품Q&A</h3>
-			</div>
-			<div class="container">
-				<%@ include file="menu.jsp"%>
-				<div class="sub-container">
+	<div class="sub-container">
         <div class="title_wrap">
             <h4>상품 Q&A</h4>
             <span>│</span>
@@ -61,9 +52,6 @@
 
 
     </div>
-			</div>
-		</div>
-	</div>
-	<%@ include file="../layout/footer.jsp"%>
+    <!-- //cnts -->
 </body>
 </html>
