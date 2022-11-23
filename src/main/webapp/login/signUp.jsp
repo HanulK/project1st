@@ -93,6 +93,17 @@
 							<td>
 								<select style="width: 80px" id="selYear" title="년도">
 									<option value="">년</option>
+									<option value="1990">1990</option>
+									<option value="1991">1991</option>
+									<option value="1992">1992</option>
+									<option value="1993">1993</option>
+									<option value="1994">1994</option>
+									<option value="1995">1995</option>
+									<option value="1996">1996</option>
+									<option value="1997">1997</option>
+									<option value="1998">1998</option>
+									<option value="1999">1999</option>
+									<option value="2000">2000</option>
 								</select>
 								<select style="width: 80px" id="selMonth" title="월">
 									<option value="">월</option>
@@ -143,6 +154,12 @@
 									<option value="30">30</option>
 									<option value="31">31</option>
 								</select>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><strong class="reqd">*</strong><label for="phonenum">핸드폰번호</label></th>
+							<td>
+								<input type="text" style="width: 120px" id="phone" name="phone" />
 							</td>
 						</tr>
 					</tbody>
