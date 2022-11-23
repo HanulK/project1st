@@ -11,6 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@ include file="../layout/header.jsp"%>
 	<div class="bodywrap">
 		<div class="sub_container">
 			<div class="cnt_title">

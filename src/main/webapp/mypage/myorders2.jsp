@@ -10,6 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@ include file="../layout/header.jsp"%>
 	<div class="bodywrap">
 		<div class="sub_container">
 			<div class="cnt_title">
@@ -65,7 +66,10 @@
 							</thead>
 							<tbody id="listBody">
 								<tr>
-									<td colspan="6" class="no_data">주문내역이 없습니다.<!-- 주문내역이 없습니다. --></td>
+									<td colspan="6" class="no_data">
+										주문내역이 없습니다.
+										<!-- 주문내역이 없습니다. -->
+									</td>
 								</tr>
 							</tbody>
 						</table>
