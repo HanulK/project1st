@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@ include file="../layout/header.jsp"%>
+	<%@ include file="../layout/header.jsp"%>
 	<div class="bodywrap">
 		<div class="sub_container">
 			<div class="cnt_title">
@@ -19,7 +19,7 @@
 			<div class="container">
 				<%@ include file="menu.jsp"%>
 				<div class="sub-container">
-					<div class="title_wrap mt30">
+					<div class="title_wrap">
 						<h4 class="float_left">개인정보 변경</h4>
 						<p class="txt_line">회원정보를 확인하고, 변경할 수 있습니다.</p>
 						<p class="reqd_txt">
@@ -42,14 +42,16 @@
 									</tr>
 									<tr>
 										<th scope="row" class="th_space"><label for="pwChangeBtn">비밀번호</label></th>
-										<td><input type="button" value="비밀번호 변경" class="btn add_s" id="pwChangeBtn">
+										<td>
+											<input type="button" value="비밀번호 변경" class="btn add_s" id="pwChangeBtn">
 										</td>
 									</tr>
 									<tr>
 										<th scope="row"><strong class="reqd">*</strong> <label for="inforcvemail">E-mail(정보수신용)</label></th>
-										<td><input type="text" style="width: 120px" title="이메일아이디" id="email" value="">
-											<span class="andmail">@</span> <select id="emailDomainSel" style="width: 120px"
-											title="이메일계정">
+										<td>
+											<input type="text" style="width: 120px" title="이메일아이디" id="email" value="">
+											<span class="andmail">@</span>
+											<select id="emailDomainSel" style="width: 120px" title="이메일계정">
 												<option value="">직접입력</option>
 												<option value="naver.com">naver.com</option>
 												<option value="daum.net">daum.net</option>
@@ -68,23 +70,26 @@
 												<option value="hanafos.com">hanafos.com</option>
 												<option value="freechal.com">freechal.com</option>
 												<option value="hitel.net">hitel.net</option>
-										</select> <input type="text" id="emailDomain" style="width: 120px" value="" title="이메일 도메인">
-											<input type="button" class="btn add_s" id="emailDubChkBtn" value="중복확인"> <span
-											class="guide_comment" id="emailMsg"></span>
+											</select>
+											<input type="text" id="emailDomain" style="width: 120px" value="" title="이메일 도메인">
+											<!-- <input type="button" class="btn add_s" id="emailDubChkBtn" value="중복확인"> -->
+											<span class="guide_comment" id="emailMsg"></span>
 											<div class="wtype_comment pt10">
 												<span>정확한 이메일 정보를 입력하셔야 주문/배송 및 서비스정보를 받아 보실 수 있습니다.</span>
-											</div></td>
+											</div>
+										</td>
 									</tr>
 									<tr>
 										<th scope="row" class="th_space"><strong class="reqd">*</strong> 이름</th>
-										<td><input type="text" style="width: 120px" id="name" name="name" value="이*솔">
+										<td>
+											<input type="text" style="width: 120px" id="name" name="name" value="이*솔">
 										</td>
 									</tr>
 									<tr>
 										<th scope="row" class="th_space"><strong class="reqd">*</strong> 생년월일</th>
-										<td><select style="width: 120px" id="selYear" title="년도">
-												<option value="">년</option>
-												<option value="2008">2008</option>
+										<td>
+											<select style="width: 120px" id="selYear" title="년도">
+												<option value="2008" selected>2008</option>
 												<option value="2007">2007</option>
 												<option value="2006">2006</option>
 												<option value="2005">2005</option>
@@ -153,49 +158,9 @@
 												<option value="1942">1942</option>
 												<option value="1941">1941</option>
 												<option value="1940">1940</option>
-												<option value="1939">1939</option>
-												<option value="1938">1938</option>
-												<option value="1937">1937</option>
-												<option value="1936">1936</option>
-												<option value="1935">1935</option>
-												<option value="1934">1934</option>
-												<option value="1933">1933</option>
-												<option value="1932">1932</option>
-												<option value="1931">1931</option>
-												<option value="1930">1930</option>
-												<option value="1929">1929</option>
-												<option value="1928">1928</option>
-												<option value="1927">1927</option>
-												<option value="1926">1926</option>
-												<option value="1925">1925</option>
-												<option value="1924">1924</option>
-												<option value="1923">1923</option>
-												<option value="1922">1922</option>
-												<option value="1921">1921</option>
-												<option value="1920">1920</option>
-												<option value="1919">1919</option>
-												<option value="1918">1918</option>
-												<option value="1917">1917</option>
-												<option value="1916">1916</option>
-												<option value="1915">1915</option>
-												<option value="1914">1914</option>
-												<option value="1913">1913</option>
-												<option value="1912">1912</option>
-												<option value="1911">1911</option>
-												<option value="1910">1910</option>
-												<option value="1909">1909</option>
-												<option value="1908">1908</option>
-												<option value="1907">1907</option>
-												<option value="1906">1906</option>
-												<option value="1905">1905</option>
-												<option value="1904">1904</option>
-												<option value="1903">1903</option>
-												<option value="1902">1902</option>
-												<option value="1901">1901</option>
-												<option value="1900">1900</option>
-										</select> <select style="width: 120px" id="selMonth" title="월">
-												<option value="">월</option>
-												<option value="01">01</option>
+											</select>
+											<select style="width: 120px" id="selMonth" title="월">
+												<option value="01" selected>01</option>
 												<option value="02">02</option>
 												<option value="03">03</option>
 												<option value="04">04</option>
@@ -207,9 +172,8 @@
 												<option value="10">10</option>
 												<option value="11">11</option>
 												<option value="12">12</option>
-										</select> <select style="width: 120px" id="selDay" title="일">
-												<option value="default" selected="">**</option>
-												<option value="">일</option>
+											</select>
+											<select style="width: 120px" id="selDay" title="일">
 												<option value="01">01</option>
 												<option value="02">02</option>
 												<option value="03">03</option>
@@ -241,29 +205,27 @@
 												<option value="29">29</option>
 												<option value="30">30</option>
 												<option value="31">31</option>
-										</select></td>
+											</select>
+										</td>
 									</tr>
-									<tr>
+									<!-- <tr>
 										<th scope="row" class="th_space">이메일 / SMS <br> 수신여부
 										</th>
 										<td>
 											<div class="wtype_comment">
-												더한섬닷컴에서 제공되는 서비스에 대한 수신동의 여부를 확인해주세요. <br> 선택 하시면 더한섬닷컴에서 진행하는 공지 및 이벤트소식을 받아보실 수
-												있습니다. <br> <span>(단, 가입 및 주문/결제와 재입고 알림 등에 관련된 이메일과 SMS는 동의와 상관 없이 발송 됩니다.)</span>
+												더한섬닷컴에서 제공되는 서비스에 대한 수신동의 여부를 확인해주세요.
+												<br>
+												선택 하시면 더한섬닷컴에서 진행하는 공지 및 이벤트소식을 받아보실 수 있습니다.
+												<br>
+												<span>(단, 가입 및 주문/결제와 재입고 알림 등에 관련된 이메일과 SMS는 동의와 상관 없이 발송 됩니다.)</span>
 											</div>
 											<div class="receive_choice">
-												<span class="bul_sty01"> <span>이메일</span> <input type="radio"
-													name="emailReceiveYN" value="true" id="emailReceiveYN"><label for="email_y">예</label>
-													<input type="radio" name="emailReceiveYN" value="false" id="emailReceiveYN"
-													checked="checked"><label for="email_n">아니오</label>
-												</span> <span class="bul_sty01"> <span>SMS</span> <input type="radio"
-													name="smsReceiveYN" id="smsReceiveYN" value="true" disabled="disabled"><label
-													for="sms_y2">예</label> <input type="radio" name="smsReceiveYN" id="smsReceiveYN"
-													value="false" disabled="disabled" checked="checked"><label for="sms_n2">아니오</label>
+												<span class="bul_sty01"> <span>이메일</span> <input type="radio" name="emailReceiveYN" value="true" id="emailReceiveYN"><label for="email_y">예</label> <input type="radio" name="emailReceiveYN" value="false" id="emailReceiveYN" checked="checked"><label for="email_n">아니오</label>
+												</span> <span class="bul_sty01"> <span>SMS</span> <input type="radio" name="smsReceiveYN" id="smsReceiveYN" value="true" disabled="disabled"><label for="sms_y2">예</label> <input type="radio" name="smsReceiveYN" id="smsReceiveYN" value="false" disabled="disabled" checked="checked"><label for="sms_n2">아니오</label>
 												</span>
 											</div>
 										</td>
-									</tr>
+									</tr> -->
 								</tbody>
 							</table>
 						</div>
@@ -272,8 +234,8 @@
 						<input type="button" class="btn wt_ss" value="회원탈퇴" id="memberSecessionBtn">
 					</div>
 					<div class="btnwrap mypage2">
-						<input type="button" class="btn wt" value="취소" id="cancleBtn"> <input type="button"
-							class="btn gray" value="변경사항 저장" id="saveBtn">
+						<input type="button" class="btn wt" value="취소" id="cancleBtn">
+						<input type="button" class="btn gray" value="변경사항 저장" id="saveBtn">
 					</div>
 				</div>
 			</div>

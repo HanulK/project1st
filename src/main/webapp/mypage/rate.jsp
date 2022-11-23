@@ -56,7 +56,7 @@
 									<tr>
 										<th scope="col">작성일</th>
 										<th scope="col">상품정보</th>
-										<th scope="col">상품평 수정</th>
+										<th scope="col">상품평 작성</th>
 									</tr>
 								</thead>
 								<tbody id="writeListBody">

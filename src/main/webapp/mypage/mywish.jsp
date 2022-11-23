@@ -20,10 +20,6 @@
 			<div class="container">
 				<%@ include file="menu.jsp"%>
 				<div class="sub-container">
-					<div class="title-wrap mt30">
-						<h4>위시리스트</h4>
-						<p class="txt_line">위시리스트에는 상품이 최대 200개 까지 저장 됩니다.</p>
-					</div>
 					<div class="table-wrap">
 						<table class="tbl_ltype">
 							<caption>Backet</caption>
@@ -67,6 +63,7 @@
 								</tr>
 							</tbody>
 						</table>
+						<p class="txt_line">위시리스트에는 상품이 최대 200개 까지 저장 됩니다.</p>
 					</div>
 				</div>
 			</div>

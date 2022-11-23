@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+textarea {
+	resize: none;
+}
+
 .bodywrap {
     padding: 119px 0 45px 0;
     height:1000px;
