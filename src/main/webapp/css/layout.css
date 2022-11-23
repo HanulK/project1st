@@ -16,8 +16,15 @@ hr {
 
 .app-container {
 	padding-top: 60px;
-	width : 90vw;
+	width: 90vw;
 	max-width: 940px;
+	margin: 0 auto;
+	width: 90vw;
+}
+
+.mypage-container {
+	width: 90vw;
+	max-width: 834px;
 	margin: 0 auto;
 	width: 90vw;
 }
