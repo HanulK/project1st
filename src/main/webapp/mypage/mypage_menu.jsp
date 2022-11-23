@@ -50,6 +50,12 @@ $(function(){
 		$("#pageName").text("내 상품평")
 	})
 })
+$(function(){
+	$("#qnaWrite").click(function(){
+		$(".page").load("qnaForm.jsp")
+		$("#pageName").text("Q&A 글쓰기")
+	})
+})
 </script>
 <title>Insert title here</title>
 </head>
@@ -80,6 +86,8 @@ $(function(){
 							<dt>나의 활동관리</dt>
 							<dd><a href="#" id="rate">내 상품평</a></dd>
 							<dd><a href="#" id="qna">상품 Q&A</a></dd>
+							<dd><a href="#" id="qnaWrite">Q&A글쓰기</a></dd>
+							
 						</dl>
 					</div>
 					<div class="guide">

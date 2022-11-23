@@ -15,6 +15,7 @@
             <h4>상품 Q&A</h4>
             <span>│</span>
             <p class="txt_line">고객님이 상품상세 Q&A에서 작성한 글입니다.</p>
+            <input type="button" class="wt_ss btn" value="Q&A글쓰기">
         </div>
         <div class="tblwrap">
             <table class="tbl_ltype">
