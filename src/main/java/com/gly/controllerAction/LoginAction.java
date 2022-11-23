@@ -10,7 +10,26 @@ public class LoginAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		String url="member/login.jsp";
+//	    HttpSession session=request.getSession();
+//	  
+//	    String id=request.getParameter("id");
+//	    String pwd=request.getParameter("pwd");
+//	    
+//	    MemberDAO memberDAO=MemberDAO.getInstance();
+//	    MemberVO memberVO=memberDAO.getMember(id);
+//	    
+//	    if(memberVO!=null){
+//	      if(memberVO.getPwd().equals(pwd)){    
+//	        url="gly?command=index";
+//	      } else {
+//		    	//alert
+//		    }
+//	    } else {
+//	    	//alert
+//	    }
+	    
+	    request.getRequestDispatcher(url).forward(request, response);
 
 	}
 

@@ -10,7 +10,8 @@ public class LogoutAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		String url="main/main.jsp";
+		request.getRequestDispatcher(url).forward(request, response);  
 
 	}
 
