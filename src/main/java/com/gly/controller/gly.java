@@ -17,36 +17,35 @@ import com.gly.controllerAction.Action;
 public class gly extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	private void doHandle(HttpServletRequest request, HttpServletResponse respons) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
-		String command = request.getParameter("command");
-	    System.out.println("command 확인 : " + command);
-	    
-	    ActionFactory af = ActionFactory.getInstance();
-	    Action action = af.getAction(command);
-
-	    if (action != null) {
-	      action.execute(request, respons);
-	    }
-
-	}
-
-//  protected void doGet(HttpServletRequest request,
-//      HttpServletResponse response) throws ServletException, IOException {
-//    String command = request.getParameter("command");
-//    System.out.println("NonageServlet에서 요청을 받음을 확인 : " + command);
+//	protected void doHandle(HttpServletRequest request, HttpServletResponse respons) throws ServletException, IOException {
+//		request.setCharacterEncoding("UTF-8");
+//		String command = request.getParameter("command");
+//	    System.out.println("command 확인 : " + command);
+//	    
+//	    ActionFactory af = ActionFactory.getInstance();
+//	    Action action = af.getAction(command);
 //
-//    ActionFactory af = ActionFactory.getInstance();
-//    Action action = af.getAction(command);
+//	    if (action != null) {
+//	      action.execute(request, respons);
+//	    }
 //
-//    if (action != null) {
-//      action.execute(request, response);
-//    }
-//  }
-//
-//  protected void doPost(HttpServletRequest request,
-//      HttpServletResponse response) throws ServletException, IOException {
-//    request.setCharacterEncoding("UTF-8");
-//    doGet(request, response);
-//  }
+//	}
+	
+	  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		    String command = req.getParameter("command");
+		    System.out.println("gly(Servlet)에서 요청을 받음을 확인 : " + command);
+
+		    ActionFactory af = ActionFactory.getInstance();
+		    Action action = af.getAction(command);
+
+		    if (action != null) {
+		      action.execute(req, resp);
+		    }
+		  }
+
+		  protected void doPost(HttpServletRequest request,
+		      HttpServletResponse response) throws ServletException, IOException {
+		    request.setCharacterEncoding("UTF-8");
+		    doGet(request, response);
+		  }
 }
