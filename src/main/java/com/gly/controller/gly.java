@@ -14,7 +14,7 @@ import com.gly.controllerAction.Action;
 //import com.gly.controllerAction.*;
 
 @WebServlet("/gly")
-public class glyServlet extends HttpServlet {
+public class gly extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private void doHandle(HttpServletRequest request, HttpServletResponse respons) throws ServletException, IOException {
