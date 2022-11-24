@@ -7,9 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../css/login.css" rel="stylesheet" />
-<link href="../css/common.css" rel="stylesheet" />
-<link href="../css/layout.css" rel="stylesheet" />
+<link href="css/login.css" rel="stylesheet" />
+<link href="css/common.css" rel="stylesheet" />
+<link href="css/layout.css" rel="stylesheet" />
 </head>
 <body>
 	<%@ include file="../layout/header.jsp"%>
