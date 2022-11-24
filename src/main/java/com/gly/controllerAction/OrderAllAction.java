@@ -9,8 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 public class OrderAllAction implements Action {
 
 	@Override
-	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {  
 
 	}
 

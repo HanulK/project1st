@@ -10,7 +10,8 @@ public class OrderDetailAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		String url="mypage/orderDetail.jsp";
+		request.getRequestDispatcher(url).forward(request, response);  
 
 	}
 

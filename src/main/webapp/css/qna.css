@@ -6,7 +6,6 @@
 }
 .title_wrap {
     position: relative;
-    margin-top: 100px;
     margin-bottom: 15px;
     min-height: 25px;
     overflow: hidden;
@@ -55,4 +54,21 @@
 
 .tbl_ltype caption {
     display: none;
+}
+.float_right{
+	float:right;
+}
+.wt_ss{
+	padding: 6px 10px 7px;
+    min-width: 50px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 11px;
+    line-height: 11px;
+    float:right;
+}
+.btn{
+	cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
 }

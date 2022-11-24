@@ -10,7 +10,8 @@ public class QnaWriteAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		String url="mypage/qnaForm.jsp";
+		request.getRequestDispatcher(url).forward(request, response);  
 
 	}
 

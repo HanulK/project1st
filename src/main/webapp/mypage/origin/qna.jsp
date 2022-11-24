@@ -6,25 +6,15 @@
 <html>
 <head>
 <link href="../css/qna.css" rel="stylesheet" />
-<link href="../css/mypage.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<%@ include file="../layout/header.jsp"%>
-	<div class="bodywrap">
-		<div class="sub_container">
-			<div class="cnt_title">
-				<h3 id="pageName">상품Q&A</h3>
-			</div>
-			<div class="container">
-				<%@ include file="menu.jsp"%>
-				<div class="sub-container">
+	<div class="sub-container">
         <div class="title_wrap">
             <h4>상품 Q&A</h4>
             <span>│</span>
             <p class="txt_line">고객님이 상품상세 Q&A에서 작성한 글입니다.</p>
-            <input type="button" class="wt_ss btn" value="Q&A글쓰기">
         </div>
         <div class="tblwrap">
             <table class="tbl_ltype">
@@ -62,9 +52,6 @@
 
 
     </div>
-			</div>
-		</div>
-	</div>
-	<%@ include file="../layout/footer.jsp"%>
+    <!-- //cnts -->
 </body>
 </html>
