@@ -26,7 +26,7 @@
 					<a href="mywish.jsp" id="wish">위시리스트</a>
 				</dd>
 				<dd>
-					<a href="shoppingbag.jsp" id="wish">쇼핑백</a>
+					<a href="${contextPath}/gly?command=cart_list" id="wish">쇼핑백</a>
 				</dd>
 			</dl>
 			<dl>

@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ include file="../layout/header.jsp"%>
+<%@ include file="/layout/header.jsp"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
-<link href="../css/shoppingbag.css" rel="stylesheet" />
-<link href="../css/layout.css" rel="stylesheet" />
-<link href="../css/common2.css" rel="stylesheet" />
-<link href="../css/mypage.css" rel="stylesheet" type="text/css">
+<link href="css/shoppingbag.css" rel="stylesheet" />
+<link href="css/layout.css" rel="stylesheet" />
+<link href="css/common2.css" rel="stylesheet" />
+<link href="css/mypage.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -177,7 +177,7 @@
 			</div>
 		</div>
 	</div>
-	<%@ include file="../layout/footer.jsp"%>
+	<%@ include file="/layout/footer.jsp"%>
 </body>
 
 </html>
