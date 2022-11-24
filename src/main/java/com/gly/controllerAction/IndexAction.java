@@ -17,9 +17,13 @@ public class IndexAction implements Action {
 		String url = "main/main.jsp";
 		response.setContentType("text/html;charset=utf-8");
 		ProductDAO dao = new ProductDAO();
-		ArrayList<ImageVO> newProductList = dao.listNewProduct();	
+		ArrayList<ImageVO> newProductList = dao.listNewProduct();
+		ArrayList<ImageVO> bestProductList = dao.listBestProduct();
+		
+		
 		request.setAttribute("newProductList", newProductList);
-		dao.listNewProduct();
+		request.setAttribute("bestProductList", bestProductList);
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 		

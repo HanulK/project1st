@@ -34,16 +34,17 @@
 					</div>
 					<div class="swiper-container">
 						<ul class="swiper-wrapper">
-						<c:forEach items="${newProductList}" var="imageVO">
-							<li>
+							<c:forEach items="${newProductList}" var="imageVO">
+								<li>
 									<div class="item_box">
-										<a href="#"> <span class="item_img"> <img src="${imageVO.imgSrc}" alt="" class="respon_image">
+										<a href="#"> <span class="item_img"> <img src="${imageVO.imgSrc}" alt=""
+												class="respon_image">
 										</span>
 										</a> <a href="#" class="item_info2"> <span class="brand">${imageVO.name}</span> <span
 											class="price">₩${imageVO.price}</span>
 										</a>
 									</div>
-							</li>
+								</li>
 							</c:forEach>
 						</ul>
 					</div>
@@ -58,29 +59,17 @@
 					</div>
 					<div class="swiper-container">
 						<ul class="swiper-wrapper">
-							<li>
-								<div class="item_box">
-									<a href="#"> <span class="item_img"> <img
-											src="http://newmedia.thehandsome.com/IL/2C/FW/IL2C9TTO870N_BK_W01.jpg/dims/resize/234x353"
-											alt="" name="캐시미어 블렌드 발마칸 코트" class="respon_image">
-									</span>
-									</a> <a href="#" class="item_info2"> <span class="brand">TIME HOMME</span> <span
-										class="price">₩1,350,000</span>
-									</a>
-								</div>
-							</li>
-							<li>
-								<div class="item_box">
-									<a href="#"> <span class="item_img"> <img
-											src="http://newmedia.thehandsome.com/IL/2C/FW/IL2C9TTO870N_BK_W01.jpg/dims/resize/234x353"
-											alt="" name="캐시미어 블렌드 발마칸 코트" class="respon_image">
-									</span>
-									</a> <a href="#" class="item_info2"> <span class="brand">TIME HOMME</span> <span
-										class="price">₩1,350,000</span>
-									</a>
-								</div>
-							</li>
-							
+							<c:forEach items="${bestProductList}" var="imageVO">
+								<li>
+									<div class="item_box">
+										<a href="#"> <span class="item_img"> <img src="${imageVO.imgSrc}" alt=""  class="respon_image">
+										</span>
+										</a> <a href="#" class="item_info2"> <span class="brand">${imageVO.name}</span> <span
+											class="price">₩${imageVO.price}</span>
+										</a>
+									</div>
+								</li>
+							</c:forEach>
 						</ul>
 					</div>
 				</div>

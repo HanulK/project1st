@@ -47,9 +47,6 @@ public class ProductDAO {
 				image.setImgSrc(rset.getString(1));
 				image.setName(rset.getString(2));
 				image.setPrice(rset.getInt(3));
-				System.out.println(rset.getString(1));
-				System.out.println(rset.getString(2));
-				System.out.println(rset.getInt(3));
 				imageList.add(image);
 			}
 			rset.close();
@@ -61,17 +58,20 @@ public class ProductDAO {
 		return imageList;
 	}
 	
-	public void listBestProduct() {
+	public ArrayList<ImageVO> listBestProduct() {
 		ArrayList<ImageVO> imageList = new ArrayList<ImageVO>();
-
 		try {
 			con = dataFactory.getConnection();
 			System.out.println("Connection success");
-			String query = "select * from best_img where rownum <= 4 order by p_name ";
+			String query = "select * from best_img where rownum <= 3 order by p_name ";
 			pstmt = con.prepareStatement(query);
 			ResultSet rset = pstmt.executeQuery();
 			while (rset.next()) {
-				System.out.println(rset.getString(1));
+				ImageVO image = new ImageVO();
+				image.setImgSrc(rset.getString(1));
+				image.setName(rset.getString(2));
+				image.setPrice(rset.getInt(3));
+				imageList.add(image);
 			}
 			rset.close();
 			pstmt.close();
@@ -79,6 +79,7 @@ public class ProductDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return imageList;
 	}
 
 }
