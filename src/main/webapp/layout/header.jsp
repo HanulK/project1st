@@ -12,7 +12,7 @@
 	<header class="header-wrap">
 		<nav class="nav-container">
 			<h1 class="logo">
-				<a href="../main/main.jsp"> :)GLY </a>
+				<a href="/main/main.jsp"> :)GLY </a>
 			</h1>
 			<div>
 				<ul class="nav-wrap">
@@ -23,12 +23,12 @@
 			</div>
 			<ul class="nav-wrap" style="margin-left: auto">
 				<li class="nav-mymenu nav-search"><input type="text" /> <a href="../product/searchlist.jsp">
-						<img src="../assets/img/search.png" class="navicon" alt="검색" />
+						<img src="/assets/img/search.png" class="navicon" alt="검색" />
 					</a></li>
-				<li class="nav-mymenu"><a href="../login/login.jsp"> 로그인</a></li>
-				<li class="nav-mymenu"><a href="../mypage/mypage_menu.jsp"> 마이페이지</a></li>
-				<li class="nav-mymenu"><a href="../mypage/mywish.jsp">찜</a></li>
-				<li class="nav-mymenu"><a href="../mypage/shoppingbag.jsp">쇼핑백 </a></li>
+				<li class="nav-mymenu"><a href="/login/login.jsp"> 로그인</a></li>
+				<li class="nav-mymenu"><a href="/mypage/mypage_menu.jsp"> 마이페이지</a></li>
+				<li class="nav-mymenu"><a href="/mypage/mywish.jsp">찜</a></li>
+				<li class="nav-mymenu"><a href="/mypage/shoppingbag.jsp">쇼핑백 </a></li>
 			</ul>
 		</nav>
 	</header>
