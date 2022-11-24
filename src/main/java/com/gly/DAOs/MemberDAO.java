@@ -56,6 +56,9 @@ public class MemberDAO {
 				memberVO.setM_address(rs.getString(8));
 				memberVO.setM_indate(rs.getTimestamp(9));
 			}
+			rs.close();
+			pstmt.close();
+			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
