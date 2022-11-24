@@ -10,7 +10,7 @@ public class LoginAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url="member/login.jsp";
+		String url="login/login.jsp";
 //	    HttpSession session=request.getSession();
 //	  
 //	    String id=request.getParameter("id");
