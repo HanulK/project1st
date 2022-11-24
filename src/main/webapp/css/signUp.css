@@ -111,9 +111,9 @@ select {
 	cursor: pointer;
 }
 
-.repeat-check {
+.check-msg {
 	margin-left: 10px;
-	/* display: none; */
+	display: none;
 }
 
 .btnwrap {
