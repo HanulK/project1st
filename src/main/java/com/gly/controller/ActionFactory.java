@@ -1,6 +1,30 @@
 package com.gly.controller;
 
-import com.gly.controllerAction.*;
+import com.gly.controllerAction.Action;
+import com.gly.controllerAction.CartDeleteAction;
+import com.gly.controllerAction.CartInsertAction;
+import com.gly.controllerAction.CartListAction;
+import com.gly.controllerAction.IdCheckFormAction;
+import com.gly.controllerAction.IndexAction;
+import com.gly.controllerAction.ItemSearchAction;
+import com.gly.controllerAction.JoinAction;
+import com.gly.controllerAction.JoinFormAction;
+import com.gly.controllerAction.LoginAction;
+import com.gly.controllerAction.LoginFormAction;
+import com.gly.controllerAction.LogoutAction;
+import com.gly.controllerAction.MyPageAction;
+import com.gly.controllerAction.OrderAllAction;
+import com.gly.controllerAction.OrderDetailAction;
+import com.gly.controllerAction.OrderInsertAction;
+import com.gly.controllerAction.OrderListAction;
+import com.gly.controllerAction.ProductDetailAction;
+import com.gly.controllerAction.QnaListAction;
+import com.gly.controllerAction.QnaViewAction;
+import com.gly.controllerAction.QnaWriteAction;
+import com.gly.controllerAction.QnaWriteFormAction;
+import com.gly.controllerAction.WishListAction;
+import com.gly.controllerAction.WishListDeleteAction;
+import com.gly.controllerAction.WishListInsertAction;
 //import com.gly.admin.controller.action.*;
 
 
@@ -65,6 +89,8 @@ public class ActionFactory {
 			action = new WishListAction();
 		} else if (command.equals("wish_list_delete")) {
 			action = new WishListDeleteAction();
+		} else if (command.equals("search")) {
+			action = new ItemSearchAction();
 		}
 
 		/*

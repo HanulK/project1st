@@ -22,9 +22,13 @@
 				</ul>
 			</div>
 			<ul class="nav-wrap" style="margin-left: auto">
-				<li class="nav-mymenu nav-search"><input type="text" /> <a href="../product/searchlist.jsp">
-						<img src="../assets/img/search.png" class="navicon" alt="검색" />
-					</a></li>
+				<li class="nav-mymenu nav-search">
+					<form method="post" action="gly?command=search">
+						<input name="words" type="text" />
+						<%--<img src="assets/img/search.png" class="navicon" alt="검색" > --%>
+						<input type="submit" value="검색" >
+					</form>
+				</li>
 				<li class="nav-mymenu"><a href="../login/login.jsp"> 로그인</a></li>
 				<li class="nav-mymenu"><a href="../mypage/mypage_menu.jsp"> 마이페이지</a></li>
 				<li class="nav-mymenu"><a href="../mypage/mywish.jsp">찜</a></li>
