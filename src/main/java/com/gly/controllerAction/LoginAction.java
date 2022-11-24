@@ -16,7 +16,7 @@ public class LoginAction implements Action {
 	}
 
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "member/login_fail.jsp";
+		String url = "login/login_fail.jsp";
 		HttpSession session = request.getSession();
 
 		String id = request.getParameter("login_id");

@@ -20,8 +20,8 @@
 				<form method="post" action="gly?command=login">
 					<legend class="section_title">회원</legend>
 					<hr />
-					<input type="text" placeholder="아이디/이메일을 입력하세요." name="login_id" class="login_input" value="nanun" />
-					<input type="password" placeholder="비밀번호를 입력하세요." name="login_pw" class="login_input"  value="nangman" />
+					<input type="text" placeholder="아이디/이메일을 입력하세요." name="login_id" class="login_input" />
+					<input type="password" placeholder="비밀번호를 입력하세요." name="login_pw" class="login_input"  />
 					<input type="submit" value="로그인" class="submit-btn" />
 				</form>
 			</section>
