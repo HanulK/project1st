@@ -1,17 +1,30 @@
 package com.gly.controllerAction;
 
-import java.io.IOException;
+import java.io.*;
+import java.util.*;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+import com.gly.DAOs.*;
+import com.gly.VOs.*;
 
 public class MyPageAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url="mypage/mypage.jsp";
-		request.getRequestDispatcher(url).forward(request, response);  
+		
+		HttpSession session = request.getSession();
+	    MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
+		if (session.getAttribute("userInfo") != null) {
+			System.out.println(loginUser.getM_id());
+			OrderDAO dao = OrderDAO.getInstance();
+			ArrayList<OrderVO> recentOrderList = dao.recentOrderList(loginUser.getM_id());
+			request.setAttribute("recentOrderList", recentOrderList);
+		}
+		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+		dispatcher.forward(request, response); 
 
 	}
 

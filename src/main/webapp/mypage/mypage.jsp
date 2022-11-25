@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@ include file="../layout/header.jsp"%>
+	<%@ include file="../layout/header.jsp"%>
 	<div class="bodywrap">
 		<div class="sub_container">
 			<div class="cnt_title">
@@ -20,7 +20,7 @@
 				<%@ include file="menu.jsp"%>
 				<div class="sub-container">
 					<div class="profile">
-						<span>김주혜님</span>
+						<span>${sessionScope.userInfo.m_name}님</span>
 					</div>
 					<div class="title-wrap">
 						<h4>최근주문</h4>
@@ -44,13 +44,18 @@
 									<th scope="col" style="padding: 15px 0">수량</th>
 									<th scope="col">판매가</th>
 									<th scope="col">주문상태</th>
-									<th scope="col">구분</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td colspan="6" class="no_data">최근 한달 간 주문내역이 없습니다.</td>
-								</tr>
+								<c:forEach items="${recentOrderList}" var="orderVO">
+									<tr>
+										<td>${orderVO.o_id}</td>
+										<td>${orderVO.p_name}</td>
+										<td>${orderVO.o_quantity}</td>
+										<td>${orderVO.o_state}</td>
+										<td>${orderVO.p_price}</td>
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>
