@@ -17,27 +17,28 @@ public class LoginAction implements Action {
 
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "login/login_fail.jsp";
+
+		// 세션 생성
 		HttpSession session = request.getSession();
 
 		String id = request.getParameter("login_id");
 		String pw = request.getParameter("login_pw");
 
+		// 멤버 info 확인 및 로그인
 		MemberDAO memberDAO = MemberDAO.getInstance();
 		MemberVO memberVO = memberDAO.getMemberInfo(id);
 
-		if (memberVO != null) { // 저장된 정보가 있을 시
-			if (memberVO.getM_pw().equals(pw)) { // login success
+		if (memberVO != null) { // DB에 멤버 정보가 있을 시
+			if (memberVO.getM_pw().equals(pw)) { // id O, 비밀번호 O
 				session.removeAttribute("id");
-				session.setAttribute("loginUser", memberVO);
+				session.setAttribute("userInfo", memberVO);
 				url = "gly?command=index";
 				System.out.println("로그인 성공");
-			} else {
-				// 비밀 번호가 틀려도
+			} else { // id O, 비밀번호 X
 				System.out.println("로그인 실패(비번다름)");
 
 			}
-		} else {
-			// 저장된 정보가 없을 시, login fail
+		} else { // id X, 비밀번호 X, login fail
 			System.out.println("로그인 실패(존재X)");
 		}
 

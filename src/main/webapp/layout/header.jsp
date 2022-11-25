@@ -25,10 +25,19 @@
 				<li class="nav-mymenu nav-search"><input type="text" /> <a href="../product/searchlist.jsp">
 						<img src="../assets/img/search.png" class="navicon" alt="검색" />
 					</a></li>
-				<li class="nav-mymenu"><a href="../login/login.jsp"> 로그인</a></li>
-				<li class="nav-mymenu"><a href="../mypage/mypage_menu.jsp"> 마이페이지</a></li>
-				<li class="nav-mymenu"><a href="../mypage/mywish.jsp">찜</a></li>
-				<li class="nav-mymenu"><a href="../mypage/shoppingbag.jsp">쇼핑백 </a></li>
+				<c:choose>
+					<c:when test="${empty sessionScope.userInfo}">
+						<li><a href="gly?command=login_form">로그인</a></li>
+					</c:when>
+					<c:otherwise>
+						<li class="nav-mymenu">${sessionScope.userInfo.m_name}님</li>
+					</c:otherwise>
+				</c:choose>
+				<!-- <li class="nav-mymenu"><a href="gly?command=login_form"> 로그인</a></li> -->
+				<li class="nav-mymenu"><a href="gly?command=logout">로그아웃</a></li>
+				<li class="nav-mymenu"><a href="gly?command=mypage"> 마이페이지</a></li>
+				<li class="nav-mymenu"><a href="gly?command=wish_list_list">찜</a></li>
+				<li class="nav-mymenu"><a href="gly?command=cart_list">쇼핑백 </a></li>
 			</ul>
 		</nav>
 	</header>
