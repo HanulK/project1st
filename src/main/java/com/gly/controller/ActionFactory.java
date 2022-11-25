@@ -17,26 +17,26 @@ public class ActionFactory {
 		Action action = null;
 		System.out.println("ActionFactory  :" + command);
 
-		if (command.equals("index")) {						// main page
+		if (command.equals("index")) { // main page
 			action = new IndexAction();
-		} else if (command.equals("product_detail")) {		// 제품 상세 page
+		} else if (command.equals("product_detail")) { // 제품 상세 page
 			action = new ProductDetailAction();
-		} else if (command.equals("join_form")) {			// 회원 가입 page
+		} else if (command.equals("join_form")) { // 회원 가입 page
 			action = new JoinFormAction();
-		} else if (command.equals("id_check_form")) {		// 회원 가입 - 중복 확인 체크
+		} else if (command.equals("id_check_form")) { // 회원 가입 - 중복 확인 체크
 			action = new IdCheckFormAction();
-		} else if (command.equals("join")) {				// 회원 가입 페이지
+		} else if (command.equals("join")) { // 회원 가입 페이지
 			action = new JoinAction();
-		} else if (command.equals("login_form")) {			// 로그인 페이지
+		} else if (command.equals("login_form")) { // 로그인 페이지
 			action = new LoginFormAction();
-		} else if (command.equals("login")) {				// 로그인 작성 후 데이터 보내기
+		} else if (command.equals("login")) { // 로그인 작성 후 데이터 보내기
 			action = new LoginAction();
 		} else if (command.equals("logout")) {
 			action = new LogoutAction();
 		} else if (command.equals("cart_insert")) {
 			action = new CartInsertAction();
 		} else if (command.equals("cart_list")) {
-			action = new CartListAction();					//장바구니 가기
+			action = new CartListAction(); // 장바구니 가기
 		} else if (command.equals("cart_delete")) {
 			action = new CartDeleteAction();
 		} else if (command.equals("order_insert")) {
@@ -72,40 +72,30 @@ public class ActionFactory {
 		}
 
 		/*
-		// admin
-		if (command.equals("admin_login_form")) {
-			action = new AdminIndexAction();
-		} else if (command.equals("admin_login")) {
-			action = new AdminLoginAction();
-		} else if (command.equals("admin_logout")) {
-			action = new AdminLogoutAction();
-		} else if (command.equals("admin_product_list")) {
-			action = new AdminProductListAction();
-		} else if (command.equals("admin_product_write_form")) {
-			action = new AdminProductWriteFormAction();
-		} else if (command.equals("admin_product_write")) {
-			action = new AdminProductWriteAction();
-		} else if (command.equals("admin_product_detail")) {
-			action = new AdminProductDetailAction();
-		} else if (command.equals("admin_product_update_form")) {
-			action = new AdminProductUpdateFormAction();
-		} else if (command.equals("admin_product_update")) {
-			action = new AdminProductUpdateAction();
-		} else if (command.equals("admin_order_list")) {
-			action = new AdminOrderListAction();
-		} else if (command.equals("admin_order_save")) {
-			action = new AdminOrderSaveAction();
-		} else if (command.equals("admin_member_list")) {
-			action = new AdminMemberListAction();
-		} else if (command.equals("admin_qna_list")) {
-			action = new AdminQnaListAction();
-		} else if (command.equals("admin_qna_detail")) {
-			action = new AdminQnaDetailAction();
-		} else if (command.equals("admin_qna_repsave")) {
-			action = new AdminQnaResaveAction();
-		}
-		*/
-		
+		 * // admin if (command.equals("admin_login_form")) { action = new
+		 * AdminIndexAction(); } else if (command.equals("admin_login")) { action = new
+		 * AdminLoginAction(); } else if (command.equals("admin_logout")) { action = new
+		 * AdminLogoutAction(); } else if (command.equals("admin_product_list")) {
+		 * action = new AdminProductListAction(); } else if
+		 * (command.equals("admin_product_write_form")) { action = new
+		 * AdminProductWriteFormAction(); } else if
+		 * (command.equals("admin_product_write")) { action = new
+		 * AdminProductWriteAction(); } else if (command.equals("admin_product_detail"))
+		 * { action = new AdminProductDetailAction(); } else if
+		 * (command.equals("admin_product_update_form")) { action = new
+		 * AdminProductUpdateFormAction(); } else if
+		 * (command.equals("admin_product_update")) { action = new
+		 * AdminProductUpdateAction(); } else if (command.equals("admin_order_list")) {
+		 * action = new AdminOrderListAction(); } else if
+		 * (command.equals("admin_order_save")) { action = new AdminOrderSaveAction(); }
+		 * else if (command.equals("admin_member_list")) { action = new
+		 * AdminMemberListAction(); } else if (command.equals("admin_qna_list")) {
+		 * action = new AdminQnaListAction(); } else if
+		 * (command.equals("admin_qna_detail")) { action = new AdminQnaDetailAction(); }
+		 * else if (command.equals("admin_qna_repsave")) { action = new
+		 * AdminQnaResaveAction(); }
+		 */
+
 		return action;
 	}
 }
