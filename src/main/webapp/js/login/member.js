@@ -40,8 +40,8 @@ function go_save() {
     alert("전화번호를 입력해 주세요.");
     document.signupForm.phone[0].focus();
   } 
-  // else {
-  //   document.signupForm.action = "NonageServlet?command=join";
-  //   document.signupForm.submit();
-  // }
+  else {
+    document.signupForm.action = "NonageServlet?command=join";
+    document.signupForm.submit();
+  }
 }

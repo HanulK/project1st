@@ -159,6 +159,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       </form>
     </div>
     <%@ include file="../layout/footer.jsp"%>
-    <script type="text/javascript" src="../js/login/member.js"></script>
+    <script type="text/javascript" src="js/login/member.js"></script>
   </body>
 </html>
