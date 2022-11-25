@@ -29,6 +29,8 @@ public class ActionFactory {
 			action = new JoinAction();
 		} else if (command.equals("login_form")) { // 로그인 페이지
 			action = new LoginFormAction();
+		} else if (command.equals("delete_member")) { // 회원 탈퇴
+			action = new DeleteMember();
 		} else if (command.equals("login")) { // 로그인 작성 후 데이터 보내기
 			action = new LoginAction();
 		} else if (command.equals("logout")) {

@@ -92,4 +92,22 @@ public class MemberDAO {
 		}
 		return result;
 	}
+
+	public void deleteMember(String id) {
+		try {
+			System.out.println(id);
+			con = dataFactory.getConnection();
+			String query = "delete from member where id=? ";
+			pstmt = con.prepareStatement(query);
+			pstmt.setString(1, id);
+
+			pstmt.executeUpdate();
+			System.out.println("탈퇴성공");
+			pstmt.close();
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
