@@ -6,11 +6,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class OrderAllAction implements Action {
-
+public class RateListAction implements Action{
+	
 	@Override
-	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {  
-		String url = "product/itemWList.jsp";
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String url="mypage/rate.jsp";
 		request.getRequestDispatcher(url).forward(request, response);  
 	}
 

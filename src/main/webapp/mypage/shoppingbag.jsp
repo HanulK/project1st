@@ -5,10 +5,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="../css/shoppingbag.css" rel="stylesheet" />
-<link href="../css/layout.css" rel="stylesheet" />
-<link href="../css/common2.css" rel="stylesheet" />
-<link href="../css/mypage.css" rel="stylesheet" type="text/css">
+<link href="css/shoppingbag.css" rel="stylesheet" />
+<link href="css/layout.css" rel="stylesheet" />
+<link href="css/common2.css" rel="stylesheet" />
+<link href="css/mypage.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>

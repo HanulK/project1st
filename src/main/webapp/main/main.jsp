@@ -27,9 +27,9 @@
 					<div class="product_left_menu">
 						<h4 class="tit">신상품</h4>
 						<ul>
-							<li class="newItem"><a href="../product/itemWList.jsp">여성</a></li>
-							<li class="newItem"><a href="../product/itemWList.jsp">남성</a></li>
-							<li class="newItem"><a href="../product/itemWList.jsp">포인트 ACC.</a></li>
+							<li class="newItem"><a href="gly?command=order_all">여성</a></li>
+							<li class="newItem"><a href="gly?command=order_all">남성</a></li>
+							<li class="newItem"><a href="gly?command=order_all">포인트 ACC.</a></li>
 						</ul>
 					</div>
 					<div class="swiper-container">
@@ -53,8 +53,8 @@
 					<div class="product_left_menu">
 						<h4 class="tit">베스트</h4>
 						<ul>
-							<li class="newItem"><a href="../product/itemWList.jsp">여성</a></li>
-							<li class="newItem"><a href="../product/itemWList.jsp">남성</a></li>
+							<li class="newItem"><a href="gly?command=order_all">여성</a></li>
+							<li class="newItem"><a href="gly?command=order_all">남성</a></li>
 						</ul>
 					</div>
 					<div class="swiper-container">
