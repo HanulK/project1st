@@ -52,11 +52,11 @@ public class ActionFactory {
 			action = new JoinFormAction();
 		} else if (command.equals("id_check_form")) {		// 회원 가입 - 중복 확인 체크
 			action = new IdCheckFormAction();
-		} else if (command.equals("join")) {				// 회원 가입
+		} else if (command.equals("join")) {				// 회원 가입 페이지
 			action = new JoinAction();
-		} else if (command.equals("login_form")) {			// 로그인 작성 후 데이터 보내기
+		} else if (command.equals("login_form")) {			// 로그인 페이지
 			action = new LoginFormAction();
-		} else if (command.equals("login")) {				// 로그인 기능
+		} else if (command.equals("login")) {				// 로그인 작성 후 데이터 보내기
 			action = new LoginAction();
 		} else if (command.equals("logout")) {
 			action = new LogoutAction();

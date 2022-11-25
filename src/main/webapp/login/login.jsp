@@ -17,11 +17,11 @@
 		<h1 class="page-title center">로그인</h1>
 		<div class="login-container center">
 			<section class="login-form">
-				<form method="post" action="login" name="login-form">
+				<form method="post" action="gly?command=login">
 					<legend class="section_title">회원</legend>
 					<hr />
 					<input type="text" placeholder="아이디/이메일을 입력하세요." name="login_id" class="login_input" />
-					<input type="password" placeholder="비밀번호를 입력하세요." name="login_pw" class="login_input" />
+					<input type="password" placeholder="비밀번호를 입력하세요." name="login_pw" class="login_input"  />
 					<input type="submit" value="로그인" class="submit-btn" />
 				</form>
 			</section>
