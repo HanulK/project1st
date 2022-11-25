@@ -10,7 +10,7 @@ public class MyPageAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url="mypage/mypage_menu.jsp";
+		String url="mypage/mypage.jsp";
 		request.getRequestDispatcher(url).forward(request, response);  
 
 	}

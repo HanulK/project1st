@@ -1,7 +1,31 @@
 package com.gly.controller;
 
-import com.gly.controllerAction.*;
-//import com.gly.admin.controller.action.*;
+import com.gly.controllerAction.Action;
+import com.gly.controllerAction.CartDeleteAction;
+import com.gly.controllerAction.CartInsertAction;
+import com.gly.controllerAction.CartListAction;
+import com.gly.controllerAction.ChangeInfoAction;
+import com.gly.controllerAction.IdCheckFormAction;
+import com.gly.controllerAction.IndexAction;
+import com.gly.controllerAction.JoinAction;
+import com.gly.controllerAction.JoinFormAction;
+import com.gly.controllerAction.LoginAction;
+import com.gly.controllerAction.LoginFormAction;
+import com.gly.controllerAction.LogoutAction;
+import com.gly.controllerAction.MyPageAction;
+import com.gly.controllerAction.OrderAllAction;
+import com.gly.controllerAction.OrderDetailAction;
+import com.gly.controllerAction.OrderInsertAction;
+import com.gly.controllerAction.OrderListAction;
+import com.gly.controllerAction.ProductDetailAction;
+import com.gly.controllerAction.QnaListAction;
+import com.gly.controllerAction.QnaViewAction;
+import com.gly.controllerAction.QnaWriteAction;
+import com.gly.controllerAction.QnaWriteFormAction;
+import com.gly.controllerAction.RateListAction;
+import com.gly.controllerAction.WishListAction;
+import com.gly.controllerAction.WishListDeleteAction;
+import com.gly.controllerAction.WishListInsertAction;
 
 
 public class ActionFactory {
@@ -27,18 +51,18 @@ public class ActionFactory {
 			action = new JoinFormAction();
 		} else if (command.equals("id_check_form")) {		// 회원 가입 - 중복 확인 체크
 			action = new IdCheckFormAction();
-		} else if (command.equals("join")) {				// 회원 가입
+		} else if (command.equals("join")) {				// 회원 가입 페이지
 			action = new JoinAction();
-		} else if (command.equals("login_form")) {			// 로그인 작성 후 데이터 보내기
+		} else if (command.equals("login_form")) {			// 로그인 페이지
 			action = new LoginFormAction();
-		} else if (command.equals("login")) {				// 로그인 기능
+		} else if (command.equals("login")) {				// 로그인 작성 후 데이터 보내기
 			action = new LoginAction();
 		} else if (command.equals("logout")) {
 			action = new LogoutAction();
 		} else if (command.equals("cart_insert")) {
 			action = new CartInsertAction();
 		} else if (command.equals("cart_list")) {
-			action = new CartListAction();
+			action = new CartListAction();					//장바구니 가기
 		} else if (command.equals("cart_delete")) {
 			action = new CartDeleteAction();
 		} else if (command.equals("order_insert")) {
@@ -47,6 +71,8 @@ public class ActionFactory {
 			action = new OrderListAction();
 		} else if (command.equals("mypage")) {
 			action = new MyPageAction();
+		} else if (command.equals("change_info")) {
+			action = new ChangeInfoAction();
 		} else if (command.equals("order_detail")) {
 			action = new OrderDetailAction();
 		} else if (command.equals("order_all")) {
@@ -65,6 +91,8 @@ public class ActionFactory {
 			action = new WishListAction();
 		} else if (command.equals("wish_list_delete")) {
 			action = new WishListDeleteAction();
+		} else if (command.equals("rate")) {
+			action = new RateListAction();
 		}
 
 		/*

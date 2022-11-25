@@ -15,7 +15,7 @@ public class JdbcTestSelect extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();	
 		TestDAO dao = new TestDAO();
-		dao.JdbcTest();
+		dao.listBestProduct();
 		
 	}
 }

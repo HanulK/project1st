@@ -104,6 +104,8 @@ li {
 .item_img img{
 	display: inline-block;
     vertical-align: middle;
+    width:234px;
+    height:353px;
 }
 .main_container {
     margin: 0 auto;
@@ -120,4 +122,7 @@ a:link, a:active, a:visited, a {
 }
 a{
 	outline: none;
+}
+li{
+	float : left;
 }

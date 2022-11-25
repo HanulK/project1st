@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="../css/headerNav.css" rel="stylesheet" />
+<link href="css/headerNav.css" rel="stylesheet" />
 <meta charset="UTF-8" />
 <title>Insert title here</title>
 </head>
@@ -12,24 +12,35 @@
 	<header class="header-wrap">
 		<nav class="nav-container">
 			<h1 class="logo">
-				<a href="../main/main.jsp"> :)GLY </a>
+				<a href="gly?command=index"> :)GLY </a>
+
 			</h1>
 			<div>
 				<ul class="nav-wrap">
-					<li class="nav-category"><a href="../product/itemWList.jsp" class="nav-link">여성</a></li>
-					<li class="nav-category"><a href="../product/itemWList.jsp" class="nav-link">남성</a></li>
-					<li class="nav-category"><a href="../product/itemWList.jsp" class="nav-link">잡화</a></li>
+					<li class="nav-category"><a href="gly?command=order_all" class="nav-link">여성</a></li>
+					<li class="nav-category"><a href="gly?command=order_all" class="nav-link">남성</a></li>
+					<li class="nav-category"><a href="gly?command=order_all" class="nav-link">잡화</a></li>
 				</ul>
 			</div>
 			<ul class="nav-wrap" style="margin-left: auto">
 				<li class="nav-mymenu nav-search"><input type="text" /> <a href="../product/searchlist.jsp">
-						<img src="../assets/img/search.png" class="navicon" alt="검색" />
+						<img src="/assets/img/search.png" class="navicon" alt="검색" />
 					</a></li>
-				<li class="nav-mymenu"><a href="../login/login.jsp"> 로그인</a></li>
-				<li class="nav-mymenu"><a href="../mypage/mypage_menu.jsp"> 마이페이지</a></li>
-				<li class="nav-mymenu"><a href="../mypage/mywish.jsp">찜</a></li>
-				<li class="nav-mymenu"><a href="../mypage/shoppingbag.jsp">쇼핑백 </a></li>
+				<c:choose>
+					<c:when test="${empty sessionScope.userInfo}">
+						<li><a href="gly?command=login_form">로그인</a></li>
+					</c:when>
+					<c:otherwise>
+						<li class="nav-mymenu">${sessionScope.userInfo.m_name}님</li>
+					</c:otherwise>
+				</c:choose>
+				<!-- <li class="nav-mymenu"><a href="gly?command=login_form"> 로그인</a></li> -->
+				<li class="nav-mymenu"><a href="gly?command=logout">로그아웃</a></li>
+				<li class="nav-mymenu"><a href="gly?command=mypage"> 마이페이지</a></li>
+				<li class="nav-mymenu"><a href="gly?command=wish_list_list">찜</a></li>
+				<li class="nav-mymenu"><a href="gly?command=cart_list">쇼핑백 </a></li>
 			</ul>
+
 		</nav>
 	</header>
 </body>

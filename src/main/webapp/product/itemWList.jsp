@@ -4,9 +4,9 @@
 <head>
 <meta charset="UTF-8" />
 <title>여성의류</title>
-<link href="../css/common2.css" rel="stylesheet" />
-<link href="../css/searchList.css" rel="stylesheet" type="text/css" />
-<link href="../css/itemWList.css" rel="stylesheet" type="text/css" />
+<link href="css/common2.css" rel="stylesheet" />
+<link href="css/searchList.css" rel="stylesheet" type="text/css" />
+<link href="css/itemWList.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 	<%@ include file="../layout/header.jsp"%>
