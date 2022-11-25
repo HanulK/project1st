@@ -6,6 +6,7 @@ import com.gly.controllerAction.CartInsertAction;
 import com.gly.controllerAction.CartListAction;
 import com.gly.controllerAction.IdCheckFormAction;
 import com.gly.controllerAction.IndexAction;
+import com.gly.controllerAction.ItemSearchAction;
 import com.gly.controllerAction.JoinAction;
 import com.gly.controllerAction.JoinFormAction;
 import com.gly.controllerAction.LoginAction;
@@ -89,6 +90,8 @@ public class ActionFactory {
 			action = new WishListAction();
 		} else if (command.equals("wish_list_delete")) {
 			action = new WishListDeleteAction();
+		} else if (command.equals("search")) {
+			action = new ItemSearchAction();
 		} else if (command.equals("rate")) {
 			action = new RateListAction();
 		}

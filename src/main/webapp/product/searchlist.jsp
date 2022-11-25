@@ -7,9 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../css/common2.css" rel="stylesheet" />
-<link href="../css/layout.css" rel="stylesheet" />
-<link href="../css/searchList.css" rel="stylesheet" />
+<link href="css/common2.css" rel="stylesheet" />
+<link href="css/layout.css" rel="stylesheet" />
+<link href="css/searchList.css" rel="stylesheet" />
 </head>
 <body>
 	<%@ include file="../layout/header.jsp"%>
@@ -22,7 +22,7 @@
 				<div class="result_inner_top">
 					<div class="result_inner_top_left">
 						<h2 class="result_tlt">
-							<strong class="schr_result">자켓</strong>
+							<strong class="schr_result">${Title}</strong>
 							<p>
 								검색결과 <span id="search_result_keyword_state">총 <b>1923</b>개 상품
 								</span>
@@ -37,7 +37,8 @@
 							<ul id="search_style_menu"></ul>
 						</div>
 					</div>
-
+					
+					<%-- 결과 내 재검색
 					<div class="result_inner_top_right">
 						<fieldset>
 							<div id="async" class="re_search_box">
@@ -50,6 +51,7 @@
 							</div>
 						</fieldset>
 					</div>
+					--%>
 				</div>
 				<!--//result_inner_top-->
 				<!--result_inner_bottom -->

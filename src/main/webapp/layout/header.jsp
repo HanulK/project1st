@@ -23,9 +23,12 @@
 				</ul>
 			</div>
 			<ul class="nav-wrap" style="margin-left: auto">
-				<li class="nav-mymenu nav-search"><input type="text" /> <a href="../product/searchlist.jsp">
-						<img src="/assets/img/search.png" class="navicon" alt="검색" />
-					</a></li>
+				<li class="nav-mymenu nav-search">
+					<form method="post" action="gly?command=search">
+						<input name="words" type="text" />
+						<%--<img src="assets/img/search.png" class="navicon" alt="검색" > --%>
+						<input type="submit" value="검색" >
+					</form></li>
 				<c:choose>
 					<c:when test="${empty sessionScope.userInfo}">
 						<li><a href="gly?command=login_form">로그인</a></li>

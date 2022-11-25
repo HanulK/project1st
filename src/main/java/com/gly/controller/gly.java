@@ -17,7 +17,7 @@ public class gly extends HttpServlet {
 	  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		    String command = req.getParameter("command");
 		    System.out.println("gly(Servlet)에서 요청을 받음을 확인 : " + command);
-
+		    
 		    ActionFactory af = ActionFactory.getInstance();
 		    Action action = af.getAction(command);
 

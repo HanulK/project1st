@@ -16,7 +16,7 @@ public class IndexAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "main/main.jsp";
 		response.setContentType("text/html;charset=utf-8");
-		ProductDAO dao = new ProductDAO();
+		ProductDAO dao = ProductDAO.getInstance();
 		ArrayList<ImageVO> newProductList = dao.listNewProduct();
 		ArrayList<ImageVO> bestProductList = dao.listBestProduct();
 		
