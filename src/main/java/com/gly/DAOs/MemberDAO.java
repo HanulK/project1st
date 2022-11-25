@@ -1,14 +1,11 @@
 package com.gly.DAOs;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
+import javax.naming.*;
+import javax.sql.*;
 
-import com.gly.VOs.MemberVO;
+import com.gly.VOs.*;
 
 public class MemberDAO {
 	private Connection con;
@@ -25,7 +22,7 @@ public class MemberDAO {
 		}
 	};
 
-	private static MemberDAO instance = new MemberDAO();
+	public static MemberDAO instance = new MemberDAO();
 
 	public static MemberDAO getInstance() {
 		return instance;
@@ -64,4 +61,6 @@ public class MemberDAO {
 		}
 		return memberVO;
 	}
+	
+	
 }

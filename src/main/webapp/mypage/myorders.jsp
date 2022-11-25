@@ -55,22 +55,23 @@
 							</colgroup>
 							<thead>
 								<tr>
-									<th scope="col">주문번호<!-- 주문번호 --></th>
-									<th scope="col">상품정보<!-- 상품정보 --></th>
-									<th scope="col" style="padding: 15px 0">수량<!-- 수량 --></th>
-									<!-- 스타일추가 181204 -->
-									<th scope="col">판매가<!-- 판매가 --></th>
-									<th scope="col">주문상태<!-- 주문상태 --></th>
-									<th scope="col">구분<!-- 구분 --></th>
+									<th scope="col">주문번호</th>
+									<th scope="col">상품정보</th>
+									<th scope="col" style="padding: 15px 0">수량</th>
+									<th scope="col">판매가</th>
+									<th scope="col">주문상태</th>
 								</tr>
 							</thead>
 							<tbody id="listBody">
+							<c:forEach items="${orderList}" var="orderVO">
 								<tr>
-									<td colspan="6" class="no_data">
-										주문내역이 없습니다.
-										<!-- 주문내역이 없습니다. -->
-									</td>
+									<td>${orderVO.o_id}</td>
+									<td>${orderVO.p_name}</td>
+									<td>${orderVO.o_quantity}</td>
+									<td>${orderVO.o_state}</td>
+									<td>${orderVO.p_price}</td>
 								</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>

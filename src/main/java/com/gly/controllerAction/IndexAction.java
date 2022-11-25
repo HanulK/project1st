@@ -1,15 +1,13 @@
 package com.gly.controllerAction;
 
-import java.io.IOException;
-import java.util.ArrayList;
+import java.io.*;
+import java.util.*;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
-import com.gly.DAOs.ProductDAO;
-import com.gly.VOs.ImageVO;
+import com.gly.DAOs.*;
+import com.gly.VOs.*;
 
 public class IndexAction implements Action {
 	@Override
@@ -20,6 +18,11 @@ public class IndexAction implements Action {
 		ArrayList<ImageVO> newProductList = dao.listNewProduct();
 		ArrayList<ImageVO> bestProductList = dao.listBestProduct();
 		
+		HttpSession session = request.getSession();
+		if (session.getAttribute("userInfo") != null) {
+			MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
+			System.out.println(loginUser.getM_id());
+		}
 		
 		request.setAttribute("newProductList", newProductList);
 		request.setAttribute("bestProductList", bestProductList);

@@ -4,6 +4,7 @@ import com.gly.controllerAction.Action;
 import com.gly.controllerAction.CartDeleteAction;
 import com.gly.controllerAction.CartInsertAction;
 import com.gly.controllerAction.CartListAction;
+import com.gly.controllerAction.ChangeInfoAction;
 import com.gly.controllerAction.IdCheckFormAction;
 import com.gly.controllerAction.IndexAction;
 import com.gly.controllerAction.ItemSearchAction;
@@ -22,9 +23,11 @@ import com.gly.controllerAction.QnaListAction;
 import com.gly.controllerAction.QnaViewAction;
 import com.gly.controllerAction.QnaWriteAction;
 import com.gly.controllerAction.QnaWriteFormAction;
+import com.gly.controllerAction.RateListAction;
 import com.gly.controllerAction.WishListAction;
 import com.gly.controllerAction.WishListDeleteAction;
 import com.gly.controllerAction.WishListInsertAction;
+
 
 
 public class ActionFactory {
