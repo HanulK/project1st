@@ -1,7 +1,8 @@
 const joinBtn = document.querySelector("#joinBtn");
 joinBtn.addEventListener("click", go_save);
 
-// const repeatCheck = document.querySelector("#correct-check");
+const idCheck = document.querySelector("#double-check");
+const pwCheck = document.querySelector("#correct-check");
 
 function go_save() {
   if (document.signupForm.id.value == "") {
@@ -11,7 +12,8 @@ function go_save() {
     alert("비밀번호를 입력해 주세요.");
     document.signupForm.pw.focus();
   } else if (document.signupForm.pw.value != document.signupForm.pwc.value) {
-    document.querySelector("#correct-check").innerText = "비밀번호가 일치하지 않습니다.";
+    pwCheck.innerText = "비밀번호가 일치하지 않습니다.";
+    pwCheck.style.display = "inline-block";
     document.signupForm.pw.focus();
   } else if (document.signupForm.name.value == "") {
     alert("이름을 입력해 주세요.");
@@ -33,15 +35,15 @@ function go_save() {
     alert("이메일을 입력해 주세요.");
     document.signupForm.email.focus();
   } else if (
-    document.signupForm.phone[0].value == "" ||
-    document.signupForm.phone[1].value == "" ||
-    document.signupForm.phone[2].value == ""
+    document.signupForm.phone1.value == "" ||
+    document.signupForm.phone2.value == "" ||
+    document.signupForm.phone3.value == ""
   ) {
     alert("전화번호를 입력해 주세요.");
     document.signupForm.phone[0].focus();
   } 
   else {
-    document.signupForm.action = "NonageServlet?command=join";
+    document.signupForm.action = "gly?command=join";
     document.signupForm.submit();
   }
 }
