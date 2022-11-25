@@ -7,9 +7,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
   <head>
     <meta charset="UTF-8" />
     <title>Gly : 회원가입</title>
-    <link href="../css/common.css" rel="stylesheet" />
-    <link href="../css/layout.css" rel="stylesheet" />
-    <link href="../css/signUp.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/layout.css" rel="stylesheet" />
+    <link href="css/signUp.css" rel="stylesheet" />
   </head>
   <body>
     <%@ include file="../layout/header.jsp"%>
