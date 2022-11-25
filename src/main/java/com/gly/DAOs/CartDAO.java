@@ -8,6 +8,8 @@ import javax.sql.*;
 
 import com.gly.VOs.*;
 
+import oracle.jdbc.*;
+
 //import java.sql.Connection;
 //import java.sql.PreparedStatement;
 //import java.sql.ResultSet;
@@ -31,16 +33,20 @@ public class CartDAO {
 		}
 	}
 
-
-	public ArrayList<CartVO> listCart() {
+//writer : juhye
+	public ArrayList<CartVO> listCart(String v_id) {
 		ArrayList<CartVO> cartList = new ArrayList<CartVO>();
+		String query = "{call get_cart_user(?,?)}";
 		
 		try {
 			con = dataFactory.getConnection();
 			System.out.println("Connection success");
-			String query = "select * from show_bag";
-			pstmt = con.prepareStatement(query);
-			ResultSet rset = pstmt.executeQuery();
+			CallableStatement callableStatement = con.prepareCall(query);
+			callableStatement.setString(1, v_id);
+			callableStatement.registerOutParameter(2, OracleTypes.CURSOR);
+			callableStatement.execute();
+			ResultSet rset = (ResultSet)callableStatement.getObject(2);
+			
 			while (rset.next()) {
 				CartVO cart = new CartVO();
 				cart.setImg_src(rset.getString(1));

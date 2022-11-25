@@ -18,10 +18,9 @@ public class CartListAction implements Action {
 		HttpSession session = request.getSession();
 		if (session.getAttribute("userInfo") != null) {
 			MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
-			System.out.println(loginUser.getM_id());
 			
 			CartDAO dao = new CartDAO();
-			ArrayList<CartVO> cartList = dao.listCart();
+			ArrayList<CartVO> cartList = dao.listCart(loginUser.getM_id());
 			
 			int totalPrice = 0;
 	
@@ -29,6 +28,7 @@ public class CartListAction implements Action {
 				totalPrice += cartVO.getP_price() * cartVO.getC_quantity();
 			}
 			request.setAttribute("cartList", cartList);
+			request.setAttribute("totalPrice", totalPrice);
 			
 		}else {
 			url="gly?command=login_form";
