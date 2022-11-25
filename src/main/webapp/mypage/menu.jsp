@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="../css/mypage_menu.css" rel="stylesheet" type="text/css">
+<link href="css/mypage_menu.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -17,31 +17,32 @@
 			<dl>
 				<dt>주문조회</dt>
 				<dd>
-					<a href="myorders.jsp" id="order">주문/배송/반품/취소</a>
+					<a href="gly?command=order_list" id="order">주문/배송/반품/취소</a>
 				</dd>
 			</dl>
 			<dl>
 				<dt>나의 상품관리</dt>
 				<dd>
-					<a href="mywish.jsp" id="wish">위시리스트</a>
+					<a href="gly?command=wish_list_list" id="wish">위시리스트</a>
 				</dd>
 				<dd>
-					<a href="shoppingbag.jsp" id="wish">쇼핑백</a>
+					<a href="gly?command=cart_list" id="wish">쇼핑백</a>
+
 				</dd>
 			</dl>
 			<dl>
 				<dt>나의 정보관리</dt>
 				<dd>
-					<a href="changeInfo.jsp" id="info">개인정보 변경/탈퇴</a>
+					<a href="gly?command=change_info" id="info">개인정보 변경/탈퇴</a>
 				</dd>
 			</dl>
 			<dl>
 				<dt>나의 활동관리</dt>
 				<dd>
-					<a href="rate.jsp" id="rate">내 상품평</a>
+					<a href="gly?command=rate" id="rate">내 상품평</a>
 				</dd>
 				<dd>
-					<a href="qna.jsp" id="qna">상품 Q&A</a>
+					<a href="gly?command=qna_list" id="qna">상품 Q&A</a>
 				</dd>
 			</dl>
 		</div>

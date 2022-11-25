@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="../css/changeInfo.css" rel="stylesheet" type="text/css">
-<link href="../css/mypage.css" rel="stylesheet" type="text/css">
+<link href="css/changeInfo.css" rel="stylesheet" type="text/css">
+<link href="css/mypage.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
