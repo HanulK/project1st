@@ -13,7 +13,7 @@
 </head>
 <body>
 	<%@ include file="../layout/header.jsp"%>
-	<div class="app-container" style="height:800px;">
+	<div class="app-container" style="height: 800px;">
 		<h1 class="page-title center">로그인</h1>
 		<div class="login-container center">
 			<section class="login-form">
@@ -21,7 +21,7 @@
 					<legend class="section_title">회원</legend>
 					<hr />
 					<input type="text" placeholder="아이디/이메일을 입력하세요." name="login_id" class="login_input" />
-					<input type="password" placeholder="비밀번호를 입력하세요." name="login_pw" class="login_input"  />
+					<input type="password" placeholder="비밀번호를 입력하세요." name="login_pw" class="login_input" />
 					<input type="submit" value="로그인" class="submit-btn" />
 				</form>
 			</section>
@@ -33,7 +33,7 @@
 					<br />
 					<span style="color: #c69c6c;">우글리마일리지와 현대백화점그룹 H.Point 혜택, 우글리의 온라인 멤버십 서비스 ‘THE 클럽’의 혜택은 제공되지 않습니다.</span>
 				</p>
-				<button class="submit-btn" style="font-weight: bold;" onclick="location.href = 'signUp.jsp' ">우글리닷컴 회원가입</button>
+				<button class="submit-btn" style="font-weight: bold;" onclick="location='gly?command=join_form'">우글리닷컴 회원가입</button>
 			</section>
 		</div>
 	</div>
