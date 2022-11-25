@@ -17,9 +17,9 @@
 			</h1>
 			<div>
 				<ul class="nav-wrap">
-					<li class="nav-category"><a href="gly?command=order_all" class="nav-link">여성</a></li>
-					<li class="nav-category"><a href="gly?command=order_all" class="nav-link">남성</a></li>
-					<li class="nav-category"><a href="gly?command=order_all" class="nav-link">잡화</a></li>
+					<li class="nav-category"><a href="gly?command=item_all&kind=0" class="nav-link">여성</a></li>
+					<li class="nav-category"><a href="gly?command=item_all&kind=1" class="nav-link">남성</a></li>
+					<li class="nav-category"><a href="gly?command=item_all&kind=2" class="nav-link">잡화</a></li>
 				</ul>
 			</div>
 			<ul class="nav-wrap" style="margin-left: auto">

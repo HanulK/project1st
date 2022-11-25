@@ -17,15 +17,13 @@ public class ItemSearchAction implements Action {
 		String url="product/searchlist.jsp";
 		
 		String words = request.getParameter("words");
-		System.out.println("What's your search? : " + words);
-		
 		
 		request.setAttribute("Title", words);
 		ProductDAO productDAO = ProductDAO.getInstance();
-		ArrayList<ProductVO> productList = productDAO.getSearchProducts();
+		ArrayList<ProductVO> productList = productDAO.getSearchProducts(words);
 		
 		
-//		request.setAttribute("count", count);
+		request.setAttribute("count", productList.size());
 		request.setAttribute("productList", productList);
 		request.getRequestDispatcher(url).forward(request, response);  
 	}
