@@ -30,9 +30,8 @@
 						<table class="tbl_ltype">
 							<caption>상품평 리스트</caption>
 							<colgroup>
+								<col style="width: 50px">
 								<col style="width: 120px">
-								<col>
-								<col style="width: 42px">
 								<col style="width: 107px">
 								<col style="width: 108px">
 								<col style="width: 96px">

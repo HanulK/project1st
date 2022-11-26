@@ -13,4 +13,5 @@ public class ReviewVO {
 	private int			r_score;		// 별점(0-5)
 	private String		r_text;			// 구매평
 	private Timestamp 	r_indate;		// 리뷰 등록 날짜
+	private String p_name; 				//상품정보
 }

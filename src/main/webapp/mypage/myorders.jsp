@@ -46,9 +46,8 @@
 							<caption>상품 주문 목록</caption>
 							<colgroup class="interval1812">
 								<!-- 수정 181204 -->
+								<col style="width: 50px">
 								<col style="width: 120px">
-								<col>
-								<col style="width: 43px">
 								<col style="width: 112px">
 								<col style="width: 89px">
 								<col style="width: 111px">
