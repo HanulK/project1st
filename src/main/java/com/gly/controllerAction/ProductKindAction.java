@@ -20,7 +20,7 @@ public class ProductKindAction implements Action {
 		 ProductDAO productDAO=ProductDAO.getInstance();
 		 ArrayList<ProductVO> productKindList = productDAO.listKindProduct(kind);
 		 
-		 request.setAttribute("productKindList", productKindList);
+		 request.setAttribute("productList", productKindList);
 		 request.getRequestDispatcher(url).forward(request, response);
 
 	}

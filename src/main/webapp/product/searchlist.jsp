@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}}" />
 
 <!DOCTYPE html>
@@ -81,7 +82,9 @@
 							<!-- 상품 정보 셋팅 -->
 							<a href="gly?command=product_detail&pid=${productVO.p_id}" class="item_info2">
 								<span class="title"> ${productVO.p_name} </span>
-								<span class="price"> <span> ${productVO.p_price} </span></span>
+								<span class="price">
+									<span> ₩ <fmt:formatNumber value="${productVO.p_price}" pattern="#,###"/> </span>
+								</span>
 								<span class="flag"> 
 								<input type="hidden" id="${productVO.p_id}" name="${productVO.p_name}" /> 
 								</span>
