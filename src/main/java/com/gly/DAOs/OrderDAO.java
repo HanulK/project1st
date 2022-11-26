@@ -37,7 +37,7 @@ public class OrderDAO {
 			cstmt.setString(1,id);
 			cstmt.registerOutParameter(2, OracleTypes.CURSOR);
 			cstmt.execute();
-			ResultSet rset = (ResultSet) cstmt.getObject(5);
+			ResultSet rset = (ResultSet) cstmt.getObject(2);
 
 			while (rset.next()) {
 				OrderVO order = new OrderVO();
@@ -47,7 +47,9 @@ public class OrderDAO {
 				order.setP_price(rset.getInt(4));
 				order.setO_state(rset.getInt(5));
 				orderList.add(order);
+				System.out.println("성공");
 			}
+			cstmt.close();
 			rset.close();
 			con.close();
 		} catch (Exception e) {

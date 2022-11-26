@@ -110,17 +110,16 @@ public class ProductDAO {
 		return product;
 	}
 	
+	//hansol
 	public ArrayList<ImageVO> listNewProduct() {
 		ArrayList<ImageVO> imageList = new ArrayList<ImageVO>();
-
+		String sql = "{call recent_product(?)}";
 		try {
 			con = dataFactory.getConnection();
-			System.out.println("Connection success");
-			String query = "select img_src, p_name, p_price from main_img_list m, product p"
-					 + " where m.p_id=p.p_id and rownum<=3"
-					+" order by p_indate desc ";
-			pstmt = con.prepareStatement(query);
-			ResultSet rset = pstmt.executeQuery();
+			CallableStatement cstmt = con.prepareCall(sql);
+			cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+			cstmt.execute();
+			ResultSet rset = (ResultSet) cstmt.getObject(1);
 			while (rset.next()) {
 				ImageVO image = new ImageVO();
 				image.setImgSrc(rset.getString(1));
@@ -134,18 +133,19 @@ public class ProductDAO {
 			}catch (Exception e) {
 				e.printStackTrace();
 		}
-			
 		return imageList;
 	}
 	
+	//hansol
 	public ArrayList<ImageVO> listBestProduct() {
 		ArrayList<ImageVO> imageList = new ArrayList<ImageVO>();
+		String sql = "{call best_product(?)}";
 		try {
 			con = dataFactory.getConnection();
-			System.out.println("Connection success");
-			String query = "select * from best_img where rownum <= 3 order by p_name ";
-			pstmt = con.prepareStatement(query);
-			ResultSet rset = pstmt.executeQuery();
+			CallableStatement cstmt = con.prepareCall(sql);
+			cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+			cstmt.execute();
+			ResultSet rset = (ResultSet)cstmt.getObject(1);
 			while (rset.next()) {
 				ImageVO image = new ImageVO();
 				image.setImgSrc(rset.getString(1));
