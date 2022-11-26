@@ -42,7 +42,7 @@
 									<th scope="col">상품정보</th>
 									<th scope="col" style="padding: 15px 0">수량</th>
 									<th scope="col">판매가</th>
-									<th scope="col">주문상태</th>
+									<th scope="col">리뷰작성</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -52,7 +52,7 @@
 										<td>${orderVO.p_name}</td>
 										<td>${orderVO.o_quantity}</td>
 										<td>${orderVO.o_state}</td>
-										<td>${orderVO.p_price}</td>
+										<td><a href="gly?command=rate_form">상품평 작성</a></td>
 									</tr>
 								</c:forEach>
 							</tbody>

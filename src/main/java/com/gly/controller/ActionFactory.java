@@ -69,6 +69,8 @@ public class ActionFactory {
 			action = new ItemSearchAction();
 		} else if (command.equals("rate")) {
 			action = new RateListAction();
+		}else if (command.equals("rate_form")) {
+			action = new RateFormAction();
 		}
 
 		/*
