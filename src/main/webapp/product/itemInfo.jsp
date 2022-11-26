@@ -2,7 +2,7 @@
    pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<c:set var="contextPath" value="${pageContext.request.contextPath}}" />
+<c:set var="contextPath" value="${pageContext.request.contextPath}}/" />
 <!DOCTYPE html>
 <html>
    <head>
@@ -55,7 +55,7 @@
                      </div>
                   </div>
                   <!-- 선택 옵션 및 가격 -->
-                  <form action="${contextPath}/gly?command=cart_insert">
+                  <form action="${contextPath}gly?command=cart_insert">
                      <div class="item_option_box info_sect" id="color_size">
                         <ul class="color_size_qty">
                            <li><span class="title">사이즈</span>
@@ -92,47 +92,6 @@
                            <summary>상품상세정보</summary>
                            <div class="product-info-211027 detail_contents">
                               <h3>상품 추가 정보</h3>
-                              <table>
-                                 <caption>상품 추가 정보</caption>
-                                 <colgroup>
-                                    <col style="width: 91px" />
-                                    <col style="width: 125px" />
-                                    <col style="width: 127px" />
-                                    <col style="width: 126px" />
-                                 </colgroup>
-                                 <tbody>
-                                    <tr>
-                                       <th>핏</th>
-                                       <td>슬림핏</td>
-                                       <td>레귤러핏</td>
-                                       <td class="bold">루즈핏</td>
-                                    </tr>
-                                    <tr>
-                                       <th>신축성</th>
-                                       <td>없음</td>
-                                       <td>조금 있음</td>
-                                       <td class="bold">있음</td>
-                                    </tr>
-                                    <tr>
-                                       <th>비침</th>
-                                       <td class="bold">없음</td>
-                                       <td>약간</td>
-                                       <td>있음</td>
-                                    </tr>
-                                    <tr>
-                                       <th>두께</th>
-                                       <td>얇음</td>
-                                       <td class="bold">보통</td>
-                                       <td>두꺼움</td>
-                                    </tr>
-                                    <tr>
-                                       <th>안감</th>
-                                       <td class="bold">없음</td>
-                                       <td>부분 안감</td>
-                                       <td>전체 안감</td>
-                                    </tr>
-                                 </tbody>
-                              </table>
                               <p>상기 정보는 주관적 내용이므로 참고해주세요</p>
                            </div>
                         </details>
@@ -140,11 +99,9 @@
                         <details>
                            <summary>상품정보제공고시</summary>
                            <div class="detail_contents">
-                              <strong>상품품번 :</strong> TN2CATTO616W <br /> <strong>품목
-                              :</strong> 의류 <br /> <strong>소재 :</strong> 겉감 면 100%, 배색 면 95%, 폴리우레탄
-                              5%(CR) <br /> <strong>색상 :</strong> CR(CREAM) <br /> <strong>사이즈
-                              :</strong> S <br /> <strong>제조국 :</strong> 한국 <br /> <strong>제조사
-                              :</strong> (주)한섬 <br /> <strong>제조연월 :</strong> 202210 <br /> <strong>세탁방법
+                              <strong>상품품번 :</strong> gly:)${product.p_kind}${product.p_id} <br /> <strong>품목
+                              :</strong> 의류 <br /> <strong>제조국 :</strong> 한국 <br /> <strong>제조사
+                              :</strong> (주)한섬 <br /> <strong>세탁방법
                               및 취급 시 주의사항</strong>
                               <div class="howToWash renew1907" id="newHowToWash">
                                  <ul>
@@ -206,41 +163,6 @@
                         <details>
                            <summary>실측사이즈</summary>
                            <div class="ko realsize_img SZ01"></div>
-                           <p class="tit">티셔츠</p>
-                           <!-- info_tbl -->
-                           <div class="detail-size-bd">
-                              <span class="unit">단위(cm)</span>
-                              <!-- 아우터 사이즈 -->
-                              <table class="unit-board" border="0">
-                                 <caption>아우터 실측사이즈</caption>
-                                 <colgroup>
-                                    <col style="width: 81px" />
-                                    <col style="width: auto" />
-                                    <col style="width: auto" />
-                                 </colgroup>
-                                 <thead>
-                                    <tr>
-                                       <th scope="col">사이즈</th>
-                                       <th scope="col">S</th>
-                                    </tr>
-                                 </thead>
-                                 <tbody>
-                                    <tr>
-                                       <th scope="row">총길이</th>
-                                       <td>51.44</td>
-                                    </tr>
-                                    <tr>
-                                       <th scope="row">가슴단면</th>
-                                       <td>71.12</td>
-                                    </tr>
-                                    <tr>
-                                       <th scope="row">소매부리</th>
-                                       <td>9.52</td>
-                                    </tr>
-                                 </tbody>
-                              </table>
-                           </div>
-                           <br />
                            <font color="red"> <strong> 원단, 측정방법에 따라 약간의 오차
                            가능성이 있습니다.</strong>
                            </font>

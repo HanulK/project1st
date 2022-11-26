@@ -18,6 +18,7 @@
 			</span>
 		</h3>
 
+		<%--
 		<div class="filterWrap hsDelivery1902">
 			<ul class="clearfix float_left">
 				<!-- 정상용 브랜드 검색 -->
@@ -48,6 +49,8 @@
 			<!-- <div class="items_count float_right"><span class="num">676</span> <span>전체</span></div> -->
 		</div>
 		<!--  정렬까지 완료 -->
+		
+		--%>
 		
 		<div class="items_list cate_item4">
 			<ul id="asyncSearchItem" class="clearfix">
