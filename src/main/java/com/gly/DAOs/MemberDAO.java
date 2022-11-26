@@ -7,6 +7,8 @@ import javax.sql.*;
 
 import com.gly.VOs.*;
 
+import oracle.jdbc.*;
+
 public class MemberDAO {
 	private Connection con;
 	private PreparedStatement pstmt;
@@ -35,13 +37,15 @@ public class MemberDAO {
 
 		try {
 			con = dataFactory.getConnection();
-//			System.out.println("Connection success");
+			System.out.println("Connection success");
+			String query = " { ? = call get_userInfo(?) }";
+			CallableStatement cstmt = con.prepareCall(query);
+			cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+			cstmt.setString(2, id);
+			cstmt.execute();
 
-			String query = "select * from member where id=? ";
-			pstmt = con.prepareStatement(query);
-			pstmt.setString(1, id);
+			ResultSet rs = (ResultSet) cstmt.getObject(1);
 
-			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
 				memberVO = new MemberVO();
 				memberVO.setM_id(rs.getString(1));
