@@ -92,16 +92,16 @@ public class MemberDAO {
 	}
 
 	public void deleteMember(String id) {
+		String sql = " { call delete_member(?) } ";
 		try {
 			System.out.println(id);
 			con = dataFactory.getConnection();
-			String query = "delete from member where id=? ";
-			pstmt = con.prepareStatement(query);
-			pstmt.setString(1, id);
+			CallableStatement cstmt = con.prepareCall(sql);
+			cstmt.setString(1, id);
 
-			pstmt.executeUpdate();
+			cstmt.execute();
 			System.out.println("탈퇴성공");
-			pstmt.close();
+			cstmt.close();
 			con.close();
 
 		} catch (Exception e) {
