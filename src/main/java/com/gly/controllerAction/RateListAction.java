@@ -1,16 +1,13 @@
 package com.gly.controllerAction;
 
-import java.io.IOException;
-import java.util.ArrayList;
+import java.io.*;
+import java.util.*;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
-import com.gly.DAOs.ReviewDAO;
-import com.gly.VOs.MemberVO;
-import com.gly.VOs.ReviewVO;
+import com.gly.DAOs.*;
+import com.gly.VOs.*;
 
 public class RateListAction implements Action{
 	
@@ -23,7 +20,8 @@ public class RateListAction implements Action{
 			MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
 			System.out.println(loginUser.getM_id());
 			ReviewDAO dao = ReviewDAO.getInstance();
-			ArrayList<ReviewVO> newReviewtList = dao.listReview(loginUser.getM_id());
+			ArrayList<ReviewVO> reviewList = dao.listReview(loginUser.getM_id());
+			request.setAttribute("reviewList", reviewList);
 		}
 		request.getRequestDispatcher(url).forward(request, response);  
 	}

@@ -1,19 +1,14 @@
 package com.gly.DAOs;
 
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
+import java.sql.*;
+import java.util.*;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
+import javax.naming.*;
+import javax.sql.*;
 
-import com.gly.VOs.ImageVO;
-import com.gly.VOs.ReviewVO;
+import com.gly.VOs.*;
 
-import oracle.jdbc.OracleTypes;
+import oracle.jdbc.*;
 
 //import java.sql.Connection;
 //import java.sql.PreparedStatement;
@@ -54,10 +49,9 @@ public class ReviewDAO {
 			ResultSet rset = (ResultSet) cstmt.getObject(2);
 			while (rset.next()) {
 				ReviewVO review = new ReviewVO();
-				review.setR_indate(rset.getTimestamp(1));
-				review.setP_name(rset.getString(2));
-				System.out.println(rset.getTimestamp(1));
-				System.out.println(rset.getString(2));
+				review.setR_indate(rset.getDate(1));
+				review.setR_title(rset.getString(2));
+				review.setR_text(rset.getString(3));
 				reviewList.add(review);
 			}
 			rset.close();

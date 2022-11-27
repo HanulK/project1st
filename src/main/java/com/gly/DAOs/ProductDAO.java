@@ -1,19 +1,14 @@
 package com.gly.DAOs;
 
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
+import java.sql.*;
+import java.util.*;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
+import javax.naming.*;
+import javax.sql.*;
 
-import com.gly.VOs.ImageVO;
-import com.gly.VOs.ProductVO;
+import com.gly.VOs.*;
 
-import oracle.jdbc.OracleTypes;
+import oracle.jdbc.*;
 
 
 public class ProductDAO {
@@ -128,7 +123,6 @@ public class ProductDAO {
 				imageList.add(image);
 			}
 			rset.close();
-			pstmt.close();
 			con.close();
 			}catch (Exception e) {
 				e.printStackTrace();
@@ -154,7 +148,6 @@ public class ProductDAO {
 				imageList.add(image);
 			}
 			rset.close();
-			pstmt.close();
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
