@@ -68,13 +68,11 @@ public class CartDAO {
 		return cartList;
 	}
 	
-	public CartVO getpdid(int v_p_size, String v_p_color, int v_p_id) {
-		CartVO pdid = new CartVO();
+	public int getpdid(int v_p_size, String v_p_color, int v_p_id) {
 		String query = "{ ? = call check_p_d_id(?,?,?)}";
-
+		int p_d_id = 0;
 		try {
 			con = dataFactory.getConnection();
-			System.out.println("INPUT");
 			CallableStatement callableStatement = con.prepareCall(query);
 			
 			callableStatement.registerOutParameter(1, OracleType.NUMBER);
@@ -82,19 +80,48 @@ public class CartDAO {
 			callableStatement.setString(3, v_p_color);
 			callableStatement.setInt(4, v_p_id);
 			callableStatement.executeUpdate();
-			int p_d_id = callableStatement.getInt(1);
+			p_d_id = callableStatement.getInt(1);
 			
-			pdid.setP_d_id(p_d_id);
 
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return pdid;
-		
-		
+		return p_d_id;	
 	}
 	
+	public void insertcart(int in_quantity, String in_m_id, int in_p_d_id) {
+		String query = "{call insertcart(?,?,?)}";
+		
+		try {
+			con = dataFactory.getConnection();
+			CallableStatement callableStatement = con.prepareCall(query);
+			callableStatement.setInt(1, in_quantity);
+			callableStatement.setString(2,in_m_id);
+			callableStatement.setInt(3,in_p_d_id);
+			callableStatement.execute();
+			con.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		}
+	public void deletecart(int del_quantity, String del_m_id, int del_p_d_id) {
+		String query = "{call deletecart(?,?,?)}";
+		
+		try {
+			con = dataFactory.getConnection();
+			CallableStatement callableStatement = con.prepareCall(query);
+			callableStatement.setInt(1, del_quantity);
+			callableStatement.setString(2,del_m_id);
+			callableStatement.setInt(3,del_p_d_id);
+			callableStatement.execute();
+			con.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		}
 	
 	
  }
