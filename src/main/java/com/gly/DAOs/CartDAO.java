@@ -8,19 +8,24 @@ import javax.sql.*;
 
 import com.gly.VOs.*;
 
-//import java.sql.Connection;
-//import java.sql.PreparedStatement;
-//import java.sql.ResultSet;
-//
-//import javax.naming.Context;
-//import javax.naming.InitialContext;
-//import javax.sql.DataSource;
+import oracle.jdbc.*;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
 
 public class CartDAO {
 	private Connection con;
-	private PreparedStatement pstmt;
 	private DataSource dataFactory;
-
+	private static CartDAO cDAO = new CartDAO();
+	
+	public static CartDAO getInstance() {//인스턴트 리턴 메서드 생성
+		return cDAO;
+	}
 	public CartDAO() {
 		try {
 			Context initContext = new InitialContext();
@@ -31,16 +36,20 @@ public class CartDAO {
 		}
 	}
 
-
-	public ArrayList<CartVO> listCart() {
+//writer : juhye - 카트테이블에 있는 값 리스트로 가져오기
+	public ArrayList<CartVO> listCart(String v_id) {
 		ArrayList<CartVO> cartList = new ArrayList<CartVO>();
+		String query = "{call get_cart_user(?,?)}";
 		
 		try {
 			con = dataFactory.getConnection();
 			System.out.println("Connection success");
-			String query = "select * from show_bag";
-			pstmt = con.prepareStatement(query);
-			ResultSet rset = pstmt.executeQuery();
+			CallableStatement callableStatement = con.prepareCall(query);
+			callableStatement.setString(1, v_id);
+			callableStatement.registerOutParameter(2, OracleTypes.CURSOR);
+			callableStatement.execute();
+			ResultSet rset = (ResultSet)callableStatement.getObject(2);
+			
 			while (rset.next()) {
 				CartVO cart = new CartVO();
 				cart.setImg_src(rset.getString(1));
@@ -52,12 +61,40 @@ public class CartDAO {
 				cartList.add(cart);
 			}
 			rset.close();
-			pstmt.close();
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return cartList;
 	}
+	
+	public CartVO getpdid(int v_p_size, String v_p_color, int v_p_id) {
+		CartVO pdid = new CartVO();
+		String query = "{ ? = call check_p_d_id(?,?,?)}";
+
+		try {
+			con = dataFactory.getConnection();
+			System.out.println("INPUT");
+			CallableStatement callableStatement = con.prepareCall(query);
+			
+			callableStatement.registerOutParameter(1, OracleType.NUMBER);
+			callableStatement.setInt(2, v_p_size);
+			callableStatement.setString(3, v_p_color);
+			callableStatement.setInt(4, v_p_id);
+			callableStatement.executeUpdate();
+			int p_d_id = callableStatement.getInt(1);
+			
+			pdid.setP_d_id(p_d_id);
+
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return pdid;
+		
+		
+	}
+	
+	
 	
  }
