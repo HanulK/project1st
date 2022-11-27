@@ -50,7 +50,11 @@ public class ProductDetailAction implements Action {
 		request.setAttribute("product", productVO);
 		request.setAttribute("ops", optionVOs);
 		request.setAttribute("colors", colorSet);
-		request.setAttribute("sizes", sizeSet);
+		if(sizeSet.size()==1 && sizeSet.get(0)==0) {
+			request.setAttribute("sizes", "FR");
+		} else {
+			request.setAttribute("sizes", sizeSet);
+		}
 		request.setAttribute("img_srcs", imgSrcs);
 		request.getRequestDispatcher(url).forward(request, response);  
 	}

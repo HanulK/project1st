@@ -41,6 +41,8 @@ public class ActionFactory {
 			action = new CartListAction(); // 장바구니 가기
 		} else if (command.equals("cart_delete")) {
 			action = new CartDeleteAction();
+		} else if (command.equals("order_detail")) {
+			action = new OrderSettingAction();
 		} else if (command.equals("order_insert")) {
 			action = new OrderInsertAction();
 		} else if (command.equals("order_list")) {

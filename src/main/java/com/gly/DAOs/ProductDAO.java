@@ -58,7 +58,6 @@ public class ProductDAO {
 				productList.add(product);
 			}
 			rset.close();
-//			pstmt.close();
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -92,7 +91,6 @@ public class ProductDAO {
 			System.out.println();
 			
 			rset.close();
-			pstmt.close();
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -124,7 +122,6 @@ public class ProductDAO {
 			product.setP_price(rset.getInt("p_price"));
 			
 			rset.close();
-			pstmt.close();
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();

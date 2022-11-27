@@ -1,17 +1,19 @@
 package com.gly.DAOs;
 
-import java.sql.*;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
 
-import javax.naming.*;
-import javax.sql.*;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
 
-import com.gly.VOs.*;
+import com.gly.VOs.MemberVO;
 
-import oracle.jdbc.*;
+import oracle.jdbc.OracleTypes;
 
 public class MemberDAO {
 	private Connection con;
-	private PreparedStatement pstmt;
 	private DataSource dataFactory;
 
 	// 연결
@@ -59,7 +61,6 @@ public class MemberDAO {
 				memberVO.setM_indate(rs.getTimestamp(9));
 			}
 			rs.close();
-			pstmt.close();
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
