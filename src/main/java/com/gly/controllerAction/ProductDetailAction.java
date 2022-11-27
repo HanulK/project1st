@@ -29,6 +29,7 @@ public class ProductDetailAction implements Action {
 		
 		ProductDAO productDAO = ProductDAO.getInstance();
 		ProductVO productVO = productDAO.getProductVO(p_id);
+		productVO.setP_id(p_id); //writer : juhye
 		
 		OptionDAO optionDAO = OptionDAO.getInstance();
 		ArrayList<OptionVO> optionVOs = optionDAO.getProductOptions(p_id);

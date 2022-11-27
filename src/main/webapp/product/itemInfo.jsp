@@ -55,7 +55,7 @@
                      </div>
                   </div>
                   <!-- 선택 옵션 및 가격 -->
-                  <form action="${contextPath}gly?command=cart_insert">
+                  <form action="${contextPath}/gly?command=cart_insert" method="post">
                      <div class="item_option_box info_sect" id="color_size">
                         <ul class="color_size_qty">
                            <li><span class="title">사이즈</span>
@@ -81,7 +81,9 @@
                            </li>
                         </ul>
                      </div>
-                     <input type="submit" value="장바구니"> <input type="submit" value="바로주문">
+                     <input type="hidden" value="${product.p_id}" name="p_id"> 
+                     <input type="submit" value="장바구니">
+                     <input type="submit" value="바로주문">
                   </form>
                   <!-- 하단 세부 사항-->
                   <div>

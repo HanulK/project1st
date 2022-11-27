@@ -9,6 +9,7 @@
 <link href="css/searchList.css" rel="stylesheet" type="text/css" />
 <link href="css/itemWList.css" rel="stylesheet" type="text/css" />
 </head>
+<%--writer : juhye--%>
 <body>
 	<%@ include file="../layout/header.jsp"%>
 	<!-- 여성>아우터>재킷 -->

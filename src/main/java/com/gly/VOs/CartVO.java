@@ -2,6 +2,7 @@ package com.gly.VOs;
 
 import lombok.*;
 
+
 @Getter
 @Setter
 public class CartVO {
@@ -13,4 +14,7 @@ public class CartVO {
 	private String		p_name;			// 상품이름
 	private String		p_color;		// 상품색상
 	private int			p_size;			// 상품 사이즈
+	private int			p_id;			// 상품 번호
+	
+
 }
