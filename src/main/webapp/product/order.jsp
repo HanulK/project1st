@@ -5,11 +5,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="../css/order.css" rel="stylesheet" type="text/css">
+<link href="css/order.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>:) GLY</title>
 </head>
 <body>
+	<%@ include file="/layout/header.jsp"%>
 	<h3 class="cnts_title">
 		<span>배송&결제정보 입력</span>
     </h3>
@@ -70,9 +71,8 @@
 	                    	<table class="tbl_wtype1">
 	                    		<caption>주문자 정보</caption>
 	                    		<colgroup>
-	                            	<col style="width: 140px">
-	                                <col>
-	                             </colgroup>
+	                            	<col style="width: 140px"> <col>
+	                         </colgroup>
 	                             <tbody>
 	                             	<tr>
 	                             		<th scope="row" class="th_space">주문자</th>
@@ -172,6 +172,7 @@
                                 </tbody>
 							</table>
 						</div>
+					</div>
 				</div>
 			</div>
 			<div class="float_right" style="position: absolute; left: 680px; top: 336px;">
@@ -192,5 +193,7 @@
 			</div>
 		</form>
 	</div>
+	<%-- <%@ include file="../layout/footer.jsp"%> --%>
+	<%@ include file="../layout/footer.jsp"%>
 </body>
 </html>

@@ -55,8 +55,9 @@
                      </div>
                   </div>
                   <!-- 선택 옵션 및 가격 -->
-                  <form action="${contextPath}/gly?command=cart_insert" method="post">
+                  <form method="post">
                      <div class="item_option_box info_sect" id="color_size">
+                     <input type="hidden" name="p_id" value="${product.p_id}" />
                         <ul class="color_size_qty">
                            <li><span class="title">사이즈</span>
                            		<!-- T0D0 0일 때 FR로 변경 추가 -->

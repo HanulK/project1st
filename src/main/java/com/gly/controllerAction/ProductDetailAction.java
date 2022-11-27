@@ -17,7 +17,6 @@ import com.gly.VOs.ImageVO;
 import com.gly.VOs.OptionVO;
 import com.gly.VOs.ProductVO;
 
-import oracle.jdbc.proxy._Proxy_;
 
 public class ProductDetailAction implements Action {
 
@@ -29,7 +28,7 @@ public class ProductDetailAction implements Action {
 		
 		ProductDAO productDAO = ProductDAO.getInstance();
 		ProductVO productVO = productDAO.getProductVO(p_id);
-		productVO.setP_id(p_id); //writer : juhye
+		productVO.setP_id(p_id);
 		
 		OptionDAO optionDAO = OptionDAO.getInstance();
 		ArrayList<OptionVO> optionVOs = optionDAO.getProductOptions(p_id);
