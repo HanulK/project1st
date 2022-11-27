@@ -7,6 +7,8 @@ import javax.sql.*;
 
 import com.gly.VOs.*;
 
+import oracle.jdbc.*;
+
 public class MemberDAO {
 	private Connection con;
 	private PreparedStatement pstmt;
@@ -35,13 +37,15 @@ public class MemberDAO {
 
 		try {
 			con = dataFactory.getConnection();
-//			System.out.println("Connection success");
+			System.out.println("Connection success");
+			String query = " { ? = call MEM.get_userInfo(?) }";
+			CallableStatement cstmt = con.prepareCall(query);
+			cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+			cstmt.setString(2, id);
+			cstmt.execute();
 
-			String query = "select * from member where id=? ";
-			pstmt = con.prepareStatement(query);
-			pstmt.setString(1, id);
+			ResultSet rs = (ResultSet) cstmt.getObject(1);
 
-			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
 				memberVO = new MemberVO();
 				memberVO.setM_id(rs.getString(1));
@@ -49,9 +53,9 @@ public class MemberDAO {
 				memberVO.setM_name(rs.getString(3));
 				memberVO.setM_birth(rs.getString(4));
 				memberVO.setM_gender(rs.getInt(5));
-				memberVO.setM_email(rs.getString(6));
-				memberVO.setM_phone(rs.getString(7));
-				memberVO.setM_address(rs.getString(8));
+				memberVO.setM_address(rs.getString(6));
+				memberVO.setM_email(rs.getString(7));
+				memberVO.setM_phone(rs.getString(8));
 				memberVO.setM_indate(rs.getTimestamp(9));
 			}
 			rs.close();
@@ -64,32 +68,48 @@ public class MemberDAO {
 	}
 
 	public int insertMember(MemberVO memberVO) {
-		int result = 0;
-		String sql = "insert into member(id, pw, name, birth, gender, address, email, phone, indate) ";
-		sql += "values(?, ?, ?, ?, ?, ?, ?, ?, sysdate) ";
+		int result = -1;
+		String sql = "{ call MEM.sign_up(?, ?, ?, ?, ?, ?, ?, ?)}";
 		System.out.println("sql: " + sql);
 
 		try {
 			con = dataFactory.getConnection();
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, memberVO.getM_id());
-			pstmt.setString(2, memberVO.getM_pw());
-			pstmt.setString(3, memberVO.getM_name());
-			pstmt.setString(4, memberVO.getM_birth());
-			pstmt.setInt(5, memberVO.getM_gender());
-			pstmt.setString(6, memberVO.getM_address());
-			pstmt.setString(7, memberVO.getM_email());
-			pstmt.setString(8, memberVO.getM_phone());
-
-			result = pstmt.executeUpdate();
+			CallableStatement cstmt = con.prepareCall(sql);
+			cstmt.setString(1, memberVO.getM_id());
+			cstmt.setString(2, memberVO.getM_pw());
+			cstmt.setString(3, memberVO.getM_name());
+			cstmt.setString(4, memberVO.getM_birth());
+			cstmt.setInt(5, memberVO.getM_gender());
+			cstmt.setString(6, memberVO.getM_address());
+			cstmt.setString(7, memberVO.getM_email());
+			cstmt.setString(8, memberVO.getM_phone());
+			cstmt.execute();
 
 			System.out.println("가입 성공");
-			pstmt.close();
+			cstmt.close();
 			con.close();
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return result;
+	}
+
+	public void deleteMember(String id) {
+		String sql = " { call MEM.delete_member(?) } ";
+		try {
+			System.out.println(id);
+			con = dataFactory.getConnection();
+			CallableStatement cstmt = con.prepareCall(sql);
+			cstmt.setString(1, id);
+
+			cstmt.execute();
+			System.out.println("탈퇴성공");
+			cstmt.close();
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

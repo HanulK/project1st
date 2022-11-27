@@ -32,7 +32,6 @@ public class JoinAction implements Action {
 		memberVO.setM_birth(birth);
 		memberVO.setM_gender(Integer.parseInt(request.getParameter("gender")));
 		memberVO.setM_email(request.getParameter("email"));
-		System.out.println("email: " + request.getParameter("email"));
 		String phone = request.getParameter("phone1") + request.getParameter("phone2") + request.getParameter("phone3");
 		memberVO.setM_phone(phone);
 		memberVO.setM_address(request.getParameter("address"));
