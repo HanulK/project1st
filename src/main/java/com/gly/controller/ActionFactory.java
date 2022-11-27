@@ -47,6 +47,8 @@ public class ActionFactory {
 			action = new MyPageAction();
 		} else if (command.equals("change_info")) {
 			action = new ChangeInfoAction();
+		} else if (command.equals("change_infoForm")) {
+			action = new ChangeInfoFormAction();
 		} else if (command.equals("order_detail")) {
 			action = new OrderDetailAction();
 		} else if (command.equals("item_all")) {

@@ -6,9 +6,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
   <head>
     <meta charset="UTF-8" />
     <title>Insert title here</title>
-    <link href="../css/layout.css" rel="stylesheet" type="text/css" />
-    <link href="../css/productDetail.css" rel="stylesheet" type="text/css" />
-    <link href="../css/shoppingbag.css" rel="stylesheet" type="text/css" />
+    <link href="css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="css/productDetail.css" rel="stylesheet" type="text/css" />
+    <link href="css/shoppingbag.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <%@ include file="../layout/header.jsp"%>
