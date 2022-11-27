@@ -53,9 +53,9 @@ public class MemberDAO {
 				memberVO.setM_name(rs.getString(3));
 				memberVO.setM_birth(rs.getString(4));
 				memberVO.setM_gender(rs.getInt(5));
-				memberVO.setM_email(rs.getString(6));
-				memberVO.setM_phone(rs.getString(7));
-				memberVO.setM_address(rs.getString(8));
+				memberVO.setM_address(rs.getString(6));
+				memberVO.setM_email(rs.getString(7));
+				memberVO.setM_phone(rs.getString(8));
 				memberVO.setM_indate(rs.getTimestamp(9));
 			}
 			rs.close();
