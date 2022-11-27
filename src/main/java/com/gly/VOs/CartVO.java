@@ -13,34 +13,4 @@ public class CartVO {
 	private String		p_name;			// 상품이름
 	private String		p_color;		// 상품색상
 	private int			p_size;			// 상품 사이즈
-	
-	
-//	public void setM_id(String m_id) {
-//		this.m_id = m_id;
-//	}
-//	public int getP_d_id() {
-//		return p_d_id;
-//	}
-//	public void setP_d_id(int p_d_id) {
-//		this.p_d_id = p_d_id;
-//	}
-//	public int getC_quantity() {
-//		return c_quantity;
-//	}
-//	public void setC_quantity(int c_quantity) {
-//		this.c_quantity = c_quantity;
-//	}
-//	public int getP_price() {
-//		return p_price;
-//	}
-//	public void setP_price(int p_price) {
-//		this.p_price = p_price;
-//	}
-//	public String setImg_src() {
-//		return img_src;
-//	}
-//	public void getImg_src(String img_src) {
-//		this.img_src = img_src;
-//	}
-	
 }

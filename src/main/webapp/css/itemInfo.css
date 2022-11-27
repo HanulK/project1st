@@ -168,3 +168,8 @@
   padding: 25px 0;
   margin-top: 25px;
 }
+
+.price span {
+    font-size: 22px;
+    color: #363636;
+}

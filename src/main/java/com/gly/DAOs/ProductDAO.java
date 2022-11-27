@@ -37,17 +37,16 @@ public class ProductDAO {
 	// writer : Hanul
 	public ArrayList<ProductVO> getSearchProducts(String word) {
 		ArrayList<ProductVO> productList = new ArrayList<ProductVO>();
-		String query = "{ call search_product_with_imgsrc(?, ?, ?)}";
+		String query = "{ call prod.search_with_main_imgsrc(?, ?)}";
 		
 		try {
 			con = dataFactory.getConnection();
 			CallableStatement callableStatement = con.prepareCall(query);
 			callableStatement.setString(1, word);
-			callableStatement.setDouble(2, 1);		// get main image source
-			callableStatement.registerOutParameter(3, OracleTypes.CURSOR);
+			callableStatement.registerOutParameter(2, OracleTypes.CURSOR);
 			callableStatement.execute();
 
-			ResultSet rset = (ResultSet) callableStatement.getObject(3);
+			ResultSet rset = (ResultSet) callableStatement.getObject(2);
 
 			//p.p_id, p.p_name, p.p_content, p.p_kind, p.p_price, i.img_src
 			while (rset.next()) {
@@ -70,28 +69,25 @@ public class ProductDAO {
 	// writer : Hanul
 	public ArrayList<ProductVO> listKindProduct (int kind) {
 		ArrayList<ProductVO> productList = new ArrayList<ProductVO>();
-		String query = "{ call get_product_with_imgsrc(?, ?, ?)}";
+		String query = "{ call prod.get_each_kind_with_main_imgsrc(?, ?)}";
 		
 		try {
 			con = dataFactory.getConnection();
 			CallableStatement callableStatement = con.prepareCall(query);
 			callableStatement.setInt(1, kind);			// p_kind 
-			callableStatement.setInt(2, 1);				// p_pos
-			callableStatement.registerOutParameter(3, OracleTypes.CURSOR);
+			callableStatement.registerOutParameter(2, OracleTypes.CURSOR);
 			callableStatement.execute();
 
-			ResultSet rset = (ResultSet) callableStatement.getObject(3);
+			ResultSet rset = (ResultSet) callableStatement.getObject(2);
 
 			//p.p_id, p.p_name, p.p_price, i.img_src
 			while (rset.next()) {
 				ProductVO product = new ProductVO();
-//				product.setP_id(rset.getInt(0));
-				System.out.print(rset.getInt("p_id") + "   ");				// product ID
-				System.out.print(rset.getString("p_name") + "   ");				// product Name
-//				System.out.print(rset.getString(3) + "   ");				// product Content
-				System.out.println(rset.getInt(4) + "   ");				// product Kind
-				System.out.println(rset.getInt(5) + "   ");				// product Price
-				System.out.println(rset.getString(6) + "   ");			// Product Main Img src
+				product.setP_id(rset.getInt("p_id"));
+				product.setP_name(rset.getString("p_name"));
+				product.setP_price(rset.getInt("p_price"));
+				product.setP_img_src(rset.getString("img_src"));
+				productList.add(product);
 			}
 			System.out.println();
 			
@@ -107,6 +103,33 @@ public class ProductDAO {
 	// writer : Hanul
 	public ProductVO getProductVO(int p_id) {
 		ProductVO product = new ProductVO();
+		// 상품 main 정보
+		String query = "{ call prod.get_detail(?, ?)}";
+		
+		try {
+			con = dataFactory.getConnection();
+			CallableStatement callableStatement = con.prepareCall(query);
+			callableStatement.setInt(1, p_id);
+			callableStatement.registerOutParameter(2, OracleTypes.CURSOR);
+			callableStatement.execute();
+
+			ResultSet rset = (ResultSet) callableStatement.getObject(2);
+
+			rset.next();
+			//p.p_id, p.p_name, p_content, p_kind, p_indate, p.p_price
+			product.setP_id(rset.getInt("p_id"));
+			product.setP_name(rset.getString("p_name"));
+			product.setP_kind(rset.getInt("p_kind"));
+			product.setP_content(rset.getString("p_content"));
+			product.setP_price(rset.getInt("p_price"));
+			
+			rset.close();
+			pstmt.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		return product;
 	}
 	
@@ -161,5 +184,6 @@ public class ProductDAO {
 		}
 		return imageList;
 	}
+
 
 }
