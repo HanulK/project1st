@@ -108,4 +108,23 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 	}
+
+	public int if_id_exist(String id) {
+		int result = -1;
+		String sql = " { ? = call MEM.if_id_exist(?) } ";
+		try {
+			con = dataFactory.getConnection();
+			CallableStatement cstmt = con.prepareCall(sql);
+			cstmt.setString(2, id);
+			cstmt.registerOutParameter(1, java.sql.Types.INTEGER);
+			cstmt.execute();
+			result = cstmt.getInt(1);
+			cstmt.close();
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
 }
