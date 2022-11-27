@@ -4,9 +4,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="css/main.css" rel="stylesheet" type="text/css">
+<link href="css/main.css" rel="stylesheet" type="text/css" type="image/x-icon" sizes="16x16">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="icon" href="assets/img/favicon.ico" />
+<title>𝗚𝗟𝗬</title>
 </head>
 <body>
 	<%@ include file="/layout/header.jsp"%>
