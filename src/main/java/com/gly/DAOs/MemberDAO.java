@@ -68,32 +68,48 @@ public class MemberDAO {
 	}
 
 	public int insertMember(MemberVO memberVO) {
-		int result = 0;
-		String sql = "insert into member(id, pw, name, birth, gender, address, email, phone, indate) ";
-		sql += "values(?, ?, ?, ?, ?, ?, ?, ?, sysdate) ";
+		int result = -1;
+		String sql = "{ call MEM.sign_up(?, ?, ?, ?, ?, ?, ?, ?)}";
 		System.out.println("sql: " + sql);
 
 		try {
 			con = dataFactory.getConnection();
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, memberVO.getM_id());
-			pstmt.setString(2, memberVO.getM_pw());
-			pstmt.setString(3, memberVO.getM_name());
-			pstmt.setString(4, memberVO.getM_birth());
-			pstmt.setInt(5, memberVO.getM_gender());
-			pstmt.setString(6, memberVO.getM_address());
-			pstmt.setString(7, memberVO.getM_email());
-			pstmt.setString(8, memberVO.getM_phone());
-
-			result = pstmt.executeUpdate();
+			CallableStatement cstmt = con.prepareCall(sql);
+			cstmt.setString(1, memberVO.getM_id());
+			cstmt.setString(2, memberVO.getM_pw());
+			cstmt.setString(3, memberVO.getM_name());
+			cstmt.setString(4, memberVO.getM_birth());
+			cstmt.setInt(5, memberVO.getM_gender());
+			cstmt.setString(6, memberVO.getM_address());
+			cstmt.setString(7, memberVO.getM_email());
+			cstmt.setString(8, memberVO.getM_phone());
+			cstmt.execute();
 
 			System.out.println("가입 성공");
-			pstmt.close();
+			cstmt.close();
 			con.close();
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return result;
+	}
+
+	public void deleteMember(String id) {
+		String sql = " { call MEM.delete_member(?) } ";
+		try {
+			System.out.println(id);
+			con = dataFactory.getConnection();
+			CallableStatement cstmt = con.prepareCall(sql);
+			cstmt.setString(1, id);
+
+			cstmt.execute();
+			System.out.println("탈퇴성공");
+			cstmt.close();
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
