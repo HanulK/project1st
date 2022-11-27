@@ -61,7 +61,9 @@
                            <li><span class="title">사이즈</span>
                            		<!-- T0D0 0일 때 FR로 변경 추가 -->
 								<c:forEach items="${sizes}"  var="sizes">
-		                           <label><input type="radio" name="size" value="${sizes}" />${sizes}</label> 
+		                           <label><input type="radio" name="size" value="${sizes}" />
+		                           ${sizes}
+		                           </label> 
                           		</c:forEach>
                            </li>
                            <li><span class="title">색상</span>
@@ -73,10 +75,7 @@
                               <span class="title">수량</span> 
                               <span class="txt">
                                  <span class="qty_sel num">
-                                    <!-- T0D0 +/- 기능 추가 -->
-                                    <button class="left opt_btn">－</button> <input type="text"
-                                       id="quantity" name="quantity" value="1" readonly="readonly" />
-                                    <button class="right opt_btn">＋</button>
+                                    <input type="number" id="quantity" name="quantity" value="1" />
                                  </span>
                               </span>
                            </li>
