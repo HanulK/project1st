@@ -81,9 +81,8 @@
                            </li>
                         </ul>
                      </div>
-                     <input type="hidden" value="${product.p_id}" name="p_id"> 
-                     <input type="submit" value="장바구니">
-                     <input type="submit" value="바로주문">
+                     <input type="submit" value="장바구니" onclick="javascript: form.action='gly?command=cart_insert';">
+                     <input type="submit" value="바로주문" onclick="javascript: form.action='gly?command=order_insert';">
                   </form>
                   <!-- 하단 세부 사항-->
                   <div>
