@@ -75,9 +75,9 @@
 															</a>
 
 															<p class="color_op">
-																color : <span name="dcolor">${cartVO.p_color}</span><span
-																	class="and_line">/</span> size :<span name="dsize">
-																	${cartVO.p_size}</span>
+																color : <span name="dcolor">${cartVO.p_color}</span>
+																<span class="and_line">/</span> size :
+																<span name="dsize"> ${cartVO.p_size}</span>
 															</p>
 														</div>
 													</div> <!-- //pt_list_all-->
@@ -108,9 +108,9 @@
 												<td class="al_middle">
 													<!-- Button size -->
 													<div class="btn_wrap">
-														<a href="#none" class="btn gray_ss"
-															onclick="callWishListClick('램스 울 블렌드 후드 점퍼',$(this),'O22CAWOT283W_LA_82');"
-															data-value="0">주문</a> <input type="submit"
+														<input type="submit" class="btn gray_ss"
+															onclick="javascript: form.action='gly?command=order_detail&num=${cartList.size()}';"
+															value="주문" /> <input type="submit"
 															class="btn wt_ss" value="삭제" />
 													</div> <!-- //Button size -->
 												</td>

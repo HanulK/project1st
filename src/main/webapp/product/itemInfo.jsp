@@ -82,7 +82,7 @@
                         </ul>
                      </div>
                      <input type="submit" value="장바구니" onclick="javascript: form.action='gly?command=cart_insert';">
-                     <input type="submit" value="바로주문" onclick="javascript: form.action='gly?command=order_detail';">
+                     <input type="submit" value="바로주문" onclick="javascript: form.action='gly?command=order_detail&num=1';">
                   </form>
                   <!-- 하단 세부 사항-->
                   <div>
