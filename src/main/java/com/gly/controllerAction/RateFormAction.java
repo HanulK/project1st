@@ -12,7 +12,5 @@ public class RateFormAction  implements Action{
 		String url="mypage/rateForm.jsp";
 		System.out.println("여기로옴");
 		request.getRequestDispatcher(url).forward(request, response);  
-
 	}
-
 }

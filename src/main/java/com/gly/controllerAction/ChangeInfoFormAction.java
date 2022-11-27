@@ -20,10 +20,6 @@ public class ChangeInfoFormAction implements Action{
 		String month = request.getParameter("month");
 		String day = request.getParameter("day");
 		String birth = year+month+day;
-		String user ="dooboo";
-//		System.out.println(pwd +" "+  email +" "+ emailDomain);
-//		System.out.println(year +" "+  month +" "+ day);
-		
 		
 		System.out.println("성공");
 		String url = "mypage/checkChangeInfo.jsp";

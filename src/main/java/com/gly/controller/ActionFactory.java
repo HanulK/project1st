@@ -73,6 +73,8 @@ public class ActionFactory {
 			action = new RateListAction();
 		}else if (command.equals("rate_form")) {
 			action = new RateFormAction();
+		}else if (command.equals("write_review")) {
+			action = new ReviewWriteAction();
 		}
 
 		/*
