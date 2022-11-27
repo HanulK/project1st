@@ -26,10 +26,11 @@
 							<strong class="reqd">*</strong> 표시는 필수항목입니다.
 						</p>
 					</div>
-					<fieldset>
-						<legend>회원정보입력</legend>
-						<div class="tblwrap">
-							<form method="post" action="gly?command=change_infoForm" >
+					<form method="post" action="gly?command=change_infoForm">
+						<fieldset>
+							<legend>회원정보입력</legend>
+							<div class="tblwrap">
+
 								<table class="tbl_wtype1">
 									<caption>회원가입 입력항목</caption>
 									<colgroup>
@@ -39,7 +40,7 @@
 									<tbody>
 										<tr>
 											<th scope="row" class="th_space">아이디</th>
-											<td>gks*****************</td>
+											<td>${sessionScope.userInfo.m_id}</td>
 										</tr>
 										<tr>
 											<th scope="row" class="th_space"><label for="pwChangeBtn">비밀번호</label></th>
@@ -47,18 +48,16 @@
 										</tr>
 										<tr>
 											<th scope="row"><strong class="reqd">*</strong> <label for="inforcvemail">E-mail(정보수신용)</label></th>
-											<td><input type="text" style="width: 120px" id="email" value="">
-												<span class="andmail">@</span>  
-												<input type="text" id="emailDomain" style="width: 120px" value="" name="email_domain" >
-												<!-- <input type="button" class="btn add_s" id="emailDubChkBtn" value="중복확인"> --> <span
-												class="guide_comment" id="emailMsg"></span>
+											<td><input type="text" style="width: 120px" ="email" /> <span
+												class="andmail">@</span> <input type="text" id="emailDomain" style="width: 120px" name="email_domain"> 
+												<span class="guide_comment" id="emailMsg"></span>
 												<div class="wtype_comment pt10">
 													<span>정확한 이메일 정보를 입력하셔야 주문/배송 및 서비스정보를 받아 보실 수 있습니다.</span>
 												</div></td>
 										</tr>
 										<tr>
 											<th scope="row" class="th_space"><strong class="reqd">*</strong> 이름</th>
-											<td><input type="text" style="width: 120px" id="name" name="name" value="이*솔">
+											<td><input type="text" style="width: 120px" id="name" name="name" value="${sessionScope.userInfo.m_name}" disabled>
 											</td>
 										</tr>
 										<tr>
@@ -200,16 +199,17 @@
 									</tr> -->
 									</tbody>
 								</table>
-							</form>
+
+							</div>
+						</fieldset>
+						<div class="btn_btwrap">
+							<input type="button" class="btn wt_ss" value="회원탈퇴" id="memberSecessionBtn">
 						</div>
-					</fieldset>
-					<div class="btn_btwrap">
-						<input type="button" class="btn wt_ss" value="회원탈퇴" id="memberSecessionBtn">
-					</div>
-					<div class="btnwrap mypage2">
-						<input type="button" class="btn wt" value="취소" id="cancleBtn"> 
-						<input type="submit" class="btn gray" value="변경사항 저장" id="saveBtn">
-					</div>
+						<div class="btnwrap mypage2">
+							<input type="button" class="btn wt" value="취소" id="cancleBtn"> <input type="submit"
+								class="btn gray" value="변경사항 저장" id="saveBtn">
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>

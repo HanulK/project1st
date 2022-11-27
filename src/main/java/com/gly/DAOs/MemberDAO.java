@@ -92,4 +92,26 @@ public class MemberDAO {
 		}
 		return result;
 	}
+	
+	//hansol
+	public void changeInfo(String user,String pwd, String email,String birth) {
+		String sql ="{call update_info(?,?,?,?)}";
+		try {
+			System.out.println("회원정보 변경!");
+			con = dataFactory.getConnection();
+			CallableStatement cstmt = con.prepareCall(sql);
+			cstmt.setString(1,user);
+			cstmt.setString(2,pwd);
+			cstmt.setString(3,email);
+			cstmt.setString(4,birth);
+			cstmt.execute();
+			cstmt.close();
+			con.close();
+		} catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			
+		}
+		
+	}
 }
