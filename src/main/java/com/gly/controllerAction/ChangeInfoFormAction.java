@@ -26,15 +26,17 @@ public class ChangeInfoFormAction implements Action{
 		
 		
 		System.out.println("성공");
+		String url = "mypage/checkChangeInfo.jsp";
 		
 		HttpSession session = request.getSession();
 		
 		if (session.getAttribute("userInfo") != null) {
 			MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
 			MemberDAO dao = MemberDAO.getInstance();
-			dao.changeInfo(user, pwd, email, birth);
-			System.out.println(loginUser.getM_id());
+			dao.changeInfo(loginUser.getM_id(), pwd, email, birth);
 		}
+		request.getRequestDispatcher(url).forward(request, response);
+		
 	}
 
 }
