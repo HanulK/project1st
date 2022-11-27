@@ -8,7 +8,8 @@
 <head>
 <link href="css/order.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
-<title>:) GLY</title>
+<link rel="icon" href="assets/img/favicon.ico" />
+<title>𝗚𝗟𝗬</title>
 </head>
 <body>
 	<%@ include file="/layout/header.jsp"%>
@@ -36,31 +37,33 @@
 									</tr>
 								</thead>
 								<tbody>
+								<c:forEach items="${products}" var="products" varStatus="status">
 									<tr class="al_middle">
 										<td class="frt">
 											<div class="pt_list_all">
 												<a>
-													<img src="${product.p_img_src}" alt="">
+													<img src="${products.p_img_src}" alt="">
 												</a>
 												<div class="tlt_wrap">
 													<a>
-														<span class="sb_tlt"> ${product.p_name} </span>
+														<span class="sb_tlt"> ${products.p_name} </span>
 													</a>
 													<p class="color_op">
-														color : ${product.p_color}
+														color : ${products.p_color}
 														<span class="and_line">/</span>
-														size : ${size}
+														size : ${products.p_size}
 													</p>
 												</div>
 											</div>
 										</td>
-										<td>${quan}</td>
+										<td>${quantitys[status.index]}</td>
 										<td>
 											<div>
-												<span> ₩ <fmt:formatNumber value="${product.p_price*quan}" pattern="#,###"/> </span>
+												<span> ₩ <fmt:formatNumber value="${products.p_price*quantitys[status.index]}" pattern="#,###"/> </span>
 											</div>
 										</td>
 									</tr>
+									</c:forEach>
 								</tbody>
 							</table>
 						</div>
@@ -180,7 +183,7 @@
 						<div class="total">
 							<dl>
 								<dt>합계</dt>
-								<dd id="totalPrice">₩ <fmt:formatNumber value="${product.p_price*quan}" pattern="#,###"/></dd>
+								<dd id="totalPrice">₩ <fmt:formatNumber value="${totalPrice}" pattern="#,###"/></dd>
 							</dl>
 						</div>
 					</div>

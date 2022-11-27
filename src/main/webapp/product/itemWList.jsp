@@ -4,7 +4,8 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8" />
-<title>여성의류</title>
+<link rel="icon" href="assets/img/favicon.ico" />
+<title>𝗚𝗟𝗬</title>
 <link href="css/common2.css" rel="stylesheet" />
 <link href="css/searchList.css" rel="stylesheet" type="text/css" />
 <link href="css/itemWList.css" rel="stylesheet" type="text/css" />

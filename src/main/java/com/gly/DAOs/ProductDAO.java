@@ -182,5 +182,38 @@ public class ProductDAO {
 		return imageList;
 	}
 
+	public ArrayList<ProductVO> getCartForEach(String m_id) {
+		ArrayList<ProductVO> productList = new ArrayList<ProductVO>();
+		String query = "{ call get_cart_data_for_each(?, ?)}";
+		
+		try {
+			con = dataFactory.getConnection();
+			CallableStatement callableStatement = con.prepareCall(query);
+			callableStatement.setString(1, m_id);			// p_kind 
+			callableStatement.registerOutParameter(2, OracleTypes.CURSOR);
+			callableStatement.execute();
+
+			ResultSet rset = (ResultSet) callableStatement.getObject(2);
+
+			//p.p_id, p.p_name, p.p_price, i.img_src
+			while (rset.next()) {
+				ProductVO product = new ProductVO();
+				product.setP_id(rset.getInt("p_id"));
+				product.setP_name(rset.getString("p_name"));
+				product.setP_price(rset.getInt("p_price"));
+				product.setP_size(rset.getInt("p_size"));
+				product.setP_color(rset.getString("p_color"));
+				product.setP_img_src(rset.getString("img_src"));
+				productList.add(product);
+			}
+			
+			rset.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return productList;
+	}
+
 
 }

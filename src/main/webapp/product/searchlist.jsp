@@ -7,7 +7,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="icon" href="assets/img/favicon.ico" />
+<title>𝗚𝗟𝗬</title>
 <link href="css/common2.css" rel="stylesheet" />
 <link href="css/layout.css" rel="stylesheet" />
 <link href="css/searchList.css" rel="stylesheet" />

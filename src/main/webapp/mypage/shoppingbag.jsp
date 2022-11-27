@@ -61,19 +61,9 @@
 												<td class="pt_list_wrap">
 													<!-- pt_list_all -->
 													<div class="pt_list_all">
-														<a
-															href="/ko/HANDSOME/WOMEN/OUTER/JUMPER/%EB%9E%A8%EC%8A%A4-%EC%9A%B8-%EB%B8%94%EB%A0%8C%EB%93%9C-%ED%9B%84%EB%93%9C-%EC%A0%90%ED%8D%BC/p/O22CAWOT283W_LA_82"
-															onclick="javascript:setEcommerceData('0', 'Click ADD');GA_Event('쇼핑백','상품','램스 울 블렌드 후드 점퍼');">
 															<img src="${cartVO.img_src}" alt="" />
-														</a>
 														<div class="tlt_wrap">
-															<a
-																href="/ko/HANDSOME/WOMEN/OUTER/JUMPER/%EB%9E%A8%EC%8A%A4-%EC%9A%B8-%EB%B8%94%EB%A0%8C%EB%93%9C-%ED%9B%84%EB%93%9C-%EC%A0%90%ED%8D%BC/p/O22CAWOT283W_LA_82"
-																class="basket_tlt"
-																onclick="javascript:setEcommerceData('0', 'Click ADD');GA_Event('쇼핑백','상품','램스 울 블렌드 후드 점퍼');">
-																<span class="sb_tlt"> ${cartVO.p_name}</span>
-															</a>
-
+															<span class="sb_tlt"> ${cartVO.p_name}</span>
 															<p class="color_op">
 																color : <span name="dcolor">${cartVO.p_color}</span>
 																<span class="and_line">/</span> size :
@@ -94,8 +84,8 @@
 													type="hidden" name="cartDivision" value="" /> <!-- qty_sel -->
 
 													<div>
-														<input type="number" min="1" value="${cartVO.c_quantity}"
-															name="dquantity">
+														<input readonly type="number" min="1" value="${cartVO.c_quantity}"
+															name="dquantity" >
 													</div></td>
 												<td class="al_middle">
 													<!-- Price -->

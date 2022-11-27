@@ -10,10 +10,6 @@ import com.gly.VOs.*;
 
 import oracle.jdbc.*;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
@@ -122,6 +118,31 @@ public class CartDAO {
 			}
 
 		}
+	public ArrayList<Integer> getQuantityOfCartForEach(String m_id) {
+		ArrayList<Integer> quantitys = new ArrayList<Integer>();
+		String query = "{ call get_quantity_of_cart_for_each(?, ?)}";
+		
+		try {
+			con = dataFactory.getConnection();
+			CallableStatement callableStatement = con.prepareCall(query);
+			callableStatement.setString(1, m_id);			// p_kind 
+			callableStatement.registerOutParameter(2, OracleTypes.CURSOR);
+			callableStatement.execute();
+
+			ResultSet rset = (ResultSet) callableStatement.getObject(2);
+
+			//p.p_id, p.p_name, p.p_price, i.img_src
+			while (rset.next()) {
+				quantitys.add(rset.getInt("c_quantity"));
+			}
+			
+			rset.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return quantitys;
+	}
 	
 	
  }
