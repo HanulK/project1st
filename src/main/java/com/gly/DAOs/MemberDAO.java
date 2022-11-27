@@ -38,7 +38,7 @@ public class MemberDAO {
 		try {
 			con = dataFactory.getConnection();
 			System.out.println("Connection success");
-			String query = " { ? = call get_userInfo(?) }";
+			String query = " { ? = call MEM.get_userInfo(?) }";
 			CallableStatement cstmt = con.prepareCall(query);
 			cstmt.registerOutParameter(1, OracleTypes.CURSOR);
 			cstmt.setString(2, id);
