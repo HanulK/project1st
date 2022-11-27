@@ -65,7 +65,7 @@ public class MemberDAO {
 
 	public int insertMember(MemberVO memberVO) {
 		int result = -1;
-		String sql = "{ call sign_up(?, ?, ?, ?, ?, ?, ?, ?)}";
+		String sql = "{ call MEM.sign_up(?, ?, ?, ?, ?, ?, ?, ?)}";
 		System.out.println("sql: " + sql);
 
 		try {
@@ -92,7 +92,7 @@ public class MemberDAO {
 	}
 
 	public void deleteMember(String id) {
-		String sql = " { call delete_member(?) } ";
+		String sql = " { call MEM.delete_member(?) } ";
 		try {
 			System.out.println(id);
 			con = dataFactory.getConnection();
