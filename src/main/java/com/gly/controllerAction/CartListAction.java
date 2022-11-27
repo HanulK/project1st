@@ -10,7 +10,7 @@ import com.gly.DAOs.*;
 import com.gly.VOs.*;
 
 public class CartListAction implements Action {
-
+//writer : juhye
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url="mypage/shoppingbag.jsp";
@@ -24,11 +24,13 @@ public class CartListAction implements Action {
 			
 			int totalPrice = 0;
 	
+	
 			for(CartVO cartVO : cartList) {
 				totalPrice += cartVO.getP_price() * cartVO.getC_quantity();
 			}
 			request.setAttribute("cartList", cartList);
 			request.setAttribute("totalPrice", totalPrice);
+		
 			
 		}else {
 			url="gly?command=login_form";

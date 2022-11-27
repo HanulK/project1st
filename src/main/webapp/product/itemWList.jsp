@@ -57,7 +57,7 @@
 						<!-- 사이즈 데이터 -->
 						<!-- 컬러 데이터 -->
 						<!-- 이미지 셋팅 -->
-						<a href="/p/CS2C9WJC012WEH?area=SearchResult" class="item_info1" onclick="beshow_tagging(this);" link="/p/CS2C9WJC012WEH" price="1350000" image="http://newmedia.thehandsome.com/CS/2C/FW/CS2C9WJC012WEH_CM_T01.jpg" prdname="[EUDON CHOI] 베아트리체 재킷" code="CS2C9WJC012WEH">
+						<a href="${contextPath}/gly?command=product_detail&pid=1" class="item_info1" onclick="beshow_tagging(this);" link="/p/CS2C9WJC012WEH" price="1350000" image="http://newmedia.thehandsome.com/CS/2C/FW/CS2C9WJC012WEH_CM_T01.jpg" prdname="[EUDON CHOI] 베아트리체 재킷" code="CS2C9WJC012WEH">
 							<span class="item_img"> <img src="http://newmedia.thehandsome.com/CS/2C/FW/CS2C9WJC012WEH_CM_T01.jpg" alt="http://newmedia.thehandsome.com/CS/2C/FW/CS2C9WJC012WEH_CM_T01.jpg" class="respon_image" />
 							</span>
 							<!-- 아이템 셋팅 -->

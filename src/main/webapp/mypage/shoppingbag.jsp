@@ -4,6 +4,7 @@
 <%@ include file="/layout/header.jsp"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
+<%-- writer:juhye --%>
 <html>
 <head>
 <link href="css/ shoppingbag.css" rel="stylesheet" />
@@ -96,7 +97,7 @@
 													<!-- qty_sel -->
 
 													<div>
-														<input type="number" value = "${cartVO.c_quantity}"/>
+														<input type="number" min="1" value = "${cartVO.c_quantity}"/>
 													</div>
 												</form>
 											</td>
@@ -149,7 +150,7 @@
 								</div>
 								<div class="total_count1807">
 									<p>
-										총 <span id="selectProductCount">1</span>개 상품
+										총 <span id="selectProductCount">${cartList.size()}</span>개 상품
 									</p>
 								</div>
 								<!-- //total -->
