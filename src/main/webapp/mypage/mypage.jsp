@@ -46,18 +46,21 @@
 								</tr>
 							</thead>
 							<tbody>
-							<form action="gly?command=rate_form" method="post">
+							
 								<c:forEach items="${recentOrderList}" var="orderVO">
+								<form action="gly?command=rate_form" method="post">
 									<tr>
 										<td>${orderVO.o_id}</td>
 										<td>${orderVO.p_name}</td>
 										<td>${orderVO.o_quantity}</td>
-										<td>${orderVO.o_state}</td>
+										<td>${orderVO.p_price}</td>
+										<!-- <td>${orderVO.o_state}</td> -->
 										<input type="hidden" value="${orderVO.p_id}" name="p_id">
 										<td><input value="상품평작성" type="submit"/></td>
 									</tr>
+									</form>
 								</c:forEach>
-								</form>
+								
 							</tbody>
 						</table>
 					</div>

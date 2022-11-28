@@ -74,8 +74,9 @@ public class OrderDAO {
 				order.setO_id(rset.getInt(1));
 				order.setP_name(rset.getString(2));
 				order.setO_quantity(rset.getInt(3));
-				order.setO_state(rset.getInt(4));
-				order.setP_id(rset.getInt(5));
+				order.setP_price(rset.getInt(4));
+				order.setO_state(rset.getInt(5));
+				order.setP_id(rset.getInt(6));
 				orderList.add(order);
 			}
 			rset.close();
