@@ -12,7 +12,7 @@ public class DeleteMember implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "main/main.jsp";
+		String url = "gly?command=index";
 
 		// 기존의 세션 객체가 존재하면 반환, 없을시 null 반환
 		HttpSession session = request.getSession();
