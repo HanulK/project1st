@@ -8,7 +8,7 @@ import javax.sql.*;
 
 import com.gly.VOs.*;
 
-import oracle.jdbc.internal.OracleTypes;
+import oracle.jdbc.internal.*;
 
 public class OrderDAO {
 	private Connection con;
@@ -31,6 +31,7 @@ public class OrderDAO {
 	public ArrayList<OrderVO> orderList(String id) {
 		ArrayList<OrderVO> orderList = new ArrayList<OrderVO>();
 		String sql = "{call order_list(?,?)}";
+		System.out.println(sql);
 		try {
 			con = dataFactory.getConnection();
 			CallableStatement cstmt = con.prepareCall(sql);

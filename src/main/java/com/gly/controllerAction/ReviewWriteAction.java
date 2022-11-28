@@ -28,7 +28,7 @@ public class ReviewWriteAction implements Action {
 		if (session.getAttribute("userInfo") != null) {
 			MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
 			ReviewDAO dao = ReviewDAO.getInstance();
-			dao.writeReview(loginUser.getM_id(),1,contents,1,title);
+			dao.writeReview(1,contents,4,loginUser.getM_id(),title);
 		}
 		request.getRequestDispatcher(url).forward(request, response);
 		

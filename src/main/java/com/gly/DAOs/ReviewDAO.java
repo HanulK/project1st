@@ -62,16 +62,16 @@ public class ReviewDAO {
 		return reviewList;
 	}
 	
-	public void writeReview(String user, int score, String text, int p_id, String title) {
+	public void writeReview(int score, String text, int p_id, String user,  String title) {
 		String sql = "{call write_review(?,?,?,?,?)}";
 		try {
 			System.out.println("상품평 글쓰기");
 			con = dataFactory.getConnection();
 			CallableStatement cstmt = con.prepareCall(sql);
-			cstmt.setString(1,user);
-			cstmt.setInt(2,score);
-			cstmt.setString(3,text);
-			cstmt.setInt(4,p_id);
+			cstmt.setInt(1,score);
+			cstmt.setString(2,text);
+			cstmt.setInt(3,p_id);
+			cstmt.setString(4,user);
 			cstmt.setString(5,title);
 			cstmt.execute();
 			cstmt.close();
