@@ -1,6 +1,7 @@
 package com.gly.VOs;
 
 import java.sql.Timestamp;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,10 +21,10 @@ public class OrderVO {
 	private String		m_phone;		// 고객 전화번호
 	private String 		m_address;		// 기존 고객 주소
 
-	private int 		p_d_id; 		// 제품 상세 번호
+	private int 			p_d_id; 		// 제품 상세 번호
 	private String 		p_name; 		// 상품 이름
 	private String 		p_color; 		// 제품 색상
-	private int 		p_szie; 		// 제품 사이즈 (0:free, 44, 55, 66, 225, 230)
-	private int 		p_price; 		// 상품 가격
+	private int 			p_szie; 		// 제품 사이즈 (0:free, 44, 55, 66, 225, 230)
+	private int 			p_price; 		// 상품 가격
 	private String		img_src;		// 상품 이미지 링크
 }

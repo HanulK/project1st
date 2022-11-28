@@ -105,23 +105,13 @@
 	                            </colgroup>
 	                            <tbody>
 	                            	<tr>
-		                            	<th scope="row">
-		                            		<strong class="reqd">*</strong>
-		                            		<label for="adress">배송지 주소</label>
-		                            	</th>
-		                            	<td>
-		                            		<div>
-		                            			<input class="post_wall top" type="text" value="${member.m_address}">
-		                            		</div>
-		                            	</td>
-	                            	</tr>
-	                            	<tr>
 	                            		<th scope="row">
 	                            			<strong class="reqd">*</strong>
 	                            			<label for="rcpt_name">수령인</label>
 	                            		</th>
 	                            		<td>
-	                            			<input title="수령인" maxlength="13" type="text" style="width: 118px;" value="${member.m_name}">
+	                            			<input title="수령인" maxlength="13" type="text" style="width: 118px;" 
+	                            			name="receiver" value="${member.m_name}">
 	                            		</td>
 	                            	</tr>
 	                            	<tr>
@@ -130,10 +120,22 @@
 	                            			<label for="hp">휴대폰 번호</label>
 	                            		</th>
 	                            		<td>
-	                            			<input type="text" maxlength="13" value="${member.m_phone}">
+	                            			<input type="text" maxlength="13" 
+	                            			name="receiverPhone" value="${member.m_phone}">
 	                            		</td>
 	                            	</tr>
 	                            	<tr>
+		                            	<th scope="row">
+		                            		<strong class="reqd">*</strong>
+		                            		<label for="adress">배송지 주소</label>
+		                            	</th>
+		                            	<td>
+		                            		<div>
+		                            			<input class="post_wall top" type="text" 
+		                            			name="receieverAdress" value="${member.m_address}">
+		                            		</div>
+		                            	</td>
+	                            	</tr>
 	                            </tbody>
 	                    	</table>
 	                    </div>

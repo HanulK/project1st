@@ -14,14 +14,21 @@ public class OrderInsertAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url="mypage/myorders.jsp";
+		System.out.println("????");
 		
 		HttpSession session = request.getSession();
 		if (session.getAttribute("userInfo") != null) {
 			MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
 			
-			if(request.getParameter("color")!=null &&
-					request.getParameter("size")!=null ) {
-				url="product/order.jsp";
+			// need to get o_address, o_way, o_state, o_phone, o_receiver
+			System.out.println(request.getParameter("receiver"));
+			System.out.println(request.getParameter("receiverPhone"));
+			System.out.println(request.getParameter("receiverAddress"));
+			System.out.println(request.getParameter("pay"));
+			
+//			if(request.getParameter("color")!=null &&
+//					request.getParameter("size")!=null ) {
+//				url="product/order.jsp";
 				
 //				ProductVO product = new ProductVO();
 //				product.setP_id(Integer.parseInt(request.getParameter("productCode")));
@@ -47,9 +54,9 @@ public class OrderInsertAction implements Action {
 //				request.setAttribute("quan", request.getParameter("quantity"));
 //				
 //				
-			} else {
-				url="product/order_fail.jsp";
-			}
+//			} else {
+//				url="product/order_fail.jsp";
+//			}
 			
 		} else {
 			url="login/not_login_state.jsp";

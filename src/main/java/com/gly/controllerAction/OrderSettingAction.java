@@ -11,7 +11,6 @@ import javax.servlet.http.HttpSession;
 import com.gly.DAOs.CartDAO;
 import com.gly.DAOs.ImageDAO;
 import com.gly.DAOs.ProductDAO;
-import com.gly.VOs.ImageVO;
 import com.gly.VOs.MemberVO;
 import com.gly.VOs.ProductVO;
 
@@ -72,8 +71,6 @@ public class OrderSettingAction implements Action {
 			request.setAttribute("products", products);
 			request.setAttribute("quantitys", quantitys);
 			request.setAttribute("totalPrice", totalPrice);
-			
-			
 
 		} else {
 			url = "login/not_login_state.jsp";
