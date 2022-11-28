@@ -51,6 +51,8 @@ public class ActionFactory {
 			action = new MyPageAction();
 		} else if (command.equals("change_info")) {
 			action = new ChangeInfoAction();
+		} else if (command.equals("change_infoForm")) {
+			action = new ChangeInfoFormAction();
 		} else if (command.equals("order_detail")) {
 			action = new OrderDetailAction();
 		} else if (command.equals("item_all")) {
@@ -73,6 +75,10 @@ public class ActionFactory {
 			action = new ItemSearchAction();
 		} else if (command.equals("rate")) {
 			action = new RateListAction();
+		}else if (command.equals("rate_form")) {
+			action = new RateFormAction();
+		}else if (command.equals("write_review")) {
+			action = new ReviewWriteAction();
 		}
 
 		/*

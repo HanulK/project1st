@@ -1,14 +1,12 @@
 package com.gly.controllerAction;
 
-import java.io.IOException;
+import java.io.*;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
-import com.gly.DAOs.MemberDAO;
-import com.gly.VOs.MemberVO;
+import com.gly.DAOs.*;
+import com.gly.VOs.*;
 
 public class LoginAction implements Action {
 
@@ -41,9 +39,7 @@ public class LoginAction implements Action {
 		} else { // id X, 비밀번호 X, login fail
 			System.out.println("로그인 실패(존재X)");
 		}
-
 		request.getRequestDispatcher(url).forward(request, response);
-
 	}
 
 }

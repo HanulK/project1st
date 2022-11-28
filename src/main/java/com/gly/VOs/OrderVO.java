@@ -1,9 +1,8 @@
 package com.gly.VOs;
 
-import java.sql.Timestamp;
+import java.sql.*;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
@@ -27,4 +26,5 @@ public class OrderVO {
 	private int 			p_szie; 		// 제품 사이즈 (0:free, 44, 55, 66, 225, 230)
 	private int 			p_price; 		// 상품 가격
 	private String		img_src;		// 상품 이미지 링크
+	private int			p_id;			//상품 번호
 }

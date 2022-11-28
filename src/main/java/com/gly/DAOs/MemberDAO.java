@@ -1,16 +1,13 @@
 package com.gly.DAOs;
 
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.ResultSet;
+import java.sql.*;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
+import javax.naming.*;
+import javax.sql.*;
 
-import com.gly.VOs.MemberVO;
+import com.gly.VOs.*;
 
-import oracle.jdbc.OracleTypes;
+import oracle.jdbc.*;
 
 public class MemberDAO {
 	private Connection con;
@@ -96,6 +93,7 @@ public class MemberDAO {
 		return result;
 	}
 
+
 	public void deleteMember(String id) {
 		String sql = " { call MEM.delete_member(?) } ";
 		try {
@@ -110,6 +108,26 @@ public class MemberDAO {
 			con.close();
 
 		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	
+	//hansol
+	public void changeInfo(String user,String pwd, String email,String birth) {
+		String sql ="{call update_info(?,?,?,?)}";
+		try {
+			System.out.println("회원정보 변경!");
+			con = dataFactory.getConnection();
+			CallableStatement cstmt = con.prepareCall(sql);
+			cstmt.setString(1,user);
+			cstmt.setString(2,pwd);
+			cstmt.setString(3,email);
+			cstmt.setString(4,birth);
+			cstmt.execute();
+			cstmt.close();
+			con.close();
+		} catch(Exception e){
 			e.printStackTrace();
 		}
 	}
