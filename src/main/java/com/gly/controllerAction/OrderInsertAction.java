@@ -16,6 +16,8 @@ public class OrderInsertAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url="mypage/myorders.jsp";
 		
+		System.out.println("주문 경우 ??? : "+request.getParameter("orderCase").trim());
+		
 		HttpSession session = request.getSession();
 		if (session.getAttribute("userInfo") != null) {
 			MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");

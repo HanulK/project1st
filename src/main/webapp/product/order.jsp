@@ -17,7 +17,7 @@
 		<span>배송&결제정보 입력</span>
     </h3>
     <div class="orderwrap">
-		<form action="gly?command=order_insert" method="post">
+		<form action="gly?command=order_insert&orderCase=${orderCase}" method="post">
 			<div class="sub_container">
 				<div class="orderwrap">
 					<div class="float_left">

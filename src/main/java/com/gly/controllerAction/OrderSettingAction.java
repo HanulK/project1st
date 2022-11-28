@@ -51,6 +51,8 @@ public class OrderSettingAction implements Action {
 					products.add(prod);
 					quantitys.add(Integer.parseInt(request.getParameter("quantity")));
 					totalPrice = prod.getP_price()*quantitys.get(0);
+					
+					request.setAttribute("orderCase", "single");
 				} else {
 					url = "product/order_fail.jsp";
 				}
@@ -65,6 +67,7 @@ public class OrderSettingAction implements Action {
 				for(int i=0; i<products.size(); i++) {
 					totalPrice += (products.get(i).getP_price()*quantitys.get(i));
 				}
+				request.setAttribute("orderCase", "multi");
 			}
 			
 			request.setAttribute("member", loginUser);
