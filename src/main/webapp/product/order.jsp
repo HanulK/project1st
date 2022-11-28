@@ -17,7 +17,7 @@
 		<span>배송&결제정보 입력</span>
     </h3>
     <div class="orderwrap">
-		<form action="gly?command=order_insert" method="post">
+		<form action="gly?command=order_insert&orderCase=${orderCase}" method="post">
 			<div class="sub_container">
 				<div class="orderwrap">
 					<div class="float_left">
@@ -47,16 +47,21 @@
 												<div class="tlt_wrap">
 													<a>
 														<span class="sb_tlt"> ${products.p_name} </span>
+														<input type="hidden" name="productName" value="${products.p_name}"/>
 													</a>
 													<p class="color_op">
 														color : ${products.p_color}
+														<input type="hidden" name="productColor" value="${products.p_color}"/>
 														<span class="and_line">/</span>
 														size : ${products.p_size}
+														<input type="hidden" name="productSize" value="${products.p_size}"/>
 													</p>
 												</div>
 											</div>
 										</td>
-										<td>${quantitys[status.index]}</td>
+										<td>${quantitys[status.index]}
+										<input type="hidden" name="quantity" value="${quantitys[status.index]}"/>
+										</td>
 										<td>
 											<div>
 												<span> ₩ <fmt:formatNumber value="${products.p_price*quantitys[status.index]}" pattern="#,###"/> </span>

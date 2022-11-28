@@ -31,10 +31,7 @@ public class CartInsertAction implements Action {
 		HttpSession session = request.getSession();
 		MemberVO  userInfo = (MemberVO) session.getAttribute("userInfo");
 		String username = userInfo.getM_id();
-		System.out.println(size);
-		System.out.println(color);
-		System.out.println(quantity);
-		System.out.println(p_id);
+	
 		
 		int pdid = cDAO.getpdid(size, color, p_id);
 		cDAO.insertcart(quantity, username, pdid);

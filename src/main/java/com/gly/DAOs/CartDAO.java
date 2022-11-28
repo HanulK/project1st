@@ -39,7 +39,6 @@ public class CartDAO {
 		
 		try {
 			con = dataFactory.getConnection();
-			System.out.println("Connection success");
 			CallableStatement callableStatement = con.prepareCall(query);
 			callableStatement.setString(1, v_id);
 			callableStatement.registerOutParameter(2, OracleTypes.CURSOR);
@@ -54,6 +53,8 @@ public class CartDAO {
 				cart.setP_size(rset.getInt(4));
 				cart.setC_quantity(rset.getInt(5));
 				cart.setP_price(rset.getInt(6));
+				cart.setP_id(rset.getInt(7));
+				cart.setP_d_id(rset.getInt(8));
 				cartList.add(cart);
 			}
 			rset.close();
@@ -102,15 +103,14 @@ public class CartDAO {
 			}
 
 		}
-	public void deletecart(int del_quantity, String del_m_id, int del_p_d_id) {
-		String query = "{call deletecart(?,?,?)}";
+	public void deletecart(String del_m_id, int del_p_d_id) {
+		String query = "{call deletecart(?,?)}";
 		
 		try {
 			con = dataFactory.getConnection();
 			CallableStatement callableStatement = con.prepareCall(query);
-			callableStatement.setInt(1, del_quantity);
-			callableStatement.setString(2,del_m_id);
-			callableStatement.setInt(3,del_p_d_id);
+			callableStatement.setString(1,del_m_id);
+			callableStatement.setInt(2,del_p_d_id);
 			callableStatement.execute();
 			con.close();
 			} catch (Exception e) {

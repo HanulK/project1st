@@ -50,8 +50,7 @@
 										</tr>
 									</thead>
 									<tbody>
-									<form action="${contextPath}/gly?command=cart_delete"
-												method="post">
+									<form action="${contextPath}/gly?command=cart_delete" method="post">
 										<c:forEach items="${cartList}" var="cartVO">
 											
 											<tr name="entryProductInfo" data-pk="11004809805868"
@@ -61,13 +60,19 @@
 												<td class="pt_list_wrap">
 													<!-- pt_list_all -->
 													<div class="pt_list_all">
-															<img src="${cartVO.img_src}" alt="" />
+															<a href="gly?command=product_detail&pid=${cartVO.p_id}"><img src="${cartVO.img_src}"/> </a>
+															<input type="hidden" name = "p_id" value = "${cartVO.p_id}"/>
+															<input type="hidden" name = "p_d_id" value = "${cartVO.p_d_id}"/>
 														<div class="tlt_wrap">
 															<span class="sb_tlt"> ${cartVO.p_name}</span>
 															<p class="color_op">
-																color : <span name="dcolor">${cartVO.p_color}</span>
+																color : <span id="color">${cartVO.p_color}</span>
+																<input type="hidden" value="${cartVO.p_color}"
+															name="color" />
 																<span class="and_line">/</span> size :
-																<span name="dsize"> ${cartVO.p_size}</span>
+																<span id="size"> ${cartVO.p_size}</span>
+																<input type="hidden" value="${cartVO.p_size}"
+															name="size" />
 															</p>
 														</div>
 													</div> <!-- //pt_list_all-->
@@ -85,13 +90,15 @@
 
 													<div>
 														<input readonly type="number" min="1" value="${cartVO.c_quantity}"
-															name="dquantity" >
+															name="quantity" />
 													</div></td>
 												<td class="al_middle">
 													<!-- Price -->
 													<div class="price_wrap">
+													
 														<span>₩${cartVO.p_price}</span> <input type="hidden"
 															name="checkZeroPrice" value="698000.0" />
+														
 													</div> <!-- //Price -->
 												</td>
 
@@ -100,8 +107,9 @@
 													<div class="btn_wrap">
 														<input type="submit" class="btn gray_ss"
 															onclick="javascript: form.action='gly?command=order_detail&num=${cartList.size()}';"
-															value="주문" /> <input type="submit"
-															class="btn wt_ss" value="삭제" />
+															value="주문" /> 
+															<input type="submit"
+															class="btn wt_ss" onclick="javascript: form.action='gly?command=cart_delete&p_d_id=${cartVO.p_d_id}';" value="삭제" />
 													</div> <!-- //Button size -->
 												</td>
 											</tr>
