@@ -16,20 +16,17 @@ public class CartDeleteAction implements Action {
 		
 		CartDAO cdDAO = CartDAO.getInstance();
 		
-		int dsize = Integer.parseInt(request.getParameter("dsize"));
-		String dcolor = request.getParameter("dcolor");
-		int dquantity = Integer.parseInt(request.getParameter("dquantity"));
-		int dp_id = Integer.parseInt(request.getParameter("p_id"));
+		
+		
 		HttpSession session = request.getSession();
 		MemberVO  userInfo = (MemberVO) session.getAttribute("userInfo");
 		String username = userInfo.getM_id();
 		
-		System.out.println(dsize);
-		System.out.println(dcolor);
-		System.out.println(dquantity);
+		int p_d_id = Integer.parseInt(request.getParameter("p_d_id"));
 		
-		int pdid = cdDAO.getpdid(dsize, dcolor, dp_id);
-		cdDAO.deletecart(dquantity, username, pdid);
+		
+		System.out.println(p_d_id + " " + username);
+		cdDAO.deletecart(username, p_d_id);
 		
 		request.getRequestDispatcher(url).forward(request, response);  
 	}
