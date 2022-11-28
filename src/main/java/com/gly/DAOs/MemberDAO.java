@@ -93,7 +93,6 @@ public class MemberDAO {
 		return result;
 	}
 
-
 	public void deleteMember(String id) {
 		String sql = " { call MEM.delete_member(?) } ";
 		try {
@@ -112,23 +111,41 @@ public class MemberDAO {
 		}
 	}
 
-	
-	//hansol
-	public void changeInfo(String user,String pwd, String email,String birth) {
-		String sql ="{call update_info(?,?,?,?)}";
+	// hansol
+	public void changeInfo(String user, String pwd, String email, String birth) {
+		String sql = "{call update_info(?,?,?,?)}";
 		try {
 			System.out.println("회원정보 변경!");
 			con = dataFactory.getConnection();
 			CallableStatement cstmt = con.prepareCall(sql);
-			cstmt.setString(1,user);
-			cstmt.setString(2,pwd);
-			cstmt.setString(3,email);
-			cstmt.setString(4,birth);
+			cstmt.setString(1, user);
+			cstmt.setString(2, pwd);
+			cstmt.setString(3, email);
+			cstmt.setString(4, birth);
 			cstmt.execute();
 			cstmt.close();
 			con.close();
-		} catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public int if_id_exist(String id) {
+		int result = -1;
+		String sql = " { ? = call MEM.if_id_exist(?) } ";
+		try {
+			con = dataFactory.getConnection();
+			CallableStatement cstmt = con.prepareCall(sql);
+			cstmt.setString(2, id);
+			cstmt.registerOutParameter(1, java.sql.Types.INTEGER);
+			cstmt.execute();
+			result = cstmt.getInt(1);
+			cstmt.close();
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 }

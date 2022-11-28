@@ -104,4 +104,22 @@ public class ReviewDAO {
 		return result;
 	}
 	
+	public void deleteReview(int pid, String mid) {
+		String sql = " { call RATE_MOD.deleteReview(?, ?) } ";
+		try {
+			con = dataFactory.getConnection();
+			CallableStatement cstmt = con.prepareCall(sql);
+			cstmt.setInt(1, pid);
+			cstmt.setString(2, mid);
+			cstmt.execute();
+			
+			System.out.println("리뷰 삭제 성공");
+			cstmt.close();
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 }
