@@ -18,7 +18,7 @@
 				<h3 id="pageName">상품평 작성</h3>
 			</div>
 			<%@ include file="menu.jsp"%>
-			<form action ="gly?command=write_review" method="post">
+			<form action ="gly?command=write_review&p_id=${p_id}" method="post">
 				<fieldset>
 					<legend style="display: none;">상품평 작성</legend>
 					<div class="tblwrap">
