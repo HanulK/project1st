@@ -52,6 +52,7 @@ public class ReviewDAO {
 				review.setR_indate(rset.getDate(1));
 				review.setR_title(rset.getString(2));
 				review.setR_text(rset.getString(3));
+				review.setP_id((rset.getInt(4)));
 				reviewList.add(review);
 			}
 			rset.close();
@@ -107,6 +108,24 @@ public class ReviewDAO {
 		
 		return result;
 		
+	}
+	
+	public void deleteReview(int pid, String mid) {
+		String sql = " { call RATE_MOD.deleteReview(?, ?) } ";
+		try {
+			con = dataFactory.getConnection();
+			CallableStatement cstmt = con.prepareCall(sql);
+			cstmt.setInt(1, pid);
+			cstmt.setString(2, mid);
+			cstmt.execute();
+			
+			System.out.println("리뷰 삭제 성공");
+			cstmt.close();
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 }
