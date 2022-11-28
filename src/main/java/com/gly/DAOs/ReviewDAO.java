@@ -82,4 +82,31 @@ public class ReviewDAO {
 		}
 	}
 	
+	public int checkProduct(int product_id, String user){
+		int result = -1;
+		String sql = "{call checkProduct(?,?,?)}";
+		try {
+			con=dataFactory.getConnection();
+			CallableStatement cstmt = con.prepareCall(sql);
+			cstmt.setInt(1 ,product_id);
+			cstmt.setString(2,user);
+			cstmt.registerOutParameter(3, OracleTypes.CURSOR);
+			cstmt.execute();
+			ResultSet rset = (ResultSet)cstmt.getObject(3);
+			if(rset.next()) {
+				result=1;
+			}else {
+				result=-1;
+			}
+			con.close();
+			cstmt.close();
+			rset.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+		
+	}
+	
 }

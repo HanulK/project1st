@@ -149,6 +149,7 @@ public class ProductDAO {
 			}
 			rset.close();
 			con.close();
+			cstmt.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
