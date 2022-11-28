@@ -52,6 +52,7 @@ public class ReviewDAO {
 				review.setR_indate(rset.getDate(1));
 				review.setR_title(rset.getString(2));
 				review.setR_text(rset.getString(3));
+				review.setP_id(rset.getInt(4));
 				reviewList.add(review);
 			}
 			rset.close();

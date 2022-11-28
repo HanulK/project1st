@@ -21,7 +21,7 @@ public class RateFormAction  implements Action{
 		if (session.getAttribute("userInfo") != null) {
 			MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
 			ReviewDAO dao = ReviewDAO.getInstance();
-//			dao.checkProduct()
+			int check = dao.checkProduct(product_id,loginUser.getM_id());
 		}
 		request.getRequestDispatcher(url).forward(request, response);  
 	}
