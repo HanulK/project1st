@@ -2,9 +2,6 @@ package com.gly.controllerAction;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -31,18 +28,15 @@ public class ProductDetailAction implements Action {
 		productVO.setP_id(p_id);
 		
 		OptionDAO optionDAO = OptionDAO.getInstance();
-		ArrayList<OptionVO> optionVOs = optionDAO.getProductOptions(p_id);
+		ArrayList<ArrayList<OptionVO>> optionVOs = optionDAO.getProductOptions(p_id);
 		
-		Set<String> color_set = new HashSet<String>();
-		Set<Integer> size_set = new HashSet<Integer>();
-		for(int i=0; i<optionVOs.size(); i++) {
-			color_set.add(optionVOs.get(i).getP_color());
-			size_set.add(optionVOs.get(i).getP_szie());
-		}
-		ArrayList<String> colorSet = new ArrayList<>(color_set);
-		ArrayList<Integer> sizeSet = new ArrayList<>(size_set);
-		Collections.sort(colorSet);
-		Collections.sort(sizeSet);
+		ArrayList<String> colorSet = new ArrayList<String>();
+		for(int i=0; i<optionVOs.get(0).size(); i++)
+			colorSet.add(optionVOs.get(0).get(i).getP_color());
+		
+		ArrayList<Integer> sizeSet = new ArrayList<Integer>();
+		for(int i=0; i<optionVOs.get(1).size(); i++)
+			sizeSet.add(optionVOs.get(1).get(i).getP_szie());
 		
 		ImageDAO imageDAO = ImageDAO.getInstance();
 		ArrayList<ImageVO> imgSrcs = imageDAO.getDetailImagVO(p_id);
