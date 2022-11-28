@@ -17,7 +17,7 @@
 		<span>배송&결제정보 입력</span>
     </h3>
     <div class="orderwrap">
-		<form>
+		<form action="gly?command=order_insert" method="post">
 			<div class="sub_container">
 				<div class="orderwrap">
 					<div class="float_left">
@@ -127,12 +127,12 @@
 	                            	<tr>
 		                            	<th scope="row">
 		                            		<strong class="reqd">*</strong>
-		                            		<label for="adress">배송지 주소</label>
+		                            		<label for="receiverAddress">배송지 주소</label>
 		                            	</th>
 		                            	<td>
 		                            		<div>
 		                            			<input class="post_wall top" type="text" 
-		                            			name="receieverAdress" value="${member.m_address}">
+		                            			name="receiverAddress" value="${member.m_address}">
 		                            		</div>
 		                            	</td>
 	                            	</tr>
@@ -157,16 +157,16 @@
 	                                		<div class="rd_wrap">
 	                                			<ul>
 	                                				<li>
-	                                					<input type="radio" checked="checked" name="pay">
-	                                					<label class="mr20 one_click_pay">계좌이체</label>
+	                                					<input type="radio" checked="checked" name="pay" value="0">
+	                                					<label class="mr20 one_click_pay">카드 결제</label>
 	                                				</li>
 	                                				<li>
-	                                					<input type="radio" name="pay">
+	                                					<input type="radio" name="pay" value="1">
 	                                					<label class="mr20 one_click_pay">핸드폰 결제</label>
 	                                				</li>
 	                                				<li>
-	                                					<input type="radio" name="pay">
-	                                					<label class="mr20 one_click_pay">카드 결제</label>
+	                                					<input type="radio" name="pay" value="2">
+	                                					<label class="mr20 one_click_pay">계좌이체</label>
 	                                				</li>
 	                                			</ul>
 	                                		</div>
@@ -191,7 +191,7 @@
 					</div>
 				</div>
 				<span id="doOrderBtn">
-					<input type="submit" class="btn gray" onclick="javascript: form.action='gly?command=order_insert';" value="결제하기">
+				<input type="submit" class="btn gray" value="결제하기">
                 </span>
 			</div>
 		</form>

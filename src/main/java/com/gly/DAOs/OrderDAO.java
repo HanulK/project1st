@@ -1,12 +1,16 @@
 package com.gly.DAOs;
 
-import java.sql.*;
-import java.util.*;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
-import javax.naming.*;
-import javax.sql.*;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
 
-import com.gly.VOs.*;
+import com.gly.VOs.OrderVO;
 
 public class OrderDAO {
 	private Connection con;
@@ -90,5 +94,23 @@ public class OrderDAO {
 			e.printStackTrace();
 		}
 		return orderList;
+	}
+	
+	public void insertOrder(String m_id, String receiver, String phone, String address, int payWay, int state) {
+		String query = "{ call add_order(?, ?, ?, ?, ?, ?)}";
+		try {
+			con = dataFactory.getConnection();
+			CallableStatement callableStatement = con.prepareCall(query);
+			callableStatement.setString(1, address);
+			callableStatement.setInt(2, payWay);
+			callableStatement.setInt(3, state);
+			callableStatement.setString(4, phone);
+			callableStatement.setString(5, receiver);
+			callableStatement.setString(6, m_id);
+			callableStatement.execute();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
