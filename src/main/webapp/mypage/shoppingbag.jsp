@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="/layout/header.jsp"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <%-- writer:juhye --%>
@@ -95,11 +96,11 @@
 												<td class="al_middle">
 													<!-- Price -->
 													<div class="price_wrap">
+														<span>
+                         									₩ 
+                         								  <fmt:formatNumber value="${cartVO.p_price}" pattern="#,###"/>
+                       									 </span>
 													
-														<span>₩${cartVO.p_price}</span> <input type="hidden"
-															name="checkZeroPrice" value="698000.0" />
-														
-													</div> <!-- //Price -->
 												</td>
 
 												<td class="al_middle">
@@ -119,7 +120,7 @@
 									</tbody>
 								</table>
 							</div>
-							<!--// shoppingback table-->
+							<!--shoppingback table-->
 							<!--Total wrap-->
 							<div class="total_wrap">
 								<!-- total -->
@@ -127,7 +128,10 @@
 									<dl>
 										<dt>상품 합계</dt>
 										<dd>
-											<span id="cartDataSubtotal">₩${totalPrice}</span>
+										 <span id="cartDataSubtotal">
+                          					 ₩ 
+                          					 <fmt:formatNumber value="${totalPrice}" pattern="#,###"/>
+                      					 </span>
 										</dd>
 										<dt class="delch_wrap">
 											<p class="tlt_ship">배송비</p>
@@ -139,7 +143,10 @@
 									<dl class="total">
 										<dt>합계</dt>
 										<dd>
-											<span id="cartDataTotalPrice">₩${totalPrice}</span>
+										 <span id="cartDataTotalPrice">
+                        				   ₩ 
+                         				  <fmt:formatNumber value="${totalPrice}" pattern="#,###"/>
+                    				    </span>
 										</dd>
 									</dl>
 								</div>
