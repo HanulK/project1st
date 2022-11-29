@@ -35,10 +35,13 @@
 					</c:when>
 					<c:otherwise>
 						<li class="nav-mymenu">${sessionScope.userInfo.m_name}님</li>
+						　|
+						<li class="nav-mymenu"><a href="gly?command=logout"> 로그아웃</a></li>
+						　|
 					</c:otherwise>
 				</c:choose>
-				<li class="nav-mymenu"><a href="gly?command=logout"> 로그아웃</a></li>
 				<li class="nav-mymenu"><a href="gly?command=mypage"> 마이페이지</a></li>
+				　|
 				<li class="nav-mymenu"><a href="gly?command=cart_list">쇼핑백 </a></li>
 			</ul>
 
