@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="/layout/header.jsp"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
@@ -50,71 +49,62 @@
 										</tr>
 									</thead>
 									<tbody>
-									<form action="${contextPath}/gly?command=cart_delete" method="post">
-										<c:forEach items="${cartList}" var="cartVO">
-											
-											<tr name="entryProductInfo" data-pk="11004809805868"
-												data-deliverykind="" data-outofstock="false"
-												data-category="WE052">
+										<form action="${contextPath}/gly?command=cart_delete" method="post">
+											<c:forEach items="${cartList}" var="cartVO">
 
-												<td class="pt_list_wrap">
-													<!-- pt_list_all -->
-													<div class="pt_list_all">
-															<a href="gly?command=product_detail&pid=${cartVO.p_id}"><img src="${cartVO.img_src}"/> </a>
-															<input type="hidden" name = "p_id" value = "${cartVO.p_id}"/>
-															<input type="hidden" name = "p_d_id" value = "${cartVO.p_d_id}"/>
-														<div class="tlt_wrap">
-															<span class="sb_tlt"> ${cartVO.p_name}</span>
-															<p class="color_op">
-																color : <span id="color">${cartVO.p_color}</span>
-																<input type="hidden" value="${cartVO.p_color}"
-															name="color" />
-																<span class="and_line">/</span> size :
-																<span id="size"> ${cartVO.p_size}</span>
-																<input type="hidden" value="${cartVO.p_size}"
-															name="size" />
-															</p>
-														</div>
-													</div> <!-- //pt_list_all-->
-												</td>
-												<td class="al_middle"><input type="hidden"
-													name="entryNumber" value="0" /> <input type="hidden"
-													name="productCode" value="O22CAWOT283W_LA_82" /> <input
-													type="hidden" name="initialQuantity" value="1" /> <input
-													type="hidden" name="chgProductCode" value="" /> <input
-													type="hidden" name="curSize" value="82" /> <input
-													type="hidden" name="storeId" value="" /> <input
-													type="hidden" name="storePickupDate" value="" /> <input
-													type="hidden" name="deliveryKind" value="" /> <input
-													type="hidden" name="cartDivision" value="" /> <!-- qty_sel -->
+												<tr name="entryProductInfo" data-pk="11004809805868" data-deliverykind=""
+													data-outofstock="false" data-category="WE052">
 
-													<div>
-														<input readonly type="number" min="1" value="${cartVO.c_quantity}"
-															name="quantity" />
-													</div></td>
-												<td class="al_middle">
-													<!-- Price -->
-													<div class="price_wrap">
-													
-														<span>₩${cartVO.p_price}</span> <input type="hidden"
-															name="checkZeroPrice" value="698000.0" />
-														
-													</div> <!-- //Price -->
-												</td>
+													<td class="pt_list_wrap">
+														<!-- pt_list_all -->
+														<div class="pt_list_all">
+															<a href="gly?command=product_detail&pid=${cartVO.p_id}"><img
+																src="${cartVO.img_src}" /> </a> <input type="hidden" name="p_id" value="${cartVO.p_id}" />
+															<input type="hidden" name="p_d_id" value="${cartVO.p_d_id}" />
+															<div class="tlt_wrap">
+																<span class="sb_tlt"> ${cartVO.p_name}</span>
+																<p class="color_op">
+																	color : <span id="color">${cartVO.p_color}</span> <input type="hidden"
+																		value="${cartVO.p_color}" name="color" /> <span class="and_line">/</span> size :
+																	<span id="size"> ${cartVO.p_size}</span> <input type="hidden"
+																		value="${cartVO.p_size}" name="size" />
+																</p>
+															</div>
+														</div> <!-- //pt_list_all-->
+													</td>
+													<td class="al_middle"><input type="hidden" name="entryNumber" value="0" /> <input
+														type="hidden" name="productCode" value="O22CAWOT283W_LA_82" /> <input type="hidden"
+														name="initialQuantity" value="1" /> <input type="hidden" name="chgProductCode"
+														value="" /> <input type="hidden" name="curSize" value="82" /> <input type="hidden"
+														name="storeId" value="" /> <input type="hidden" name="storePickupDate" value="" /> <input
+														type="hidden" name="deliveryKind" value="" /> <input type="hidden"
+														name="cartDivision" value="" /> <!-- qty_sel -->
 
-												<td class="al_middle">
-													<!-- Button size -->
-													<div class="btn_wrap">
-														<input type="submit" class="btn gray_ss"
-															onclick="javascript: form.action='gly?command=order_detail&num=${cartList.size()}';"
-															value="주문" /> 
-															<input type="submit"
-															class="btn wt_ss" onclick="javascript: form.action='gly?command=cart_delete&p_d_id=${cartVO.p_d_id}';" value="삭제" />
-													</div> <!-- //Button size -->
-												</td>
-											</tr>
-										
-										</c:forEach>
+														<div>
+															<input readonly type="number" min="1" value="${cartVO.c_quantity}" name="quantity" />
+														</div></td>
+													<td class="al_middle">
+														<!-- Price -->
+														<div class="price_wrap">
+
+															<span>₩${cartVO.p_price}</span> <input type="hidden" name="checkZeroPrice"
+																value="698000.0" />
+
+														</div> <!-- //Price -->
+													</td>
+
+													<td class="al_middle">
+														<!-- Button size -->
+														<div class="btn_wrap">
+															<input type="submit" class="btn gray_ss"
+																onclick="javascript: form.action='gly?command=order_detail&num=${cartList.size()}';"
+																value="주문" style="margin-bottom:10px;"/> <input type="submit" class="btn wt_ss"
+																onclick="javascript: form.action='gly?command=cart_delete&p_d_id=${cartVO.p_d_id}';"
+																value="삭제" />
+														</div> <!-- //Button size -->
+													</td>
+												</tr>
+											</c:forEach>
 										</form>
 									</tbody>
 								</table>
