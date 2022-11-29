@@ -140,6 +140,7 @@ public class ProductDAO {
 				image.setImgSrc(rset.getString(1));
 				image.setName(rset.getString(2));
 				image.setPrice(rset.getInt(3));
+				image.setId(rset.getInt(4));
 				imageList.add(image);
 			}
 			rset.close();
@@ -162,9 +163,10 @@ public class ProductDAO {
 			ResultSet rset = (ResultSet)cstmt.getObject(1);
 			while (rset.next()) {
 				ImageVO image = new ImageVO();
-				image.setImgSrc(rset.getString(1));
-				image.setName(rset.getString(2));
-				image.setPrice(rset.getInt(3));
+				image.setId(rset.getInt(1));
+				image.setImgSrc(rset.getString(2));
+				image.setName(rset.getString(3));
+				image.setPrice(rset.getInt(4));
 				imageList.add(image);
 			}
 			rset.close();

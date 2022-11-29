@@ -39,7 +39,7 @@
 							<c:forEach items="${newProductList}" var="imageVO">
 								<li>
 									<div class="item_box">
-										<a href="#"> <span class="item_img"> <img src="${imageVO.imgSrc}" alt=""
+										<a href="gly?command=product_detail&pid=${imageVO.id}"> <span class="item_img"> <img src="${imageVO.imgSrc}" alt=""
 												class="respon_image">
 										</span>
 										</a> <a href="#" class="item_info2"> <span class="brand">${imageVO.name}</span> <span
@@ -64,7 +64,7 @@
 							<c:forEach items="${bestProductList}" var="imageVO">
 								<li>
 									<div class="item_box">
-										<a href="#"> <span class="item_img"> <img src="${imageVO.imgSrc}" alt=""  class="respon_image">
+										<a href="gly?command=product_detail&pid=${imageVO.id}"> <span class="item_img"> <img src="${imageVO.imgSrc}" alt=""  class="respon_image">
 										</span>
 										</a> <a href="#" class="item_info2"> <span class="brand">${imageVO.name}</span> <span
 											class="price">₩${imageVO.price}</span>
