@@ -31,8 +31,8 @@
 							<caption>상품평 리스트</caption>
 							<colgroup>
 								<col style="width: 55px">
-								<col style="width: 120px">
-								<col style="width: 107px">
+								<col style="width: 150px">
+								<col style="width: 30px">
 								<col style="width: 108px">
 								<col style="width: 96px">
 							</colgroup>
@@ -56,7 +56,7 @@
 										<td>${orderVO.p_price}</td>
 										<!-- <td>${orderVO.o_state}</td> -->
 										<input type="hidden" value="${orderVO.p_id}" name="p_id">
-										<td><input value="상품평작성" type="submit"/></td>
+										<td><input class="btn add_ss" value="상품평작성" type="submit"/></td>
 									</tr>
 									</form>
 								</c:forEach>

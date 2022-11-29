@@ -11,7 +11,7 @@ a{
 	text-decoration:none;
 }
 .bodywrap:after, .bodywrap:before{
-	padding: 10px 45px ;
+	padding: 50px 45px 45px 20px ;
 	content: "";
     display: block;
     clear: both;
@@ -188,4 +188,24 @@ caption {
 .wish-wrap{
 	margin:0;
 	padding:0;
+}
+.add_ss {
+    padding: 6px 10px 7px;
+    min-width: 50px;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+    font-size: 11px;
+    line-height: 11px;
+}
+.btn {
+    display: inline-block;
+    color: #363636;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.btn:hover{
+	opacity:0.7;
 }

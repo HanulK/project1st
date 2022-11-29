@@ -47,7 +47,6 @@ public class OrderDAO {
 				order.setP_price(rset.getInt(4));
 				order.setO_state(rset.getInt(5));
 				orderList.add(order);
-				System.out.println("성공");
 			}
 			cstmt.close();
 			rset.close();

@@ -50,7 +50,7 @@
 	                내 상품평 목록
 	              </caption> -->
 									<colgroup>
-										<col style="width: 50px" />
+										<col style="width: 100px" />
 										<col style="width: 150px" />
 										<col style="width: 200px" />
 										<col style="width: 50px" />
@@ -60,7 +60,7 @@
 											<th scope="col">작성일</th>
 											<th scope="col">제목</th>
 											<th scope="col">내용</th>
-											<th scope="col">수정/삭제</th>
+											<th scope="col">삭제</th>
 										</tr>
 									</thead>
 									<tbody id="writeListBody">
@@ -71,7 +71,7 @@
 												<td>${ReviewVO.r_title}</td>
 												<td>${ReviewVO.r_text}</td>
 												<td>
-													<button style="height: 15px;" onclick="delete_review()">삭제</button>
+													<button class="btn add_ss" onclick="delete_review()">삭제</button>
 												</td>
 											</tr>
 										</c:forEach>
@@ -91,7 +91,12 @@
 								<ul>
 									<li>마일리지는 더한섬닷컴 통합회원만 적립 가능합니다. (간편회원 적립 불가)</li>
 									<li>상품평은 홍보, 이벤트 등 다양한 방법으로 활용될 수 있습니다.</li>
-									<li>아래와 같은 상품평은 사전 동의 없이 미게시로 전환될 수 있으며, 지급된 마일리지는 자동으로 회수됩니다.<br /> 1)부당 리뷰(직접 촬영하지 않은 캡쳐 사진, 해석 및 식별이 불가능한 리뷰, 타 상품에 대한 리뷰, 제 3자 사진 도움 등)<br /> 2)약관 및 법률 위배(비속어, 허위사실 등)<br /> 3)상기 내용에 준하는 사유라고 합리적으로 판단되는 경우
+									<li>아래와 같은 상품평은 사전 동의 없이 미게시로 전환될 수 있으며, 지급된 마일리지는 자동으로 회수됩니다.<br />
+									<ol>
+										<li>부당 리뷰(직접 촬영하지 않은 캡쳐 사진, 해석 및 식별이 불가능한 리뷰, 타 상품에 대한 리뷰, 제 3자 사진 도움 등)</li>
+										<li>약관 및 법률 위배(비속어, 허위사실 등)</li>
+										<li>상기 내용에 준하는 사유라고 합리적으로 판단되는 경우</li>
+									</ul>
 									</li>
 								</ul>
 							</dd>
