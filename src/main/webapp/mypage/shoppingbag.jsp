@@ -50,77 +50,72 @@
 										</tr>
 									</thead>
 									<tbody>
-									<c:forEach items = "${cartList}" var="cartVO">
-										<tr name="entryProductInfo" data-pk="11004809805868"
-											data-deliverykind="" data-outofstock="false"
-											data-category="WE052">
+									<form action="${contextPath}/gly?command=cart_delete" method="post">
+										<c:forEach items="${cartList}" var="cartVO">
+											
+											<tr name="entryProductInfo" data-pk="11004809805868"
+												data-deliverykind="" data-outofstock="false"
+												data-category="WE052">
 
-											<td class="pt_list_wrap">
-												<!-- pt_list_all -->
-												<div class="pt_list_all">
-													<a
-														href="/ko/HANDSOME/WOMEN/OUTER/JUMPER/%EB%9E%A8%EC%8A%A4-%EC%9A%B8-%EB%B8%94%EB%A0%8C%EB%93%9C-%ED%9B%84%EB%93%9C-%EC%A0%90%ED%8D%BC/p/O22CAWOT283W_LA_82"
-														onclick="javascript:setEcommerceData('0', 'Click ADD');GA_Event('쇼핑백','상품','램스 울 블렌드 후드 점퍼');">
-														<img
-														src="${cartVO.img_src}"
-														alt="" />
-													</a>
-													<div class="tlt_wrap">
-														<a
-															href="/ko/HANDSOME/WOMEN/OUTER/JUMPER/%EB%9E%A8%EC%8A%A4-%EC%9A%B8-%EB%B8%94%EB%A0%8C%EB%93%9C-%ED%9B%84%EB%93%9C-%EC%A0%90%ED%8D%BC/p/O22CAWOT283W_LA_82"
-															class="basket_tlt"
-															onclick="javascript:setEcommerceData('0', 'Click ADD');GA_Event('쇼핑백','상품','램스 울 블렌드 후드 점퍼');">
-															<span class="sb_tlt">
-																${cartVO.p_name}</span>
-														</a>
-
-														<p class="color_op">
-															color : ${cartVO.p_color}<span class="and_line">/</span> size : ${cartVO.p_size}
-														</p>
-													</div>
-												</div> <!-- //pt_list_all-->
-											</td>
-											<td class="al_middle">
-												<form id="updateCartForm0"
-													data-cart='{"cartCode" : "436274501","productPostPrice":"698000.0","productName":"램스 울 블렌드 후드 점퍼"}'
-													action="/ko/shoppingbag/update" method="post">
-													<input type="hidden" name="entryNumber" value="0" /> <input
-														type="hidden" name="productCode"
-														value="O22CAWOT283W_LA_82" /> <input type="hidden"
-														name="initialQuantity" value="1" /> <input type="hidden"
-														name="chgProductCode" value="" /> <input type="hidden"
-														name="curSize" value="82" /> <input type="hidden"
-														name="storeId" value="" /> <input type="hidden"
-														name="storePickupDate" value="" /> <input type="hidden"
-														name="deliveryKind" value="" /> <input type="hidden"
-														name="cartDivision" value="" />
-													<!-- qty_sel -->
+												<td class="pt_list_wrap">
+													<!-- pt_list_all -->
+													<div class="pt_list_all">
+															<a href="gly?command=product_detail&pid=${cartVO.p_id}"><img src="${cartVO.img_src}"/> </a>
+															<input type="hidden" name = "p_id" value = "${cartVO.p_id}"/>
+															<input type="hidden" name = "p_d_id" value = "${cartVO.p_d_id}"/>
+														<div class="tlt_wrap">
+															<span class="sb_tlt"> ${cartVO.p_name}</span>
+															<p class="color_op">
+																color : <span id="color">${cartVO.p_color}</span>
+																<input type="hidden" value="${cartVO.p_color}"
+															name="color" />
+																<span class="and_line">/</span> size :
+																<span id="size"> ${cartVO.p_size}</span>
+																<input type="hidden" value="${cartVO.p_size}"
+															name="size" />
+															</p>
+														</div>
+													</div> <!-- //pt_list_all-->
+												</td>
+												<td class="al_middle"><input type="hidden"
+													name="entryNumber" value="0" /> <input type="hidden"
+													name="productCode" value="O22CAWOT283W_LA_82" /> <input
+													type="hidden" name="initialQuantity" value="1" /> <input
+													type="hidden" name="chgProductCode" value="" /> <input
+													type="hidden" name="curSize" value="82" /> <input
+													type="hidden" name="storeId" value="" /> <input
+													type="hidden" name="storePickupDate" value="" /> <input
+													type="hidden" name="deliveryKind" value="" /> <input
+													type="hidden" name="cartDivision" value="" /> <!-- qty_sel -->
 
 													<div>
-														<input type="number" min="1" value = "${cartVO.c_quantity}"/>
-													</div>
-												</form>
-											</td>
-											<td class="al_middle">
-												<!-- Price -->
-												<div class="price_wrap">
-													<span>₩${cartVO.p_price}</span> <input type="hidden"
-														name="checkZeroPrice" value="698000.0" />
-												</div> <!-- //Price -->
-											</td>
+														<input readonly type="number" min="1" value="${cartVO.c_quantity}"
+															name="quantity" />
+													</div></td>
+												<td class="al_middle">
+													<!-- Price -->
+													<div class="price_wrap">
+													
+														<span>₩${cartVO.p_price}</span> <input type="hidden"
+															name="checkZeroPrice" value="698000.0" />
+														
+													</div> <!-- //Price -->
+												</td>
 
-											<td class="al_middle">
-												<!-- Button size -->
-												<div class="btn_wrap">
-													<a href="#none" class="btn gray_ss"
-														onclick="callWishListClick('램스 울 블렌드 후드 점퍼',$(this),'O22CAWOT283W_LA_82');"
-														data-value="0">주문</a> <a href="#none"
-														id="RemoveProduct_0" class="btn wt_ss"
-														onclick="GA_Event('쇼핑백','삭제','램스 울 블렌드 후드 점퍼');">삭제</a>
-												</div> <!-- //Button size -->
-											</td>
-										</tr>
+												<td class="al_middle">
+													<!-- Button size -->
+													<div class="btn_wrap">
+														<input type="submit" class="btn gray_ss"
+															onclick="javascript: form.action='gly?command=order_detail&num=${cartList.size()}';"
+															value="주문" /> 
+															<input type="submit"
+															class="btn wt_ss" onclick="javascript: form.action='gly?command=cart_delete&p_d_id=${cartVO.p_d_id}';" value="삭제" />
+													</div> <!-- //Button size -->
+												</td>
+											</tr>
+										
 										</c:forEach>
+										</form>
 									</tbody>
 								</table>
 							</div>
@@ -138,7 +133,7 @@
 											<p class="tlt_ship">배송비</p>
 										</dt>
 										<dd>
-											<span id="cartDataDeliveryCost">₩ 0</span>
+											<span id="cartDataDeliveryCost">무료배송</span>
 										</dd>
 									</dl>
 									<dl class="total">

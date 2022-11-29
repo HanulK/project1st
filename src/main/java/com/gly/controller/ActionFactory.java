@@ -41,6 +41,8 @@ public class ActionFactory {
 			action = new CartListAction(); // 장바구니 가기
 		} else if (command.equals("cart_delete")) {
 			action = new CartDeleteAction();
+		} else if (command.equals("order_detail")) {
+			action = new OrderSettingAction();
 		} else if (command.equals("order_insert")) {
 			action = new OrderInsertAction();
 		} else if (command.equals("order_list")) {
@@ -49,6 +51,8 @@ public class ActionFactory {
 			action = new MyPageAction();
 		} else if (command.equals("change_info")) {
 			action = new ChangeInfoAction();
+		} else if (command.equals("change_infoForm")) {
+			action = new ChangeInfoFormAction();
 		} else if (command.equals("order_detail")) {
 			action = new OrderDetailAction();
 		} else if (command.equals("item_all")) {
@@ -71,7 +75,15 @@ public class ActionFactory {
 			action = new ItemSearchAction();
 		} else if (command.equals("rate")) {
 			action = new RateListAction();
-		}
+		} else if (command.equals("rate_form")) {
+			action = new RateFormAction();
+		} else if (command.equals("write_review")) {
+			action = new ReviewWriteAction();
+		} else if (command.equals("rate_delete")) {
+			action = new RateDeleteAction();
+		}else if (command.equals("rate_filter")) { 			// 점수별 필터링
+			action = new RateFilterAction();
+		} 
 
 		/*
 		 * // admin if (command.equals("admin_login_form")) { action = new

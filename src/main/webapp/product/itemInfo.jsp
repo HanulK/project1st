@@ -7,7 +7,8 @@
 <html>
    <head>
       <meta charset="UTF-8">
-      <title>상품 목록</title>
+      <link rel="icon" href="assets/img/favicon.ico" />
+	<title>𝗚𝗟𝗬</title>
       <link href="css/common.css" rel="stylesheet" />
       <link href="css/itemInfo.css" rel="stylesheet" />
    </head>
@@ -28,11 +29,12 @@
             <!-- 정보 박스 -->
             <article class="item-info-box">
                <div class="info">
+               	<form method="post">
                   <div class="info_sect">
                      <h4 class="item_name">
                         <span class="name"> ${product.p_name}
-                        <input type="hidden" id="productName" value="${product.p_name}" />
-                        <input type="hidden" id="productCode" value="${product.p_id}" />
+                        <input type="hidden" name="productName" value="${product.p_name}" />
+                        <input type="hidden" name="productCode" value="${product.p_id}" />
                         </span>
                      </h4>
                      <div class="flag"></div>
@@ -41,7 +43,7 @@
                            ₩ 
                            <fmt:formatNumber value="${product.p_price}" pattern="#,###"/>
                         </span>
-                        <input type="hidden" id="productPrice" value="${product.p_price}" />
+                        <input type="hidden" name="productPrice" value="${product.p_price}" />
                      </p>
                      <p class="selling_point"></p>
                      <div class="prod-detail-con-box">
@@ -55,11 +57,10 @@
                      </div>
                   </div>
                   <!-- 선택 옵션 및 가격 -->
-                  <form action="${contextPath}/gly?command=cart_insert" method="post">
+                  <!-- <form method="post"> -->
                      <div class="item_option_box info_sect" id="color_size">
                         <ul class="color_size_qty">
                            <li><span class="title">사이즈</span>
-                           		<!-- T0D0 0일 때 FR로 변경 추가 -->
 								<c:forEach items="${sizes}"  var="sizes">
 		                           <label><input type="radio" name="size" value="${sizes}" />
 		                           ${sizes}
@@ -68,7 +69,7 @@
                            </li>
                            <li><span class="title">색상</span>
                            <c:forEach items="${colors}"  var="colors">
-                           <label><input type="radio" name="color" value="${colors}" />${colors}</label> 
+                           	<label><input type="radio" name="color" value="${colors}" />${colors}</label> 
                            </c:forEach>
                            </li>
                            <li>
@@ -82,7 +83,7 @@
                         </ul>
                      </div>
                      <input type="submit" value="장바구니" onclick="javascript: form.action='gly?command=cart_insert';">
-                     <input type="submit" value="바로주문" onclick="javascript: form.action='gly?command=order_insert';">
+                     <input type="submit" value="바로주문" onclick="javascript: form.action='gly?command=order_detail&num=1';">
                   </form>
                   <!-- 하단 세부 사항-->
                   <div>

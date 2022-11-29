@@ -1,8 +1,6 @@
 package com.gly.DAOs;
 
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.*;
 import java.util.ArrayList;
 
 import javax.naming.Context;
@@ -10,9 +8,8 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 import com.gly.VOs.ImageVO;
-import oracle.jdbc.OracleTypes;
 
-import java.sql.ResultSet;
+import oracle.jdbc.OracleTypes;
 
 
 public class ImageDAO {
@@ -61,5 +58,25 @@ public class ImageDAO {
 		}
 		
 		return imgSrcs;
+	}
+	
+	public String getSubImageSrc(int p_id) {
+		String imgSrc = null;
+		String query = "{ ? = call get_small_imgsrc(?) }";
+		
+		try {
+			con = dataFactory.getConnection();
+			CallableStatement callableStatement = con.prepareCall(query);
+			callableStatement.registerOutParameter(1, Types.VARCHAR);
+			callableStatement.setInt(2, p_id);
+			callableStatement.executeUpdate();
+			imgSrc = callableStatement.getString(1);
+			
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return imgSrc;
 	}
 }

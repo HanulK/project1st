@@ -1,17 +1,31 @@
 package com.gly.controllerAction;
 
-import java.io.IOException;
+import java.io.*;
+import java.util.*;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
-public class RateListAction implements Action{
-	
+import com.gly.DAOs.*;
+import com.gly.VOs.*;
+
+public class RateListAction implements Action {
+
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url="mypage/rate.jsp";
-		request.getRequestDispatcher(url).forward(request, response);  
+		String url = "mypage/rate.jsp";
+
+		HttpSession session = request.getSession();
+		if (session.getAttribute("userInfo") != null) {
+			MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
+			System.out.println(loginUser.getM_id());
+			if (request.getAttribute("reviewList") == null) {
+				ReviewDAO dao = ReviewDAO.getInstance();
+				ArrayList<ReviewVO> reviewList = dao.listReview(loginUser.getM_id());
+				request.setAttribute("reviewList", reviewList);
+			}
+		}
+		request.getRequestDispatcher(url).forward(request, response);
 	}
 
 }

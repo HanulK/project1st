@@ -6,7 +6,8 @@
 <head>
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="icon" href="assets/img/favicon.ico" />
+<title>𝗚𝗟𝗬</title>
 </head>
 <body>
 	<%@ include file="/layout/header.jsp"%>
@@ -16,7 +17,8 @@
 				<ul>
 					<li class="swiper-slide">
 						<div class="slide-bgimg"
-							style="background-image: url(&quot;http://www.thehandsome.com/medias/221111-A-weeklypick-02.jpg?context=bWFzdGVyfGltYWdlc3w2ODYxNHxpbWFnZS9qcGVnfGltYWdlcy9oYjQvaDcyLzkzNDg2MTI0NTY0NzguanBnfGZiNjRkZTdmNWQwMGViYzU5NDg1ZGUwNDVmY2JiNmFiZTgzMGNkYzc3YWZlN2EwM2UzOWY4OTVjM2VhNzU5MTg&quot;);"></div>
+							style="background-image: url(&quot;http://www.thehandsome.com/medias/221111-A-weeklypick-02.jpg?context=bWFzdGVyfGltYWdlc3w2ODYxNHxpbWFnZS9qcGVnfGltYWdlcy9oYjQvaDcyLzkzNDg2MTI0NTY0NzguanBnfGZiNjRkZTdmNWQwMGViYzU5NDg1ZGUwNDVmY2JiNmFiZTgzMGNkYzc3YWZlN2EwM2UzOWY4OTVjM2VhNzU5MTg&quot;);">
+							</div>
 					</li>
 				</ul>
 			</div>
@@ -37,7 +39,7 @@
 							<c:forEach items="${newProductList}" var="imageVO">
 								<li>
 									<div class="item_box">
-										<a href="#"> <span class="item_img"> <img src="${imageVO.imgSrc}" alt=""
+										<a href="gly?command=product_detail&pid=${imageVO.id}"> <span class="item_img"> <img src="${imageVO.imgSrc}" alt=""
 												class="respon_image">
 										</span>
 										</a> <a href="#" class="item_info2"> <span class="brand">${imageVO.name}</span> <span
@@ -62,7 +64,7 @@
 							<c:forEach items="${bestProductList}" var="imageVO">
 								<li>
 									<div class="item_box">
-										<a href="#"> <span class="item_img"> <img src="${imageVO.imgSrc}" alt=""  class="respon_image">
+										<a href="gly?command=product_detail&pid=${imageVO.id}"> <span class="item_img"> <img src="${imageVO.imgSrc}" alt=""  class="respon_image">
 										</span>
 										</a> <a href="#" class="item_info2"> <span class="brand">${imageVO.name}</span> <span
 											class="price">₩${imageVO.price}</span>

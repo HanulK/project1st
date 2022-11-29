@@ -11,7 +11,7 @@
 <body>
 	<div class="info-wrap">
 		<h4>
-			<a href="#" id="mypage">마이페이지</a>
+			<a href="gly?command=mypage" id="mypage">마이페이지</a>
 		</h4>
 		<div class="info_wrap">
 			<dl>
@@ -22,9 +22,9 @@
 			</dl>
 			<dl>
 				<dt>나의 상품관리</dt>
-				<dd>
+				<!-- <dd>
 					<a href="gly?command=wish_list_list" id="wish">위시리스트</a>
-				</dd>
+				</dd> -->
 				<dd>
 					<a href="gly?command=cart_list" id="wish">쇼핑백</a>
 
@@ -41,9 +41,12 @@
 				<dd>
 					<a href="gly?command=rate" id="rate">내 상품평</a>
 				</dd>
+				<!-- <dd>
+					<a href="gly?command=rate_form" id="qna">상품평 작성</a>
+				</dd>
 				<dd>
 					<a href="gly?command=qna_list" id="qna">상품 Q&A</a>
-				</dd>
+				</dd> -->
 			</dl>
 		</div>
 		<div class="guide">

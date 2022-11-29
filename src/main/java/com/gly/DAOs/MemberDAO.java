@@ -7,9 +7,10 @@ import javax.sql.*;
 
 import com.gly.VOs.*;
 
+import oracle.jdbc.*;
+
 public class MemberDAO {
 	private Connection con;
-	private PreparedStatement pstmt;
 	private DataSource dataFactory;
 
 	// 연결
@@ -35,13 +36,15 @@ public class MemberDAO {
 
 		try {
 			con = dataFactory.getConnection();
-//			System.out.println("Connection success");
+			System.out.println("Connection success");
+			String query = " { ? = call MEM.get_userInfo(?) }";
+			CallableStatement cstmt = con.prepareCall(query);
+			cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+			cstmt.setString(2, id);
+			cstmt.execute();
 
-			String query = "select * from member where id=? ";
-			pstmt = con.prepareStatement(query);
-			pstmt.setString(1, id);
+			ResultSet rs = (ResultSet) cstmt.getObject(1);
 
-			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
 				memberVO = new MemberVO();
 				memberVO.setM_id(rs.getString(1));
@@ -49,13 +52,12 @@ public class MemberDAO {
 				memberVO.setM_name(rs.getString(3));
 				memberVO.setM_birth(rs.getString(4));
 				memberVO.setM_gender(rs.getInt(5));
-				memberVO.setM_email(rs.getString(6));
-				memberVO.setM_phone(rs.getString(7));
-				memberVO.setM_address(rs.getString(8));
+				memberVO.setM_address(rs.getString(6));
+				memberVO.setM_email(rs.getString(7));
+				memberVO.setM_phone(rs.getString(8));
 				memberVO.setM_indate(rs.getTimestamp(9));
 			}
 			rs.close();
-			pstmt.close();
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -104,6 +106,25 @@ public class MemberDAO {
 			cstmt.close();
 			con.close();
 
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	// hansol
+	public void changeInfo(String user, String pwd, String email, String birth) {
+		String sql = "{call update_info(?,?,?,?)}";
+		try {
+			System.out.println("회원정보 변경!");
+			con = dataFactory.getConnection();
+			CallableStatement cstmt = con.prepareCall(sql);
+			cstmt.setString(1, user);
+			cstmt.setString(2, pwd);
+			cstmt.setString(3, email);
+			cstmt.setString(4, birth);
+			cstmt.execute();
+			cstmt.close();
+			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
