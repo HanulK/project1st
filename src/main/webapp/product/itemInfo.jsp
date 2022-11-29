@@ -237,6 +237,7 @@
 				</div>
 			</article>
 		</div>
+		<%@ include file="../layout/recentItems.jsp"%>
 	</div>
 	<%@ include file="../layout/footer.jsp"%>
 	<script type="text/javascript" src="js/product/product.js"></script>
