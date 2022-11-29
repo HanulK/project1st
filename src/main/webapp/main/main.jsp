@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="css/main.css" rel="stylesheet" type="text/css" type="image/x-icon" sizes="16x16">
+<link href="css/main.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
 <link rel="icon" href="assets/img/favicon.ico" />
 <title>𝗚𝗟𝗬</title>
