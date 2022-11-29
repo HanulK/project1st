@@ -44,6 +44,15 @@ const nextBtn = document.querySelector(".slide_next_button");
 						<img class="slide1" src="http://www.thehandsome.com/medias/221121-A-rest-023.jpg?context=bWFzdGVyfGltYWdlc3w0MTMyMnxpbWFnZS9qcGVnfGltYWdlcy9oNTUvaDZjLzkzNTA4MjU0NzYxMjYuanBnfDQwN2I1NmVjZWM2MzlmYWIxYmU4MjExMDJiZWFjZWQwMmQzZGZkOWU0NGFmOWJjMGNhM2EwMzJmYmZlYjUwYzI">
 			</div>
 		</div>
+		<div class="video_main_wrap">
+			<div class="video_area1903">
+				<video src="http://s3.ap-northeast-2.amazonaws.com/cdn.thehandsome.com-kr/pc/0_main_video/221118_systemhomme/systemhomme_video.mp4" autoplay loop muted></video>
+			</div>
+			<div class="txt">
+				<p class="tit">Be in the Warmth</p>
+				<p class="s_t">계절을 감싸 안는 아우터<br>시스템옴므 2022 아우터 컬렉션</p>
+			</div>
+		</div>
 		<div class="main_container">
 			<div class="product_list1903">
 				<div class="nbe_cnt new">
@@ -95,6 +104,7 @@ const nextBtn = document.querySelector(".slide_next_button");
 						</ul>
 					</div>
 				</div>
+				
 			</div>
 		</div>
 	</div>

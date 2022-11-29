@@ -185,3 +185,41 @@ a{
 li{
 	float : left;
 }
+.video_main_wrap {
+    margin: 15px 0 40px 0;
+    background: #f4f4f4;
+    padding: 60px 0 32px 0;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+}
+.video_main_wrap .tit {
+    float: left;
+    color: #0b0b0b;
+    font-size: 34px;
+    width: 39.59%;
+    line-height: 36px;
+    margin-left: 3.39%;
+}
+.video_main_wrap .s_t {
+    float: right;
+    width: 49.32%;
+    font-size: 20px;
+    color: #494949;
+    line-height: 27px;
+    margin-right: 3.39%;
+}
+.video_main_wrap .txt {
+    display: inline-block;
+    margin: 35px 0 32px 0;
+    overflow: hidden;
+    width: 884px;
+    text-align: left;
+    font-family: Arial,'Apple SD Gothic Neo',sans-serif;
+}
+.video_area1903 {
+    display: block;
+    width: 884px;
+    height: auto;
+    margin: 0 auto;
+}
