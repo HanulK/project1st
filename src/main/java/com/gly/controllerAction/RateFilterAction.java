@@ -9,21 +9,21 @@ import javax.servlet.http.*;
 import com.gly.DAOs.*;
 import com.gly.VOs.*;
 
-public class RateListAction implements Action {
+public class RateFilterAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "mypage/rate.jsp";
+		String url = "gly?command=rate";
 
 		HttpSession session = request.getSession();
+
 		if (session.getAttribute("userInfo") != null) {
+			int rateScore = Integer.parseInt(request.getParameter("rateScore"));
+			System.out.println();
 			MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
-			System.out.println(loginUser.getM_id());
-			if (request.getAttribute("reviewList") == null) {
-				ReviewDAO dao = ReviewDAO.getInstance();
-				ArrayList<ReviewVO> reviewList = dao.listReview(loginUser.getM_id());
-				request.setAttribute("reviewList", reviewList);
-			}
+			ReviewDAO dao = ReviewDAO.getInstance();
+			ArrayList<ReviewVO> reviewList = dao.rateFilter(loginUser.getM_id(), rateScore);
+			request.setAttribute("reviewList", reviewList);
 		}
 		request.getRequestDispatcher(url).forward(request, response);
 	}

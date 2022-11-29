@@ -81,7 +81,9 @@ public class ActionFactory {
 			action = new ReviewWriteAction();
 		} else if (command.equals("rate_delete")) {
 			action = new RateDeleteAction();
-		}
+		}else if (command.equals("rate_filter")) { 			// 점수별 필터링
+			action = new RateFilterAction();
+		} 
 
 		/*
 		 * // admin if (command.equals("admin_login_form")) { action = new

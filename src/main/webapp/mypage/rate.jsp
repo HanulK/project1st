@@ -8,7 +8,7 @@
 <link href="css/mypage.css" rel="stylesheet" type="text/css">
 <link href="css/rate.css" rel="stylesheet" />
 <meta charset="UTF-8">
-<link rel="icon" href="assets/img/favicon.ico" />  
+<link rel="icon" href="assets/img/favicon.ico" />
 <title>𝗚𝗟𝗬</title>
 </head>
 <body>
@@ -40,6 +40,20 @@
 							<li>할인, 쿠폰 적용 후 실결제금액이 5,000원 이상인 상품에 한하여 지급됩니다.</li>
 							<li>통합회원의 경우, 구매금액에 따라 상품평 작성 추가 마일리지를 드립니다. (간편회원은 불가)</li>
 						</ul>
+					</div>
+					<!-- Filtering -->
+					<div class="search_wrap">
+						<form method="post" action="gly?command=rate_filter">
+							<legend>점수 별로 보기</legend>
+							<!-- <input type="number" id="rateScore" name="rateScore" min="1" max="5"> -->
+							<label><input type="radio" id="rateScore" name="rateScore" value="1" checked>1</label>
+							<label><input type="radio" id="rateScore" name="rateScore" value="2">2</label>
+							<label><input type="radio" id="rateScore" name="rateScore" value="3">3</label>
+							<label><input type="radio" id="rateScore" name="rateScore" value="4">4</label>
+							<label><input type="radio" id="rateScore" name="rateScore" value="5">5</label>
+							<input type="submit" name="scoreBtn" value="조회">
+						</form>
+
 					</div>
 					<!-- Table -->
 					<div class="review_tab_01">
