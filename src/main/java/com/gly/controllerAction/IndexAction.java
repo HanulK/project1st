@@ -21,7 +21,6 @@ public class IndexAction implements Action {
 		HttpSession session = request.getSession();
 		if (session.getAttribute("userInfo") != null) {
 			MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
-			System.out.println(loginUser.getM_id());
 		}
 		
 		request.setAttribute("newProductList", newProductList);

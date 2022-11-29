@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="../layout/header.jsp"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
@@ -53,8 +54,8 @@
 										<td>${orderVO.o_id}</td>
 										<td>${orderVO.p_name}</td>
 										<td>${orderVO.o_quantity}</td>
-										<td>₩ ${orderVO.p_price}</td>
-										<!-- <td>${orderVO.o_state}</td> -->
+										<td><span>₩<fmt:formatNumber value="${orderVO.p_price}" pattern="#,###"/></span>
+										</td>
 										<input type="hidden" value="${orderVO.p_id}" name="p_id">
 										<td><input value="상품평작성" type="submit" class="addBtn"/></td>
 									</tr>

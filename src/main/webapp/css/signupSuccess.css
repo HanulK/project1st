@@ -1,0 +1,40 @@
+.result-wrapper {
+	margin: 50px auto 100px auto;
+	text-align: center;
+}
+
+.result-wrapper h1 {
+	font-size: 40px;
+	margin: 20px;
+}
+
+.result-wrapper h2 {
+	font-weight: 300;
+	color: #808080;
+}
+
+.result-wrapper img {
+	width: 300px;
+}
+
+.btn-wrap {
+	width: fit-content;
+	margin: 30px auto;
+}
+
+.linkBtn {
+	width: 190px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #575757;
+	background: #fff;
+	border: 1px solid #ccc;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.login {
+	background: #4b4a4a;
+	color: #fff;
+}
