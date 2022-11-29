@@ -3,11 +3,6 @@
 textarea {
 	resize: none;
 }
-
-.bodywrap {
-    padding: 119px 0 45px 0;
-    height:1000px;
-}
 body{
 	margin:0;
 	padding:0;
@@ -15,8 +10,11 @@ body{
 a{
 	text-decoration:none;
 }
-.bodywrap{
-	padding: 119px 0 45px 0;
+.bodywrap:after, .bodywrap:before{
+	padding: 10px 45px ;
+	content: "";
+    display: block;
+    clear: both;
 }
 .bodywrap h3{
 	height: 89px;

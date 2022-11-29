@@ -42,9 +42,6 @@ const nextBtn = document.querySelector(".slide_next_button");
 						<img class="slide1" src="http://www.thehandsome.com/medias/221125-A-weeklypick-01.jpg?context=bWFzdGVyfGltYWdlc3w3NDQ4OXxpbWFnZS9qcGVnfGltYWdlcy9oN2IvaGM3LzkzNTE4ODMwMzA1NTguanBnfDE3YmNjOGFiYzhiNGFhOThmMzM3ZDYzOGM4OWYwNjUwM2I0Njg5Y2Q4MjA2ZWMyZWIwZDUyNDQ3M2VmNGU4ZGM">
 						<img class="slide1" src="http://www.thehandsome.com/medias/A-beautyholiday-09.jpg?context=bWFzdGVyfGltYWdlc3w5NzQzNXxpbWFnZS9qcGVnfGltYWdlcy9oYzUvaDZhLzkzNTIwNzcxODA5NTguanBnfGQzMWM4ZmVmNTAwZGE3NTI4ZTRhOGU5MzNhNzExOGZlZDdlZjJmZTQzMjM2MTNhYzJiOGRlMDQ5OTM1ZTM0YjA">
 						<img class="slide1" src="http://www.thehandsome.com/medias/221121-A-rest-023.jpg?context=bWFzdGVyfGltYWdlc3w0MTMyMnxpbWFnZS9qcGVnfGltYWdlcy9oNTUvaDZjLzkzNTA4MjU0NzYxMjYuanBnfDQwN2I1NmVjZWM2MzlmYWIxYmU4MjExMDJiZWFjZWQwMmQzZGZkOWU0NGFmOWJjMGNhM2EwMzJmYmZlYjUwYzI">
-						<div class="slide_prev_button slide_button">◀</div>
-      					<div class="slide_next_button slide_button">▶</div>
-      					<ul class="slide_pagination"></ul>
 			</div>
 		</div>
 		<div class="main_container">

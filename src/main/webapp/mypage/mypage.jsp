@@ -30,7 +30,7 @@
 						<table class="tbl_ltype">
 							<caption>상품평 리스트</caption>
 							<colgroup>
-								<col style="width: 50px">
+								<col style="width: 55px">
 								<col style="width: 120px">
 								<col style="width: 107px">
 								<col style="width: 108px">
@@ -64,14 +64,6 @@
 							</tbody>
 						</table>
 					</div>
-					<div class="title-wrap line mt50">
-						<h4>위시리스트</h4>
-					</div>
-					<ul class="wish-wrap">
-						<li><a> <img src="http://newmedia.thehandsome.com/IL/2C/FW/IL2C9TTO870N_BK_S01.jpg">
-								<span class="brand">LATT</span> <span class="tlt">울 블렌드 하이넥 탑</span>
-						</a> <span class="price">￦ 145,000</span></li>
-					</ul>
 				</div>
 			</div>
 		</div>
