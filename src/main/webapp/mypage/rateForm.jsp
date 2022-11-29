@@ -18,7 +18,7 @@
 				<h3 id="pageName">상품평 작성</h3>
 			</div>
 			<%@ include file="menu.jsp"%>
-			<form action ="gly?command=write_review" method="post">
+			<form action ="gly?command=write_review&p_id=${p_id}" method="post">
 				<fieldset>
 					<legend style="display: none;">상품평 작성</legend>
 					<div class="tblwrap">
@@ -37,6 +37,18 @@
 									<th scope="row"><strong class="reqd">*</strong><label for="inquiryTitle">상품평 제목</label></th>
 									<td>
 										<input type="text" id="inquiryTitle" name="title" title="input" style="width: 100%">
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><strong class="reqd">*</strong><label for="inquiryTitle">별점</label></th>
+									<td>
+										<select name="rate_num">
+											 <option value="1">⭐</option>
+											 <option value="2">⭐⭐</option>
+											 <option value="3">⭐⭐⭐</option>
+											 <option value="4">⭐⭐⭐⭐</option>
+											 <option value="5">⭐⭐⭐⭐⭐</option>
+										</select>
 									</td>
 								</tr>
 								<tr>

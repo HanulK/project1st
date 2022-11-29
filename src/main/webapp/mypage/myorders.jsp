@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
@@ -19,21 +20,6 @@
 			<div class="container">
 				<%@ include file="menu.jsp"%>
 				<div class="sub-container">
-					<div class="search_wrap">
-						<ul>
-							<li>
-								<p class="bul_sty01">
-									<label for="term">조회기간</label>
-								</p>
-								<div class="calendar_wrap mr5">
-									<input type="date" class="input_date hasDatepicker">
-									<div class="form_hyphen pl5">-</div>
-									<input type="date" class="input_date hasDatepicker">
-								</div> <input type="button" id="searchBtn" class="btn_search" value="조회하기">
-							</li>
-						</ul>
-
-					</div>
 					<div class="title_wrap mt50">
 						<h4>
 							상품 주문 목록
@@ -47,10 +33,10 @@
 							<colgroup class="interval1812">
 								<!-- 수정 181204 -->
 								<col style="width: 50px">
-								<col style="width: 120px">
-								<col style="width: 112px">
-								<col style="width: 89px">
-								<col style="width: 111px">
+								<col style="width: 150px">
+								<col style="width: 40px">
+								<col style="width: 70px">
+								<col style="width: 70px">
 							</colgroup>
 							<thead>
 								<tr>
@@ -67,8 +53,15 @@
 									<td>${orderVO.o_id}</td>
 									<td>${orderVO.p_name}</td>
 									<td>${orderVO.o_quantity}</td>
-									<td>${orderVO.o_state}</td>
-									<td>${orderVO.p_price}</td>
+									<td>
+										<span>₩ <fmt:formatNumber value="${orderVO.p_price}" pattern="#,###"/></span>
+									</td>
+									<c:set var="state" value="${orderVO.o_state}"></c:set>
+									<c:if test="${state==0}"><td>입금대기중</td></c:if>
+									<c:if test="${state==1}"><td>결제완료</td></c:if>
+									<c:if test="${state==2}"><td>배송준비중</td></c:if>
+									<c:if test="${state==4}"><td>배송중</td></c:if>
+									<c:if test="${state==5}"><td>배송완료</td></c:if>
 								</tr>
 								</c:forEach>
 							</tbody>

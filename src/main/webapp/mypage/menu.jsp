@@ -23,9 +23,6 @@
 			<dl>
 				<dt>나의 상품관리</dt>
 				<dd>
-					<a href="gly?command=wish_list_list" id="wish">위시리스트</a>
-				</dd>
-				<dd>
 					<a href="gly?command=cart_list" id="wish">쇼핑백</a>
 
 				</dd>
@@ -40,12 +37,6 @@
 				<dt>나의 활동관리</dt>
 				<dd>
 					<a href="gly?command=rate" id="rate">내 상품평</a>
-				</dd>
-				<dd>
-					<a href="gly?command=rate_form" id="qna">상품평 작성</a>
-				</dd>
-				<dd>
-					<a href="gly?command=qna_list" id="qna">상품 Q&A</a>
 				</dd>
 			</dl>
 		</div>

@@ -75,11 +75,15 @@ public class ActionFactory {
 			action = new ItemSearchAction();
 		} else if (command.equals("rate")) {
 			action = new RateListAction();
-		}else if (command.equals("rate_form")) {
+		} else if (command.equals("rate_form")) {
 			action = new RateFormAction();
-		}else if (command.equals("write_review")) {
+		} else if (command.equals("write_review")) {
 			action = new ReviewWriteAction();
-		}
+		} else if (command.equals("rate_delete")) {
+			action = new RateDeleteAction();
+		}else if (command.equals("rate_filter")) { 			// 점수별 필터링
+			action = new RateFilterAction();
+		} 
 
 		/*
 		 * // admin if (command.equals("admin_login_form")) { action = new

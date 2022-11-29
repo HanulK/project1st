@@ -17,6 +17,7 @@ public class RateFormAction  implements Action{
 		HttpSession session = request.getSession();
 		
 		int product_id = Integer.parseInt(request.getParameter("p_id"));
+		String p_id = request.getParameter("p_id");
 		System.out.println("product_id= "+ product_id);
 		if (session.getAttribute("userInfo") != null) {
 			
@@ -25,8 +26,8 @@ public class RateFormAction  implements Action{
 			int check = dao.checkProduct(product_id,loginUser.getM_id());
 			System.out.println(check);
 			if(check==1) url ="mypage/checkReview.jsp";
-			else url="mypage/rateForm.jsp";
-		}
+			else url="gly?command=write_review&p_id=" + p_id ;
+		}else url = "gly?command=login_form";
 		request.getRequestDispatcher(url).forward(request, response);  
 	}
 }

@@ -17,7 +17,7 @@ body {
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   overflow-y: visible !important;
-  font-family: "Malgun Gothic", "맑은 고딕", "Dotum", "돋움", AppleGothic, sans-serif;
+  font-family: "Malgun Gothic", "留묒� 怨좊뵓", "Dotum", "�룍��", AppleGothic, sans-serif;
   color: #555;
   font-size: 12px;
 }
@@ -60,7 +60,7 @@ input,
 textarea,
 button,
 select {
-  font-family: "Malgun Gothic", "맑은 고딕", "Dotum", "돋움", AppleGothic, sans-serif;
+  font-family: "Malgun Gothic", "留묒� 怨좊뵓", "Dotum", "�룍��", AppleGothic, sans-serif;
   color: #555;
   font-size: 12px;
 }
@@ -204,7 +204,7 @@ input[type="week"]:disabled {
   color: #222;
   font-size: 12px;
   clear: both;
-} /*화면깨짐 > clear:both 추가*/
+} /*�솕硫닿묠吏� > clear:both 異붽�*/
 .tbl_wtype1.none {
   border-top: 1px solid #dfdfdf;
 }
@@ -352,7 +352,7 @@ input[type="week"]:disabled {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* 라인수 */
+  -webkit-line-clamp: 2; /* �씪�씤�닔 */
   -webkit-box-orient: vertical;
   word-wrap: break-word;
 }
@@ -428,7 +428,6 @@ td .btn_wrap a:first-child {
   text-align: center;
 }
 .btn {
-  margin-left: 5px;
   display: inline-block;
   color: #363636;
   font-size: 12px;
@@ -472,8 +471,8 @@ td .btn_wrap a:first-child {
   border: 1px solid #ccc;
   background: #f5f5f5;
   font-size: 14px;
-} /*2017-05-25 추가*/
-/* e-gift Card List SOLDOUT btn 추가 18.12.19 */
+} /*2017-05-25 異붽�*/
+/* e-gift Card List SOLDOUT btn 異붽� 18.12.19 */
 .btn.add.soldout {
   padding: 8px 20px 10px;
   min-width: 140px;
@@ -637,7 +636,7 @@ td .btn_wrap a:first-child {
   padding-left: 70px;
   min-height: 60px;
   margin-bottom: 20px;
-} /* 쇼핑백 PROMOTION 혜택 사은품 이미지 추가 */ /*171116 min-height, margin-bottom추가*/
+} /* �눥�븨諛� PROMOTION �삙�깮 �궗���뭹 �씠誘몄� 異붽� */ /*171116 min-height, margin-bottom異붽�*/
 .bul_sty01_li.promotion_img li.img {
   position: absolute;
   left: 0;

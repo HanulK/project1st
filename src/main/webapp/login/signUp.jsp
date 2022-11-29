@@ -27,7 +27,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               <tr>
                 <th scope="row"><strong class="reqd">*</strong><label for="id">아이디</label></th>
                 <td>
-                  <input type="text" style="width: 150px" id="id" name="id" value="test"/>
+                  <input type="text" style="width: 150px" id="id" name="id"/>
+                  <input type="hidden" name="reid">
                   <input type="button" class="btn add_s" value="중복확인" />
                   <span class="check-msg" id="double-check">중복확인여부</span>
                 </td>
@@ -159,6 +160,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
       </form>
     </div>
     <%@ include file="../layout/footer.jsp"%>
-    <script type="text/javascript" src="js/login/member.js"></script>
+    <script type="text/javascript" src="js/signup/member.js"></script>
+    <script type="text/javascript" src="js/signup/idcheck.js"></script>
   </body>
 </html>

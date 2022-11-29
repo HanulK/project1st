@@ -44,25 +44,32 @@
 										</tr>
 										<tr>
 											<th scope="row" class="th_space"><label for="pwChangeBtn">비밀번호</label></th>
-											<td><input type="text" class="btn add_s" name="pwd"></td>
+											<td>
+												<input type="text" class="btn add_s" name="pwd">
+											</td>
 										</tr>
 										<tr>
 											<th scope="row"><strong class="reqd">*</strong> <label for="inforcvemail">E-mail(정보수신용)</label></th>
-											<td><input type="text" style="width: 120px" name="email" /> <span class="andmail">@</span>
-												<input type="text" id="emailDomain" style="width: 120px" name="email_domain"> <span
-												class="guide_comment" id="emailMsg"></span>
+											<td>
+												<input type="text" style="width: 120px" name="email" />
+												<span class="andmail">@</span>
+												<input type="text" id="emailDomain" style="width: 120px" name="email_domain">
+												<span class="guide_comment" id="emailMsg"></span>
 												<div class="wtype_comment pt10">
 													<span>정확한 이메일 정보를 입력하셔야 주문/배송 및 서비스정보를 받아 보실 수 있습니다.</span>
-												</div></td>
+												</div>
+											</td>
 										</tr>
 										<tr>
 											<th scope="row" class="th_space"><strong class="reqd">*</strong> 이름</th>
-											<td><input type="text" style="width: 120px" id="name" name="name"
-												value="${sessionScope.userInfo.m_name}" disabled></td>
+											<td>
+												<input type="text" style="width: 120px" id="name" name="name" value="${sessionScope.userInfo.m_name}" disabled>
+											</td>
 										</tr>
 										<tr>
 											<th scope="row" class="th_space"><strong class="reqd">*</strong> 생년월일</th>
-											<td><select style="width: 120px" id="selYear" title="년도" name="year">
+											<td>
+												<select style="width: 120px" id="selYear" title="년도" name="year">
 													<option value="2008" selected>2008</option>
 													<option value="2007">2007</option>
 													<option value="2006">2006</option>
@@ -132,7 +139,8 @@
 													<option value="1942">1942</option>
 													<option value="1941">1941</option>
 													<option value="1940">1940</option>
-											</select> <select style="width: 120px" id="selMonth" title="월" name="month">
+												</select>
+												<select style="width: 120px" id="selMonth" title="월" name="month">
 													<option value="01" selected>01</option>
 													<option value="02">02</option>
 													<option value="03">03</option>
@@ -145,7 +153,8 @@
 													<option value="10">10</option>
 													<option value="11">11</option>
 													<option value="12">12</option>
-											</select> <select style="width: 120px" id="selDay" title="일" name="day">
+												</select>
+												<select style="width: 120px" id="selDay" title="일" name="day">
 													<option value="01">01</option>
 													<option value="02">02</option>
 													<option value="03">03</option>
@@ -177,7 +186,8 @@
 													<option value="29">29</option>
 													<option value="30">30</option>
 													<option value="31">31</option>
-											</select></td>
+												</select>
+											</td>
 										</tr>
 									</tbody>
 								</table>
@@ -185,12 +195,12 @@
 							</div>
 						</fieldset>
 						<div class="btn_btwrap">
-							<input type="button" class="btn wt_ss" value="회원탈퇴" id="memberSecessionBtn"
-								onclick="location='gly?command=delete_member'">
+							<input type="button" class="btn wt_ss" value="회원탈퇴" id="memberSecessionBtn">
 						</div>
 						<div class="btnwrap mypage2">
+
 							<a href="gly?command=mypage"><input type="button" class="btn wt" value="취소"
-								id="cancleBtn"></a> <input type="submit" class="btn gray" value="변경사항 저장" id="saveBtn">
+								id="cancleBtn"></a> <input type="submit" class="btn gray" style="color:#fff;" value="변경사항 저장" id="saveBtn">
 						</div>
 					</form>
 				</div>
@@ -198,5 +208,6 @@
 		</div>
 	</div>
 	<%@ include file="../layout/footer.jsp"%>
+	<script type="text/javascript" src="js/mypage/deleteMember.js"></script>
 </body>
 </html>

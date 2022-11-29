@@ -14,9 +14,8 @@ public class OrderInsertAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url="mypage/myorders.jsp";
+		String url="gly?command=order_list";
 		
-		System.out.println("주문 경우 ??? : "+request.getParameter("orderCase").trim());
 		
 		HttpSession session = request.getSession();
 		if (session.getAttribute("userInfo") != null) {
@@ -31,11 +30,20 @@ public class OrderInsertAction implements Action {
 			int state = 1;
 			if (payWay == 2)
 				state = 0;
-				
 			
 			OrderDAO orderDAO = OrderDAO.getInstance();
-			orderDAO.insertOrder(loginUser.getM_id(), receiver, phone, address, payWay, state);
-			
+			if (request.getParameter("orderCase").trim().equals("multi")) {	// cart 상품 주문
+				orderDAO.insertOrder(loginUser.getM_id(), receiver, phone, address, payWay, state);
+			} else {	
+				// 바로 가기 상품 주문
+				String productName = request.getParameter("productName");
+				String productColor = request.getParameter("productColor");
+				int productSize = Integer.parseInt(request.getParameter("productSize"));
+				int quantity = Integer.parseInt(request.getParameter("quantity"));
+				orderDAO.insertOrder(loginUser.getM_id(), receiver, phone, address, payWay, state,
+						productName, productColor, productSize, quantity);
+			}
+				
 		} else {
 			url="login/not_login_state.jsp";
 		}
