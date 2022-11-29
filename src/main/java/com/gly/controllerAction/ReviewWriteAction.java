@@ -17,9 +17,6 @@ public class ReviewWriteAction implements Action {
 		String title =request.getParameter("title");
 		
 		int p_id = Integer.parseInt(request.getParameter("p_id").trim());
-		System.out.println(title);
-		System.out.println(p_id);
-		
 		HttpSession session = request.getSession();
 		
 		if (session.getAttribute("userInfo") != null) {
@@ -28,10 +25,10 @@ public class ReviewWriteAction implements Action {
 			if(title==null) {
 				url = "mypage/rateForm.jsp";
 				request.setAttribute("p_id", request.getParameter("p_id").trim());
-				
 			}else {
+				int rate_num = Integer.parseInt(request.getParameter("rate_num"));
 				String contents =request.getParameter("contents");
-				dao.writeReview(1,contents,p_id,loginUser.getM_id(),title);
+				dao.writeReview(rate_num,contents,p_id,loginUser.getM_id(),title);
 				url="mypage/checkWriteReview.jsp";
 			}
 		}else url = "gly?command=login_form";
