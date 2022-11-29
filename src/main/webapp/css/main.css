@@ -31,6 +31,27 @@ body{
         opacity: 1;
     }
 }
+.item_img{
+	overflow:hidden;
+}
+.item_img img{
+	transition:1s;
+}
+.item_box:hover img {
+	transform:scale(1.2);
+}
+ .slide_pagination {
+    /* layout */
+    display: flex;
+    gap: 5px;
+  
+    /* position */
+    position: absolute;
+    bottom: 0;
+    /* left:50%, translateX(-50%)를 하면 가로 가운데로 위치시킬 수 있다. */
+    left: 50%;
+    transform: translateX(-50%);
+  }
 .slide-bgimg{
 	position: absolute;
     top: 0;
@@ -81,7 +102,36 @@ li {
     overflow: hidden;
     z-index: 1;
 }
+.newItem:hover{
+	color:black;
+}
+.slide_button {
+  /* layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  /* position */
+  position: absolute;
+  /* 버튼이 중앙에 위치하게 하기위해 계산 */
+  top: calc(50% - 16px);
+
+  /* size */
+  width: 32px;
+  height: 32px;
+
+  /* style */
+  border-radius: 100%;
+  background-color: #cccc;
+  cursor: pointer;
+}
+
+.slide_prev_button {
+  left: 10px;
+}
+.slide_next_button {
+  right: 10px;
+}
 .swiper-slide {
     width: 234px;
     margin-right: 7px;
