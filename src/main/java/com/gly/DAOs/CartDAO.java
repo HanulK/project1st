@@ -3,9 +3,6 @@ package com.gly.DAOs;
 import java.sql.*;
 import java.util.*;
 
-import javax.naming.*;
-import javax.sql.*;
-
 import com.gly.VOs.*;
 
 import oracle.jdbc.*;
