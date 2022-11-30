@@ -155,4 +155,33 @@ public class ReviewDAO {
 		return reviewList;
 	}
 
+	public ArrayList<ReviewVO> productReviewList(int pid) {
+		ArrayList<ReviewVO> reviewList = new ArrayList<ReviewVO>();
+		String query = "{ ? = call RATE_MOD.productReviewList(?)}";
+		try {
+			con = dataFactory.getConnection();
+			CallableStatement cstmt = con.prepareCall(query);
+			cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+			cstmt.setInt(2, pid);
+			cstmt.execute();
+
+			ResultSet rset = (ResultSet) cstmt.getObject(1);
+			while (rset.next()) {
+				ReviewVO review = new ReviewVO();
+				review.setR_score(rset.getInt(1));
+				review.setR_text(rset.getString(2));
+				review.setR_indate(rset.getDate(3));
+				review.setP_id(rset.getInt(4));
+				review.setM_id(rset.getString(5).replaceAll("(?<=.{3}).", "*"));
+				review.setR_title(rset.getString(6));
+				reviewList.add(review);
+			}
+			rset.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return reviewList;
+	}
+
 }
