@@ -145,6 +145,21 @@ public class CartDAO {
 		}
 		return quantitys;
 	}
-	
+	public void update_qty(int v_p_d_id, String v_m_id, int v_qty) {
+		String query = "{call update_qty(?,?,?)}";
+		
+		try {
+			con = dataFactory.getConnection();
+			CallableStatement callableStatement = con.prepareCall(query);
+			callableStatement.setInt(1, v_p_d_id);
+			callableStatement.setString(2,v_m_id);
+			callableStatement.setInt(3,v_qty);
+			callableStatement.execute();
+			con.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		}
 	
  }
