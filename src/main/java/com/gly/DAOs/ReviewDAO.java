@@ -56,6 +56,8 @@ public class ReviewDAO {
 				review.setR_title(rset.getString(2));
 				review.setR_text(rset.getString(3));
 				review.setP_id(rset.getInt(4));
+				review.setP_name(rset.getString(5));
+				review.setP_src(rset.getString(6));
 				reviewList.add(review);
 			}
 			rset.close();
@@ -145,6 +147,8 @@ public class ReviewDAO {
 				review.setP_id(rset.getInt(4));
 				review.setM_id(rset.getString(5));
 				review.setR_title(rset.getString(6));
+				review.setP_src(rset.getString(7));
+				review.setP_name(rset.getString(8));
 				reviewList.add(review);
 			}
 			rset.close();

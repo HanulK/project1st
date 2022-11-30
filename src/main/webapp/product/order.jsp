@@ -21,7 +21,6 @@
     <div class="orderwrap">
 		<form action="gly?command=order_insert&orderCase=${orderCase}" method="post">
 			<div class="sub_container">
-				<div class="orderwrap">
 					<div class="float_left">
 						<div class="tblwrap">
 							<table>
@@ -183,7 +182,6 @@
 							</table>
 						</div>
 					</div>
-				</div>
 			</div>
 			<div class="float_right">
 				<div class="sum_box">

@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
 <link href="css/main.css" rel="stylesheet" type="text/css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <meta charset="UTF-8">
 <link rel="icon" href="assets/img/favicon.ico" />
@@ -37,10 +37,10 @@
          </div>
          <div class="side-btns">
             <div>
-               <span><i class="fas fa-angle-left"></i></span>
+               <span><i class="fas fa-angle-left" style="font-size:40px; color:white;"></i></span>
             </div>
             <div>
-               <span><i class="fas fa-angle-right"></i></span>
+               <span><i class="fas fa-angle-right" style="font-size:40px; color:white;"></i></span>
             </div>
          </div>
       </div>
@@ -78,7 +78,7 @@
                               <span class="item_img"> <img src="${imageVO.imgSrc}" alt="" class="respon_image" >
                               </span>
                               </a> <a href="#" class="item_info2"> <span class="brand">${imageVO.name}</span> <span
-                                 class="price">₩${imageVO.price}</span>
+                                 class="price"> ₩ <fmt:formatNumber value="${imageVO.price}" pattern="#,###"/> </span>
                               </a>
                            </div>
                         </li>
@@ -104,7 +104,7 @@
                                     <img src="${imageVO.imgSrc}" alt="" class="respon_image">
                                  </span>
                               </a> <a href="#" class="item_info2"> <span class="brand">${imageVO.name}</span> <span
-                                 class="price">₩${imageVO.price}</span>
+                                 class="price"> ₩ <fmt:formatNumber value="${imageVO.price}" pattern="#,###"/> </span>
                               </a>
                            </div>
                         </li>

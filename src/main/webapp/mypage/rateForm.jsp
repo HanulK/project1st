@@ -61,8 +61,8 @@
 						</table>
 					</div>
 					<div class="btnwrap mt40">
-						<input type="button" id="qnaCancle" value="취소하기" class="btn wt">
-						<input type="submit" id="qnaWriteSend" value="등록하기" class="btn gray mr0">
+						<input type="button" value="취소하기" class="btn wt">
+						<input type="submit" style="color:white;" value="등록하기" class="btn gray mr0">
 					</div>
 				</fieldset>
 			</form>

@@ -64,13 +64,15 @@
 	                내 상품평 목록
 	              </caption> -->
 									<colgroup>
-										<col style="width: 130px" />
-										<col style="width: 130px" />
-										<col />
-										<col style="width: 40px" />
+										<col style="width: 10px" />
+										<col style="width: 70px" />
+										<col style="width: 100px" />
+										<col style="width: 200px" />
+										<col style="width: 10px" />
 									</colgroup>
 									<thead>
 										<tr>
+											<th>상품이름</th>
 											<th scope="col">작성일</th>
 											<th scope="col">제목</th>
 											<th scope="col">내용</th>
@@ -81,12 +83,19 @@
 										<c:forEach items="${reviewList}" var="ReviewVO">
 											<tr>
 												<input type="hidden" value="${ReviewVO.p_id}" name="pid">
-												<td>${ReviewVO.r_indate}</td>
+												<td>
+													<a class="review_img" href="gly?command=product_detail&pid=${ReviewVO.p_id}">
+													<img  src="${ReviewVO.p_src}">
+													<div>${ReviewVO.p_name}</div>
+													</a>
+												</td>
+												<td>${ReviewVO.r_indate} </td>
 												<td>${ReviewVO.r_title}</td>
 												<td>${ReviewVO.r_text}</td>
 												<td>
 													<button class="addBtn" onclick="delete_review()">삭제</button>
 												</td>
+												
 											</tr>
 										</c:forEach>
 									</tbody>
