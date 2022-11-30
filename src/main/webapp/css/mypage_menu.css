@@ -32,6 +32,7 @@ h4 a {
 }
 .info_wrap dd {
     padding-left: 5px;
+    margin-bottom: 13px;
 }
 dd a {
     font-size: 11px;
