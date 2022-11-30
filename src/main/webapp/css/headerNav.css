@@ -65,11 +65,12 @@
 	font-size: 14px;
 	font-weight: 800;
 	padding: 0.5rem 1rem;
+	margin-right:20px;
 }
 
 .nav-category:hover {
 	border-width: 50%;
-	background-color: #d4d4d4;
+	border-bottom:3px solid #d4d4d4;
 }
 
 .nav-mymenu {
