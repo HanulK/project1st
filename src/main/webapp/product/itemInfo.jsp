@@ -13,6 +13,7 @@
 </head>
 <body>
 	<%@ include file="/layout/header.jsp"%>
+	<%@ include file="/layout/collectRecnetItem.jsp"%>
 	<div class="app-container">
 		<div class="info-wrap">
 			<!--이미지 -->
@@ -237,7 +238,7 @@
 				</div>
 			</article>
 		</div>
-		<%@ include file="../layout/recentItems.jsp"%>
+		<%@ include file="/layout/showRecentItem.jsp"%>
 	</div>
 	<%@ include file="../layout/footer.jsp"%>
 	<script type="text/javascript" src="js/product/product.js"></script>

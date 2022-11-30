@@ -11,6 +11,7 @@
 </head>
 <body>
 	<%@ include file="/layout/header.jsp"%>
+	<%@ include file="/layout/collectRecnetItem.jsp"%>
 	<div class="bodywrap">
 		<div class="big_banner1903">
 			<div class="swiper-container big_banner_inner">
@@ -39,12 +40,12 @@
 							<c:forEach items="${newProductList}" var="imageVO">
 								<li>
 									<div class="item_box">
-										<a href="gly?command=product_detail&pid=${imageVO.id}"> <span class="item_img"> <img src="${imageVO.imgSrc}" alt=""
-												class="respon_image">
+										<a href="gly?command=product_detail&pid=${imageVO.id}" onclick="javascript:moveItemPage(${imageVO.id},'${imageVO.name}','${imageVO.imgSrc}',${imageVO.price}); return false;" >
+										<span class="item_img"> <img src="${imageVO.imgSrc}" alt="" class="respon_image" >
 										</span>
 										</a> <a href="#" class="item_info2"> <span class="brand">${imageVO.name}</span> <span
 											class="price">₩${imageVO.price}</span>
-										</a>
+										</a> <%-- <a href="#" onclick="javascript:moveItemPage(${imageVO.id},'${imageVO.imgSrc}'); return false;" ></a> --%>
 									</div>
 								</li>
 							</c:forEach>
@@ -64,7 +65,7 @@
 							<c:forEach items="${bestProductList}" var="imageVO">
 								<li>
 									<div class="item_box">
-										<a href="gly?command=product_detail&pid=${imageVO.id}"> <span class="item_img"> <img src="${imageVO.imgSrc}" alt=""  class="respon_image">
+										<a href="gly?command=product_detail&pid=${imageVO.id}" onclick="javascript:moveItemPage(${imageVO.id},'${imageVO.name}','${imageVO.imgSrc}',${imageVO.price}); return false;" > <span class="item_img"> <img src="${imageVO.imgSrc}" alt=""  class="respon_image">
 										</span>
 										</a> <a href="#" class="item_info2"> <span class="brand">${imageVO.name}</span> <span
 											class="price">₩${imageVO.price}</span>
@@ -77,6 +78,7 @@
 				</div>
 			</div>
 		</div>
+		<%@ include file="/layout/showRecentItem.jsp"%>
 	</div>
 </body>
 <%@ include file="/layout/footer.jsp"%>
