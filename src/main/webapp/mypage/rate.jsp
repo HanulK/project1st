@@ -64,10 +64,10 @@
 	                내 상품평 목록
 	              </caption> -->
 									<colgroup>
-										<col style="width: 100px" />
-										<col style="width: 150px" />
-										<col style="width: 200px" />
-										<col style="width: 50px" />
+										<col style="width: 130px" />
+										<col style="width: 130px" />
+										<col />
+										<col style="width: 40px" />
 									</colgroup>
 									<thead>
 										<tr>
@@ -85,7 +85,7 @@
 												<td>${ReviewVO.r_title}</td>
 												<td>${ReviewVO.r_text}</td>
 												<td>
-													<button class="btn add_ss" onclick="delete_review()">삭제</button>
+													<button class="addBtn" onclick="delete_review()">삭제</button>
 												</td>
 											</tr>
 										</c:forEach>
