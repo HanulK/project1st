@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
@@ -78,7 +79,7 @@
                               <span class="item_img"> <img src="${imageVO.imgSrc}" alt="" class="respon_image" >
                               </span>
                               </a> <a href="#" class="item_info2"> <span class="brand">${imageVO.name}</span> <span
-                                 class="price">₩${imageVO.price}</span>
+                                 class="price"> ₩ <fmt:formatNumber value="${imageVO.price}" pattern="#,###"/> </span>
                               </a>
                            </div>
                         </li>
@@ -104,7 +105,7 @@
                                     <img src="${imageVO.imgSrc}" alt="" class="respon_image">
                                  </span>
                               </a> <a href="#" class="item_info2"> <span class="brand">${imageVO.name}</span> <span
-                                 class="price">₩${imageVO.price}</span>
+                                 class="price"> ₩ <fmt:formatNumber value="${imageVO.price}" pattern="#,###"/> </span>
                               </a>
                            </div>
                         </li>
