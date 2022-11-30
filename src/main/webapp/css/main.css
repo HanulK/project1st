@@ -224,10 +224,14 @@ li{
     height: auto;
     margin: 0 auto;
 }
-.edt_banner_wrap1903 .edt_banner_inner2 {
+.edt_banner_inner2 {
+    overflow: hidden;
     margin-top: 80px;
 }
-.edt_banner li {
+.edt_banner_inner2 .edt_banner li:first-child {
+    margin-left: 0;
+}
+.edt_banner_inner2 .edt_banner li {
     width: 31.16%;
     float: left;
     margin-left: 3.23%;
@@ -236,17 +240,16 @@ li{
 .main_container a {
     display: block;
 }
+.edt_banner li img {
+    width: 100%;
+}
 .main_container a img {
     display: inline-block;
     vertical-align: middle;
 }
-.edt_banner li:first-child {
-    margin-left: 0;
-}
-.edt_banner .ban_txt_wrap {
+ .ban_txt_wrap {
     left: 26px;
     bottom: 29px;
-    position: absolute;
 }
 .sticker {
     color: #fff;
@@ -254,14 +257,26 @@ li{
     font-size: 14px;
     padding: 2px 5px;
     font-family: Arial,'Apple SD Gothic Neo',sans-serif;
-    background: #e16a6a;
 }
 .s_title {
     font-size: 18px;
     letter-spacing: -1px;
     line-height: 1.1em;
 }
-.edt_banner_wrap1903 .edt_banner_inner2 .edt_banner .ban_txt_wrap .title {
+.title {
     font-size: 30px;
     letter-spacing: -1px;
+    line-height: 1.1em;
+    margin-top: 7px;
+}
+.ban_txt_wrap {
+    left: 26px;
+    bottom: 29px;
+    position: absolute;
+}
+.edt_banner li img {
+    width: 100%;
+}
+.swiper-wrapper li{
+	margin-left: 3.23%;
 }
