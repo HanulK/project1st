@@ -11,8 +11,12 @@
 <link href="css/layout.css" rel="stylesheet" />
 <link href="css/common2.css" rel="stylesheet" />
 <link href="css/mypage.css" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>:)GLY</title>
+
+</script>
+
 </head>
 <body>
    <div class="bodywrap">
@@ -79,8 +83,8 @@
                                     </td>
                                     <td class="al_middle">
                                        <div>
-                                          <input readonly type="number" min="1" value="${cartVO.c_quantity}" 
-                                             name="quantity" class="cart-qty"/>
+                                          	<input readonly type="number" min="1" value="${cartVO.c_quantity}" 
+                                             name="quantity" class="cart-qty" id="qty"/>
                                        </div></td>
                                     <td class="al_middle">
                                        <!-- Price -->
