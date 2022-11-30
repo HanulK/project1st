@@ -17,6 +17,7 @@
 }
 .float_left {
     float: left;
+    width:600px;
 }
 .tblwrap {
     position: relative;
@@ -185,7 +186,7 @@ li {
 .float_right {
     float: right;
     position: absolute;
-	left: 1100px;
+	left: 1000px;
     top: 336px;
     width: 308px;
 }
