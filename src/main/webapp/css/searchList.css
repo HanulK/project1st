@@ -89,14 +89,13 @@
 .items_list li .item_box .item_info2 .brand,
 .matches_list .item_info2 .brand {
   letter-spacing: 1px;
-  font-family: "whitneyBold", "Malgun Gothic", "맑은 고딕";
+  font-family: "whitneyBold", "Malgun Gothic", "留묒� 怨좊뵓";
   font-size: 11px;
   color: #363636;
 }
 .items_list li .item_box .item_info2 .title {
   padding: 5px 10px;
   height: 20px;
-  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -169,7 +168,7 @@ a:hover {
   color: #727272;
 }
 
-/* 검색 */
+/* 寃��깋 */
 .br_result_search .result_inner_top_right input[type="search"] {
   width: 250px;
   height: 25px;

@@ -31,10 +31,10 @@
 						<table class="tbl_ltype">
 							<caption>상품평 리스트</caption>
 							<colgroup>
+								<col style="width: 50px">
+								<col style="width: 180px">
+								<col style="width: 30px">
 								<col style="width: 80px">
-								<col>
-								<col style="width: 80px">
-								<col style="width: 130px">
 								<col style="width: 80px">
 							</colgroup>
 							<thead>
