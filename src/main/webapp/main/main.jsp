@@ -5,50 +5,46 @@
 <html>
 <head>
 <link href="css/main.css" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <meta charset="UTF-8">
 <link rel="icon" href="assets/img/favicon.ico" />
 <title>𝗚𝗟𝗬</title>
+
 </head>
 <body>
-	<script>
-		const prevBtn = document.querySelector(".slide_prev_button");
-		const nextBtn = document.querySelector(".slide_next_button");
-		var index = 0; //이미지에 접근하는 인덱스
-		window.onload = function() {
-			slideShow();
-		}
-
-		function slideShow() {
-			var i;
-			var x = document.getElementsByClassName("slide1"); //slide1에 대한 dom 참조
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none"; //처음에 전부 display를 none으로 한다.
-			}
-			index++;
-			if (index > x.length) {
-				index = 1; //인덱스가 초과되면 1로 변경
-			}
-			x[index - 1].style.display = "block"; //해당 인덱스는 block으로
-			setTimeout(slideShow, 4000); //함수를 4초마다 호출
-
-		}
-	</script>
 	<%@ include file="/layout/header.jsp"%>
 	<div class="bodywrap">
-		<div class="big_banner1903">
-			<div class="swiper-container big_banner_inner">
-				<img class="slide1"
-					src="http://www.thehandsome.com/medias/221111-A-weeklypick-02.jpg?context=bWFzdGVyfGltYWdlc3w2ODYxNHxpbWFnZS9qcGVnfGltYWdlcy9oYjQvaDcyLzkzNDg2MTI0NTY0NzguanBnfGZiNjRkZTdmNWQwMGViYzU5NDg1ZGUwNDVmY2JiNmFiZTgzMGNkYzc3YWZlN2EwM2UzOWY4OTVjM2VhNzU5MTg">
-				<img class="slide1"
-					src="http://www.thehandsome.com/medias/221123-A-outer-08.jpg?context=bWFzdGVyfGltYWdlc3w1OTEzM3xpbWFnZS9qcGVnfGltYWdlcy9oMWYvaDJlLzkzNTEyOTk3NjAxNTguanBnfDNkNzU0OWQyYzg5NmUzYmQ5YWQ2N2FhMTBlMjlkYzFlY2EyZWE4Y2U3YmU0YmY4MDRkMTFiZjMyY2IwNzgyMGU">
-				<img class="slide1"
-					src="http://www.thehandsome.com/medias/221125-A-weeklypick-01.jpg?context=bWFzdGVyfGltYWdlc3w3NDQ4OXxpbWFnZS9qcGVnfGltYWdlcy9oN2IvaGM3LzkzNTE4ODMwMzA1NTguanBnfDE3YmNjOGFiYzhiNGFhOThmMzM3ZDYzOGM4OWYwNjUwM2I0Njg5Y2Q4MjA2ZWMyZWIwZDUyNDQ3M2VmNGU4ZGM">
-				<img class="slide1"
-					src="http://www.thehandsome.com/medias/A-beautyholiday-09.jpg?context=bWFzdGVyfGltYWdlc3w5NzQzNXxpbWFnZS9qcGVnfGltYWdlcy9oYzUvaDZhLzkzNTIwNzcxODA5NTguanBnfGQzMWM4ZmVmNTAwZGE3NTI4ZTRhOGU5MzNhNzExOGZlZDdlZjJmZTQzMjM2MTNhYzJiOGRlMDQ5OTM1ZTM0YjA">
-				<img class="slide1"
-					src="http://www.thehandsome.com/medias/221121-A-rest-023.jpg?context=bWFzdGVyfGltYWdlc3w0MTMyMnxpbWFnZS9qcGVnfGltYWdlcy9oNTUvaDZjLzkzNTA4MjU0NzYxMjYuanBnfDQwN2I1NmVjZWM2MzlmYWIxYmU4MjExMDJiZWFjZWQwMmQzZGZkOWU0NGFmOWJjMGNhM2EwMzJmYmZlYjUwYzI">
+		<div class="slider-1">
+			<div class="slides">
+				<div class="active"
+					style="background-image: url(http://www.thehandsome.com/medias/221111-A-weeklypick-02.jpg?context=bWFzdGVyfGltYWdlc3w2ODYxNHxpbWFnZS9qcGVnfGltYWdlcy9oYjQvaDcyLzkzNDg2MTI0NTY0NzguanBnfGZiNjRkZTdmNWQwMGViYzU5NDg1ZGUwNDVmY2JiNmFiZTgzMGNkYzc3YWZlN2EwM2UzOWY4OTVjM2VhNzU5MTg);"></div>
+				<div
+					style="background-image: url(http://www.thehandsome.com/medias/221123-A-outer-08.jpg?context=bWFzdGVyfGltYWdlc3w1OTEzM3xpbWFnZS9qcGVnfGltYWdlcy9oMWYvaDJlLzkzNTEyOTk3NjAxNTguanBnfDNkNzU0OWQyYzg5NmUzYmQ5YWQ2N2FhMTBlMjlkYzFlY2EyZWE4Y2U3YmU0YmY4MDRkMTFiZjMyY2IwNzgyMGU);"></div>
+				<div
+					style="background-image: url(http://www.thehandsome.com/medias/221125-A-weeklypick-01.jpg?context=bWFzdGVyfGltYWdlc3w3NDQ4OXxpbWFnZS9qcGVnfGltYWdlcy9oN2IvaGM3LzkzNTE4ODMwMzA1NTguanBnfDE3YmNjOGFiYzhiNGFhOThmMzM3ZDYzOGM4OWYwNjUwM2I0Njg5Y2Q4MjA2ZWMyZWIwZDUyNDQ3M2VmNGU4ZGM);"></div>
+				<div
+					style="background-image: url(http://www.thehandsome.com/medias/A-beautyholiday-09.jpg?context=bWFzdGVyfGltYWdlc3w5NzQzNXxpbWFnZS9qcGVnfGltYWdlcy9oYzUvaDZhLzkzNTIwNzcxODA5NTguanBnfGQzMWM4ZmVmNTAwZGE3NTI4ZTRhOGU5MzNhNzExOGZlZDdlZjJmZTQzMjM2MTNhYzJiOGRlMDQ5OTM1ZTM0YjA);"></div>
+				<div
+					style="background-image: url(http://www.thehandsome.com/medias/221121-A-rest-023.jpg?context=bWFzdGVyfGltYWdlc3w0MTMyMnxpbWFnZS9qcGVnfGltYWdlcy9oNTUvaDZjLzkzNTA4MjU0NzYxMjYuanBnfDQwN2I1NmVjZWM2MzlmYWIxYmU4MjExMDJiZWFjZWQwMmQzZGZkOWU0NGFmOWJjMGNhM2EwMzJmYmZlYjUwYzI);"></div>
+			</div>
+			<div class="page-btns">
+				<div class="active"></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div class="side-btns">
+				<div>
+					<span><i class="fas fa-angle-left"></i></span>
+				</div>
+				<div>
+					<span><i class="fas fa-angle-right"></i></span>
+				</div>
 			</div>
 		</div>
+
 		<div class="video_main_wrap">
 			<div class="video_area1903">
 				<video
@@ -120,8 +116,7 @@
 				<div class="edt_banner_inner2">
 					<div class="edt_banner">
 						<ul>
-							<li><a href="/ko/magazine/exhibitions/8813526046392"
-								onclick="GA_main('exhibitionBanner',$(this));"> <img
+							<li><img
 									src="http://www.thehandsome.com/medias/221128-C-bally-02.jpg?context=bWFzdGVyfGltYWdlc3wyMTYzN3xpbWFnZS9qcGVnfGltYWdlcy9oMjAvaDI5LzkzNTIzNjc4NjU4ODYuanBnfDliMzJhM2YwOWI5YzgyMGJlODhlMGUzZTVjMjE0NTYzNmFhMjVjYjMxYTM4ZDgyMjNlOTA1MGFhNTAxOGMwZWY"
 									alt="기획전 배너">
 									<div class="ban_txt_wrap">
@@ -133,9 +128,8 @@
 											<font color="#ffffff">BALLY WINTER</font>
 										</p>
 									</div>
-							</a></li>
-							<li><a href="/ko/magazine/exhibitions/8813525980856"
-								onclick="GA_main('exhibitionBanner',$(this));"> <img
+							</li>
+							<li><img
 									src="http://www.thehandsome.com/medias/221118-C-latt.jpg?context=bWFzdGVyfGltYWdlc3w4NzUxN3xpbWFnZS9qcGVnfGltYWdlcy9oNGYvaDY1LzkzNTAyMTI1ODM0NTQuanBnfDRiOTg0NmQ4ODA5N2UxM2E5ZjA2NGIzYzczNzBjOGY3MDA0NDZmNmU0MTllZTliNjZjODNkMjU4OWRiN2NjMjQ"
 									alt="기획전 배너">
 									<div class="ban_txt_wrap">
@@ -147,9 +141,8 @@
 											<font color="#FFFFFF">LÄTT X YK JEONG</font>
 										</p>
 									</div>
-							</a></li>
-							<li><a href="/ko/magazine/exhibitions/8813526144696"
-								onclick="GA_main('exhibitionBanner',$(this));"> <img
+							</li>
+							<li> <img
 									src="http://www.thehandsome.com/medias/221118-c-timehomme.jpg?context=bWFzdGVyfGltYWdlc3w1MTgwNHxpbWFnZS9qcGVnfGltYWdlcy9oNGEvaGEyLzkzNTAyMTI5NzY2NzAuanBnfDlkNzhlMTE4YTI3MDBjNzhhNTI5MTVlMDIzMzdjYjA4MTU0YjFhY2MyNWZiNGJmM2U5NTU5ZTEyNzE2MDMzMGU"
 									alt="기획전 배너">
 									<div class="ban_txt_wrap">
@@ -161,7 +154,7 @@
 											<font color="#ffffff">겨울을 준비하는 자세</font>
 										</p>
 									</div>
-							</a></li>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -169,5 +162,62 @@
 		</div>
 	</div>
 	<%@ include file="/layout/footer.jsp"%>
+<script>
+console.clear();
+
+//기존 버튼형 슬라이더
+$('.slider-1 > .page-btns > div').click(function(){
+ var $this = $(this);
+ var index = $this.index();
+ 
+ $this.addClass('active');
+ $this.siblings('.active').removeClass('active');
+ 
+ var $slider = $this.parent().parent();
+ 
+ var $current = $slider.find(' > .slides > div.active');
+ 
+ var $post = $slider.find(' > .slides > div').eq(index);
+ 
+ $current.removeClass('active');
+ $post.addClass('active');
+});
+
+//좌/우 버튼 추가 슬라이더
+$('.slider-1 > .side-btns > div').click(function(){
+ var $this = $(this);
+ var $slider = $this.closest('.slider-1');
+ 
+ var index = $this.index();
+ var isLeft = index == 0;
+ 
+ var $current = $slider.find(' > .page-btns > div.active');
+ var $post;
+ 
+ if ( isLeft ){
+     $post = $current.prev();
+ }
+ else {
+     $post = $current.next();
+ };
+ 
+ if ( $post.length == 0 ){
+     if ( isLeft ){
+         $post = $slider.find(' > .page-btns > div:last-child');
+     }
+     else {
+         $post = $slider.find(' > .page-btns > div:first-child');
+     }
+ };
+ 
+ $post.click();
+});
+
+setInterval(function(){
+ $('.slider-1 > .side-btns > div').eq(1).click();
+}, 3000);
+
+
+</script>
 </body>
 </html>
