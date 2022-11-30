@@ -78,17 +78,6 @@
                                        </div> <!-- //pt_list_all-->
                                     </td>
                                     <td class="al_middle">
-<!--                                     	<input type="hidden"
-                                       name="entryNumber" value="0" /> <input type="hidden"
-                                       name="productCode" value="O22CAWOT283W_LA_82" /> <input
-                                       type="hidden" name="initialQuantity" value="1" /> <input
-                                       type="hidden" name="chgProductCode" value="" /> <input
-                                       type="hidden" name="curSize" value="82" /> <input
-                                       type="hidden" name="storeId" value="" /> <input
-                                       type="hidden" name="storePickupDate" value="" /> <input
-                                       type="hidden" name="deliveryKind" value="" /> <input
-                                       type="hidden" name="cartDivision" value="" /> qty_sel -->
-
                                        <div>
                                           <input readonly type="number" min="1" value="${cartVO.c_quantity}" 
                                              name="quantity" class="cart-qty"/>

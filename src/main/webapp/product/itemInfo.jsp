@@ -69,7 +69,7 @@
 						</div>
 						<div class="btn-wrap">
 							<input type="submit" value="장바구니" class="submitBtn" onclick="javascript: form.action='gly?command=cart_insert';">
-							<input type="submit" value="바로주문" class="submitBtn buyBtn" onclick="javascript: form.action='gly?command=order_detail&num=1';">
+							<input type="submit" value="바로주문" class="submitBtn buyBtn" onclick="javascript: form.action='gly?command=order_detail&num=0';">
 						</div>
 					</form>
 					<!-- 하단 세부 사항-->
