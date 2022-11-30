@@ -14,7 +14,6 @@ import oracle.jdbc.OracleTypes;
 
 public class ImageDAO {
 	private Connection con;
-	private PreparedStatement pstmt;
 	private DataSource dataFactory;
 	
 	private static ImageDAO instance = new ImageDAO();
