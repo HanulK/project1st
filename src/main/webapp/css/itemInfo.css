@@ -159,10 +159,10 @@
 }
 
 .qty_sel input {
-	width:20px;
+	width: 20px;
 	height: 24px;
 	line-height: 24px;
-	font-size:14px;
+	font-size: 14px;
 	border: none;
 	text-align: center;
 	text-indent: 0;
@@ -181,12 +181,13 @@
 }
 
 #numOption button {
-	width:20px;
-	height:20px;
-	line-height:20px;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
 }
-#numOption input:active{
-	border:none;
+
+#numOption input:active {
+	border: none;
 }
 
 .item_option_box li {
@@ -235,4 +236,8 @@
 .price span {
 	font-size: 22px;
 	color: #363636;
+}
+
+#modal_open_btn {
+	font-size: 14px;
 }
