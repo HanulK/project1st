@@ -10,17 +10,9 @@ import com.gly.VOs.*;
 
 import oracle.jdbc.*;
 
-//import java.sql.Connection;
-//import java.sql.PreparedStatement;
-//import java.sql.ResultSet;
-//
-//import javax.naming.Context;
-//import javax.naming.InitialContext;
-//import javax.sql.DataSource;
 
 public class ReviewDAO {
 	private Connection con;
-	private PreparedStatement pstmt;
 	private DataSource dataFactory;
 
 	private static ReviewDAO instance = new ReviewDAO();
@@ -39,6 +31,7 @@ public class ReviewDAO {
 		}
 	};
 
+	// writer : hansol - 
 	public ArrayList<ReviewVO> listReview(String id) {
 		ArrayList<ReviewVO> reviewList = new ArrayList<ReviewVO>();
 		String query = "{ call rate(?,?)}";
@@ -68,6 +61,7 @@ public class ReviewDAO {
 		return reviewList;
 	}
 
+	// writer : hansol - 
 	public void writeReview(int score, String text, int p_id, String user, String title) {
 		String sql = "{call write_review(?,?,?,?,?)}";
 		try {
@@ -88,6 +82,7 @@ public class ReviewDAO {
 		}
 	}
 
+	// writer : hansol - 
 	public int checkProduct(int product_id, String user) {
 		int result = -1;
 		String sql = "{ ? =call checkProduct(?,?)}";
@@ -109,6 +104,7 @@ public class ReviewDAO {
 		return result;
 	}
 
+	// writer : seyoung - 
 	public void deleteReview(int pid, String mid) {
 		String sql = " { call RATE_MOD.deleteReview(?, ?) } ";
 		try {
@@ -127,6 +123,7 @@ public class ReviewDAO {
 		}
 	}
 
+	// writer : seyoung - 
 	public ArrayList<ReviewVO> rateFilter(String id, int rateScore) {
 		ArrayList<ReviewVO> reviewList = new ArrayList<ReviewVO>();
 		String query = "{ ? = call RATE_MOD.rateFilter(?,?)}";

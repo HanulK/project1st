@@ -27,10 +27,10 @@ public class OrderDAO {
 		}
 	};
 
+	// writer : hansol - 
 	public ArrayList<OrderVO> orderList(String id) {
 		ArrayList<OrderVO> orderList = new ArrayList<OrderVO>();
 		String sql = "{call order_list(?,?)}";
-		int s=-1;
 		try {
 			con = dataFactory.getConnection();
 			CallableStatement cstmt = con.prepareCall(sql);
@@ -57,6 +57,7 @@ public class OrderDAO {
 		return orderList;
 	}
 	
+	// writer : hansol - 
 	public ArrayList<OrderVO> recentOrderList(String id) {
 		ArrayList<OrderVO> orderList = new ArrayList<OrderVO>();
 		String sql ="{call recent_order(?,?)}";
@@ -85,6 +86,7 @@ public class OrderDAO {
 		return orderList;
 	}
 	
+	// writer : hanul - 
 	public void insertOrder(String m_id, String receiver, String phone, String address, int payWay, int state) {
 		String query = "{ call ord.add_order(?, ?, ?, ?, ?, ?)}";
 		try {
@@ -103,6 +105,7 @@ public class OrderDAO {
 		}
 	}
 	
+	// writer : hanul - 
 	public void insertOrder(String m_id, String receiver, String phone, String address, int payWay, int state,
 			String productName, String productColor, int productSize, int quantity) {
 		String query = "{ call ord.add_order(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}";

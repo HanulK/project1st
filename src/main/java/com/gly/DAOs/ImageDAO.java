@@ -29,6 +29,7 @@ public class ImageDAO {
 		}
 	};
 	
+	// writer : hanul - 
 	public ArrayList<ImageVO> getDetailImagVO(int p_id) {
 		ArrayList<ImageVO> imgSrcs = new ArrayList<ImageVO>();
 		// 상품 상세 이미지 
@@ -59,6 +60,7 @@ public class ImageDAO {
 		return imgSrcs;
 	}
 	
+	// writer : hanul - 
 	public String getSubImageSrc(int p_id) {
 		String imgSrc = null;
 		String query = "{ ? = call get_small_imgsrc(?) }";

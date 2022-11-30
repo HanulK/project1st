@@ -29,7 +29,7 @@ public class CartDAO {
 		}
 	}
 
-//writer : juhye - 카트테이블에 있는 값 리스트로 가져오기
+    // writer : juhye - 카트테이블에 있는 값 리스트로 가져오기
 	public ArrayList<CartVO> listCart(String v_id) {
 		ArrayList<CartVO> cartList = new ArrayList<CartVO>();
 		String query = "{call get_cart_user(?,?)}";
@@ -62,6 +62,7 @@ public class CartDAO {
 		return cartList;
 	}
 	
+	// writer : juhye - 
 	public int getpdid(int v_p_size, String v_p_color, int v_p_id) {
 		String query = "{ ? = call check_p_d_id(?,?,?)}";
 		int p_d_id = 0;
@@ -84,6 +85,7 @@ public class CartDAO {
 		return p_d_id;	
 	}
 	
+	// writer : juhye - 
 	public void insertcart(int in_quantity, String in_m_id, int in_p_d_id) {
 		String query = "{call insertcart(?,?,?)}";
 		
@@ -100,6 +102,8 @@ public class CartDAO {
 			}
 
 		}
+	
+	// writer : juhye - 
 	public void deletecart(String del_m_id, int del_p_d_id) {
 		String query = "{call deletecart(?,?)}";
 		
@@ -115,6 +119,8 @@ public class CartDAO {
 			}
 
 		}
+	
+	// writer : hanul - 각 회원의 카트에 담긴 수량 가져오기
 	public ArrayList<Integer> getQuantityOfCartForEach(String m_id) {
 		ArrayList<Integer> quantitys = new ArrayList<Integer>();
 		String query = "{ call get_quantity_of_cart_for_each(?, ?)}";
@@ -122,13 +128,12 @@ public class CartDAO {
 		try {
 			con = dataFactory.getConnection();
 			CallableStatement callableStatement = con.prepareCall(query);
-			callableStatement.setString(1, m_id);			// p_kind 
+			callableStatement.setString(1, m_id);
 			callableStatement.registerOutParameter(2, OracleTypes.CURSOR);
 			callableStatement.execute();
 
 			ResultSet rset = (ResultSet) callableStatement.getObject(2);
 
-			//p.p_id, p.p_name, p.p_price, i.img_src
 			while (rset.next()) {
 				quantitys.add(rset.getInt("c_quantity"));
 			}
