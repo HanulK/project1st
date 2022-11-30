@@ -13,13 +13,14 @@
 </head>
 <body>
 	<%@ include file="/layout/header.jsp"%>
-	<h3 class="cnts_title">
-		<span>배송&결제정보 입력</span>
-    </h3>
+	<div style="margin-top:100px;">
+		<h3 class="cnts_title">
+			<span>배송&결제정보 입력</span>
+	    </h3>
+    </div>
     <div class="orderwrap">
 		<form action="gly?command=order_insert&orderCase=${orderCase}" method="post">
 			<div class="sub_container">
-				<div class="orderwrap">
 					<div class="float_left">
 						<div class="tblwrap">
 							<table>
@@ -181,9 +182,8 @@
 							</table>
 						</div>
 					</div>
-				</div>
 			</div>
-			<div class="float_right" style="position: absolute; left: 680px; top: 336px;">
+			<div class="float_right">
 				<div class="sum_box">
 					<div>
 						<p class="tlt">최종 결제 금액</p> <hr>

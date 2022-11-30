@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="/layout/header.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
@@ -8,7 +7,7 @@
 <%-- writer:juhye --%>
 <html>
 <head>
-<link href="css/ shoppingbag.css" rel="stylesheet" />
+<link href="css/shoppingbag.css" rel="stylesheet" />
 <link href="css/layout.css" rel="stylesheet" />
 <link href="css/common2.css" rel="stylesheet" />
 <link href="css/mypage.css" rel="stylesheet" type="text/css">
@@ -78,20 +77,10 @@
                                           </div>
                                        </div> <!-- //pt_list_all-->
                                     </td>
-                                    <td class="al_middle"><input type="hidden"
-                                       name="entryNumber" value="0" /> <input type="hidden"
-                                       name="productCode" value="O22CAWOT283W_LA_82" /> <input
-                                       type="hidden" name="initialQuantity" value="1" /> <input
-                                       type="hidden" name="chgProductCode" value="" /> <input
-                                       type="hidden" name="curSize" value="82" /> <input
-                                       type="hidden" name="storeId" value="" /> <input
-                                       type="hidden" name="storePickupDate" value="" /> <input
-                                       type="hidden" name="deliveryKind" value="" /> <input
-                                       type="hidden" name="cartDivision" value="" /> <!-- qty_sel -->
-
+                                    <td class="al_middle">
                                        <div>
-                                          <input readonly type="number" min="1" value="${cartVO.c_quantity}"
-                                             name="quantity" />
+                                          <input readonly type="number" min="1" value="${cartVO.c_quantity}" 
+                                             name="quantity" class="cart-qty"/>
                                        </div></td>
                                     <td class="al_middle">
                                        <!-- Price -->
@@ -106,17 +95,14 @@
                                     <td class="al_middle">
                                        <!-- Button size -->
                                        <div class="btn_wrap">
-                                          <input type="submit" class="btn gray_ss"
-                                             onclick="javascript: form.action='gly?command=order_detail&num=${cartList.size()}';"
-                                             value="주문" /> 
-                                             <input type="submit"
+                                             <input type="submit" style="border-radius: 3px; font-size: 5px;"
                                              class="btn wt_ss" onclick="javascript: form.action='gly?command=cart_delete&p_d_id=${cartVO.p_d_id}';" value="삭제" />
                                        </div> <!-- //Button size -->
                                     </td>
                                  </tr>
                               
                               </c:forEach>
-                              </form>
+                              
                            </tbody>
                         </table>
                      </div>
@@ -125,8 +111,9 @@
                      <div class="total_wrap">
                         <!-- total -->
                         <div class="total_price_wrap">
+                         <div class="real_price_wrap">
                            <dl>
-                              <dt>상품 합계</dt>
+                              <dt style="margin-bottom: 5px;">상품 합계</dt>
                               <dd>
                                <span id="cartDataSubtotal">
                                           ₩ 
@@ -141,7 +128,7 @@
                               </dd>
                            </dl>
                            <dl class="total">
-                              <dt>합계</dt>
+                              <dt style="margin-bottom: 15px;">합계</dt>
                               <dd>
                                <span id="cartDataTotalPrice">
                                        ₩ 
@@ -149,17 +136,24 @@
                                     </span>
                               </dd>
                            </dl>
+                           
+                           <div class="btn gray_ss" style="width:100%"  >
+                            <dl>
+                           	<input style="background: #4a4a4a; border: none; text-align: center; color: white;" type="submit" onclick="javascript: form.action='gly?command=order_detail&num=${cartList.size()}';" value="전체주문" /> 
+                           </dl>
+                           </div>
+                           
+                         </div>
                         </div>
+                        
                         <div class="total_count1807">
                            <p>
-                              총 <span id="selectProductCount">${cartList.size()}</span>개 상품
+                              총 <span id="selectProductCount">${cartList.size()}</span> 개 상품
                            </p>
                         </div>
                         <!-- //total -->
                      </div>
-
                   </div>
-                  <!--//order wrap-->
                </div>
                <!--//sub_container-->
             </div>

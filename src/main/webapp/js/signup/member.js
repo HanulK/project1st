@@ -1,10 +1,18 @@
 const joinBtn = document.querySelector("#joinBtn");
+const idCheck = document.querySelector("#double-check");
+
 joinBtn.addEventListener("click", go_save);
 
-const idCheck = document.querySelector("#double-check");
+// 실시간 비밀번호 체크
+const pwcInput = document.querySelector("#pwc");
 const pwCheck = document.querySelector("#correct-check");
+pwc.addEventListener("change", pwReCheck);
+pwc.addEventListener("keyup", pwReCheck);
+pwc.addEventListener("paste", pwReCheck);
+
 const signup = document.signupForm;
-console.log(signup);
+
+// 아이디 확인
 function go_save() {
   if (signup.id.value == "") {
     alert("아이디를 입력하여 주세요.");
@@ -15,9 +23,8 @@ function go_save() {
   } else if (signup.pw.value == "") {
     alert("비밀번호를 입력해 주세요.");
     signup.pw.focus();
-  } else if (signup.pw.value != signup.pwc.value) {5
-    pwCheck.innerText = "비밀번호가 일치하지 않습니다.";
-    pwCheck.style.display = "inline-block";
+  } else if (signup.pw.value != signup.pwc.value) {
+    alert("비밀번호를 확인해 주세요.");
     signup.pw.focus();
   } else if (signup.name.value == "") {
     alert("이름을 입력해 주세요.");
@@ -42,3 +49,21 @@ function go_save() {
     signup.submit();
   }
 }
+
+// 패스워드 확인
+function pwReCheck() {
+  if (signup.pwc.value == "") {
+    pwCheck.style.display = "none";
+  } else if (signup.pw.value != signup.pwc.value) {
+    pwCheck.innerText = "비밀번호가 일치하지 않습니다.";
+    pwCheck.style.display = "inline-block";
+    pwCheck.style.color = "#b22222";
+  } else {
+    pwCheck.innerText = "비밀번호가 일치합니다.";
+    pwCheck.style.display = "inline-block";
+    pwCheck.style.color = "#2e8b57";
+  }
+}
+
+
+// W.PSY

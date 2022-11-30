@@ -28,7 +28,7 @@ public class OrderSettingAction implements Action {
 			ArrayList<Integer> quantitys = new ArrayList<Integer>();
 			int totalPrice = 0;
 
-			if (request.getParameter("num").equals("1")) {
+			if (request.getParameter("num").equals("0")) {
 				// 단일 상품 결제
 				if (request.getParameter("color") != null && request.getParameter("size") != null) {
 					ProductVO prod = new ProductVO();

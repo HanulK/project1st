@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="../layout/header.jsp"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
@@ -30,9 +31,9 @@
 						<table class="tbl_ltype">
 							<caption>상품평 리스트</caption>
 							<colgroup>
-								<col style="width: 50px">
-								<col style="width: 120px">
-								<col style="width: 107px">
+								<col style="width: 55px">
+								<col style="width: 150px">
+								<col style="width: 30px">
 								<col style="width: 108px">
 								<col style="width: 96px">
 							</colgroup>
@@ -53,10 +54,12 @@
 										<td>${orderVO.o_id}</td>
 										<td>${orderVO.p_name}</td>
 										<td>${orderVO.o_quantity}</td>
-										<td>${orderVO.p_price}</td>
+										<td><span>₩<fmt:formatNumber value="${orderVO.p_price}" pattern="#,###"/></span>
+										</td>
+										
 										<!-- <td>${orderVO.o_state}</td> -->
 										<input type="hidden" value="${orderVO.p_id}" name="p_id">
-										<td><input value="상품평작성" type="submit"/></td>
+										<td><input class="btn add_ss" value="상품평작성" type="submit"/></td>
 									</tr>
 									</form>
 								</c:forEach>
@@ -64,14 +67,6 @@
 							</tbody>
 						</table>
 					</div>
-					<div class="title-wrap line mt50">
-						<h4>위시리스트</h4>
-					</div>
-					<ul class="wish-wrap">
-						<li><a> <img src="http://newmedia.thehandsome.com/IL/2C/FW/IL2C9TTO870N_BK_S01.jpg">
-								<span class="brand">LATT</span> <span class="tlt">울 블렌드 하이넥 탑</span>
-						</a> <span class="price">￦ 145,000</span></li>
-					</ul>
 				</div>
 			</div>
 		</div>

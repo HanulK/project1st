@@ -1,17 +1,14 @@
 package com.gly.DAOs;
 
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.util.ArrayList;
+import java.sql.*;
+import java.util.*;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
+import javax.naming.*;
+import javax.sql.*;
 
-import com.gly.VOs.OrderVO;
+import com.gly.VOs.*;
 
-import oracle.jdbc.internal.OracleTypes;
+import oracle.jdbc.internal.*;
 
 public class OrderDAO {
 	private Connection con;
@@ -33,7 +30,7 @@ public class OrderDAO {
 	public ArrayList<OrderVO> orderList(String id) {
 		ArrayList<OrderVO> orderList = new ArrayList<OrderVO>();
 		String sql = "{call order_list(?,?)}";
-		System.out.println(sql);
+		int s=-1;
 		try {
 			con = dataFactory.getConnection();
 			CallableStatement cstmt = con.prepareCall(sql);
@@ -50,7 +47,6 @@ public class OrderDAO {
 				order.setP_price(rset.getInt(4));
 				order.setO_state(rset.getInt(5));
 				orderList.add(order);
-				System.out.println("성공");
 			}
 			cstmt.close();
 			rset.close();

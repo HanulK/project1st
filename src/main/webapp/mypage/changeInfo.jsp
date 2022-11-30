@@ -198,6 +198,7 @@
 							<input type="button" class="btn wt_ss" value="회원탈퇴" id="memberSecessionBtn">
 						</div>
 						<div class="btnwrap mypage2">
+
 							<a href="gly?command=mypage"><input type="button" class="btn wt" value="취소"
 								id="cancleBtn"></a> <input type="submit" class="btn gray" style="color:#fff;" value="변경사항 저장" id="saveBtn">
 						</div>

@@ -22,7 +22,7 @@ public class MyPageAction implements Action {
 			OrderDAO dao = OrderDAO.getInstance();
 			ArrayList<OrderVO> recentOrderList = dao.recentOrderList(loginUser.getM_id());
 			request.setAttribute("recentOrderList", recentOrderList);
-		}
+		}else url = "gly?command=login_form";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response); 
 
