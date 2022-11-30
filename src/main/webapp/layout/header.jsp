@@ -25,9 +25,10 @@
 			<ul class="nav-wrap" style="margin-left: auto">
 				<li class="nav-mymenu nav-search">
 					<form method="post" action="gly?command=search">
-						<input type="search" id="search" name="words" type="text" placeholder="상품명을 입력하세요"/>
+						<input type="search" id="search" name="words" placeholder="상품명을 입력하세요"/>
 						<%--<img src="assets/img/search.png" class="navicon" alt="검색" > --%>
-						<input type="submit" class="search" value="검색">
+						<%-- <input type="submit" class="search" value="검색">--%>
+						<button type="submit" class="search"><img src="assets/img/search.png" alt=""></button>
 					</form>
 				</li>
 				<c:choose>

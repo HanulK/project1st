@@ -36,20 +36,20 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               <tr>
                 <th scope="row"><strong class="reqd">*</strong><label for="pw">비밀번호</label></th>
                 <td>
-                  <input type="password" id="pw" name="pw" style="width: 150px" title="비밀번호"  value="test"/>
+                  <input type="password" id="pw" name="pw" style="width: 150px" title="비밀번호" />
                 </td>
               </tr>
               <tr>
                 <th scope="row"><strong class="reqd">*</strong> <label for="pwc">비밀번호 확인</label></th>
                 <td>
-                  <input type="password" id="pwc" style="width: 150px" title="비밀번호 확인"  value="test"/>
+                  <input type="password" id="pwc" style="width: 150px" title="비밀번호 확인" />
                   <span class="check-msg" id="correct-check">일치확인여부</span>
                 </td>
               </tr>
               <tr>
                 <th scope="row"><strong class="reqd">*</strong><label for="name">이름</label></th>
                 <td>
-                  <input type="text" style="width: 120px" id="name" name="name"  value="test"/>
+                  <input type="text" style="width: 120px" id="name" name="name" />
                 </td>
               </tr>
               <tr>
@@ -57,6 +57,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                 <td>
                   <select style="width: 80px" id="selYear" name="selYear" title="년도">
                  <!--    <option value="" selected disabled>년</option> -->
+                    <option value="none">년도</option>
                     <option value="2020">2020</option>
                     <option value="2019">2019</option>
                     <option value="2018">2018</option>
@@ -67,11 +68,36 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                     <option value="2013">2013</option>
                     <option value="2012">2012</option>
                     <option value="2011">2011</option>
-                    <option value="2010">2009</option>
-                    <option value="2010">2008</option>
+                    <option value="2010">2010</option>
+                    <option value="2009">2009</option>
+                     <option value="2008">2008</option>
+                    <option value="2007">2007</option>
+                    <option value="2006">2006</option>
+                    <option value="2005">2005</option>
+                    <option value="2004">2004</option>
+                    <option value="2003">2003</option>
+                    <option value="2002">2002</option>
+                    <option value="2001">2001</option>
+                    <option value="2000">2000</option>
+                    <option value="1999">1999</option>
+                    <option value="1998">1998</option>
+                    <option value="1997">1997</option>
+                     <option value="1996">1996</option>
+                    <option value="1995">1995</option>
+                    <option value="1994">1994</option>
+                    <option value="1993">1993</option>
+                    <option value="1992">1992</option>
+                    <option value="1991">1991</option>
+                    <option value="1990">1990</option>
+                    <option value="1989">1989</option>
+                    <option value="1988">1988</option>
+                    <option value="1987">1987</option>
+                    <option value="1986">1986</option>
+                    <option value="1985">1985</option>
                   </select>
                   <select style="width: 80px" id="selMonth" name="selMonth" title="월">
                  <!--    <option value="" selected disabled>월</option> -->
+                    <option value="none">월</option>
                     <option value="01">01</option>
                     <option value="02">02</option>
                     <option value="03">03</option>
@@ -87,6 +113,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                   </select>
                   <select style="width: 80px" id="selDay" name="selDay" title="일">
                     <!-- <option value="" selected disabled>일</option> -->
+                    <option value="none">일</option>
                     <option value="01">01</option>
                     <option value="02">02</option>
                     <option value="03">03</option>
@@ -131,13 +158,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               <tr>
                 <th scope="row"><strong class="reqd">*</strong><label for="address">주소</label></th>
                 <td>
-                  <input type="text" style="width: 100%" id="address" name="address"  value="test"/>
+                  <input type="text" style="width: 100%" id="address" name="address" placeholder="ex) test@gmail.com"/>
                 </td>
               </tr>
               <tr>
                 <th scope="row"><strong class="reqd">*</strong><label for="email">E-mail</label></th>
                 <td>
-                  <input type="text" style="width: 180px" name="email" title="이메일" id="email" value="test"/>
+                  <input type="text" style="width: 180px" name="email" title="이메일" id="email" />
                   <!-- <span class="andmail">@</span>
                   <input type="text" style="width: 120px" title="이메일 도메인" id="emailDomain" /> -->
                 </td>
@@ -145,9 +172,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
               <tr>
                 <th scope="row"><strong class="reqd">*</strong><label for="phone">전화번호</label></th>
                 <td>
-                  <input type="text" style="width: 50px" name="phone1"  value="123"/>-
-                  <input type="text" style="width: 50px" name="phone2"  value="123"/>-
-                  <input type="text" style="width: 50px" name="phone3"  value="123"/>
+                  <input type="text" style="width: 50px" name="phone1" />-
+                  <input type="text" style="width: 50px" name="phone2" />-
+                  <input type="text" style="width: 50px" name="phone3" />
                 </td>
               </tr>
             </tbody>
