@@ -1,7 +1,7 @@
 package com.gly.controllerAction;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -9,7 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.gly.DAOs.CartDAO;
-import com.gly.VOs.*;
+import com.gly.VOs.CartVO;
+import com.gly.VOs.MemberVO;
 
 public class CartInsertAction implements Action {
 	// writer : juhye
@@ -46,7 +47,7 @@ public class CartInsertAction implements Action {
 							cDAO.update_qty(pdid, username, quantity);
 							cDAO.insertcart(quantity, username, pdid);
 					}else{
-						url = "product/order_fail.jsp";		
+						url = "product/order_fail1.jsp";		
 					}
 						
 

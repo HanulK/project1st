@@ -28,7 +28,7 @@ public class OrderSettingAction implements Action {
 			ArrayList<Integer> quantitys = new ArrayList<Integer>();
 			int totalPrice = 0;
 
-			if (request.getParameter("num").equals("0")) {
+			if (request.getParameter("num").equals("D")) {
 				// 단일 상품 결제
 				if (request.getParameter("color") != null && request.getParameter("size") != null) {
 					ProductVO prod = new ProductVO();
@@ -54,8 +54,11 @@ public class OrderSettingAction implements Action {
 					
 					request.setAttribute("orderCase", "single");
 				} else {
-					url = "product/order_fail.jsp";
+					request.setAttribute("msg", "옵션을 선택하세요.");
+					url = "product/order_fail1.jsp";
 				}
+			} else if (request.getParameter("num").equals("0")) {
+				url = "product/order_fail2.jsp";
 			} else {
 				// 여러 상품 결제
 				ProductDAO productDAO = ProductDAO.getInstance();
