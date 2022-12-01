@@ -22,7 +22,7 @@ public class OrderListAction implements Action {
 			OrderDAO dao = OrderDAO.getInstance();
 			ArrayList<OrderVO> orderList = dao.orderList(loginUser.getM_id());
 			request.setAttribute("orderList", orderList);
-		}
+		}else url = "gly?command=login_form";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}

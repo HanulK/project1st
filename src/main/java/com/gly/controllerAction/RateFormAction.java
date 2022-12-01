@@ -27,6 +27,7 @@ public class RateFormAction  implements Action{
 			System.out.println(check);
 			if(check==1) url ="mypage/checkReview.jsp";
 			else url="gly?command=write_review&p_id=" + p_id ;
+			
 		}else url = "gly?command=login_form";
 		request.getRequestDispatcher(url).forward(request, response);  
 	}

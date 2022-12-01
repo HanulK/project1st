@@ -24,7 +24,7 @@ public class RateFilterAction implements Action {
 			ReviewDAO dao = ReviewDAO.getInstance();
 			ArrayList<ReviewVO> reviewList = dao.rateFilter(loginUser.getM_id(), rateScore);
 			request.setAttribute("reviewList", reviewList);
-		}
+		}else url = "gly?command=login_form";
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 

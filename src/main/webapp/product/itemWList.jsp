@@ -41,6 +41,9 @@
 			</div>
 			<!-- //items list -->
 		</div>
+		<div style="float:left">
+   <%@ include file="/layout/FloatingBanner.jsp"%>
+   </div>
 	</div>
 	<%@ include file="../layout/footer.jsp"%>
 </body>
