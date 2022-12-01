@@ -68,9 +68,17 @@
 										</tr>
 										<tr>
 											<th scope="row" class="th_space"><strong class="reqd">*</strong> 생년월일</th>
+											<c:set var="birth" value="${sessionScope.userInfo.m_birth}"></c:set>
+											<%
+												String birth =(String)request.getAttribute("birth");
+												String year = birth.substring(0,4);
+												String month = birth.substring(4,6);
+												String day = birth.substring(6,8);
+											%>
 											<td>
 												<select style="width: 120px" id="selYear" title="년도" name="year">
-													<option value="2008" selected>2008</option>
+													<option value="${year}"selected hidden><%=year%></option>
+													<option value="2008">2008</option>
 													<option value="2007">2007</option>
 													<option value="2006">2006</option>
 													<option value="2005">2005</option>
@@ -141,7 +149,8 @@
 													<option value="1940">1940</option>
 												</select>
 												<select style="width: 120px" id="selMonth" title="월" name="month">
-													<option value="01" selected>01</option>
+													<option value="${month}"selected hidden><%=month%></option>
+													<option value="01">01</option>
 													<option value="02">02</option>
 													<option value="03">03</option>
 													<option value="04">04</option>
@@ -155,6 +164,7 @@
 													<option value="12">12</option>
 												</select>
 												<select style="width: 120px" id="selDay" title="일" name="day">
+												<option value="${day}"selected hidden><%=day%></option>
 													<option value="01">01</option>
 													<option value="02">02</option>
 													<option value="03">03</option>
