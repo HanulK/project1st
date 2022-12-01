@@ -5,7 +5,8 @@ article {
 }
 
 #my_order_list {
-	float: left; min-height : 600px;
+	float: left;
+	min-height: 600px;
 	width: calc(100% - 161px);
 	min-height: 600px;
 }
@@ -13,9 +14,6 @@ article {
 #each_order_wrap {
 	margin-top: 20px;
 	width: 100%;
-	padding-bottom: 50px;
-	margin-bottom: 50px;
-	border-bottom: 1px solid #e5e5e5;
 }
 
 .order_box {
@@ -84,6 +82,7 @@ table {
 	color: #222;
 	text-align: center;
 	border-bottom: 1px solid #e5e5e5;
+	border-right: 1px solid #e5e5e5;
 }
 
 .pt_list_wrap {

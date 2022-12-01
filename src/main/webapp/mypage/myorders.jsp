@@ -22,40 +22,37 @@
 				<div class="container">
 					<%@ include file="menu.jsp"%>
 					<section id="my_order_list">
-						<c:forEach var="orderVO" items="${orderList}">
-							<article id="each_order_wrap">
-								<div class="order_box">
-									<dl>
-										<dt>주문일자</dt>
-										<dd>
-											<fmt:formatDate value="${orderVO.o_indate}" type="date" />
-										</dd>
-										<span> | </span>
-										<dt>주문번호</dt>
-										<dd>${orderVO.o_id}</dd>
-									</dl>
-								</div>
-								<div class="table-wrap">
-									<table class="tbl_ltype">
-										<caption style="display: none">주문 상세정보</caption>
-										<colgroup>
-											<col style="width: 150px" />
-											<col />
-											<col style="width: 150px" />
-										</colgroup>
-										<thead>
-											<tr>
-												<th scope="col">상품주문번호</th>
-												<th scope="col">상품정보</th>
-												<th scope="col">상품금액(수량)</th>
-											</tr>
-										</thead>
-										<tbody>
+						<article id="each_order_wrap">
+
+							<div class="table-wrap">
+								<table class="tbl_ltype">
+									<caption style="display: none">주문 상세정보</caption>
+									<colgroup>
+										<col style="width: 110px" />
+										<col style="width: 120px" />
+										<col />
+										<col style="width: 150px" />
+										<col style="width: 150px" />
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">상품주문번호</th>
+											<th scope="col">상품주문일자</th>
+											<th scope="col">상품정보</th>
+											<th scope="col">상품금액(수량)</th>
+											<th scope="col">상품금액(총액)</th>
+										</tr>
+									</thead>
+									<tbody>
+										<c:forEach var="orderVO" items="${orderList}">
 											<tr>
 												<td>
 													<div class="price_wrap">
 														<span>${orderVO.o_id} </span>
 													</div>
+												</td>
+												<td>
+													<fmt:formatDate value="${orderVO.o_indate}" type="date" />
 												</td>
 												<td class="pt_list_wrap">
 													<div class="pt_list_all">
@@ -78,24 +75,15 @@
 														<span><fmt:formatNumber value="${orderVO.p_price}" pattern="#,###" /> 원</span> <span>(${orderVO.o_quantity}개)</span>
 													</div>
 												</td>
+												<td>
+													<span><fmt:formatNumber value="${orderVO.p_price * orderVO.o_quantity}" pattern="#,###" /> 원</span>
+												</td>
 											</tr>
-										</tbody>
-									</table>
-								</div>
-								<div class="table-wrap">
-									<table class="tbl_ltype">
-										<caption style="display: none">총액</caption>
-										<colgroup>
-											<col style="width: 50%" />
-										</colgroup>
-										<tr>
-											<td>총액</td>
-											<td>318,300원</td>
-										</tr>
-									</table>
-								</div>
-							</article>
-						</c:forEach>
+										</c:forEach>
+									</tbody>
+								</table>
+							</div>
+						</article>
 					</section>
 				</div>
 			</div>
