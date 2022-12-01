@@ -15,6 +15,17 @@
 <meta charset="UTF-8">
 <title>:)GLY</title>
 
+<script>
+var quantity=0;
+function plus(){
+    quantity++;
+    document.querySelector("#countBtn").innerText=count;
+}
+function minus(){
+    quantity--;
+    document.querySelector("#countBtn").innerText=count;
+}
+
 </script>
 
 </head>
@@ -40,10 +51,10 @@
                         <table class="tbl_ltype">
                            <caption>쇼핑백</caption>
                            <colgroup>
-                              <col style="width: 270px" />
+                              <col style="width: 450px" />
+                              <col/>
+                              <col style="width: 150px" />
                               <col style="width: 50px" />
-                              <col style="width: 140px" />
-                              <col style="width: 110px" />
                            </colgroup>
                            <thead>
                               <tr>
@@ -68,8 +79,8 @@
                                              <input type="hidden" name = "p_id" value = "${cartVO.p_id}"/>
                                              <input type="hidden" name = "p_d_id" value = "${cartVO.p_d_id}"/>
                                           <div class="tlt_wrap">
-                                             <span class="sb_tlt"> ${cartVO.p_name}</span>
-                                             <p class="color_op">
+                                             <span class="sb_tlt" style="font-size:16px;"> ${cartVO.p_name}</span>
+                                             <p class="color_op" style="font-size:12px;">
                                                 color : <span id="color">${cartVO.p_color}</span>
                                                 <input type="hidden" value="${cartVO.p_color}"
                                              name="color" />
@@ -83,13 +94,15 @@
                                     </td>
                                     <td class="al_middle">
                                        <div>
+                                       		<button type="button" id=qty_minus onclick="minus()">-</button>
                                           	<input readonly type="number" min="1" value="${cartVO.c_quantity}" 
-                                             name="quantity" class="cart-qty" id="qty"/>
+                                             name="quantity" class="cart-qty" id="qty" style="font-size:13px;"/>
+                                            <button type="button" id=qty_plus onclick="plus()">+</button>
                                        </div></td>
                                     <td class="al_middle">
                                        <!-- Price -->
                                        <div class="price_wrap">
-                                          <span>
+                                          <span style="font-size:13px;">
                                                     ₩ 
                                                    <fmt:formatNumber value="${cartVO.p_price}" pattern="#,###"/>
                                                    </span>

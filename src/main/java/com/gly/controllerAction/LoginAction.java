@@ -30,6 +30,11 @@ public class LoginAction implements Action {
 			if (memberVO.getM_pw().equals(pw)) { // id O, 비밀번호 O
 				session.removeAttribute("id");
 				session.setAttribute("userInfo", memberVO);
+				
+//				CartDAO cDAO = CartDAO.getInstance();
+//				int cart_size = cDAO.cart_total_size(id);
+//				session.setAttribute("total_cart", cart_size);
+				
 				url = "gly?command=index";
 				System.out.println("로그인 성공");
 			} else { // id O, 비밀번호 X
@@ -39,6 +44,7 @@ public class LoginAction implements Action {
 		} else { // id X, 비밀번호 X, login fail
 			System.out.println("로그인 실패(존재X)");
 		}
+		
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 

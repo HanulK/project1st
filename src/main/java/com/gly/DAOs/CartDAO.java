@@ -162,4 +162,28 @@ public class CartDAO {
 
 		}
 	
+	public int cart_total_size(String v_m_id) {
+		int cart_size = 0;
+		String query = "{? = call find_cart_size(?)}";
+		
+		try {
+			con = dataFactory.getConnection();
+			CallableStatement callableStatement = con.prepareCall(query);
+			callableStatement.registerOutParameter(1, OracleType.NUMBER);
+			callableStatement.setString(2, v_m_id);
+
+			callableStatement.execute();
+			
+			cart_size = callableStatement.getInt(1);
+			con.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		
+		
+		return cart_size;
+		
+	}
+	
  }

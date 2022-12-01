@@ -25,9 +25,9 @@ public class CartDeleteAction implements Action {
 		int p_d_id = Integer.parseInt(request.getParameter("p_d_id"));
 		
 		
-		System.out.println(p_d_id + " " + username);
 		cdDAO.deletecart(username, p_d_id);
-		
+		int cart_size = (int) session.getAttribute("total_cart");
+		session.setAttribute("total_cart", cart_size-1);
 		request.getRequestDispatcher(url).forward(request, response);  
 	}
 
