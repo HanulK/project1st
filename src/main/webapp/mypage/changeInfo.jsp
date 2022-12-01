@@ -77,7 +77,7 @@
 												String day = birth.substring(6,8);
 											%>
 											<td>
-												<select style="width: 120px" id="selYear" title="년도" name="year">
+												<select style="width: 120px" id="selYear" title="년도" name="year" disabled>
 													<option value="${year}"selected hidden><%=year%></option>
 													<option value="2008">2008</option>
 													<option value="2007">2007</option>
@@ -149,7 +149,7 @@
 													<option value="1941">1941</option>
 													<option value="1940">1940</option>
 												</select>
-												<select style="width: 120px" id="selMonth" title="월" name="month">
+												<select style="width: 120px" id="selMonth" title="월" name="month" disabled>
 													<option value="${month}"selected hidden><%=month%></option>
 													<option value="01">01</option>
 													<option value="02">02</option>
@@ -164,7 +164,7 @@
 													<option value="11">11</option>
 													<option value="12">12</option>
 												</select>
-												<select style="width: 120px" id="selDay" title="일" name="day">
+												<select style="width: 120px" id="selDay" title="일" name="day" disabled>
 												<option value="${day}"selected hidden><%=day%></option>
 													<option value="01">01</option>
 													<option value="02">02</option>

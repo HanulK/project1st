@@ -16,10 +16,6 @@ public class ChangeInfoFormAction implements Action{
 		String e = request.getParameter("email");
 		String emailDomain = request.getParameter("email_domain");
 		String email = e + "@" + emailDomain;
-		String year = request.getParameter("year");
-		String month = request.getParameter("month");
-		String day = request.getParameter("day");
-		String birth = year+month+day;
 		
 		System.out.println("성공");
 		String url = "mypage/checkChangeInfo.jsp";
@@ -29,8 +25,7 @@ public class ChangeInfoFormAction implements Action{
 		if (session.getAttribute("userInfo") != null) {
 			MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
 			MemberDAO dao = MemberDAO.getInstance();
-			dao.changeInfo(loginUser.getM_id(), pwd, email, birth);
-			loginUser.setM_birth(birth);
+			dao.changeInfo(loginUser.getM_id(), pwd, email);
 		}else url = "gly?command=login_form";
 		request.getRequestDispatcher(url).forward(request, response);
 		
