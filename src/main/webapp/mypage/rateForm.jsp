@@ -36,7 +36,7 @@
 								<tr>
 									<th scope="row"><strong class="reqd">*</strong><label for="inquiryTitle">상품평 제목</label></th>
 									<td>
-										<input type="text" id="inquiryTitle" name="title" title="input" style="width: 100%">
+										<input type="text" id="inquiryTitle" name="title" title="input" style="width: 100%" required>
 									</td>
 								</tr>
 								<tr>
