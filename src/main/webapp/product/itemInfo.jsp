@@ -327,7 +327,9 @@
 					<!-- 상품평 -->
 					<!-- 상품평 -->
 					<div class="info_sect">
-						<button id="modal_open_btn"">상품평</button>
+					<details>
+						<summary> <button id="modal_open_btn""> 상품평</summary>
+					</details>
 					</div>
 				</div>
 			</article>

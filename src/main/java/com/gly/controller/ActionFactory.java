@@ -84,32 +84,6 @@ public class ActionFactory {
 		}else if (command.equals("rate_filter")) { 			// 점수별 필터링
 			action = new RateFilterAction();
 		} 
-
-		/*
-		 * // admin if (command.equals("admin_login_form")) { action = new
-		 * AdminIndexAction(); } else if (command.equals("admin_login")) { action = new
-		 * AdminLoginAction(); } else if (command.equals("admin_logout")) { action = new
-		 * AdminLogoutAction(); } else if (command.equals("admin_product_list")) {
-		 * action = new AdminProductListAction(); } else if
-		 * (command.equals("admin_product_write_form")) { action = new
-		 * AdminProductWriteFormAction(); } else if
-		 * (command.equals("admin_product_write")) { action = new
-		 * AdminProductWriteAction(); } else if (command.equals("admin_product_detail"))
-		 * { action = new AdminProductDetailAction(); } else if
-		 * (command.equals("admin_product_update_form")) { action = new
-		 * AdminProductUpdateFormAction(); } else if
-		 * (command.equals("admin_product_update")) { action = new
-		 * AdminProductUpdateAction(); } else if (command.equals("admin_order_list")) {
-		 * action = new AdminOrderListAction(); } else if
-		 * (command.equals("admin_order_save")) { action = new AdminOrderSaveAction(); }
-		 * else if (command.equals("admin_member_list")) { action = new
-		 * AdminMemberListAction(); } else if (command.equals("admin_qna_list")) {
-		 * action = new AdminQnaListAction(); } else if
-		 * (command.equals("admin_qna_detail")) { action = new AdminQnaDetailAction(); }
-		 * else if (command.equals("admin_qna_repsave")) { action = new
-		 * AdminQnaResaveAction(); }
-		 */
-
 		return action;
 	}
 }

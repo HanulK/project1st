@@ -55,21 +55,6 @@
 						</div>
 						</div>
 						
-						<%-- 결과 내 재검색
-						<div class="result_inner_top_right">
-						<fieldset>
-							<div id="async" class="re_search_box">
-								<form name="searchRe" id="searchRe" action="/ko/hssearch/searchCount" method="post" onsubmit="return false;">
-									<input type="search" id="reQuery" name="reQuery" value="" onKeypress="javascript:pressCheckRe((event),this);" autocomplete="off" />
-									<input type="hidden" id="simbol" value="￦" />
-									<input type="hidden" id="rate" value="" />
-									<a href="javascript:doSearchRe()" class="btn_search">검색</a>
-								</form>
-							</div>
-						</fieldset>
-						</div>
-						--%>
-						
 						<!-- 상품이 존재하는 경우 -->
 						<div class="items_list cate_item4">
 						<ul id="asyncSearchItem" class="clearfix">
@@ -97,18 +82,6 @@
 					</ul>
 			</div>
 			<!-- //items list -->
-			
-			<%--
-			<!-- paging -->
-			<div id="paging" class="paging">
-				<a href="#prev2" class="prev2">《</a>
-				<a href="#prev" class="prev">〈</a>
-				<span class="num"><a href="#async" class="on" title="페이징"> 1 </a> <a href="#async" onClick="javascript:doPaging('12');" title="페이징"> 2 </a> <a href="#async" onClick="javascript:doPaging('24');" title="페이징"> 3 </a> <a href="#async" onClick="javascript:doPaging('36');" title="페이징"> 4 </a> <a href="#async" onClick="javascript:doPaging('48');" title="페이징"> 5 </a> <a href="#async" onClick="javascript:doPaging('60');" title="페이징"> 6 </a> <a href="#async" onClick="javascript:doPaging('72');" title="페이징"> 7 </a> <a href="#async" onClick="javascript:doPaging('84');" title="페이징"> 8 </a> <a href="#async" onClick="javascript:doPaging('96');" title="페이징"> 9 </a> <a href="#async" onClick="javascript:doPaging('108');" title="페이징"> 10 </a></span>
-				<a href="#next" class="next" onclick="javascript:doPaging('120')">〉</a>
-				<a href="#next2" class="next2">》</a>
-			</div>
-			<!-- //paging -->
-			 --%>	
 						
 						</c:otherwise>
 					</c:choose>
@@ -119,18 +92,6 @@
 			<!-- //brand_result_search -->
 
 			<div id="transparent_mask_1"></div>
-			<!-- sortby-->
-			<!-- <div class="sr_sortby">
-          <a href="javascript:void(0);" class="select"><span class="current">최신 상품순</span><span class="ico_arr">arrow</span></a>
-          <ul class="sortSearch">
-            <li><a href="javascript:void(0);" title="newest" class="on">최신 상품순</a></li>
-            <li><a href="javascript:void(0);" title="lowPrice">낮은가격순</a></li>
-            <li><a href="javascript:void(0);" title="highPrice">높은가격순</a></li>
-            <li><a href="javascript:void(0);" title="sell">판매량순</a></li>
-            <li><a href="javascript:void(0);" title="sail">세일상품 우선</a></li>
-          </ul>
-        </div> -->
-			<!-- //sortby-->
 
 			<!-- sr_editorial-->
 			<div class="sr_editorial" id="search_event"></div>
