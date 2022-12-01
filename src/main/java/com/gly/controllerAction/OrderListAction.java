@@ -25,13 +25,6 @@ public class OrderListAction implements Action {
 			System.out.println(loginUser.getM_id());
 			OrderDAO dao = OrderDAO.getInstance();
 			ArrayList<OrderVO> orderList = dao.orderList(loginUser.getM_id());
-			System.out.println(loginUser.getM_id()+"님은 총 "+orderList.size()+"건 주문하셨습니다.");
-			for(int i=0; i<orderList.size(); i++) {
-				System.out.println("Date : "+orderList.get(i).getO_indate());
-				System.out.println("P_name : "+orderList.get(i).getP_name());
-				System.out.println("color : "+orderList.get(i).getP_color()+" & size : "+orderList.get(i).getP_size());
-				System.out.println("qty : "+orderList.get(i).getO_quantity());
-			}
 			request.setAttribute("orderList", orderList);
 		}else url = "gly?command=login_form";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
