@@ -26,8 +26,8 @@ public class LoginAction implements Action {
 
 		// 멤버 info 확인 및 로그인
 		MemberDAO memberDAO = MemberDAO.getInstance();
-		MemberVO memberVO = memberDAO.getMemberInfo(id);
 
+<<<<<<< Updated upstream
 		if (memberVO != null) { // DB에 멤버 정보가 있을 시
 			if (memberVO.getM_pw().equals(pw)) { // id O, 비밀번호 O
 				session.removeAttribute("id");
@@ -36,14 +36,40 @@ public class LoginAction implements Action {
 				System.out.println("로그인 성공");
 			} else { // id O, 비밀번호 X
 				System.out.println("로그인 실패(비번다름)");
+=======
+		//
+		if (memberDAO.if_id_exist(id) == 0) {
+			MemberVO memberVO = memberDAO.getMemberInfo(id);
+>>>>>>> Stashed changes
 
+			if (memberVO != null) { // DB에 멤버 정보가 있을 시
+				if (memberVO.getM_pw().equals(pw)) { // id O, 비밀번호 O
+					session.removeAttribute("id");
+					session.setAttribute("userInfo", memberVO);
+
+					url = "gly?command=index";
+					System.out.println("로그인 성공");
+				} else { // id O, 비밀번호 X
+					System.out.println("로그인 실패(비번다름)");
+
+				}
+			} else { // id X, 비밀번호 X, login fail
+				System.out.println("로그인 실패(존재X)");
 			}
-		} else { // id X, 비밀번호 X, login fail
-			System.out.println("로그인 실패(존재X)");
-		}
 
+		} else {
+			System.out.println("탈퇴한 회원입니다.");
+			response.setContentType("text/html; charset=utf-8");
+			PrintWriter w = response.getWriter();
+			w.write("<script>alert('탈퇴한 회원입니다.');</script>");
+			w.flush();
+			w.close();
+		}
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
 		request.getRequestDispatcher(url).forward(request, response);
 
 	}
-
 }
