@@ -164,7 +164,8 @@
    <%@ include file="/layout/footer.jsp"%>
 <script>
 console.clear();
-
+//writer hansol;
+//출처 https://codepen.io/kimyangsun/pen/XWJeJVj
 //기존 버튼형 슬라이더
 $('.slider-1 > .page-btns > div').click(function(){
  var $this = $(this);

@@ -30,6 +30,7 @@ public class ChangeInfoFormAction implements Action{
 			MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
 			MemberDAO dao = MemberDAO.getInstance();
 			dao.changeInfo(loginUser.getM_id(), pwd, email, birth);
+			loginUser.setM_birth(birth);
 		}else url = "gly?command=login_form";
 		request.getRequestDispatcher(url).forward(request, response);
 		

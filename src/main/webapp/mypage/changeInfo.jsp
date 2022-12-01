@@ -45,15 +45,15 @@
 										<tr>
 											<th scope="row" class="th_space"><label for="pwChangeBtn">비밀번호</label></th>
 											<td>
-												<input type="text" class="btn add_s" name="pwd">
+												<input type="text" class="btn add_s" name="pwd" required>
 											</td>
 										</tr>
 										<tr>
 											<th scope="row"><strong class="reqd">*</strong> <label for="inforcvemail">E-mail(정보수신용)</label></th>
 											<td>
-												<input type="text" style="width: 120px" name="email" />
+												<input type="text" style="width: 120px" name="email" required />
 												<span class="andmail">@</span>
-												<input type="text" id="emailDomain" style="width: 120px" name="email_domain">
+												<input type="text" id="emailDomain" style="width: 120px" name="email_domain" required>
 												<span class="guide_comment" id="emailMsg"></span>
 												<div class="wtype_comment pt10">
 													<span>정확한 이메일 정보를 입력하셔야 주문/배송 및 서비스정보를 받아 보실 수 있습니다.</span>
