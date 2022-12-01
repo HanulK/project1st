@@ -1,14 +1,17 @@
 package com.gly.DAOs;
 
-import java.sql.*;
-import java.util.*;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
-import javax.naming.*;
-import javax.sql.*;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
 
-import com.gly.VOs.*;
+import com.gly.VOs.OrderVO;
 
-import oracle.jdbc.internal.*;
+import oracle.jdbc.internal.OracleTypes;
 
 public class OrderDAO {
 	private Connection con;
@@ -30,7 +33,7 @@ public class OrderDAO {
 	// writer : hansol - 
 	public ArrayList<OrderVO> orderList(String id) {
 		ArrayList<OrderVO> orderList = new ArrayList<OrderVO>();
-		String sql = "{call order_list(?,?)}";
+		String sql = "{call get_order_detail_list(?,?)}";
 		try {
 			con = dataFactory.getConnection();
 			CallableStatement cstmt = con.prepareCall(sql);
@@ -41,11 +44,17 @@ public class OrderDAO {
 
 			while (rset.next()) {
 				OrderVO order = new OrderVO();
-				order.setO_id(rset.getInt(1));
-				order.setP_name(rset.getString(2));
-				order.setO_quantity(rset.getInt(3));
-				order.setP_price(rset.getInt(4));
-				order.setO_state(rset.getInt(5));
+				order.setO_indate(rset.getTimestamp(1));
+				order.setO_id(rset.getInt(2));
+				order.setO_address(rset.getString(3));
+				order.setP_id(rset.getInt(4)); 
+				order.setImg_src(rset.getString(5));
+				order.setP_name(rset.getString(6));
+				order.setP_color(rset.getString(7));
+				order.setP_size(rset.getInt(8)); 
+				order.setP_price(rset.getInt(9));
+				order.setO_quantity(rset.getInt(10));
+				order.setO_state(rset.getInt(11));
 				orderList.add(order);
 			}
 			cstmt.close();

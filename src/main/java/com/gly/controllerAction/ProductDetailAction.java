@@ -7,8 +7,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.gly.DAOs.*;
-import com.gly.VOs.*;
+import com.gly.DAOs.ImageDAO;
+import com.gly.DAOs.OptionDAO;
+import com.gly.DAOs.ProductDAO;
+import com.gly.DAOs.ReviewDAO;
+import com.gly.VOs.ImageVO;
+import com.gly.VOs.OptionVO;
+import com.gly.VOs.ProductVO;
+import com.gly.VOs.ReviewVO;
 
 public class ProductDetailAction implements Action {
 
@@ -31,7 +37,7 @@ public class ProductDetailAction implements Action {
 
 		ArrayList<Integer> sizeSet = new ArrayList<Integer>();
 		for (int i = 0; i < optionVOs.get(1).size(); i++)
-			sizeSet.add(optionVOs.get(1).get(i).getP_szie());
+			sizeSet.add(optionVOs.get(1).get(i).getP_size());
 
 		ImageDAO imageDAO = ImageDAO.getInstance();
 		ArrayList<ImageVO> imgSrcs = imageDAO.getDetailImagVO(p_id);
