@@ -47,13 +47,14 @@ public class OrderDAO {
 				order.setO_indate(rset.getTimestamp(1));
 				order.setO_id(rset.getInt(2));
 				order.setO_address(rset.getString(3));
-				order.setImg_src(rset.getString(4));
-				order.setP_name(rset.getString(5));
-				order.setP_color(rset.getString(6));
-				order.setP_size(rset.getInt(7));
-				order.setP_price(rset.getInt(8));
-				order.setO_quantity(rset.getInt(9));
-				order.setO_state(rset.getInt(10));
+				order.setP_id(rset.getInt(4)); 
+				order.setImg_src(rset.getString(5));
+				order.setP_name(rset.getString(6));
+				order.setP_color(rset.getString(7));
+				order.setP_size(rset.getInt(8)); 
+				order.setP_price(rset.getInt(9));
+				order.setO_quantity(rset.getInt(10));
+				order.setO_state(rset.getInt(11));
 				orderList.add(order);
 			}
 			cstmt.close();
