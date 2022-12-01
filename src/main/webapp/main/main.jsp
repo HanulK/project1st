@@ -63,11 +63,11 @@
             <div class="nbe_cnt new">
                <div class="product_left_menu">
                   <h4 class="tit">신상품</h4>
-                  <ul>
+                  <!-- <ul>
                      <li class="newItem"><a href="gly?command=item_all&kind=0">여성</a></li>
                      <li class="newItem"><a href="gly?command=item_all&kind=1">남성</a></li>
                      <li class="newItem"><a href="gly?command=item_all&kind=2">포인트 ACC.</a></li>
-                  </ul>
+                  </ul> -->
                </div>
                <div class="swiper-container">
                   <ul class="swiper-wrapper">
@@ -89,10 +89,10 @@
             <div class="nbe_cnt best">
                <div class="product_left_menu">
                   <h4 class="tit">베스트</h4>
-                  <ul>
+                  <!-- <ul>
                      <li class="newItem"><a href="gly?command=item_all&kind=0">여성</a></li>
                      <li class="newItem"><a href="gly?command=item_all&kind=1">남성</a></li>
-                  </ul>
+                  </ul> -->
                </div>
                <div class="swiper-container">
                   <ul class="swiper-wrapper">
