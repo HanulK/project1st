@@ -8,7 +8,8 @@
 <link href="css/mypage.css" rel="stylesheet" type="text/css">
 <link href="css/rate.css" rel="stylesheet" />
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="icon" href="assets/img/favicon.ico" />
+<title>𝗚𝗟𝗬</title>
 </head>
 <body>
 	<div class="bodywrap">
@@ -40,34 +41,66 @@
 							<li>통합회원의 경우, 구매금액에 따라 상품평 작성 추가 마일리지를 드립니다. (간편회원은 불가)</li>
 						</ul>
 					</div>
+					<!-- Filtering -->
+					<div class="search_wrap">
+						<form method="post" action="gly?command=rate_filter">
+							<legend>점수 별로 보기</legend>
+							<!-- <input type="number" id="rateScore" name="rateScore" min="1" max="5"> -->
+							<label><input type="radio" id="rateScore" name="rateScore" value="1" checked>1</label>
+							<label><input type="radio" id="rateScore" name="rateScore" value="2">2</label>
+							<label><input type="radio" id="rateScore" name="rateScore" value="3">3</label>
+							<label><input type="radio" id="rateScore" name="rateScore" value="4">4</label>
+							<label><input type="radio" id="rateScore" name="rateScore" value="5">5</label>
+							<input type="submit" name="scoreBtn" value="조회">
+						</form>
+
+					</div>
 					<!-- Table -->
 					<div class="review_tab_01">
 						<div class="tblwrap">
-							<table class="tbl_ltype my_review_table">
-								<!-- <caption>
-                내 상품평 목록
-              </caption> -->
-								<colgroup>
-									<col style="width: 100px" />
-									<col />
-									<col style="width: 107px" />
-								</colgroup>
-								<thead>
-									<tr>
-										<th scope="col">작성일</th>
-										<th scope="col">상품정보</th>
-										<th scope="col">상품평 작성</th>
-									</tr>
-								</thead>
-								<tbody id="writeListBody">
-									<tr>
-										<td colspan="3" class="no_data">
-											작성 가능한 주문건이 없습니다.
-											<!-- 작성 가능한 주문건이 없습니다. -->
-										</td>
-									</tr>
-								</tbody>
-							</table>
+							<form name="reviewForm" method="post">
+								<table class="tbl_ltype my_review_table">
+									<!-- <caption>
+	                내 상품평 목록
+	              </caption> -->
+									<colgroup>
+										<col style="width: 10px" />
+										<col style="width: 70px" />
+										<col style="width: 100px" />
+										<col style="width: 200px" />
+										<col style="width: 10px" />
+									</colgroup>
+									<thead>
+										<tr>
+											<th>상품이름</th>
+											<th scope="col">작성일</th>
+											<th scope="col">제목</th>
+											<th scope="col">내용</th>
+											<th scope="col">삭제</th>
+										</tr>
+									</thead>
+									<tbody id="writeListBody">
+										<c:forEach items="${reviewList}" var="ReviewVO">
+											<tr>
+												<input type="hidden" value="${ReviewVO.p_id}" name="pid">
+												<td>
+													<a class="review_img" href="gly?command=product_detail&pid=${ReviewVO.p_id}">
+													<img  src="${ReviewVO.p_src}">
+													<div>${ReviewVO.p_name}</div>
+													</a>
+												</td>
+												<td>${ReviewVO.r_indate} </td>
+												<td>${ReviewVO.r_title}</td>
+												<td>${ReviewVO.r_text}</td>
+												<td>
+													<button class="addBtn" onclick="delete_review()">삭제</button>
+												</td>
+												
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
+							</form>
 						</div>
 					</div>
 					<!-- //Table -->
@@ -81,7 +114,12 @@
 								<ul>
 									<li>마일리지는 더한섬닷컴 통합회원만 적립 가능합니다. (간편회원 적립 불가)</li>
 									<li>상품평은 홍보, 이벤트 등 다양한 방법으로 활용될 수 있습니다.</li>
-									<li>아래와 같은 상품평은 사전 동의 없이 미게시로 전환될 수 있으며, 지급된 마일리지는 자동으로 회수됩니다.<br /> 1)부당 리뷰(직접 촬영하지 않은 캡쳐 사진, 해석 및 식별이 불가능한 리뷰, 타 상품에 대한 리뷰, 제 3자 사진 도움 등)<br /> 2)약관 및 법률 위배(비속어, 허위사실 등)<br /> 3)상기 내용에 준하는 사유라고 합리적으로 판단되는 경우
+									<li>아래와 같은 상품평은 사전 동의 없이 미게시로 전환될 수 있으며, 지급된 마일리지는 자동으로 회수됩니다.<br />
+									<ol>
+										<li>부당 리뷰(직접 촬영하지 않은 캡쳐 사진, 해석 및 식별이 불가능한 리뷰, 타 상품에 대한 리뷰, 제 3자 사진 도움 등)</li>
+										<li>약관 및 법률 위배(비속어, 허위사실 등)</li>
+										<li>상기 내용에 준하는 사유라고 합리적으로 판단되는 경우</li>
+									</ul>
 									</li>
 								</ul>
 							</dd>
@@ -92,6 +130,7 @@
 		</div>
 	</div>
 	<%@ include file="../layout/footer.jsp"%>
+	<script type="text/javascript" src="js/review/deleteReview.js"></script>
 </body>
 
 </html>

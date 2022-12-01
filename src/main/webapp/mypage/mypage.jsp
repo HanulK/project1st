@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="../layout/header.jsp"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
 <link href="css/mypage.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="icon" href="assets/img/favicon.ico" />
+<title>𝗚𝗟𝗬</title>
 </head>
 <body>
 	<%@ include file="../layout/header.jsp"%>
@@ -30,12 +32,11 @@
 						<table class="tbl_ltype">
 							<caption>상품평 리스트</caption>
 							<colgroup>
-								<col style="width: 120px">
-								<col>
-								<col style="width: 42px">
-								<col style="width: 107px">
-								<col style="width: 108px">
-								<col style="width: 96px">
+								<col style="width: 50px">
+								<col style="width: 180px">
+								<col style="width: 30px">
+								<col style="width: 80px">
+								<col style="width: 80px">
 							</colgroup>
 							<thead>
 								<tr>
@@ -43,30 +44,36 @@
 									<th scope="col">상품정보</th>
 									<th scope="col" style="padding: 15px 0">수량</th>
 									<th scope="col">판매가</th>
-									<th scope="col">주문상태</th>
+									<th scope="col">리뷰작성</th>
 								</tr>
 							</thead>
 							<tbody>
+							
 								<c:forEach items="${recentOrderList}" var="orderVO">
+								<form action="gly?command=rate_form" method="post">
 									<tr>
 										<td>${orderVO.o_id}</td>
 										<td>${orderVO.p_name}</td>
 										<td>${orderVO.o_quantity}</td>
-										<td>${orderVO.o_state}</td>
-										<td>${orderVO.p_price}</td>
+										<td><span>₩<fmt:formatNumber value="${orderVO.p_price}" pattern="#,###"/></span>
+										</td>
+										<input type="hidden" value="${orderVO.p_id}" name="p_id">
+										<td><input value="상품평작성" type="submit" class="addBtn"/></td>
 									</tr>
+									</form>
 								</c:forEach>
+								
 							</tbody>
 						</table>
 					</div>
-					<div class="title-wrap line mt50">
+					<!-- <div class="title-wrap line mt50">
 						<h4>위시리스트</h4>
 					</div>
 					<ul class="wish-wrap">
 						<li><a> <img src="http://newmedia.thehandsome.com/IL/2C/FW/IL2C9TTO870N_BK_S01.jpg">
 								<span class="brand">LATT</span> <span class="tlt">울 블렌드 하이넥 탑</span>
 						</a> <span class="price">￦ 145,000</span></li>
-					</ul>
+					</ul> -->
 				</div>
 			</div>
 		</div>

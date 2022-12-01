@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="icon" href="assets/img/favicon.ico" />
+<title>𝗚𝗟𝗬</title>
 <link href="css/login.css" rel="stylesheet" />
 <link href="css/common.css" rel="stylesheet" />
 <link href="css/layout.css" rel="stylesheet" />

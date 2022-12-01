@@ -9,8 +9,15 @@
 .orderwrap{
 	margin-top: 60px;
 }
+.orderwrap:after{
+	padding: 0px 45px 45px 20px ;
+	content: "";
+    display: block;
+    clear: both;
+}
 .float_left {
     float: left;
+    width:600px;
 }
 .tblwrap {
     position: relative;
@@ -179,7 +186,7 @@ li {
 .float_right {
     float: right;
     position: absolute;
-    left: 680px;
+	left: 1000px;
     top: 336px;
     width: 308px;
 }

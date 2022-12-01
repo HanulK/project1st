@@ -5,10 +5,11 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Insert title here</title>
-    <link href="../css/layout.css" rel="stylesheet" type="text/css" />
-    <link href="../css/productDetail.css" rel="stylesheet" type="text/css" />
-    <link href="../css/shoppingbag.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="assets/img/favicon.ico" />
+	<title>𝗚𝗟𝗬</title>
+    <link href="css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="css/productDetail.css" rel="stylesheet" type="text/css" />
+    <link href="css/shoppingbag.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <%@ include file="../layout/header.jsp"%>

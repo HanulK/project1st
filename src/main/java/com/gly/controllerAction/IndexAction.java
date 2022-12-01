@@ -19,17 +19,20 @@ public class IndexAction implements Action {
 		ArrayList<ImageVO> bestProductList = dao.listBestProduct();
 		
 		HttpSession session = request.getSession();
+		session.setAttribute("total_cart", 0);
 		if (session.getAttribute("userInfo") != null) {
 			MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
-			System.out.println(loginUser.getM_id());
+			
+			CartDAO cDAO = CartDAO.getInstance();
+			int cart_size = cDAO.cart_total_size(loginUser.getM_id());
+			session.setAttribute("total_cart", cart_size);
 		}
 		
+		// 세션 생성
 		request.setAttribute("newProductList", newProductList);
 		request.setAttribute("bestProductList", bestProductList);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
-		
 	}
-
 }

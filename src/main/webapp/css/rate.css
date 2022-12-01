@@ -1,119 +1,171 @@
-.sub-container{
+.sub-container {
 	position: relative;
-    float: left;
-    margin-top: 20px;
-    width: 834px;
+	float: left;
+	margin-top: 20px;
+	width: 834px;
 }
+/* 최상단 */
 .my_review_wrap_box {
-  width: 764px;
-  height: inherit;
-  overflow: hidden;
-  padding: 25px 34px;
+	width: 764px;
+	height: inherit;
+	overflow: hidden;
+	padding: 25px 34px;
 }
 
 .my_review_wrap_box {
-  max-width: 813px;
-  border: 1px solid #e3e3e3;
-  background: #f8f8f8;
-  padding: 28px 0 32px 19px;
+	max-width: 813px;
+	border: 1px solid #e3e3e3;
+	background: #f8f8f8;
+	padding: 28px 0 32px 19px;
 }
+
 .my_review_top_box span.img {
-  background: url(http://cdn.thehandsome.com/pc/products/ico_mypage_myreview_190730.png) no-repeat;
-  width: 100px;
-  height: 100px;
-  display: block;
-  text-indent: -9999px;
-  float: left;
-  margin-right: 19px;
-}
-.my_review_wrap_box .right_txtbox h4 {
-  margin-top: 0px;
-  font-size: 18px;
-  margin-bottom: 20px;
-  color: #212121;
-}
-.my_review_wrap_box .right_txtbox p {
-  margin-bottom: 0;
-  font-weight: normal;
-}
-.my_review_wrap_box .right_txtbox p.fir {
-  margin-bottom: 7px;
-  font-weight: bold;
-}
-.my_review_wrap_box .right_txtbox p span {
-  font-size: 20px;
-  color: #c69b6b;
-  font-weight: bold;
-  vertical-align: baseline;
-}
-.info {
-  margin-bottom: 30px;
-}
-.bul_sty01_li li {
-  padding-left: 11px;
-  background: url(/_ui/desktop/common/images/common/li_bul_1.png) 0 8px no-repeat;
-  line-height: 22px;
-  font-size: 12px;
+	background:
+		url(http://cdn.thehandsome.com/pc/products/ico_mypage_myreview_190730.png)
+		no-repeat;
+	width: 100px;
+	height: 100px;
+	display: block;
+	text-indent: -9999px;
+	float: left;
+	margin-right: 19px;
 }
 
-.tbl_ltype {
-  border-top: 1px solid #414040;
-  border-bottom: 1px solid #414040;
-  width: 90%;
+.my_review_wrap_box .right_txtbox h4 {
+	margin-top: 0px;
+	font-size: 18px;
+	margin-bottom: 20px;
+	color: #212121;
 }
+
+.my_review_wrap_box .right_txtbox p {
+	margin-bottom: 0;
+	font-weight: normal;
+}
+
+.my_review_wrap_box .right_txtbox p.fir {
+	margin-bottom: 7px;
+	font-weight: bold;
+}
+
+.my_review_wrap_box .right_txtbox p span {
+	font-size: 20px;
+	color: #c69b6b;
+	font-weight: bold;
+	vertical-align: baseline;
+}
+
+/* 안내 문구 */
+.info {
+	margin-bottom: 30px;
+}
+
+.bul_sty01_li li {
+	padding-left: 11px;
+	background: url(/_ui/desktop/common/images/common/li_bul_1.png) 0 8px
+		no-repeat;
+	line-height: 22px;
+	font-size: 12px;
+}
+
+/* 검색 */
+.search_wrap {
+	padding: 20px;
+	background: #f9f9f9;
+	border: 1px solid #e3e3e3;
+	text-align: center;
+	margin-bottom:20px;
+}
+
+/* 테이블 */
+.tblwrap{
+	font-size:12px;
+	line-height:12px;
+}
+.tbl_ltype {
+	border-top: 1px solid #414040;
+	border-bottom: 1px solid #414040;
+}
+
 .tbl_ltype th {
-  padding: 15px;
-  color: #222;
-  font-size: small;
-  line-height: 14px;
-  text-align: center;
-  background: #f5f5f5;
+	padding: 15px;
+	color: #222;
+	font-size: small;
+	line-height: 14px;
+	text-align: center;
+	background: #f5f5f5;
+}
+.tbl_ltype td{
+	font-size:12px;
+	padding: 10px;
+}
+.tbl_ltype a:hover{
+	color:#959dab;
+	pointer:cursor;
 }
 td.no_data {
-  padding: 50px 0 !important;
-  color: #c69c6c;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 22px;
-  border-left: none;
+	padding: 50px 0 !important;
+	color: #c69c6c;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 22px;
+	border-left: none;
+}
+.review_img img{
+	width: 98px;
+    height: 98px;
+}
+.gd_list:first-child {
+	border-top: none;
 }
 
-.gd_list:first-child {
-  border-top: none;
-}
 .gd_list {
-  display: flex;
-  margin: auto;
-  padding: 60px 20px;
-  border-top: 1px solid #ebebeb;
-  overflow: hidden;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+	display: flex;
+	margin: auto;
+	padding: 60px 20px;
+	border-top: 1px solid #ebebeb;
+	overflow: hidden;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
+
 .gd_list dt {
-  /* flex: 1; */
-  white-space: nowrap;
-  width: fit-content;
-  color: #222;
-  font-size: 16px;
-  font-weight: bold;
-  clear: both;
+	/* flex: 1; */
+	white-space: nowrap;
+	width: fit-content;
+	color: #222;
+	font-size: 16px;
+	font-weight: bold;
+	clear: both;
 }
+
 .gd_wrap ul {
-  display: block;
-  list-style-type: disc;
-  /* margin-block-start: 1em;
+	display: block;
+	list-style-type: disc;
+	/* margin-block-start: 1em;
   margin-block-end: 1em; */
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 40px;
 }
-.gd_wrap ul > li {
-  display: list-item;
-  text-align: -webkit-match-parent;
-  padding-left: 11px;
-  background: url(/_ui/desktop/common/images/common/li_bul_1.png) 0 8px no-repeat;
-  line-height: 22px;
-  font-size: 12px;
+
+.gd_wrap ul>li {
+	display: list-item;
+	text-align: -webkit-match-parent;
+	padding-left: 11px;
+	background: url(/_ui/desktop/common/images/common/li_bul_1.png) 0 8px
+		no-repeat;
+	line-height: 22px;
+	font-size: 12px;
+}
+
+.addBtn {
+	padding: 6px 10px 7px;
+	padding: 7px 10px 6px\9;
+	min-width: 50px;
+	border: 1px solid #ccc;
+	background: #f5f5f5;
+	font-size: 11px;
+	line-height: 11px;
 }

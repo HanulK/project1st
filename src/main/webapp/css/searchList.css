@@ -2,6 +2,7 @@
   margin: 0 auto;
   position: relative;
   min-height: 400px;
+  margin-top:35px;
 }
 .br_result_search {
   margin-top: 40px;
@@ -88,19 +89,18 @@
 .items_list li .item_box .item_info2 .brand,
 .matches_list .item_info2 .brand {
   letter-spacing: 1px;
-  font-family: "whitneyBold", "Malgun Gothic", "맑은 고딕";
+  font-family: "whitneyBold", "Malgun Gothic", "留묒� 怨좊뵓";
   font-size: 11px;
   color: #363636;
 }
 .items_list li .item_box .item_info2 .title {
-  padding: 0 10px;
+  padding: 5px 10px;
   height: 20px;
-  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 .items_list li .item_box .item_info2 .price {
-  padding: 5px 0;
+/*   padding: 5px 0; */
   color: #0d0d0d;
 }
 .items_list li .item_box .item_info2 span {
@@ -135,11 +135,12 @@
   position: relative;
   padding-bottom: 40px;
 }
+
 /*item_list*/
 .items_list #asyncSearchItem li {
-  float: left;
-  width: 24.5%;
-  margin-right: 0.6%;
+  display:inline-block;
+  width: 24%;
+  margin: 0 0.3%;
   /* height: 619px; */
 }
 .items_list {
@@ -167,7 +168,7 @@ a:hover {
   color: #727272;
 }
 
-/* 검색 */
+/* 寃��깋 */
 .br_result_search .result_inner_top_right input[type="search"] {
   width: 250px;
   height: 25px;

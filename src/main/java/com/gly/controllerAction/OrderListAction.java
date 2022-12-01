@@ -1,13 +1,17 @@
 package com.gly.controllerAction;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.util.ArrayList;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import com.gly.DAOs.*;
-import com.gly.VOs.*;
+import com.gly.DAOs.OrderDAO;
+import com.gly.VOs.MemberVO;
+import com.gly.VOs.OrderVO;
 
 public class OrderListAction implements Action {
 
@@ -22,7 +26,7 @@ public class OrderListAction implements Action {
 			OrderDAO dao = OrderDAO.getInstance();
 			ArrayList<OrderVO> orderList = dao.orderList(loginUser.getM_id());
 			request.setAttribute("orderList", orderList);
-		}
+		}else url = "gly?command=login_form";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}

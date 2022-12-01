@@ -18,11 +18,11 @@ public class MyPageAction implements Action {
 		HttpSession session = request.getSession();
 	    MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
 		if (session.getAttribute("userInfo") != null) {
-			System.out.println(loginUser.getM_id());
+	
 			OrderDAO dao = OrderDAO.getInstance();
 			ArrayList<OrderVO> recentOrderList = dao.recentOrderList(loginUser.getM_id());
 			request.setAttribute("recentOrderList", recentOrderList);
-		}
+		}else url = "gly?command=login_form";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response); 
 

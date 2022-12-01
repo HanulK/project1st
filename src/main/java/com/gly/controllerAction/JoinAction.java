@@ -18,7 +18,7 @@ public class JoinAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "login/login.jsp";
+		String url = "login/signupSuccess.jsp";
 
 		HttpSession session = request.getSession();
 
@@ -32,13 +32,13 @@ public class JoinAction implements Action {
 		memberVO.setM_birth(birth);
 		memberVO.setM_gender(Integer.parseInt(request.getParameter("gender")));
 		memberVO.setM_email(request.getParameter("email"));
-		System.out.println("email: " + request.getParameter("email"));
 		String phone = request.getParameter("phone1") + request.getParameter("phone2") + request.getParameter("phone3");
 		memberVO.setM_phone(phone);
 		memberVO.setM_address(request.getParameter("address"));
 
 		MemberDAO memberDAO = MemberDAO.getInstance();
 		memberDAO.insertMember(memberVO);
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 

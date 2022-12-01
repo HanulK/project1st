@@ -1,7 +1,6 @@
 package com.gly.VOs;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
