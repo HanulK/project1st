@@ -83,7 +83,10 @@ public class ActionFactory {
 			action = new RateDeleteAction();
 		}else if (command.equals("rate_filter")) { 			// 점수별 필터링
 			action = new RateFilterAction();
-		} 
+		}else if(command.equals("cart_update")) {
+			action = new CartUpdateAction();
+		}
+
 		return action;
 	}
 }

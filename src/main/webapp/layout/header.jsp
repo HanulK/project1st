@@ -43,7 +43,7 @@
 				</c:choose>
 				<li class="nav-mymenu"><a href="gly?command=mypage"> 마이페이지</a></li>
 				<span>│</span>
-				<li class="nav-mymenu"><a href="gly?command=cart_list">쇼핑백 </a></li>
+				<li class="nav-mymenu"><a href="gly?command=cart_list">쇼핑백(${sessionScope.total_cart})</a></li>
 			</ul>
 
 		</nav>

@@ -13,9 +13,47 @@
 <link href="css/mypage.css" rel="stylesheet" type="text/css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <meta charset="UTF-8">
-<title>:)GLY</title>
+<link rel="icon" href="assets/img/favicon.ico" />
+<title>𝗚𝗟𝗬</title>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+function changeCnt(obj, i, p_d_id){
+	var id = $("#qty"+i);
+	var qty = id.val();
+	var className = $(obj).attr("class");
+	
+	if(className == "qty_plus"){
+		qty++;
+		id.val(qty);
+	}else if(className == "qty_minus"){
+		if(qty>1){
+			qty--;
+			id.val(qty);
+		}
+	}
+
+	$.ajax({
+		url : 'gly?command=cart_update',
+		type : 'post',
+		data : {
+			p_d_id : p_d_id,
+			qty : qty
+		},
+		success : function(result){
+			alert('성공');
+		},
+		error : function(e){
+			alert('실패');
+		}
+	});
+	
+}
+
 
 </script>
+
+
 
 </head>
 <body>
@@ -40,10 +78,10 @@
                         <table class="tbl_ltype">
                            <caption>쇼핑백</caption>
                            <colgroup>
-                              <col style="width: 270px" />
+                              <col style="width: 450px" />
+                              <col/>
+                              <col style="width: 150px" />
                               <col style="width: 50px" />
-                              <col style="width: 140px" />
-                              <col style="width: 110px" />
                            </colgroup>
                            <thead>
                               <tr>
@@ -56,6 +94,7 @@
                            <tbody>
                            <form action="${contextPath}/gly?command=cart_delete" method="post">
                               <c:forEach items="${cartList}" var="cartVO">
+                              	<c:set var="i" value="${i + 1}"/>
                                  
                                  <tr name="entryProductInfo" data-pk="11004809805868"
                                     data-deliverykind="" data-outofstock="false"
@@ -68,8 +107,8 @@
                                              <input type="hidden" name = "p_id" value = "${cartVO.p_id}"/>
                                              <input type="hidden" name = "p_d_id" value = "${cartVO.p_d_id}"/>
                                           <div class="tlt_wrap">
-                                             <span class="sb_tlt"> ${cartVO.p_name}</span>
-                                             <p class="color_op">
+                                             <span class="sb_tlt" style="font-size:16px;"> ${cartVO.p_name}</span>
+                                             <p class="color_op" style="font-size:12px;">
                                                 color : <span id="color">${cartVO.p_color}</span>
                                                 <input type="hidden" value="${cartVO.p_color}"
                                              name="color" />
@@ -83,14 +122,14 @@
                                     </td>
                                     <td class="al_middle">
                                        <div>
-                                          	<input readonly type="number" min="1" value="${cartVO.c_quantity}" 
-                                             name="quantity" class="cart-qty" id="qty"/>
-                                             
+                                       		<button type="button" class="qty_minus" onclick = "changeCnt(this, '${i}', '${cartVO.p_d_id}');" style="float: left; display: inline-block;">-</button>
+                                          	<input readonly type="number" value="${cartVO.c_quantity}" name="quantity" class="cart-qty" id="qty${i}" style="font-size:13px; width:40px; display: inline-block;"/>
+                                            <button type="button" class="qty_plus" onclick = "changeCnt(this, '${i}', '${cartVO.p_d_id}');" style="float: right;display: inline-block;">+</button>
                                        </div></td>
                                     <td class="al_middle">
                                        <!-- Price -->
                                        <div class="price_wrap">
-                                          <span>
+                                          <span style="font-size:13px;">
                                                     ₩ 
                                                    <fmt:formatNumber value="${cartVO.p_price}" pattern="#,###"/>
                                                    </span>

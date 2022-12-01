@@ -8,7 +8,8 @@
 <head>
 <link href="css/mypage.css" rel="stylesheet" type="text/css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="icon" href="assets/img/favicon.ico" />
+<title>𝗚𝗟𝗬</title>
 </head>
 <body>
 	<%@ include file="../layout/header.jsp"%>

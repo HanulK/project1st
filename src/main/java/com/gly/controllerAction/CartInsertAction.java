@@ -27,6 +27,7 @@ public class CartInsertAction implements Action {
 		HttpSession session = request.getSession();
 		if (session.getAttribute("userInfo") != null) {
 					MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
+		
 
 					CartDAO dao = new CartDAO();
 					ArrayList<CartVO> cartList = dao.listCart(loginUser.getM_id());
@@ -45,11 +46,12 @@ public class CartInsertAction implements Action {
 							}
 							int pdid = cDAO.getpdid(size, color, p_id);
 							cDAO.update_qty(pdid, username, quantity);
-							cDAO.insertcart(quantity, username, pdid);
+							int cart_size = (int) session.getAttribute("total_cart");
+							session.setAttribute("total_cart", cart_size+1);
 					}else{
 						url = "product/order_fail1.jsp";		
 					}
-						
+				
 
 		}else { 
 			url="gly?command=login_form";

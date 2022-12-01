@@ -31,6 +31,7 @@ public class CartDAO {
 
     // writer : juhye - 카트테이블에 있는 값 리스트로 가져오기
 	public ArrayList<CartVO> listCart(String v_id) {
+		System.out.println("list cart 받아오기");
 		ArrayList<CartVO> cartList = new ArrayList<CartVO>();
 		String query = "{call get_cart_user(?,?)}";
 		
@@ -59,6 +60,7 @@ public class CartDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 		return cartList;
 	}
 	
@@ -154,6 +156,46 @@ public class CartDAO {
 			callableStatement.setInt(1, v_p_d_id);
 			callableStatement.setString(2,v_m_id);
 			callableStatement.setInt(3,v_qty);
+			callableStatement.execute();
+			con.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		}
+	
+	public int cart_total_size(String v_m_id) {
+		int cart_size = 0;
+		String query = "{? = call find_cart_size(?)}";
+		
+		try {
+			con = dataFactory.getConnection();
+			CallableStatement callableStatement = con.prepareCall(query);
+			callableStatement.registerOutParameter(1, OracleType.NUMBER);
+			callableStatement.setString(2, v_m_id);
+
+			callableStatement.execute();
+			
+			cart_size = callableStatement.getInt(1);
+			con.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		
+		
+		return cart_size;
+		
+	}
+	public void cart_update_button(String v_m_id, int v_p_d_id, int v_quantity) {
+		String query = "{call cart_update_button(?,?,?)}";
+		
+		try {
+			con = dataFactory.getConnection();
+			CallableStatement callableStatement = con.prepareCall(query);
+			callableStatement.setString(1, v_m_id);
+			callableStatement.setInt(2,v_p_d_id);
+			callableStatement.setInt(3,v_quantity);
 			callableStatement.execute();
 			con.close();
 			} catch (Exception e) {

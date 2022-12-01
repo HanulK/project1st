@@ -20,7 +20,7 @@ public class CartListAction implements Action {
 		if (session.getAttribute("userInfo") != null) {
 			MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
 			
-			CartDAO dao = new CartDAO();
+			CartDAO dao = CartDAO.getInstance();
 			ArrayList<CartVO> cartList = dao.listCart(loginUser.getM_id());
 			
 			int totalPrice = 0;
@@ -36,7 +36,7 @@ public class CartListAction implements Action {
 		}else {
 			url="gly?command=login_form";
 		}
-
+	
 		request.getRequestDispatcher(url).forward(request, response);  
 
 	}
