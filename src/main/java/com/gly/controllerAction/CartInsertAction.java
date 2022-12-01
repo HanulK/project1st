@@ -26,6 +26,7 @@ public class CartInsertAction implements Action {
 		HttpSession session = request.getSession();
 		if (session.getAttribute("userInfo") != null) {
 					MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
+		
 
 					CartDAO dao = new CartDAO();
 					ArrayList<CartVO> cartList = dao.listCart(loginUser.getM_id());
@@ -49,7 +50,7 @@ public class CartInsertAction implements Action {
 					}else{
 						url = "product/order_fail.jsp";		
 					}
-						
+				
 
 		}else { 
 			url="gly?command=login_form";

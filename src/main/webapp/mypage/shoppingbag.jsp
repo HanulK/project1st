@@ -14,19 +14,41 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <meta charset="UTF-8">
 <title>:)GLY</title>
-
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-var quantity=0;
-function plus(){
-    quantity++;
-    document.querySelector("#countBtn").innerText=count;
-}
-function minus(){
-    quantity--;
-    document.querySelector("#countBtn").innerText=count;
-}
+function changeCnt(obj, i, p_d_id){
+	var id = $("#qty"+i);
+	var qty = id.val();
+	var className = $(obj).attr("class");
+	
+	if(className == "qty_plus"){
+		qty++;
+		id.val(qty);
+	}else if(className == "qty_minus"){
+		if(qty>1){
+			qty--;
+			id.val(qty);
+		}
+	}
 
+	$.ajax({
+		url : 'gly?command=cart_update',
+		type : 'post',
+		data : {
+			p_d_id : p_d_id,
+			qty : qty
+		},
+		success : function(result){
+		},
+		error : function(e){
+		}
+	});
+	
+}
 </script>
+
+
 
 </head>
 <body>
@@ -67,6 +89,7 @@ function minus(){
                            <tbody>
                            <form action="${contextPath}/gly?command=cart_delete" method="post">
                               <c:forEach items="${cartList}" var="cartVO">
+                              	<c:set var="i" value="${i + 1}"/>
                                  
                                  <tr name="entryProductInfo" data-pk="11004809805868"
                                     data-deliverykind="" data-outofstock="false"
@@ -94,10 +117,9 @@ function minus(){
                                     </td>
                                     <td class="al_middle">
                                        <div>
-                                       		<button type="button" id=qty_minus onclick="minus()">-</button>
-                                          	<input readonly type="number" min="1" value="${cartVO.c_quantity}" 
-                                             name="quantity" class="cart-qty" id="qty" style="font-size:13px;"/>
-                                            <button type="button" id=qty_plus onclick="plus()">+</button>
+                                       		<button type="button" class="qty_minus" onclick = "changeCnt(this, '${i}', '${cartVO.p_d_id}');" style="float: left; display: inline-block;">-</button>
+                                          	<input readonly type="number" value="${cartVO.c_quantity}" name="quantity" class="cart-qty" id="qty${i}" style="font-size:13px; width:40px; display: inline-block;"/>
+                                            <button type="button" class="qty_plus" onclick = "changeCnt(this, '${i}', '${cartVO.p_d_id}');" style="float: right;display: inline-block;">+</button>
                                        </div></td>
                                     <td class="al_middle">
                                        <!-- Price -->
