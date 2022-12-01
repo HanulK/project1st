@@ -17,7 +17,7 @@
     border: 1.5px solid #dedcdc;
     border-radius:10px;
     color: #fff;
-    right: 180px;
+    right: 120px;
 }
 #newItemsListContent {
 	margin: 0 auto;
