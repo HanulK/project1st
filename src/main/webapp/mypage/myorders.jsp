@@ -22,76 +22,80 @@
 				<div class="container">
 					<%@ include file="menu.jsp"%>
 					<section id="my_order_list">
-						<article id="each_order_wrap">
-							<div class="order_box">
-								<dl>
-									<dt>주문일자</dt>
-									<dd>2022.06.27</dd>
-									<span> | </span>
-									<dt>주문번호</dt>
-									<dd>2022060279545</dd>
-								</dl>
-							</div>
-							<div class="table-wrap">
-								<table class="tbl_ltype">
-									<caption style="display: none">주문 상세정보</caption>
-									<colgroup>
-										<col style="width: 150px" />
-										<col />
-										<col style="width: 150px" />
-									</colgroup>
-									<thead>
-										<tr>
-											<th scope="col">상품주문번호</th>
-											<th scope="col">상품정보</th>
-											<th scope="col">상품금액(수량)</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>
-												<div class="price_wrap">
-													<span>13551689546 </span>
-												</div>
-											</td>
-											<td class="pt_list_wrap">
-												<div class="pt_list_all">
-													<a href="/ko/HANDSOME/WOMEN/OUTER/JUMPER/%EB%9E%A8%EC%8A%A4-%EC%9A%B8-%EB%B8%94%EB%A0%8C%EB%93%9C-%ED%9B%84%EB%93%9C-%EC%A0%90%ED%8D%BC/p/O22CAWOT283W_LA_82" onclick="javascript:setEcommerceData('0', 'Click ADD');GA_Event('쇼핑백','상품','램스 울 블렌드 후드 점퍼');">
-														<img src="http://newmedia.thehandsome.com/O2/2C/FW/O22CAWOT283W_LA_S01.jpg" alt="" />
-													</a>
-													<div class="tlt_wrap">
-														<a href="/ko/HANDSOME/WOMEN/OUTER/JUMPER/%EB%9E%A8%EC%8A%A4-%EC%9A%B8-%EB%B8%94%EB%A0%8C%EB%93%9C-%ED%9B%84%EB%93%9C-%EC%A0%90%ED%8D%BC/p/O22CAWOT283W_LA_82" class="basket_tlt" onclick="javascript:setEcommerceData('0', 'Click ADD');GA_Event('쇼핑백','상품','램스 울 블렌드 후드 점퍼');">
-															<span class="sb_tlt"> 램스 울 블렌드 후드 점퍼</span>
-														</a>
-
-														<p class="color_op">
-															color : LAVENDER<span class="and_line">/</span> size : 82
-														</p>
+						<c:forEach var="orderVO" items="${orderList}">
+							<article id="each_order_wrap">
+								<div class="order_box">
+									<dl>
+										<dt>주문일자</dt>
+										<dd>
+											<fmt:formatDate value="${orderVO.o_indate}" type="date" />
+										</dd>
+										<span> | </span>
+										<dt>주문번호</dt>
+										<dd>${orderVO.o_id}</dd>
+									</dl>
+								</div>
+								<div class="table-wrap">
+									<table class="tbl_ltype">
+										<caption style="display: none">주문 상세정보</caption>
+										<colgroup>
+											<col style="width: 150px" />
+											<col />
+											<col style="width: 150px" />
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">상품주문번호</th>
+												<th scope="col">상품정보</th>
+												<th scope="col">상품금액(수량)</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<div class="price_wrap">
+														<span>${orderVO.o_id} </span>
 													</div>
-												</div>
-											</td>
-											<td class="al_middle">
-												<div class="price_wrap">
-													<span>53,200원</span> <span>(1개)</span>
-												</div>
-											</td>
+												</td>
+												<td class="pt_list_wrap">
+													<div class="pt_list_all">
+														<a href="gly?command=product_detail&pid=${orderVO.p_id} }">
+															<img src="${orderVO.img_src}" alt="상품 썸네일" />
+														</a>
+														<div class="tlt_wrap">
+															<a href="/ko/HANDSOME/WOMEN/OUTER/JUMPER/%EB%9E%A8%EC%8A%A4-%EC%9A%B8-%EB%B8%94%EB%A0%8C%EB%93%9C-%ED%9B%84%EB%93%9C-%EC%A0%90%ED%8D%BC/p/O22CAWOT283W_LA_82" class="basket_tlt" onclick="javascript:setEcommerceData('0', 'Click ADD');GA_Event('쇼핑백','상품','램스 울 블렌드 후드 점퍼');">
+																<span class="sb_tlt"> ${orderVO.p_name}</span>
+															</a>
+
+															<p class="color_op">
+																color : ${orderVO.p_color}<span class="and_line">/</span> size : ${orderVO.p_size}
+															</p>
+														</div>
+													</div>
+												</td>
+												<td class="al_middle">
+													<div class="price_wrap">
+														<span><fmt:formatNumber value="${orderVO.p_price}" pattern="#,###" /> 원</span> <span>(${orderVO.o_quantity}개)</span>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="table-wrap">
+									<table class="tbl_ltype">
+										<caption style="display: none">총액</caption>
+										<colgroup>
+											<col style="width: 50%" />
+										</colgroup>
+										<tr>
+											<td>총액</td>
+											<td>318,300원</td>
 										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="table-wrap">
-								<table class="tbl_ltype">
-									<caption style="display: none">총액</caption>
-									<colgroup>
-										<col style="width: 50%" />
-									</colgroup>
-									<tr>
-										<td>총액</td>
-										<td>318,300원</td>
-									</tr>
-								</table>
-							</div>
-						</article>
+									</table>
+								</div>
+							</article>
+						</c:forEach>
 					</section>
 				</div>
 			</div>

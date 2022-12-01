@@ -5,12 +5,14 @@ article {
 }
 
 #my_order_list {
+	float: left; min-height : 600px;
+	width: calc(100% - 161px);
 	min-height: 600px;
 }
 
 #each_order_wrap {
 	margin-top: 20px;
-	width: 80%;
+	width: 100%;
 	padding-bottom: 50px;
 	margin-bottom: 50px;
 	border-bottom: 1px solid #e5e5e5;
@@ -30,6 +32,10 @@ article {
 
 .order_box dt, .order_box dd {
 	display: inline-block;
+}
+
+.order_box dd {
+	margin-left: 10px;
 }
 
 table {
