@@ -59,7 +59,7 @@ public class OptionDAO {
 			ArrayList<OptionVO> sizeOption = new ArrayList<OptionVO>();
 			while (rset.next()) {
 				OptionVO option = new OptionVO();
-				option.setP_szie(rset.getInt("p_size"));
+				option.setP_size(rset.getInt("p_size"));
 				sizeOption.add(option);
 			}
 			

@@ -18,6 +18,10 @@ public class ItemSearchAction implements Action {
 		
 		String words = request.getParameter("words");
 		
+		if (words.equals("")) {
+			url="product/search_fail.jsp";
+		}
+		
 		request.setAttribute("Title", words);
 		ProductDAO productDAO = ProductDAO.getInstance();
 		ArrayList<ProductVO> productList = productDAO.getSearchProducts(words);
