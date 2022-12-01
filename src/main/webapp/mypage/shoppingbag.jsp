@@ -85,6 +85,7 @@
                                        <div>
                                           	<input readonly type="number" min="1" value="${cartVO.c_quantity}" 
                                              name="quantity" class="cart-qty" id="qty"/>
+                                             
                                        </div></td>
                                     <td class="al_middle">
                                        <!-- Price -->
