@@ -18,7 +18,7 @@
 <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-function changeCnt(obj, i, p_d_id){
+function changeCnt(obj, i, p_d_id, p_price){
 	var id = $("#qty"+i);
 	var qty = id.val();
 	var className = $(obj).attr("class");
@@ -32,7 +32,7 @@ function changeCnt(obj, i, p_d_id){
 			id.val(qty);
 		}
 	}
-
+	
 	$.ajax({
 		url : 'gly?command=cart_update',
 		type : 'post',
@@ -41,10 +41,8 @@ function changeCnt(obj, i, p_d_id){
 			qty : qty
 		},
 		success : function(result){
-			alert('성공');
 		},
 		error : function(e){
-			alert('실패');
 		}
 	});
 	
@@ -122,9 +120,9 @@ function changeCnt(obj, i, p_d_id){
                                     </td>
                                     <td class="al_middle">
                                        <div>
-                                       		<button type="button" class="qty_minus" onclick = "changeCnt(this, '${i}', '${cartVO.p_d_id}');" style="float: left; display: inline-block;">-</button>
+                                       		<button type="button" class="qty_minus" onclick = "changeCnt(this, '${i}', '${cartVO.p_d_id}', ${cartVO.p_price});" style="float: left; display: inline-block;">-</button>
                                           	<input readonly type="number" value="${cartVO.c_quantity}" name="quantity" class="cart-qty" id="qty${i}" style="font-size:13px; width:40px; display: inline-block;"/>
-                                            <button type="button" class="qty_plus" onclick = "changeCnt(this, '${i}', '${cartVO.p_d_id}');" style="float: right;display: inline-block;">+</button>
+                                            <button type="button" class="qty_plus" onclick = "changeCnt(this, '${i}', '${cartVO.p_d_id}', ${cartVO.p_price});" style="float: right;display: inline-block;">+</button>
                                        </div></td>
                                     <td class="al_middle">
                                        <!-- Price -->
