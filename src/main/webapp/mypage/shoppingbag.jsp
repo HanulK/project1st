@@ -120,9 +120,9 @@ function changeCnt(obj, i, p_d_id, p_price){
                                     </td>
                                     <td class="al_middle">
                                        <div>
-                                       		<button type="button" class="qty_minus" onclick = "changeCnt(this, '${i}', '${cartVO.p_d_id}', ${cartVO.p_price});" style="float: left; display: inline-block;">-</button>
+                          					<button type="button" class="qty_minus" onclick = "changeCnt(this, '${i}', '${cartVO.p_d_id}');" style="float: left; display: inline-block; border: none; background-color: #fff;">-</button>
                                           	<input readonly type="number" value="${cartVO.c_quantity}" name="quantity" class="cart-qty" id="qty${i}" style="font-size:13px; width:40px; display: inline-block;"/>
-                                            <button type="button" class="qty_plus" onclick = "changeCnt(this, '${i}', '${cartVO.p_d_id}', ${cartVO.p_price});" style="float: right;display: inline-block;">+</button>
+                                            <button type="button" class="qty_plus" onclick = "changeCnt(this, '${i}', '${cartVO.p_d_id}');" style="float: right;display: inline-block; border: none; background-color: #fff;">+</button>
                                        </div></td>
                                     <td class="al_middle">
                                        <!-- Price -->
