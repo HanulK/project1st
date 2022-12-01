@@ -13,7 +13,6 @@ import oracle.jdbc.*;
 
 public class ProductDAO {
 	private Connection con;
-	private PreparedStatement pstmt;
 	private DataSource dataFactory;
 	
 	private static ProductDAO instance = new ProductDAO();
@@ -29,7 +28,7 @@ public class ProductDAO {
 		}
 	};
 	
-	// writer : Hanul
+	// writer : hanul - 
 	public ArrayList<ProductVO> getSearchProducts(String word) {
 		ArrayList<ProductVO> productList = new ArrayList<ProductVO>();
 		String query = "{ call prod.search_with_main_imgsrc(?, ?)}";
@@ -43,7 +42,6 @@ public class ProductDAO {
 
 			ResultSet rset = (ResultSet) callableStatement.getObject(2);
 
-			//p.p_id, p.p_name, p.p_content, p.p_kind, p.p_price, i.img_src
 			while (rset.next()) {
 				ProductVO product = new ProductVO();
 				product.setP_id(rset.getInt("p_id"));
@@ -60,7 +58,7 @@ public class ProductDAO {
 		return productList;
 	}
 	
-	// writer : Hanul
+	// writer : hanul - 
 	public ArrayList<ProductVO> listKindProduct (int kind) {
 		ArrayList<ProductVO> productList = new ArrayList<ProductVO>();
 		String query = "{ call prod.get_each_kind_with_main_imgsrc(?, ?)}";
@@ -74,7 +72,6 @@ public class ProductDAO {
 
 			ResultSet rset = (ResultSet) callableStatement.getObject(2);
 
-			//p.p_id, p.p_name, p.p_price, i.img_src
 			while (rset.next()) {
 				ProductVO product = new ProductVO();
 				product.setP_id(rset.getInt("p_id"));
@@ -93,7 +90,7 @@ public class ProductDAO {
 		return productList;
 	}
 	
-	// writer : Hanul
+	// writer : hanul - 
 	public ProductVO getProductVO(int p_id) {
 		ProductVO product = new ProductVO();
 		// 상품 main 정보
@@ -125,7 +122,7 @@ public class ProductDAO {
 		return product;
 	}
 	
-	//hansol
+	// writer : hansol - 
 	public ArrayList<ImageVO> listNewProduct() {
 		ArrayList<ImageVO> imageList = new ArrayList<ImageVO>();
 		String sql = "{call recent_product(?)}";
@@ -151,7 +148,7 @@ public class ProductDAO {
 		return imageList;
 	}
 	
-	//hansol
+	// writer : hansol - 
 	public ArrayList<ImageVO> listBestProduct() {
 		ArrayList<ImageVO> imageList = new ArrayList<ImageVO>();
 		String sql = "{call best_product(?)}";
@@ -178,6 +175,7 @@ public class ProductDAO {
 		return imageList;
 	}
 
+	// writer : hanul - 
 	public ArrayList<ProductVO> getCartForEach(String m_id) {
 		ArrayList<ProductVO> productList = new ArrayList<ProductVO>();
 		String query = "{ call get_cart_data_for_each(?, ?)}";

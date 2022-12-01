@@ -13,7 +13,6 @@ public class MemberDAO {
 	private Connection con;
 	private DataSource dataFactory;
 
-	// 연결
 	private MemberDAO() {
 		try {
 			Context initContext = new InitialContext();
@@ -30,7 +29,7 @@ public class MemberDAO {
 		return instance;
 	}
 
-	// 멤버 전체 정보 받기 (박세영)
+	// writer : seyoung - 멤버 전체 정보 받기
 	public MemberVO getMemberInfo(String id) {
 		MemberVO memberVO = null;
 
@@ -65,6 +64,7 @@ public class MemberDAO {
 		return memberVO;
 	}
 
+	// writer : seyoung - 멤버 전체 정보 받기
 	public int insertMember(MemberVO memberVO) {
 		int result = -1;
 		String sql = "{ call MEM.sign_up(?, ?, ?, ?, ?, ?, ?, ?)}";
@@ -93,6 +93,7 @@ public class MemberDAO {
 		return result;
 	}
 
+	// writer : seyoung - 멤버 전체 정보 받기
 	public void deleteMember(String id) {
 		String sql = " { call MEM.delete_member(?) } ";
 		try {
@@ -111,7 +112,7 @@ public class MemberDAO {
 		}
 	}
 
-	// hansol
+	// writer : hansol - 
 	public void changeInfo(String user, String pwd, String email, String birth) {
 		String sql = "{call update_info(?,?,?,?)}";
 		try {
@@ -130,6 +131,7 @@ public class MemberDAO {
 		}
 	}
 
+	// writer : seyoung - 
 	public int if_id_exist(String id) {
 		int result = -1;
 		String sql = " { ? = call MEM.if_id_exist(?) } ";

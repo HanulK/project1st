@@ -2,7 +2,6 @@ package com.gly.DAOs;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
@@ -17,7 +16,6 @@ import oracle.jdbc.OracleTypes;
 
 public class OptionDAO {
 	private Connection con;
-	private PreparedStatement pstmt;
 	private DataSource dataFactory;
 	
 	private static OptionDAO instance = new OptionDAO();
@@ -34,7 +32,7 @@ public class OptionDAO {
 	};
 	
 	
-	// writer : Hanul
+	// writer : hanul - 
 	public ArrayList<ArrayList<OptionVO>> getProductOptions(int p_id) {
 		ArrayList<ArrayList<OptionVO>> options = new ArrayList<ArrayList<OptionVO>>();
 		// 상품 옵션 정보
@@ -51,7 +49,6 @@ public class OptionDAO {
 			ResultSet rset = (ResultSet) callableStatement.getObject(2);
 			ArrayList<OptionVO> colorOption = new ArrayList<OptionVO>();
 			
-			// p_color, p_size, p_d_id
 			while (rset.next()) {
 				OptionVO option = new OptionVO();
 				option.setP_color(rset.getString("p_color"));

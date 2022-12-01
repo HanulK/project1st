@@ -93,7 +93,7 @@
 												<td>${ReviewVO.r_title}</td>
 												<td>${ReviewVO.r_text}</td>
 												<td>
-													<button class="btn add_ss" onclick="delete_review()">삭제</button>
+													<button class="addBtn" onclick="delete_review()">삭제</button>
 												</td>
 												
 											</tr>

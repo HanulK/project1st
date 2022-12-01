@@ -10,11 +10,107 @@
 <title>𝗚𝗟𝗬</title>
 <link href="css/common.css" rel="stylesheet" />
 <link href="css/itemInfo.css" rel="stylesheet" />
+<link href="css/rateModal.css" rel="stylesheet" />
 </head>
 <body>
 	<%@ include file="/layout/header.jsp"%>
 	<%@ include file="/layout/collectRecnetItem.jsp"%>
 	<div class="app-container">
+		<div id="modal" style="display: none;">
+			<div class="modal_content">
+				<div id="reviewModal">
+					<!-- S. 마일리지 안내-->
+					<div class="mileage_info_wrap1906">
+						<p class="wrap_heading">상품평 작성 시 추가 마일리지를 드려요!</p>
+						<div class="mileage_info_box">
+							<div class="review_w">
+								<p class="review_w_tit">• 온라인 구매 상품평 작성 시</p>
+								<ul>
+									<li>
+										<div class="ico_mileage1906">정상상품</div>
+										<p>
+											<strong>정상상품</strong>
+											<br />
+											구매금액의 <b>0.5%</b>
+										</p>
+									</li>
+									<li>
+										<div class="ico_mileage1906">아울렛상품</div>
+										<p>
+											<strong>아울렛상품</strong>
+											<br />
+											구매금액의 <b>0.1%</b>
+										</p>
+									</li>
+									<li>
+										<div class="ico_mileage1906">포토상품평</div>
+										<p>
+											<strong>포토상품평</strong>
+											<br />
+											(상품별 최초)
+											<br />
+											<b>2,000마일리지</b>
+										</p>
+									</li>
+								</ul>
+							</div>
+							<div class="best_review">
+								<p class="review_w_tit">• 온라인/오프라인 구매</p>
+								<ul>
+									<li>
+										<div class="ico_mileage1906">베스트리뷰</div>
+										<p>
+											<strong>베스트리뷰</strong>
+											<br />
+											매월 5명 <b>10만원</b> 바우처
+										</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- E. 마일리지 안내 -->
+					<div class="pop_tltwrap2 pb0 customerreviewdiv1905">
+						<h3>상품평</h3>
+					</div>
+					<!-- pop_cnt-->
+					<div class="evaluation_list1807">
+						<div class="clearfix review_tab1_1807">
+							<ul>
+								<c:forEach items="${reviewList}" var="ReviewVO">
+									<li class="evaluation_view">
+										<div class="member_info_bottom">
+											<span class="choice">${ReviewVO.m_id}</span>
+											<c:choose>
+												<c:when test="${ReviewVO.r_score == 5}">●●●●●</c:when>
+												<c:when test="${ReviewVO.r_score == 4}">●●●●○</c:when>
+												<c:when test="${ReviewVO.r_score == 3}">●●●○○</c:when>
+												<c:when test="${ReviewVO.r_score == 2}">●●○○○</c:when>
+												<c:when test="${ReviewVO.r_score == 1}">●○○○○</c:when>
+											</c:choose>
+											<%-- <span class="choice">${ReviewVO.r_score}점</span> --%>
+										</div>
+										<div class="review_txt_wrap">
+											<p class="review_title">${ReviewVO.r_title}</p>
+											<p class="review_txt">${ReviewVO.r_text}</p>
+											<p class="review_date">${ReviewVO.r_indate}</p>
+										</div>
+									</li>
+								</c:forEach>
+							</ul>
+						</div>
+					</div>
+					<!-- paging -->
+					<div class="paging mt30" id="reviewPagingDiv"></div>
+					<!-- //paging -->
+					<!--// pop_cnt-->
+				</div>
+				<a href="javascript:void(0);" class="btn_close" id="modal_close_btn">
+					<img src="http://cdn.thehandsome.com/_ui/desktop/common/images/popup/ico_close.png" alt="닫기" />
+				</a>
+			</div>
+			<div class="modal_layer"></div>
+		</div>
 		<div class="info-wrap">
 			<!--이미지 -->
 			<div class="item_visual" id="imageDiv">
@@ -61,8 +157,7 @@
 										<label><input type="radio" name="color" value="${colors}" />${colors}</label>
 									</c:forEach></li>
 								<li><span class="title">수량</span> <span class="txt" id="numOption"> <span class="qty_sel num">
-											<button type="button" name="minusBtn">-</button>
-												<input type="number" id="quantity" name="quantity" value="1" readonly/>
+											<button type="button" name="minusBtn">-</button> <input type="number" id="quantity" name="quantity" value="1" readonly />
 											<button type="button" name="plusBtn">+</button>
 									</span>
 								</span></li>
@@ -70,7 +165,7 @@
 						</div>
 						<div class="btn-wrap">
 							<input type="submit" value="장바구니" class="submitBtn" onclick="javascript: form.action='gly?command=cart_insert';">
-							<input type="submit" value="바로주문" class="submitBtn buyBtn" onclick="javascript: form.action='gly?command=order_detail&num=0';">
+							<input type="submit" value="바로주문" class="submitBtn buyBtn" onclick="javascript: form.action='gly?command=order_detail&num=D';">
 						</div>
 					</form>
 					<!-- 하단 세부 사항-->
@@ -230,11 +325,10 @@
 						</dl>
 					</div>
 					<!-- 상품평 -->
-					<!--                   <div class="info_sect">
-                     <div>
-                        = 상품평
-                     </div>
-                  </div> -->
+					<!-- 상품평 -->
+					<div class="info_sect">
+						<button id="modal_open_btn"">상품평</button>
+					</div>
 				</div>
 			</article>
 		</div>
@@ -242,5 +336,6 @@
 	</div>
 	<%@ include file="../layout/footer.jsp"%>
 	<script type="text/javascript" src="js/product/product.js"></script>
+	<script type="text/javascript" src="js/product/modal.js"></script>
 </body>
 </html>
