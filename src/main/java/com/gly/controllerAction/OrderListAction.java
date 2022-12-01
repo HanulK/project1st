@@ -33,7 +33,7 @@ public class OrderListAction implements Action {
 				System.out.println("qty : "+orderList.get(i).getO_quantity());
 			}
 			request.setAttribute("orderList", orderList);
-		}
+		}else url = "gly?command=login_form";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}

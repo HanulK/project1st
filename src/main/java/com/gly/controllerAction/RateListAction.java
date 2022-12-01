@@ -24,7 +24,7 @@ public class RateListAction implements Action {
 				ArrayList<ReviewVO> reviewList = dao.listReview(loginUser.getM_id());
 				request.setAttribute("reviewList", reviewList);
 			}
-		}
+		}else url = "gly?command=login_form";
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 

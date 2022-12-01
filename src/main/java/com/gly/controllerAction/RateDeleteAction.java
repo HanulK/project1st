@@ -1,8 +1,8 @@
 package com.gly.controllerAction;
 
-import java.io.IOException;
+import java.io.*;
 
-import javax.servlet.ServletException;
+import javax.servlet.*;
 import javax.servlet.http.*;
 
 import com.gly.DAOs.*;
@@ -24,7 +24,7 @@ public class RateDeleteAction implements Action {
 			int pid = Integer.parseInt(request.getParameter("pid"));
 			ReviewDAO dao = ReviewDAO.getInstance();
 			dao.deleteReview(pid, mid);
-		}
+		}else url = "gly?command=login_form";
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 }
