@@ -56,11 +56,11 @@
 												</td>
 												<td class="pt_list_wrap">
 													<div class="pt_list_all">
-														<a href="gly?command=product_detail&pid=${orderVO.p_id} }">
+														<a href="gly?command=product_detail&pid=${orderVO.p_id}">
 															<img src="${orderVO.img_src}" alt="상품 썸네일" />
 														</a>
 														<div class="tlt_wrap">
-															<a href="/ko/HANDSOME/WOMEN/OUTER/JUMPER/%EB%9E%A8%EC%8A%A4-%EC%9A%B8-%EB%B8%94%EB%A0%8C%EB%93%9C-%ED%9B%84%EB%93%9C-%EC%A0%90%ED%8D%BC/p/O22CAWOT283W_LA_82" class="basket_tlt" onclick="javascript:setEcommerceData('0', 'Click ADD');GA_Event('쇼핑백','상품','램스 울 블렌드 후드 점퍼');">
+															<a href="gly?command=product_detail&pid=${orderVO.p_id}">
 																<span class="sb_tlt"> ${orderVO.p_name}</span>
 															</a>
 
