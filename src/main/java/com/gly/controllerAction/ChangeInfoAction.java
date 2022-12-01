@@ -15,8 +15,6 @@ public class ChangeInfoAction implements Action{
 		HttpSession session = request.getSession();
 		if (session.getAttribute("userInfo") != null) {
 			MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
-			String birth = loginUser.getM_birth();
-			request.setAttribute("birth", birth);
 			
 		}else url = "gly?command=login_form";
 		request.getRequestDispatcher(url).forward(request, response);  
