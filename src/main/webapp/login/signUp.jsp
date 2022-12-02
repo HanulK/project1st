@@ -163,13 +163,13 @@
 						<tr>
 							<th scope="row"><strong class="reqd">*</strong><label for="address">주소</label></th>
 							<td>
-								<input type="text" style="width: 100%" id="address" name="address" placeholder="ex) test@gmail.com" />
+								<input type="text" style="width: 100%" id="address" name="address" />
 							</td>
 						</tr>
 						<tr>
 							<th scope="row"><strong class="reqd">*</strong><label for="email">E-mail</label></th>
 							<td>
-								<input type="text" style="width: 180px" name="email" title="이메일" id="email" />
+								<input type="text" style="width: 180px" name="email" title="이메일" id="email" placeholder="ex) test@gmail.com" />
 								<!-- <span class="andmail">@</span>
                   <input type="text" style="width: 120px" title="이메일 도메인" id="emailDomain" /> -->
 							</td>
