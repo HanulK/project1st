@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ include file="/layout/header.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
@@ -55,6 +54,7 @@ function changeCnt(obj, i, p_d_id, p_price){
 
 </head>
 <body>
+<%@ include file="/layout/header.jsp"%>
    <div class="bodywrap">
       <div class="sub_container">
          <div class="cnt_title">

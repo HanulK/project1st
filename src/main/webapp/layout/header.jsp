@@ -6,7 +6,6 @@
 <head>
 <link href="css/headerNav.css" rel="stylesheet" />
 <meta charset="UTF-8" />
-<title>Insert title here</title>
 </head>
 <body>
 	<header class="header-wrap">
