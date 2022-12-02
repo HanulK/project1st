@@ -26,7 +26,7 @@ public class LoginAction implements Action {
 		MemberDAO memberDAO = MemberDAO.getInstance();
 
 		//
-		if (memberDAO.if_id_exist(id) == 0) {
+		if (memberDAO.is_member_out(id) == 0) {
 			MemberVO memberVO = memberDAO.getMemberInfo(id);
 
 			if (memberVO != null) { // DB에 멤버 정보가 있을 시

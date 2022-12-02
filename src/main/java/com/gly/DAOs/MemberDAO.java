@@ -112,7 +112,7 @@ public class MemberDAO {
 		}
 	}
 
-	// writer : hansol - 
+	// writer : hansol -
 	public void changeInfo(String user, String pwd, String email) {
 		String sql = "{call update_info(?,?,?)}";
 		try {
@@ -130,7 +130,26 @@ public class MemberDAO {
 		}
 	}
 
-	// writer : seyoung - 
+	// writer : seyoung -
+	public int is_member_out(String id) {
+		int result = -1;
+		String sql = " { ? = call MEM.is_member_out(?) } ";
+		try {
+			con = dataFactory.getConnection();
+			CallableStatement cstmt = con.prepareCall(sql);
+			cstmt.setString(2, id);
+			cstmt.registerOutParameter(1, java.sql.Types.INTEGER);
+			cstmt.execute();
+			result = cstmt.getInt(1);
+			cstmt.close();
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
 	public int if_id_exist(String id) {
 		int result = -1;
 		String sql = " { ? = call MEM.if_id_exist(?) } ";
