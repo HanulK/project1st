@@ -9,7 +9,7 @@ import com.gly.DAOs.*;
 import com.gly.VOs.*;
 
 public class DeleteMember implements Action {
-
+	// writer : Seyoung
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "gly?command=index";
@@ -19,7 +19,6 @@ public class DeleteMember implements Action {
 		if (session.getAttribute("userInfo") != null) {
 			MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
 
-			System.out.println(">>"+loginUser.getM_id());
 			MemberDAO memberDAO = MemberDAO.getInstance();
 			memberDAO.deleteMember(loginUser.getM_id());
 			

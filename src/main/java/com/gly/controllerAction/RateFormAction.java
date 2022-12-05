@@ -9,7 +9,7 @@ import com.gly.DAOs.*;
 import com.gly.VOs.*;
 
 public class RateFormAction  implements Action{
-	
+	// writer : Hansol
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url="";
@@ -18,13 +18,11 @@ public class RateFormAction  implements Action{
 		
 		int product_id = Integer.parseInt(request.getParameter("p_id"));
 		String p_id = request.getParameter("p_id");
-		System.out.println("product_id= "+ product_id);
 		if (session.getAttribute("userInfo") != null) {
 			
 			MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
 			ReviewDAO dao = ReviewDAO.getInstance();
 			int check = dao.checkProduct(product_id,loginUser.getM_id());
-			System.out.println(check);
 			if(check==1) url ="mypage/checkReview.jsp";
 			else url="gly?command=write_review&p_id=" + p_id ;
 			

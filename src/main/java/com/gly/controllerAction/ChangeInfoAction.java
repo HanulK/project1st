@@ -8,7 +8,7 @@ import javax.servlet.http.*;
 import com.gly.VOs.*;
 
 public class ChangeInfoAction implements Action{
-	
+	// writer : Hansol
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url="mypage/changeInfo.jsp";

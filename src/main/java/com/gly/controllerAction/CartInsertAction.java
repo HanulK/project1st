@@ -13,7 +13,7 @@ import com.gly.VOs.CartVO;
 import com.gly.VOs.MemberVO;
 
 public class CartInsertAction implements Action {
-	// writer : juhye
+	// writer : Juhye
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "/gly?command=cart_list";

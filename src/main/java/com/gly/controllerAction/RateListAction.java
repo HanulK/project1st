@@ -10,7 +10,7 @@ import com.gly.DAOs.*;
 import com.gly.VOs.*;
 
 public class RateListAction implements Action {
-
+	// writer : Hansol
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "mypage/rate.jsp";
@@ -18,7 +18,6 @@ public class RateListAction implements Action {
 		HttpSession session = request.getSession();
 		if (session.getAttribute("userInfo") != null) {
 			MemberVO loginUser = (MemberVO) session.getAttribute("userInfo");
-			System.out.println(loginUser.getM_id());
 			if (request.getAttribute("reviewList") == null) {
 				ReviewDAO dao = ReviewDAO.getInstance();
 				ArrayList<ReviewVO> reviewList = dao.listReview(loginUser.getM_id());

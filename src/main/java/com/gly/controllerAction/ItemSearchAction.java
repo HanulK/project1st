@@ -12,6 +12,7 @@ import com.gly.VOs.ProductVO;
 
 
 public class ItemSearchAction implements Action {
+	// writer : Hanul
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url="product/searchlist.jsp";

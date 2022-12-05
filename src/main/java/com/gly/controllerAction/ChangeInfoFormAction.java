@@ -9,7 +9,7 @@ import com.gly.DAOs.*;
 import com.gly.VOs.*;
 
 public class ChangeInfoFormAction implements Action{
-	
+	// writer : Hansol
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String pwd = request.getParameter("pwd");
@@ -17,7 +17,6 @@ public class ChangeInfoFormAction implements Action{
 		String emailDomain = request.getParameter("email_domain");
 		String email = e + "@" + emailDomain;
 		
-		System.out.println("성공");
 		String url = "mypage/checkChangeInfo.jsp";
 		
 		HttpSession session = request.getSession();

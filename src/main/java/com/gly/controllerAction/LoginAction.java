@@ -9,7 +9,7 @@ import com.gly.DAOs.*;
 import com.gly.VOs.*;
 
 public class LoginAction implements Action {
-
+	// writer : Seyoung
 	public LoginAction() {
 	}
 
@@ -30,26 +30,19 @@ public class LoginAction implements Action {
 			MemberVO memberVO = memberDAO.getMemberInfo(id);
 
 			if (memberVO != null) { // DB에 멤버 정보가 있을 시
-				if (memberVO.getM_pw().equals(pw)) { // id O, 비밀번호 O
+				// id O, 비밀번호 O : 로그인 성공
+				if (memberVO.getM_pw().equals(pw)) {
 					session.removeAttribute("id");
 					session.setAttribute("userInfo", memberVO);
 
 					url = "gly?command=index";
-					System.out.println("로그인 성공");
-				} else { // id O, 비밀번호 X
-					System.out.println("로그인 실패(비번다름)");
-
+				} else {
+					// id O, 비밀번호 X : 로그인 실패(비번다름)
 				}
-			} else { // id X, 비밀번호 X, login fail
-				System.out.println("로그인 실패(존재X)");
+			} else { // id X, 비밀번호 X, login fail : 로그인 실패(존재X)
 			}
 		} else {
-			System.out.println("탈퇴한 회원입니다.");
-			/*
-			 * response.setContentType("text/html; charset=utf-8"); PrintWriter w =
-			 * response.getWriter(); w.write("<script>alert('탈퇴한 회원입니다.');</script>");
-			 * w.flush(); w.close();
-			 */
+			// 탈퇴한 회원
 		}
 
 		request.getRequestDispatcher(url).forward(request, response);

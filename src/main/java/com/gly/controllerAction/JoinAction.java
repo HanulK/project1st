@@ -15,7 +15,7 @@ import com.gly.DAOs.MemberDAO;
 import com.gly.VOs.MemberVO;
 
 public class JoinAction implements Action {
-
+	// writer : Seyoung
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "login/signupSuccess.jsp";

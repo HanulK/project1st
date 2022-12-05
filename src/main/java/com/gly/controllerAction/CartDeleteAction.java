@@ -9,7 +9,7 @@ import com.gly.DAOs.*;
 import com.gly.VOs.*;
 
 public class CartDeleteAction implements Action {
-
+	// writer : Juhye
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url="/gly?command=cart_list";

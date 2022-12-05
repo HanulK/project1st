@@ -15,7 +15,7 @@ import com.gly.VOs.MemberVO;
 import com.gly.VOs.ProductVO;
 
 public class OrderSettingAction implements Action {
-
+	// writer : Hanul
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "product/itemInfo.jsp";

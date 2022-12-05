@@ -10,7 +10,7 @@ import com.gly.DAOs.*;
 import com.gly.VOs.*;
 
 public class MyPageAction implements Action {
-
+	// writer : Hansol
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url="mypage/mypage.jsp";

@@ -17,9 +17,9 @@ import com.gly.VOs.ProductVO;
 import com.gly.VOs.ReviewVO;
 
 public class ProductDetailAction implements Action {
-
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// writer : Hanul
 		String url = "product/itemInfo.jsp";
 
 		int p_id = Integer.parseInt(request.getParameter("pid").trim());
@@ -52,6 +52,7 @@ public class ProductDetailAction implements Action {
 		}
 		request.setAttribute("img_srcs", imgSrcs);
 
+		// writer : Seyoung
 		// 리뷰 불러오기
 		ReviewDAO dao = ReviewDAO.getInstance();
 		ArrayList<ReviewVO> reviewList = dao.productReviewList(p_id);

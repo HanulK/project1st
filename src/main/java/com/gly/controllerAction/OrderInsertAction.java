@@ -11,7 +11,7 @@ import com.gly.DAOs.OrderDAO;
 import com.gly.VOs.MemberVO;
 
 public class OrderInsertAction implements Action {
-
+	// writer : Hanul
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url="gly?command=order_list";

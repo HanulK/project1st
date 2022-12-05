@@ -11,7 +11,7 @@ import com.gly.DAOs.ProductDAO;
 import com.gly.VOs.ProductVO;
 
 public class ProductKindAction implements Action {
-
+	// writer : Hanul
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 String url = "product/itemWList.jsp";

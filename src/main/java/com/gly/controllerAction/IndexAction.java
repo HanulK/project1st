@@ -10,6 +10,8 @@ import com.gly.DAOs.*;
 import com.gly.VOs.*;
 
 public class IndexAction implements Action {
+	
+	// writer : Hansol, Seyoung
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "main/main.jsp";
