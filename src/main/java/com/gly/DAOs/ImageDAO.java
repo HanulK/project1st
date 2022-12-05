@@ -11,30 +11,33 @@ import com.gly.VOs.ImageVO;
 
 import oracle.jdbc.OracleTypes;
 
-
 public class ImageDAO {
 	private Connection con;
 	private DataSource dataFactory;
-	
+
 	private static ImageDAO instance = new ImageDAO();
-	public static ImageDAO getInstance() { return instance; }
-	
+
+	public static ImageDAO getInstance() {
+		return instance;
+	}
+
+	// writer : hanul
 	private ImageDAO() {
 		try {
 			Context initContext = new InitialContext();
-			Context envContext = (Context)initContext.lookup("java:/comp/env");
-			dataFactory = (DataSource)envContext.lookup("jdbc/glyoracle");
+			Context envContext = (Context) initContext.lookup("java:/comp/env");
+			dataFactory = (DataSource) envContext.lookup("jdbc/glyoracle");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	};
-	
-	// writer : hanul - 
+
+	// writer : hanul
 	public ArrayList<ImageVO> getDetailImagVO(int p_id) {
 		ArrayList<ImageVO> imgSrcs = new ArrayList<ImageVO>();
-		// 상품 상세 이미지 
+		// 상품 상세 이미지
 		String query = "{ call prod.get_detail_img_src(?, ?)}";
-		
+
 		try {
 			con = dataFactory.getConnection();
 			CallableStatement callableStatement = con.prepareCall(query);
@@ -49,22 +52,22 @@ public class ImageDAO {
 				img_src.setImgSrc(rset.getString("img_src"));
 				imgSrcs.add(img_src);
 			}
-			System.out.println();
-			
+
 			rset.close();
+			callableStatement.close();
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return imgSrcs;
 	}
-	
-	// writer : hanul - 
+
+	// writer : hanul
 	public String getSubImageSrc(int p_id) {
 		String imgSrc = null;
 		String query = "{ ? = call get_small_imgsrc(?) }";
-		
+
 		try {
 			con = dataFactory.getConnection();
 			CallableStatement callableStatement = con.prepareCall(query);
@@ -72,12 +75,13 @@ public class ImageDAO {
 			callableStatement.setInt(2, p_id);
 			callableStatement.executeUpdate();
 			imgSrc = callableStatement.getString(1);
-			
+
+			callableStatement.close();
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return imgSrc;
 	}
 }

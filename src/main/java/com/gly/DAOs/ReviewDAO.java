@@ -10,7 +10,6 @@ import com.gly.VOs.*;
 
 import oracle.jdbc.*;
 
-
 public class ReviewDAO {
 	private Connection con;
 	private DataSource dataFactory;
@@ -31,7 +30,7 @@ public class ReviewDAO {
 		}
 	};
 
-	// writer : hansol - 
+	// writer : hansol
 	public ArrayList<ReviewVO> listReview(String id) {
 		ArrayList<ReviewVO> reviewList = new ArrayList<ReviewVO>();
 		String query = "{ call rate(?,?)}";
@@ -54,6 +53,7 @@ public class ReviewDAO {
 				reviewList.add(review);
 			}
 			rset.close();
+			cstmt.close();
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -61,11 +61,10 @@ public class ReviewDAO {
 		return reviewList;
 	}
 
-	// writer : hansol - 
+	// writer : hansol
 	public void writeReview(int score, String text, int p_id, String user, String title) {
 		String sql = "{call write_review(?,?,?,?,?)}";
 		try {
-			System.out.println("상품평 글쓰기");
 			con = dataFactory.getConnection();
 			CallableStatement cstmt = con.prepareCall(sql);
 			cstmt.setInt(1, score);
@@ -82,7 +81,7 @@ public class ReviewDAO {
 		}
 	}
 
-	// writer : hansol - 
+	// writer : hansol
 	public int checkProduct(int product_id, String user) {
 		int result = -1;
 		String sql = "{ ? =call checkProduct(?,?)}";
@@ -94,8 +93,8 @@ public class ReviewDAO {
 			cstmt.setString(3, user);
 			cstmt.execute();
 			result = cstmt.getInt(1);
-			con.close();
 			cstmt.close();
+			con.close();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -104,7 +103,7 @@ public class ReviewDAO {
 		return result;
 	}
 
-	// writer : seyoung - 
+	// writer : seyoung
 	public void deleteReview(int pid, String mid) {
 		String sql = " { call RATE_MOD.deleteReview(?, ?) } ";
 		try {
@@ -114,7 +113,6 @@ public class ReviewDAO {
 			cstmt.setString(2, mid);
 			cstmt.execute();
 
-			System.out.println("리뷰 삭제 성공");
 			cstmt.close();
 			con.close();
 
@@ -123,7 +121,7 @@ public class ReviewDAO {
 		}
 	}
 
-	// writer : seyoung - 
+	// writer : seyoung
 	public ArrayList<ReviewVO> rateFilter(String id, int rateScore) {
 		ArrayList<ReviewVO> reviewList = new ArrayList<ReviewVO>();
 		String query = "{ ? = call RATE_MOD.rateFilter(?,?)}";
@@ -149,6 +147,7 @@ public class ReviewDAO {
 				reviewList.add(review);
 			}
 			rset.close();
+			cstmt.close();
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -156,6 +155,7 @@ public class ReviewDAO {
 		return reviewList;
 	}
 
+	// writer : Seyoung
 	public ArrayList<ReviewVO> productReviewList(int pid) {
 		ArrayList<ReviewVO> reviewList = new ArrayList<ReviewVO>();
 		String query = "{ ? = call RATE_MOD.productReviewList(?)}";
@@ -178,6 +178,7 @@ public class ReviewDAO {
 				reviewList.add(review);
 			}
 			rset.close();
+			cstmt.close();
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();

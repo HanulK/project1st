@@ -35,7 +35,6 @@ public class MemberDAO {
 
 		try {
 			con = dataFactory.getConnection();
-			System.out.println("Connection success");
 			String query = " { ? = call MEM.get_userInfo(?) }";
 			CallableStatement cstmt = con.prepareCall(query);
 			cstmt.registerOutParameter(1, OracleTypes.CURSOR);
@@ -57,6 +56,7 @@ public class MemberDAO {
 				memberVO.setM_indate(rs.getTimestamp(9));
 			}
 			rs.close();
+			cstmt.close();
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -68,7 +68,6 @@ public class MemberDAO {
 	public int insertMember(MemberVO memberVO) {
 		int result = -1;
 		String sql = "{ call MEM.sign_up(?, ?, ?, ?, ?, ?, ?, ?)}";
-		System.out.println("sql: " + sql);
 
 		try {
 			con = dataFactory.getConnection();
@@ -83,7 +82,6 @@ public class MemberDAO {
 			cstmt.setString(8, memberVO.getM_phone());
 			cstmt.execute();
 
-			System.out.println("가입 성공");
 			cstmt.close();
 			con.close();
 
@@ -97,13 +95,11 @@ public class MemberDAO {
 	public void deleteMember(String id) {
 		String sql = " { call MEM.delete_member(?) } ";
 		try {
-			System.out.println(id);
 			con = dataFactory.getConnection();
 			CallableStatement cstmt = con.prepareCall(sql);
 			cstmt.setString(1, id);
 
 			cstmt.execute();
-			System.out.println("탈퇴성공");
 			cstmt.close();
 			con.close();
 
@@ -112,17 +108,17 @@ public class MemberDAO {
 		}
 	}
 
-	// writer : hansol -
+	// writer : hansol
 	public void changeInfo(String user, String pwd, String email) {
 		String sql = "{call update_info(?,?,?)}";
 		try {
-			System.out.println("회원정보 변경!");
 			con = dataFactory.getConnection();
 			CallableStatement cstmt = con.prepareCall(sql);
 			cstmt.setString(1, user);
 			cstmt.setString(2, pwd);
 			cstmt.setString(3, email);
 			cstmt.execute();
+			
 			cstmt.close();
 			con.close();
 		} catch (Exception e) {
@@ -130,7 +126,7 @@ public class MemberDAO {
 		}
 	}
 
-	// writer : seyoung -
+	// writer : seyoung
 	public int is_member_out(String id) {
 		int result = -1;
 		String sql = " { ? = call MEM.is_member_out(?) } ";
@@ -141,15 +137,16 @@ public class MemberDAO {
 			cstmt.registerOutParameter(1, java.sql.Types.INTEGER);
 			cstmt.execute();
 			result = cstmt.getInt(1);
+			
 			cstmt.close();
 			con.close();
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return result;
 	}
-
+	
+	// writer : seyoung
 	public int if_id_exist(String id) {
 		int result = -1;
 		String sql = " { ? = call MEM.if_id_exist(?) } ";
@@ -160,6 +157,7 @@ public class MemberDAO {
 			cstmt.registerOutParameter(1, java.sql.Types.INTEGER);
 			cstmt.execute();
 			result = cstmt.getInt(1);
+			
 			cstmt.close();
 			con.close();
 

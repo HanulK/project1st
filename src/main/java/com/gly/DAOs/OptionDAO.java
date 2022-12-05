@@ -32,7 +32,7 @@ public class OptionDAO {
 	};
 	
 	
-	// writer : hanul - 
+	// writer : hanul
 	public ArrayList<ArrayList<OptionVO>> getProductOptions(int p_id) {
 		ArrayList<ArrayList<OptionVO>> options = new ArrayList<ArrayList<OptionVO>>();
 		// 상품 옵션 정보
@@ -67,6 +67,7 @@ public class OptionDAO {
 			options.add(sizeOption);
 			
 			rset.close();
+			callableStatement.close();
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
