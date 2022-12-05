@@ -58,6 +58,7 @@
 			</ul>
 		</div>
 	</section>
-	<!-- 최근본 상품 start -->
 </body>
 </html>
+
+<!-- Hanul, Seyoung -->

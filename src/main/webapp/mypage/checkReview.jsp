@@ -15,3 +15,5 @@ location.href="http://localhost/project1st/gly?command=rate";
 </script>
 </body>
 </html>
+
+<!-- Hansol -->

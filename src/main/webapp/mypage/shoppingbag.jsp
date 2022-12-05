@@ -206,3 +206,5 @@ function changeCnt(obj, i, p_d_id, p_price){
 </body>
 
 </html>
+
+<!-- Seyoung, Juhye, Hanul-->

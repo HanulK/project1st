@@ -198,3 +198,5 @@
 	<script type="text/javascript" src="js/signup/idcheck.js"></script>
 </body>
 </html>
+
+<!-- Seyoung, Juhye -->

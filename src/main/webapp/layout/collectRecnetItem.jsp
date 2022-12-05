@@ -6,15 +6,16 @@
 <head>
 <link href="css/headerNav.css" rel="stylesheet" />
 <meta charset="UTF-8" />
-<title>Insert title here</title>
-<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-	 	initLatelyItemList();
+		initLatelyItemList();
 	});
 </script>
 </head>
 <body>
-<script type="text/javascript" src="js/product/recent.js"></script>
+	<script type="text/javascript" src="js/product/recent.js"></script>
 </body>
 </html>
+
+<!-- Hanul, Seyoung -->

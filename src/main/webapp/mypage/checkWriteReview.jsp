@@ -4,3 +4,5 @@
  alert("리뷰작성 완료!");
 location.href="http://localhost/project1st/gly?command=rate";
 </script>
+
+<!-- Hansol -->

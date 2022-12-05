@@ -4,3 +4,4 @@
  alert("회원변경 성공!");
 location.href="http://localhost/project1st/gly?command=mypage";
 </script>
+<!-- Hansol -->

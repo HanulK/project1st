@@ -48,3 +48,5 @@
 	<%@ include file="../layout/footer.jsp"%>
 </body>
 </html>
+
+<!-- Juhye, Hanul, Seyoung -->

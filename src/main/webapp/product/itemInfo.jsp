@@ -341,3 +341,5 @@
 	<script type="text/javascript" src="js/product/modal.js"></script>
 </body>
 </html>
+
+<!-- Seyoung, Hanul, Juhye -->
