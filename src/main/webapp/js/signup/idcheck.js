@@ -11,3 +11,5 @@ function idcheck() {
   var url = "gly?command=id_check_form&id=" + document.signupForm.id.value;
   window.open(url, "_blank_1", "toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=330, height=200");
 }
+
+// Writer : Seyoung

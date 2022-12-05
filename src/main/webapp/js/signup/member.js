@@ -66,4 +66,4 @@ function pwReCheck() {
 }
 
 
-// W.PSY
+// Writer : Seyoung

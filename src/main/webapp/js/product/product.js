@@ -16,3 +16,5 @@ function minus() {
 function plus() {
 	pform.quantity.value = parseInt(pform.quantity.value) +1;
 }
+
+// Writer : Seyoung

@@ -8,3 +8,5 @@ function delMember() {
   	location.href ='gly?command=delete_member'
   }
 }
+
+// Writer : Seyoung 

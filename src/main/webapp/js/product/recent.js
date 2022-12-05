@@ -1,5 +1,3 @@
-////// 작성자 : 한울, 세영
-//////	출처 : 블로그(http://nerobong2.blogspot.com/2018/02/javascriptlocalstorage.html)
 const itemExpirationDate = 1;
 const itemMax = 6;
 
@@ -155,3 +153,6 @@ function LatelyItemRender() {
 		$("ul.productList").append('<li>찾아본<br>상품이<br>없습니다.</li>');
 	}
 }
+
+// Writer : Hanul, Seyoung
+//	출처 : 블로그(http://nerobong2.blogspot.com/2018/02/javascriptlocalstorage.html)
