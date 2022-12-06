@@ -1,17 +1,13 @@
 package com.gly.controllerAction;
 
-import java.io.IOException;
-import java.util.ArrayList;
+import java.io.*;
+import java.util.*;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
-import com.gly.DAOs.OrderDAO;
-import com.gly.VOs.MemberVO;
-import com.gly.VOs.OrderVO;
+import com.gly.DAOs.*;
+import com.gly.VOs.*;
 
 public class OrderListAction implements Action {
 	// writer : Hansol
@@ -30,5 +26,4 @@ public class OrderListAction implements Action {
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}
-
 }

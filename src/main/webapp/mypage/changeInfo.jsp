@@ -46,7 +46,7 @@
 										<tr>
 											<th scope="row" class="th_space"><label for="pwChangeBtn">비밀번호</label></th>
 											<td>
-												<input type="text" class="btn add_s" name="pwd" required>
+												<input type="password" class="btn add_s" name="pwd" required>
 											</td>
 										</tr>
 										<tr>
