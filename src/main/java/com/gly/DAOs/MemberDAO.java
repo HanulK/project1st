@@ -64,7 +64,7 @@ public class MemberDAO {
 		return memberVO;
 	}
 
-	// writer : seyoung - 멤버 전체 정보 받기
+	// writer : seyoung - 회원 가입
 	public int insertMember(MemberVO memberVO) {
 		int result = -1;
 		String sql = "{ call MEM.sign_up(?, ?, ?, ?, ?, ?, ?, ?)}";
@@ -91,7 +91,7 @@ public class MemberDAO {
 		return result;
 	}
 
-	// writer : seyoung - 멤버 전체 정보 받기
+	// writer : seyoung - 회원 탈퇴 (멤버 삭제)
 	public void deleteMember(String id) {
 		String sql = " { call MEM.delete_member(?) } ";
 		try {
@@ -126,7 +126,7 @@ public class MemberDAO {
 		}
 	}
 
-	// writer : seyoung
+	// writer : seyoung : 탈퇴 회원 확인
 	public int is_member_out(String id) {
 		int result = -1;
 		String sql = " { ? = call MEM.is_member_out(?) } ";
@@ -146,7 +146,7 @@ public class MemberDAO {
 		return result;
 	}
 	
-	// writer : seyoung
+	// writer : seyoung : 유효 아이디 확인
 	public int if_id_exist(String id) {
 		int result = -1;
 		String sql = " { ? = call MEM.if_id_exist(?) } ";
