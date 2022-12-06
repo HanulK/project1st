@@ -64,7 +64,7 @@ public class MemberDAO {
 		return memberVO;
 	}
 
-	// writer : seyoung - 멤버 전체 정보 받기
+	// writer : seyoung - 회원 가입
 	public int insertMember(MemberVO memberVO) {
 		int result = -1;
 		String sql = "{ call MEM.sign_up(?, ?, ?, ?, ?, ?, ?, ?)}";
