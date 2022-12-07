@@ -2,6 +2,6 @@
  pageEncoding="UTF-8"%>
 <script type="text/javascript">
  alert("회원변경 성공!");
-location.href="http://localhost/project1st/gly?command=mypage";
+location.href="http://localhost:8080/project1st/gly?command=mypage";
 </script>
 <!-- Hansol -->

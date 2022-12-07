@@ -11,7 +11,7 @@
 <body>
 <script>
 alert("이미 작성한 상품의 리뷰입니다!");
-location.href="http://localhost/project1st/gly?command=rate";
+location.href="http://localhost:8080/project1st/gly?command=rate";
 </script>
 </body>
 </html>
